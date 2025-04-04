@@ -4,7 +4,6 @@ import FullScreenCarousel from '@/components/FullScreenCarousel'
 import LocationCarousel from '@/components/LocationCarousel'
 import RatingsDisplay from '@/components/RatingsDisplay'
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 const page = () => {
   const data= [

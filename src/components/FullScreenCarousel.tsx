@@ -10,18 +10,16 @@ interface FullScreenCarouselProps {
 
 const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ data }) => {
     return (
-        <div className="w-screen max-h-screen">
-            <Swiper className="w-full">
+        <div className="w-screen h-screen bg-black">
+            <Swiper className="w-full h-full">
                 {data.map((item, index) => (
-                    <SwiperSlide key={index} className="w-full flex items-center justify-center">
-                        <div className="relative w-full h-auto max-h-[80vh]">
-                            <Image 
-                                src={item} 
-                                alt={`Slide ${index}`} 
-                                layout="responsive" 
-                                width={1920} 
-                                height={1080} 
-                                objectFit="contain" 
+                    <SwiperSlide key={index} className="w-full h-full flex items-center justify-center">
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={item}
+                                alt={`Slide ${index}`}
+                                layout="fill"
+                                objectFit="contain"
                                 priority
                             />
                         </div>

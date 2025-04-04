@@ -1,19 +1,31 @@
 "use client"
-import { Call, Footer, Whatsapp } from "@/components";
-import ContactSection from "./components/Contact/ContactSection";
 import HomeHero from "./components/Header/HomeHero";
 import TestimonialSection from "./components/Testimonials/TestimonialSection";
-import PureVegBanner from "./components/PureVegBanner";
-import ExperiencesSection from "./components/Experiences/ExperiencesSection";
-import HeroSection from "./components/Explore/HeroSection";
-import FloralDesign from "./components/FloralDesign";
-import AccommodationsSection from "./components/Accomodation/AccommodationsSection";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import BookingForm from "@/components/BookingForm";
 import DescriptionShow from "@/components/DescriptionShow";
+import WellnessSliderSection from "@/components/WellnessSlider";
+import RoomsAndSuitesCombined from "./components/FullScreenRoomCards";
+import FullSlideContentCarousel from "@/components/ImageCarouselCard";
 
 export default function Home() {
-
+  const slides = [
+    {
+      src: "/explore1.png",
+    heading: "Stunning Landscapes",
+    description: "Explore breathtaking views from around the world.",
+},
+    {
+      src: "/explore2.png",
+    heading: "Urban Exploration",
+    description: "Discover the hidden beauty of city life.",
+},
+    {
+      src: "/explore3.png",
+    heading: "Nature & Wildlife",
+    description: "Witness the wonders of the animal kingdom.",
+},
+    ];
 
   return (
     <main>
@@ -22,28 +34,73 @@ export default function Home() {
       <DescriptionShow
         title={{
           firstLine: "“Relax In A Tranquil Hideaway With The",
-            secondLine: "Sound Of Nature”"
+          secondLine: "Sound Of Nature”"
         }}
         description={{
           mainText: "We take you to a wonderland of breeze, leaves, and stars. Wake up feeling fresh and breezy every morning -experience waking up right in the heart of India’s wealthiest woodlands and reconnecting with your soul. With the sound of chirping birds, and the snow-clad mountains of the Dhauladhar and Pir Panjal range, this resort will enchant you with the holy vibes away from the hustle and bustle of the busy town of Manali. Located around apple orchards and surrounded by Pine trees we provide top-notch hospitality. Discover a haven of natural beauty and culinary delight at Anand Vardhan, the finest luxury resort in Manali, serving exquisite vegetarian cuisine.",
         }}
       />
       {/* //here */}
+      <RoomsAndSuitesCombined />
+      <WellnessSliderSection
+        title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
+        subtitle="Relax & Rejuvenation"
+        services={[
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/0e03aa4d81e248e643f37cb9b845b474e3e8962e",
+            title: "Yoga & Meditation",
+            description:
+              "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins.",
+          },
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+            title: "Panchkarma",
+            description:
+              "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we'll help you feel refreshed, inside and out.",
+          },
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+            title: "Naturopathy",
+            description:
+              "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth's simple, yet powerful remedies to restore your balance and energy.",
+          },
+        ]}
+      />
+      <WellnessSliderSection
+        subtitle="Relax & Rejuvenation"
+        services={[
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/0e03aa4d81e248e643f37cb9b845b474e3e8962e",
+            title: "Yoga & Meditation",
+            description:
+              "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins.",
+          },
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+            title: "Panchkarma",
+            description:
+              "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we'll help you feel refreshed, inside and out.",
+          },
+          {
+            imageUrl:
+              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+            title: "Naturopathy",
+            description:
+              "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth's simple, yet powerful remedies to restore your balance and energy.",
+          },
+        ]}
+        reverseLayout={true}
+      />
+
+      <FullSlideContentCarousel data={slides} />
+
       <TestimonialSection />
       <BookingForm />
-      {/* <FloralDesign location="left" />
-        <PureVegBanner />
-        <HeroSection />
-        <FloralDesign location="left" />
-        <AccommodationsSection />
-        <ExperiencesSection />
-        <FloralDesign location="right" />
-        <BookingForm />
-        <ContactSection />
-        <Footer />
-        <Whatsapp whatsAppNumber="9317207373" />
-        <Call callNumber="919317207373" /> */}
-
     </main>
   );
 }

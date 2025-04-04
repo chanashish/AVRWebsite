@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ChevronDownIcon, DropdownIcon } from "./Icons";
-
+import { countries } from "../data/countryCode";
 interface FormData {
   fullName: string;
   phoneNumber: string;
@@ -14,7 +14,6 @@ interface FormData {
   roomType: string;
 }
 
-const countryCodes = ["+91", "+1", "+44", "+61"];
 const roomTypes = ["Luxury Suite Room", "Deluxe Room", "Standard Room"];
 
 const BookingForm = () => {
@@ -23,7 +22,7 @@ const BookingForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  
+
   const [selectedCountry, setSelectedCountry] = useState("+91");
   const [selectedRoom, setSelectedRoom] = useState("Luxury Suite Room");
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -55,7 +54,7 @@ const BookingForm = () => {
       <h2 className="text-2xl leading-8 text-center text-lime-900 max-sm:text-xl max-sm:leading-7">
         Book Your Stay With Us!
       </h2>
-      <form 
+      <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 w-[1350px] max-lg:w-[90%] max-md:flex-col"
       >
@@ -64,7 +63,7 @@ const BookingForm = () => {
           <input {...register("fullName", { required: "Full Name is required" })} placeholder="Full Name*" className="text-base text-neutral-700 outline-none" />
           {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
         </div>
-        
+
         {/* Phone Number with Country Code */}
         <div className="relative flex items-center px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
           <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
@@ -72,16 +71,16 @@ const BookingForm = () => {
             <DropdownIcon />
           </div>
           {dropdownOpen && (
-            <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-24">
-              {countryCodes.map((code) => (
-                <li key={code} className="px-3 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => { setSelectedCountry(code); setDropdownOpen(false); }}>{code}</li>
+            <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-30 max-h-[200px] overflow-scroll">
+              {countries.map((code, index) => (
+                <li key={index} className="px-3 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => { setSelectedCountry(code.code); setDropdownOpen(false); }}>{code.name}{" "}{code.code}</li>
               ))}
             </ul>
           )}
           <input {...register("phoneNumber", { required: "Phone number is required" })} placeholder="Phone Number*" className="ml-4 text-base text-neutral-700 outline-none" />
           {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
         </div>
-        
+
         {/* Email */}
         <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
           <input {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" } })} placeholder="Email ID*" className="text-base text-neutral-700 outline-none" />
