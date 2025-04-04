@@ -10,7 +10,6 @@ SwiperCore.use([Autoplay]);
 
 interface SlideData {
     src: string;
-    heading: string;
     description: string;
 }
 
@@ -47,20 +46,23 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({ dat
                 >
                     {data.map((item, index) => (
                         <SwiperSlide key={index}>
-                        <div className="flex flex-col items-center justify-center h-full text-center space-y-6 px-4 py-6">
-                            <div className="relative w-full h-[50vh] md:h-[70vh]">
-                                <Image
-                                    src={item.src}
-                                    alt={`Slide ${index}`}
-                                    layout="fill"
-                                    objectFit="contain" // or 'contain'
-                                    priority
-                                />
+                            <div className="flex flex-col items-center justify-center h-full text-center space-y-6 px-4 py-6">
+                                <div className="relative w-full">
+                                    <Image
+                                        src={item.src}
+                                        alt={`Slide ${index}`}
+                                        width={1920}
+                                        height={1080}
+                                        layout="responsive"
+                                        objectFit="cover"
+                                        priority
+                                    />
+                                </div>
+
+                                <p className="text-base md:text-lg max-w-2xl">{item.description}</p>
                             </div>
-                            <p className="text-base md:text-lg max-w-2xl">{item.description}</p>
-                        </div>
-                    </SwiperSlide>
-                    
+                        </SwiperSlide>
+
                     ))}
                 </Swiper>
             </div>

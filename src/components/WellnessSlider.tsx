@@ -91,15 +91,15 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     );
 
     return (
-        <section className="px-28 py-36 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-16 bg-[#F9F9F1]">
+        <section className="px-28 py-20 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-16 bg-[#F9F9F1]">
             <header
                 className={`flex justify-between items-center mb-14 max-sm:mb-8 ${reverseLayout ? "flex-row-reverse" : ""
                     }`}
             >
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-2xl leading-8 text-lime-900 uppercase max-md:text-xl max-sm:text-lg roboto">
+                    {title && <h1 className="text-2xl leading-8 text-lime-900 uppercase max-md:text-xl max-sm:text-lg roboto">
                         {title}
-                    </h1>
+                    </h1>}
                     <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
                         {subtitle}
                     </p>

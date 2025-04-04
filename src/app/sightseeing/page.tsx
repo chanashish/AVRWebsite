@@ -6,37 +6,30 @@ import RatingsDisplay from '@/components/RatingsDisplay'
 import React from 'react'
 
 const page = () => {
-  const data= [
+  const data = [
     {
-      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/1a8fc6e9ca0b20140ca0dd7eea0e7564b1c12f58",
+      image: "/sightseeing/manali.png",
       title: "Manali Mall",
       description:
-        "Mall Road is the main street in Manali, city of Himachal Pradesh, India...",
-      decorativeImage: "https://cdn.builder.io/api/v1/image/assets/TEMP/d3032dd3c1d18105bd631d679ded7b699e00eee3",
-      decorativeImageEnd: "https://cdn.builder.io/api/v1/image/assets/TEMP/4e088ba4683d8078659136d45271faefc72e8272",
+        "Mall Road is the main street in Manali, city of Himachal Pradesh, India. The offices of municipal corporation, fire service, and police headquarters are located here. Automobiles, except emergency vehicles are not allowed on this road.",
     },
     {
-      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/c63d73781459ba469b6b79eba5116d945dec088c",
+      image: "/sightseeing/ataltunnel.png",
       title: "Atal Tunnel",
       description:
-        "Atal Tunnel, named after former Prime Minister of India...",
-      decorativeImage: "https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a",
-      decorativeImageEnd: "https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a",
+        "Atal Tunnel, named after former Prime Minister of India, Atal Bihari Vajpayee is a highway tunnel built under the Rohtang Pass in the eastern Pir Panjal range of the Himalayas on the Leh-Manali Highway in Himachal Pradesh, India.",
     },
     {
-      image: "https://cdn.builder.io/api/v1/image/assets/TEMP/1e47453dd613ebc6a122ff6d2118a950d6a1846a",
+      image: "/sightseeing/kullu.png",
       title: "Kullu City",
-      description:
-        "Kullu is a municipal council town that serves as the administrative headquarters...",
-      decorativeImage: "https://cdn.builder.io/api/v1/image/assets/TEMP/467700281770bc2c7ea73ab6e5b71df4340ebbfe",
-      decorativeImageEnd: "https://cdn.builder.io/api/v1/image/assets/TEMP/ad33659c33381eac40061641b81f19d65a13ad9f",
+      description: "Kullu is a municipal council town that serves as the administrative headquarters of the Kullu district of the Indian state of Himachal Pradesh. It is located on the banks of the Beas River in the Kullu Valley about 10 kilometres north of the airport.",
     },
   ];
   return (
     <div>
       <FullScreenCarousel data={["/carousel/sightseeing.png"]} />
       <RatingsDisplay />
-      <LocationCarousel locations={data}/>
+      <LocationCarousel locations={data} />
       <BookingForm />
     </div>
   )

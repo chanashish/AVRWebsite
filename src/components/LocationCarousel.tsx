@@ -4,13 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 interface LocationData {
   image: string;
   title: string;
   description: string;
-  decorativeImage: string;
-  decorativeImageEnd: string;
 }
 
 interface Props {
@@ -19,56 +18,64 @@ interface Props {
 
 const LocationCarousel: React.FC<Props> = ({ locations }) => {
   return (
-    <section className="flex flex-col gap-14 items-center px-0 py-32 mx-auto max-w-none bg-stone-100 max-sm:py-16">
-      <h1 className="text-4xl leading-10 text-center text-lime-900 max-md:text-3xl max-sm:text-3xl">
+    <section className="flex flex-col gap-14 items-center px-0 py-32 mx-auto max-w-none bg-[#F9F9F1] max-sm:py-16">
+      <h1 className="text-4xl leading-10 text-center text-lime-900 max-md:text-3xl max-sm:text-3xl playfair">
         &quot;A sheer rejuvenation from monotonous life&quot;
       </h1>
 
       {/* Swiper carousel */}
-      <div className="w-full px-6 max-w-[1200px]">
+      <div className="w-full max-w-[1400px] px-0 relative overflow-visible">
         <Swiper
           modules={[Navigation]}
           navigation={{
             nextEl: ".swiper-button-next-custom",
             prevEl: ".swiper-button-prev-custom",
           }}
-          loop={true}
-          centeredSlides={true}
+          loop={locations.length > 3}
+          centeredSlides={locations.length > 2}
           spaceBetween={30}
           slidesPerView={1.5}
           breakpoints={{
             0: {
               slidesPerView: 1,
               centeredSlides: false,
+              spaceBetween: 20,
             },
             768: {
-              slidesPerView: 1.5,
-              centeredSlides: true,
+              slidesPerView: locations.length > 1 ? 1.5 : 1,
+              centeredSlides: locations.length > 2,
+              spaceBetween: 30,
             },
           }}
+          className="!overflow-visible"
         >
           {locations.map((location) => (
             <SwiperSlide key={location.title}>
-              <article className="flex flex-col gap-10 items-center w-full">
-                <img
-                  src={location.image}
-                  alt={location.title}
-                  className="object-cover w-full rounded h-[488px]"
-                />
+              <article className="flex flex-col gap-6 items-center w-full">
+                <div className="w-full aspect-[3/2] relative bg-[#F9F9F1] rounded overflow-visible">
+                  <Image
+                    src={location.image}
+                    alt={location.title}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 700px"
+                  />
+
+                </div>
                 <div className="flex flex-col gap-2 items-start w-full">
                   <div className="flex gap-4 justify-center items-center w-full">
                     <img
-                      src={location.decorativeImage}
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                       alt=""
-                      className="h-2.5 w-[37px]"
+                      className="w-[37px] h-[10px]"
                     />
                     <h2 className="text-3xl leading-10 text-center text-lime-900">
                       {location.title}
                     </h2>
                     <img
-                      src={location.decorativeImageEnd}
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                       alt=""
-                      className="h-2.5 w-[37px]"
+                      className="w-[37px] h-[10px]"
                     />
                   </div>
                   <p className="text-xl font-light leading-8 text-center text-stone-500">
@@ -80,7 +87,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
           ))}
         </Swiper>
 
-        {/* Custom navigation controls at bottom */}
+        {/* Custom navigation controls */}
         <div className="flex gap-14 items-center justify-center mt-10 max-sm:gap-6">
           <button
             className="swiper-button-prev-custom cursor-pointer"
@@ -118,7 +125,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
           </button>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

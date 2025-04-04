@@ -11,21 +11,14 @@ import FullSlideContentCarousel from "@/components/ImageCarouselCard";
 export default function Home() {
   const slides = [
     {
-      src: "/explore1.png",
-    heading: "Stunning Landscapes",
-    description: "Explore breathtaking views from around the world.",
-},
+      src: "/home/dining.png",
+      description: "Govind Prasadam Pure Vegetarian Restaurant",
+    },
     {
-      src: "/explore2.png",
-    heading: "Urban Exploration",
-    description: "Discover the hidden beauty of city life.",
-},
-    {
-      src: "/explore3.png",
-    heading: "Nature & Wildlife",
-    description: "Witness the wonders of the animal kingdom.",
-},
-    ];
+      src: "/home/cafe.png",
+      description: "Open Air Cafe",
+    },
+  ];
 
   return (
     <main>
@@ -48,24 +41,21 @@ export default function Home() {
         services={[
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/0e03aa4d81e248e643f37cb9b845b474e3e8962e",
+              "/home/relax1.png",
             title: "Yoga & Meditation",
-            description:
-              "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins.",
+            description: "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins."
           },
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+              "/home/relax2.png",
             title: "Panchkarma",
-            description:
-              "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we'll help you feel refreshed, inside and out.",
+            description: "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out."
           },
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
+              "/home/relax3.png",
             title: "Naturopathy",
-            description:
-              "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth's simple, yet powerful remedies to restore your balance and energy.",
+            description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
           },
         ]}
       />
@@ -74,24 +64,21 @@ export default function Home() {
         services={[
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/0e03aa4d81e248e643f37cb9b845b474e3e8962e",
-            title: "Yoga & Meditation",
-            description:
-              "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins.",
+              "/home/explore1.png",
+            title: "Bonfire",
+            description: "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars."
           },
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
-            title: "Panchkarma",
-            description:
-              "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we'll help you feel refreshed, inside and out.",
+              "/home/explore2.png",
+            title: "Trekking",
+            description: "Lace up your boots and embark on a journey through breathtaking mountain trails—every step brings you closer to nature's wonders. "
           },
           {
             imageUrl:
-              "https://cdn.builder.io/api/v1/image/assets/TEMP/3ba32a847664d4d84c567cb8d3331a4a974c3c23",
-            title: "Naturopathy",
-            description:
-              "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth's simple, yet powerful remedies to restore your balance and energy.",
+              "/home/explore3.png",
+            title: "Outdoor Kids Area",
+            description: "Let your kids' imaginations run wild in our outdoor play area, where adventure is just a swing away! "
           },
         ]}
         reverseLayout={true}
