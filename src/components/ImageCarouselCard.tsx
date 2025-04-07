@@ -6,7 +6,6 @@ import SwiperCore from "swiper";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
-SwiperCore.use([Autoplay]);
 
 interface SlideData {
     src: string;
@@ -18,6 +17,7 @@ interface FullSlideContentCarouselProps {
 }
 
 const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({ data }) => {
+    SwiperCore.use([Autoplay]);
     return (
         <div className="w-full h-full lg:min-h-screen bg-[#F9F9F1] text-[#2F4B26] px-4 py-8 flex flex-col items-center justify-between">
             {/* Heading */}

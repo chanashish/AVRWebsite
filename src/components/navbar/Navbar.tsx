@@ -1,16 +1,13 @@
 "use client";
 import Link from "next/link";
 import Container from "../SectionComponents/Container";
-import { imageUrl, NavLink, SocialLink } from "@/data/links";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import MobileNav from "./MobileNav";
-import { MenuBurger, Outlinecall } from "@/icons/icons";
+import { MenuBurger } from "@/icons/icons";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     if (isOpen) {

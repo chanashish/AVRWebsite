@@ -103,7 +103,7 @@ const page = () => {
             Energise
           </h2>
         </div>
-        <p className='text-center mt-10 roboto font-light text-[20px] text-[#686767]'>Revitalize your body and soul—cleanse, heal, and energize with AVR's spiritual energy.</p>
+        <p className='text-center mt-10 roboto font-light text-[20px] text-[#686767]'>Revitalize your body and soul—cleanse, heal, and energize with AVR&apos;s spiritual energy.</p>
         <WeOffer items={weOfferData} />
         <WellnessSliderSection
           title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"

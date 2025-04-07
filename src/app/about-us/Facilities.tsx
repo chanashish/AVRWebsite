@@ -18,9 +18,9 @@ interface FacilitySliderProps {
   title?: string;
 }
 
-SwiperCore.use([Navigation]);
 
 const FacilitySlider: React.FC<FacilitySliderProps> = ({ cardData, title }) => {
+  SwiperCore.use([Navigation]);
   const swiperRef = useRef<SwiperCore | null>(null);
 
   const renderCard = (card: CardData, index: number) => (

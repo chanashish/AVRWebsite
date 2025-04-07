@@ -88,7 +88,7 @@ const ContactPage = () => {
                 <div className='flex-1 max-w-[704px]'>
                     <p className="text-[22px] font-normal uppercase roboto text-[#2F4B26]">anand vardhan resort</p>
                     <h2 className="text-[40px] font-normal mt-2 mb-4 playfair text-[#2F4B26]">Have a question for us?</h2>
-                    <p className="text-[#686767] roboto font-light text-[20px] mb-6">You know what to do! Drop us a line and we'll get back to you as soon as possible.</p>
+                    <p className="text-[#686767] roboto font-light text-[20px] mb-6">You know what to do! Drop us a line and we&apos;ll get back to you as soon as possible.</p>
 
                     <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
                         <input
@@ -151,7 +151,7 @@ const ContactPage = () => {
                             Submit
                         </button>
 
-                        {submitted && <p className="text-green-600 mt-2">Thanks! We'll get back to you soon.</p>}
+                        {submitted && <p className="text-green-600 mt-2">Thanks! We&apos;ll get back to you soon.</p>}
                     </form>
                 </div>
 
