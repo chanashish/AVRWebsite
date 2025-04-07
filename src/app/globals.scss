@@ -303,3 +303,19 @@
 .bg-yellow-cards{
   background:#F9F9F1 !important
 }
+
+.we-offer-slider .swiper-slide:not(.swiper-slide-active) {
+  filter: blur(5px);
+  transition: all;
+  transition-duration: 1000ms;
+
+  h3 {
+    opacity: 0;
+  }
+}
+
+.we-offer-slider .swiper-slide:not(.swiper-slide-active) {
+  filter: blur(5px);
+  transition: all;
+  transition-duration: 1000ms;
+}

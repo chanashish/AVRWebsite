@@ -71,9 +71,26 @@ const FacilitySlider: React.FC<FacilitySliderProps> = ({ cardData, title }) => {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[40px]">
-        {cardData.map(renderCard)}
+      {/* Desktop Grid */}
+      <div className="hidden lg:flex flex-col gap-[40px]">
+        {/* Full Rows */}
+        <div className="grid grid-cols-4 gap-[40px]">
+          {cardData.slice(0, Math.floor(cardData.length / 4) * 4).map(renderCard)}
+        </div>
+
+        {/* Last Row - Centered and Proper Width */}
+        {cardData.length % 4 !== 0 && (
+          <div className="flex justify-center gap-[40px]">
+            {cardData.slice(-1 * (cardData.length % 4)).map((card, index) => (
+              <div key={index} className="w-[calc((100%-120px)/4)]">
+                {/* 3 gaps of 40px = 120px, divide remaining by 4 */}
+                {renderCard(card, index)}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
+
     </div>
   );
 };

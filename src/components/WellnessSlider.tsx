@@ -3,12 +3,13 @@ import React from "react";
 
 export interface ServiceCardData {
     imageUrl: string;
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
 }
 
 interface WellnessSliderSectionProps {
     title?: string;
+    description?:string,
     subtitle: string;
     services: ServiceCardData[];
     reverseLayout?: boolean;
@@ -64,6 +65,7 @@ const ServiceCard: React.FC<ServiceCardData> = ({
 const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     title,
     subtitle,
+    description,
     services,
     reverseLayout = false,
     showArrows = true,
@@ -100,9 +102,22 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     {title && <h1 className="text-2xl leading-8 text-lime-900 uppercase max-md:text-xl max-sm:text-lg roboto">
                         {title}
                     </h1>}
-                    <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
-                        {subtitle}
-                    </p>
+                    {
+                        <div className="flex gap-3 items-center">
+                            {reverseLayout &&<img
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
+                                alt=""
+                                className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                            />}
+                            <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
+                                {subtitle}
+                            </p>
+                            {!reverseLayout &&<img
+                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
+                                alt=""
+                                className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                            />}
+                        </div>}
                 </div>
                 {showArrows && <div className="max-sm:hidden">{<Navigation />}</div>}
             </header>
@@ -125,7 +140,8 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     </div>
                 ))}
             </div>
-            <div className="sm:flex items-center hidden mt-7 justify-center">
+            {description && <p className="roboto font-light text-[20px] text-[#686767] px-5 text-center">{description}</p>}
+            <div className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Explore</span>
                 <svg
                     width="25"
@@ -145,7 +161,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 {showArrows && <div className="hidden max-sm:flex">{<Navigation />}</div>}
                 {showExplore && (
                     <div
-                        className={`flex gap-2 items-center ${!reverseLayout ? "mr-auto" : ""
+                        className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
                             }`}
                     >
                         <span className="text-lg leading-6 text-neutral-700">Explore</span>

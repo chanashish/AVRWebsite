@@ -10,7 +10,7 @@ interface FullScreenCarouselProps {
 
 const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ data }) => {
     return (
-        <div className="w-screen h-screen bg-black">
+        <div className="w-screen lg:h-screen max-lg:h-[23vh] bg-black">
             <Swiper className="w-full h-full">
                 {data.map((item, index) => (
                     <SwiperSlide key={index} className="w-full h-full flex items-center justify-center">
