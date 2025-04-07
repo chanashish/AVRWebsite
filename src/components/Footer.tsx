@@ -24,25 +24,25 @@ const Footer: React.FC = () => {
     { href: "https://www.instagram.com/anandvardhanresorts/", src: "/icons/instagram2.png", alt: "Instagram" },
     { href: "https://www.linkedin.com/company/anand-vardhan-resort/", src: "/icons/linkedin2.png", alt: "Linkedin" },
   ];
-  
+
   const quickLinks = [
-    { id: 1, value: "Quick Links", className: "playfair font-normal text-2xl" },
-    { id: 2, value: "Home", className: "roboto text-xl font-light" },
-    { id: 3, value: "About Us", className: "roboto text-xl font-light" },
-    { id: 4, value: "Rooms & Suites", className: "roboto text-xl font-light" },
-    { id: 5, value: "Gallery", className: "roboto text-xl font-light" },
-    { id: 6, value: "Contact Us", className: "roboto text-xl font-light" },
+    { id: 1, link: "", value: "Quick Links", className: "playfair font-normal text-2xl" },
+    { id: 2, link: "/", value: "Home", className: "roboto text-xl font-light" },
+    { id: 3, link: "/about-us", value: "About Us", className: "roboto text-xl font-light" },
+    { id: 4, link: "/", value: "Rooms & Suites", className: "roboto text-xl font-light" },
+    { id: 5, link: "/", value: "Gallery", className: "roboto text-xl font-light" },
+    { id: 6, link: "/contact-us", value: "Contact Us", className: "roboto text-xl font-light" },
   ];
-  
+
   const favourites = [
-    { id: 1, value: "Favourites", className: "playfair font-normal text-2xl" },
-    { id: 2, value: "Dining", className: "roboto text-xl font-light" },
-    { id: 3, value: "Things To Do", className: "roboto text-xl font-light" },
-    { id: 4, value: "Destination Wedding", className: "roboto text-xl font-light" },
-    { id: 5, value: "Spiritual Retreat", className: "roboto text-xl font-light" },
-    { id: 6, value: "Nearby Places", className: "roboto text-xl font-light" },
+    { id: 1, link: "/", value: "Favourites", className: "playfair font-normal text-2xl" },
+    { id: 2, link: "/", value: "Dining", className: "roboto text-xl font-light" },
+    { id: 3, link: "/things-to-do", value: "Things To Do", className: "roboto text-xl font-light" },
+    { id: 4, link: "/", value: "Destination Wedding", className: "roboto text-xl font-light" },
+    { id: 5, link: "/", value: "Spiritual Retreat", className: "roboto text-xl font-light" },
+    { id: 6, link: "/", value: "Nearby Places", className: "roboto text-xl font-light" },
   ];
-  
+
   const policies = [
     { id: 1, value: "Policies", className: "playfair font-normal text-2xl" },
     { id: 2, value: "Check In Policy", className: "roboto text-xl font-light" },
@@ -52,12 +52,12 @@ const Footer: React.FC = () => {
 
   // Arrow component for dropdowns
   const DropdownArrow = ({ isExpanded }: { isExpanded: boolean }) => (
-    <svg 
-      width="20" 
-      height="20" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
       className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : 'rotate-0'}`}
     >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -84,19 +84,19 @@ const Footer: React.FC = () => {
               </a>
             ))}</div>
           </div>
-          
+
           {/* Quick Links - always visible */}
           <div className="flex-1 flex flex-col gap-5 text-white text-left">
             {quickLinks.map((item) => (
-              <div key={item.id} className={item.className}>
+              <Link href={item.link} key={item.id} className={item.className}>
                 {item.value}
-              </div>
+              </Link>
             ))}
           </div>
-          
+
           {/* Favourites - collapsible on mobile */}
           <div className="flex-1 flex flex-col gap-5 text-white text-left">
-            <div 
+            <div
               className="flex justify-between items-center cursor-pointer md:cursor-default"
               onClick={() => toggleSection('favourites')}
             >
@@ -107,24 +107,24 @@ const Footer: React.FC = () => {
                 <DropdownArrow isExpanded={expandedSections.favourites} />
               </div>
             </div>
-            
+
             {/* Items - Always visible on desktop, conditionally on mobile */}
-            <div 
+            <div
               className={`flex flex-col gap-5 md:flex
                 ${expandedSections.favourites ? 'max-h-96' : 'max-h-0 overflow-hidden'} 
                 transition-all duration-300 ease-in-out md:max-h-full`}
             >
               {favourites.slice(1).map((item) => (
-                <div key={item.id} className={item.className}>
+                <Link href={item.link} key={item.id} className={item.className}>
                   {item.value}
-                </div>
+                </Link>
               ))}
             </div>
           </div>
-          
+
           {/* Policies - collapsible on mobile */}
           <div className="flex-1 flex flex-col gap-5 text-white text-left">
-            <div 
+            <div
               className="flex justify-between items-center cursor-pointer md:cursor-default"
               onClick={() => toggleSection('policies')}
             >
@@ -135,9 +135,9 @@ const Footer: React.FC = () => {
                 <DropdownArrow isExpanded={expandedSections.policies} />
               </div>
             </div>
-            
+
             {/* Items - Always visible on desktop, conditionally on mobile */}
-            <div 
+            <div
               className={`flex flex-col gap-5 md:flex
                 ${expandedSections.policies ? 'max-h-96' : 'max-h-0 overflow-hidden'} 
                 transition-all duration-300 ease-in-out md:max-h-full`}
@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <footer className="flex justify-center items-center px-28 py-4 w-full bg-lime-900 max-md:px-12 max-md:py-4 max-sm:p-4">
         <ul className="flex md:flex-row flex-col md:gap-2 gap-2 items-center">
           <li className="flex items-center gap-2">
