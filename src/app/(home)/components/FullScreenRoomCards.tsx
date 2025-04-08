@@ -1,4 +1,5 @@
 "use client";
+import { Container } from "@/components";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -111,7 +112,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
 
     return (
         <div className="bg-[#F9F9F1]">
-            <div className="flex gap-4 items-center justify-center mb-8">
+            <div className="flex gap-4 items-center justify-center py-10">
                 <img
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                     alt=""
@@ -126,10 +127,9 @@ const RoomsAndSuitesCombined: React.FC = () => {
                     className="w-[37px] h-[10px]"
                 />
             </div>
-
-            <main className="flex flex-col gap-14 items-center mx-auto my-0 w-full max-w-[1440px]">
+            <main className="flex flex-col gap-14 items-center mx-auto my-0 w-full max-w-[1600px]">
                 <div className="flex flex-col gap-8 items-center w-full">
-                    <section className="relative w-full h-[824px] max-w-[1440px] max-sm:h-[400px]">
+                    <section className="relative w-full h-[824px] max-sm:h-[400px]">
                         <img
                             src={currentRoom.images[currentImageIndex]}
                             alt={`${currentRoom.title} - Image ${currentImageIndex + 1}`}
@@ -141,38 +141,44 @@ const RoomsAndSuitesCombined: React.FC = () => {
                         </div>
                     </section>
 
-                    <article className="flex gap-10 items-start px-5 py-0 max-md:flex-col max-md:items-center max-md:text-center">
-                        <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
-                            {currentRoom.title}
-                        </h2>
-                        <div className="flex flex-col gap-8 max-w-[908px] max-md:items-center">
-                            <p className="text-xl font-light leading-7 text-[#686767] max-sm:text-base max-sm:leading-6">
-                                {currentRoom.description}
-                            </p>
-                            <Link
-                                className="flex gap-2 items-center cursor-pointer group"
-                                aria-label="Learn more about the room"
-                                href={"/rooms-suites/"}
-                            >
-                                <span className="text-lg leading-6 text-[#2F4B26] max-sm:text-base">
-                                    Know More
-                                </span>
-                                <svg
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="transition-transform group-hover:translate-x-1"
+                    {/* <article className="flex gap-10 items-start px-5 py-0 max-md:flex-col max-md:items-center max-md:text-center"> */}
+                    <Container>
+                        <div className="flex gap-10 items-start max-md:px-5 py-5 max-md:flex-col max-md:items-center max-md:text-center">
+
+                            <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
+                                {currentRoom.title}
+                            </h2>
+                            <div className="flex flex-col gap-8 max-w-[908px] max-md:items-center">
+                                <p className="text-xl font-light leading-7 text-[#686767] max-sm:text-base max-sm:leading-6">
+                                    {currentRoom.description}
+                                </p>
+                                <Link
+                                    className="flex gap-2 items-center cursor-pointer group"
+                                    aria-label="Learn more about the room"
+                                    href={"/rooms-suites/"}
                                 >
-                                    <path
-                                        d="M9.16319 19.2L8.5 18.5368L14.9368 12.1L8.5 5.66319L9.16319 5L16.2632 12.1L9.16319 19.2Z"
-                                        fill="#363636"
-                                    />
-                                </svg>
-                            </Link>
+                                    <span className="text-lg leading-6 text-[#2F4B26] max-sm:text-base">
+                                        Know More
+                                    </span>
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="transition-transform group-hover:translate-x-1"
+                                    >
+                                        <path
+                                            d="M9.16319 19.2L8.5 18.5368L14.9368 12.1L8.5 5.66319L9.16319 5L16.2632 12.1L9.16319 19.2Z"
+                                            fill="#363636"
+                                        />
+                                    </svg>
+                                </Link>
+                            </div>
                         </div>
-                    </article>
+
+                    </Container>
+                    {/* </article> */}
                 </div>
             </main>
         </div>

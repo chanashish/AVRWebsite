@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Container from "./SectionComponents/Container";
 
 interface Activity {
   title: string;
@@ -36,48 +37,48 @@ const ActivitySection: React.FC<{
   descriptionClassName = "",
   imageClassName = "",
 }) => {
-  const content = (
-    <article className="flex flex-col gap-6 items-start w-[392px] max-md:w-full">
-      <header className="flex gap-4 items-center w-full">
-        <h2 className={`text-3xl leading-10 text-lime-900 ${titleClassName}`}>
-          {activity.title}
-        </h2>
-        <img src={decorativeImageUrl} alt="" className="w-[37px] h-[10px]" />
-      </header>
-      <p
-        className={`text-xl font-light leading-8 text-stone-500 ${descriptionClassName}`}
+    const content = (
+      <article className="flex flex-col gap-6 items-start  max-md:w-full">
+        <header className="flex gap-4 items-center w-full">
+          <h2 className={`text-3xl leading-10 text-lime-900 ${titleClassName}`}>
+            {activity.title}
+          </h2>
+          <img src={decorativeImageUrl} alt="" className="w-[37px] h-[10px]" />
+        </header>
+        <p
+          className={`text-xl font-light leading-8 text-stone-500 ${descriptionClassName}`}
+        >
+          {activity.description}
+        </p>
+      </article>
+    );
+
+    const image = (
+      <img
+        src={activity.imageUrl}
+        alt={activity.imageAlt || ""}
+        className={`w-[808px] h-[488px]  rounded-[4px] object-cover max-lg:w-full ${imageClassName}`}
+      />
+    );
+
+    return (
+      <section
+        className={`flex gap-6 items-start w-full max-md:flex-col ${isReversed ? "max-md:flex-[col]" : ""} ${sectionClassName}`}
       >
-        {activity.description}
-      </p>
-    </article>
-  );
-
-  const image = (
-    <img
-      src={activity.imageUrl}
-      alt={activity.imageAlt || ""}
-      className={`w-[808px] h-[488px] rounded-[4px] object-cover max-lg:w-full ${imageClassName}`}
-    />
-  );
-
-  return (
-    <section
-      className={`flex gap-6 items-start w-full max-md:flex-col ${isReversed ? "max-md:flex-[col]" : ""} ${sectionClassName}`}
-    >
-      {isReversed ? (
-        <>
-          {content}
-          {image}
-        </>
-      ) : (
-        <>
-          {image}
-          {content}
-        </>
-      )}
-    </section>
-  );
-};
+        {isReversed ? (
+          <>
+            {content}
+            {image}
+          </>
+        ) : (
+          <>
+            {image}
+            {content}
+          </>
+        )}
+      </section>
+    );
+  };
 
 export const ActivitiesDisplay: React.FC<ActivitiesDisplayProps> = ({
   activities,
@@ -89,8 +90,8 @@ export const ActivitiesDisplay: React.FC<ActivitiesDisplayProps> = ({
   decorativeImageUrl,
 }) => {
   return (
-    <main
-      className={`justify-center max-w-[1350px] mx-auto flex flex-col gap-32 items-center px-28 py-10 max-md:px-10 max-sm:gap-16 max-sm:px-5 ${className}`}
+    <Container
+      className={`justify-center flex flex-col max-md:!mb-10 lg:py-20 gap-20 items-center max-md:px-10 max-sm:gap-16 max-sm:px-5 ${className}`}
     >
       {activities.map((activity, index) => (
         <ActivitySection
@@ -104,7 +105,7 @@ export const ActivitiesDisplay: React.FC<ActivitiesDisplayProps> = ({
           imageClassName={imageClassName}
         />
       ))}
-    </main>
+    </Container>
   );
 };
 

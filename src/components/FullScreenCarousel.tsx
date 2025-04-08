@@ -12,7 +12,7 @@ interface FullScreenCarouselProps {
 const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ data }) => {
     const enableAutoplay = data.length > 1;
     return (
-        <div className="w-screen lg:h-screen max-lg:h-[23vh] bg-black">
+        <div className="max-w-[1600px] mx-auto aspect-auto lg:aspect-[5/2.5] max-lg:h-[23vh] bg-black">
             <Swiper
                 className="w-full h-full"
                 modules={[Autoplay]}
@@ -26,7 +26,7 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ data }) => {
                                 src={item}
                                 alt={`Slide ${index}`}
                                 layout="fill"
-                                objectFit="contain"
+                                objectFit="cover"
                                 priority
                             />
                         </div>

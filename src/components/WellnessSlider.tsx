@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import Container from "./SectionComponents/Container";
 
 export interface ServiceCardData {
     imageUrl: string;
@@ -104,78 +105,87 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     );
 
     return (
-        <section className="px-28 py-20 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-16 bg-[#F9F9F1]">
-            <header
-                className={`flex justify-between items-center mb-14 max-sm:mb-8 ${reverseLayout ? "flex-row-reverse" : ""
-                    }`}
-            >
-                <div className="flex flex-col gap-2">
-                    {title && <h1 className="text-2xl leading-8 text-lime-900 uppercase max-md:text-xl max-sm:text-lg roboto">
-                        {title}
-                    </h1>}
-                    {
-                        <div className="flex gap-3 items-center">
-                            {reverseLayout && <img
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
-                                alt=""
-                                className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
-                            />}
-                            <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
-                                {subtitle}
-                            </p>
-                            {!reverseLayout && <img
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
-                                alt=""
-                                className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
-                            />}
-                        </div>}
-                </div>
-                {showArrows && <div className="max-sm:hidden">{<Navigation />}</div>}
-            </header>
-
-            <div
-                ref={scrollContainer}
-                className="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar"
-                style={{
-                    scrollSnapType: "x mandatory",
-                    scrollBehavior: "smooth",
-                }}
-            >
-                {services.map((service, index) => (
-                    <div
-                        key={index}
-                        className="flex-none w-[calc(40%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
-                        style={{ scrollSnapAlign: "start" }}
-                    >
-                        <ServiceCard {...service} />
+        <section className="max-w-[1600px] mx-auto py-20 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-16 bg-[#F9F9F1]">
+            <Container className="!px-0">
+                <header
+                    className={`flex justify-between items-center mb-14 max-sm:mb-8 ${reverseLayout ? "flex-row-reverse" : ""
+                        }`}
+                >
+                    <div className="flex flex-col gap-2">
+                        {title && <h1 className="text-2xl leading-8 text-lime-900 uppercase max-md:text-xl max-sm:text-lg roboto">
+                            {title}
+                        </h1>}
+                        {
+                            <div className="flex gap-3 items-center">
+                                {reverseLayout && <img
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
+                                    alt=""
+                                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                                />}
+                                <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
+                                    {subtitle}
+                                </p>
+                                {!reverseLayout && <img
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
+                                    alt=""
+                                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                                />}
+                            </div>}
                     </div>
-                ))}
-            </div>
-            {description && <p className="roboto font-light text-[20px] text-[#686767] px-5 text-center">{description}</p>}
-            {roomdescription && <p className="roboto font-light text-[20px] text-[#686767] px-5 ">{roomdescription}</p>}
-            {facility && (
-                <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center px-5 py-[16px] mt-8 facility-map-border">
-                    {facility.map((item) => (
+                    {showArrows && <div className="max-sm:hidden">{<Navigation />}</div>}
+                </header>
+            </Container>
+
+            <div className={`${reverseLayout ? "md:pl-32 " : "md:pl-32"}`}>
+
+                <div
+                    ref={scrollContainer}
+                    className="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar"
+                    style={{
+                        scrollSnapType: "x mandatory",
+                        scrollBehavior: "smooth",
+                    }}
+                >
+                    {services.map((service, index) => (
                         <div
-                            key={item.id}
-                            className="flex items-center gap-2 w-full sm:w-[48%] md:w-[30%] lg:w-[18%]"
+                            key={index}
+                            className="flex-none w-[calc(40%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
+                            style={{ scrollSnapAlign: "start" }}
                         >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clipPath="url(#clip0_623_3879)">
-                                    <path d="M4.57969 23.6039C9.52641 24.1327 14.4731 24.1327 19.4198 23.6039C21.4359 23.37 23.3695 21.4364 23.6034 19.4203C24.1322 14.4736 24.1322 9.52687 23.6034 4.58016C23.3695 2.56406 21.4359 0.630938 19.4198 0.396563C14.4731 -0.132187 9.52641 -0.132187 4.57969 0.396563C2.56359 0.630938 0.630469 2.56406 0.396563 4.58016C-0.132187 9.52687 -0.132187 14.4736 0.396563 19.4203C0.630469 21.4364 2.56406 23.3695 4.58016 23.6039H4.57969ZM4.85766 10.1962C5.60906 9.52219 6.765 9.58453 7.43906 10.3364L10.1991 13.4128L16.5919 6.63375C17.2847 5.89922 18.4416 5.865 19.1761 6.55781C19.9106 7.25062 19.9444 8.4075 19.252 9.14203L11.4956 17.3672C11.1502 17.7337 10.6687 17.9409 10.1658 17.9409C10.1583 17.9409 10.1508 17.9409 10.1428 17.9409C9.63141 17.9344 9.14625 17.7145 8.80453 17.3339L4.7175 12.7781C4.04344 12.0267 4.10578 10.8708 4.85766 10.1967V10.1962Z" fill="#2F4B26" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_623_3879">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <span className="text-[#686767] text-[18px] roboto uppercase font-normal whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</span>
+                            <ServiceCard {...service} />
                         </div>
                     ))}
                 </div>
+            </div>
+
+            {description && <Container> <p className="roboto border font-light text-[20px] text-[#686767] max-md:px-5">{description}</p></Container>}
+
+            {roomdescription && <Container><p className="roboto border font-light text-[20px] text-[#686767] max-md:px-5 ">{roomdescription}</p></Container>}
+            {facility && (
+                <Container>
+                    <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center max-md:px-5 py-[16px] mt-8 facility-map-border">
+                        {facility.map((item) => (
+                            <div
+                                key={item.id}
+                                className="flex items-center gap-2 w-full sm:w-[48%] md:w-[30%] lg:w-[18%]"
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clipPath="url(#clip0_623_3879)">
+                                        <path d="M4.57969 23.6039C9.52641 24.1327 14.4731 24.1327 19.4198 23.6039C21.4359 23.37 23.3695 21.4364 23.6034 19.4203C24.1322 14.4736 24.1322 9.52687 23.6034 4.58016C23.3695 2.56406 21.4359 0.630938 19.4198 0.396563C14.4731 -0.132187 9.52641 -0.132187 4.57969 0.396563C2.56359 0.630938 0.630469 2.56406 0.396563 4.58016C-0.132187 9.52687 -0.132187 14.4736 0.396563 19.4203C0.630469 21.4364 2.56406 23.3695 4.58016 23.6039H4.57969ZM4.85766 10.1962C5.60906 9.52219 6.765 9.58453 7.43906 10.3364L10.1991 13.4128L16.5919 6.63375C17.2847 5.89922 18.4416 5.865 19.1761 6.55781C19.9106 7.25062 19.9444 8.4075 19.252 9.14203L11.4956 17.3672C11.1502 17.7337 10.6687 17.9409 10.1658 17.9409C10.1583 17.9409 10.1508 17.9409 10.1428 17.9409C9.63141 17.9344 9.14625 17.7145 8.80453 17.3339L4.7175 12.7781C4.04344 12.0267 4.10578 10.8708 4.85766 10.1967V10.1962Z" fill="#2F4B26" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_623_3879">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <span className="text-[#686767] text-[18px] roboto uppercase font-normal whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</span>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
             )}
-            {roomdescription ? <div className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
+            {roomdescription ? <div className="sm:flex border items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Book Now</span>
                 <svg
                     width="25"
@@ -208,27 +218,27 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
             </Link>}
             <div className="flex justify-between items-center mt-7 max-sm:flex-row-reverse sm:hidden">
                 {showArrows && <div className="hidden max-sm:flex">{<Navigation />}</div>}
-                {showExplore && (roomdescription?(
+                {showExplore && (roomdescription ? (
                     <div
-                    className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
-                        }`}
-                >
-                    <span className="text-lg leading-6 text-neutral-700">Book Now</span>
-                    <svg
-                        width="25"
-                        height="24"
-                        viewBox="0 0 25 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-[24px] h-[24px]"
+                        className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
+                            }`}
                     >
-                        <path
-                            d="M9.66319 19.2L9 18.5368L15.4368 12.1L9 5.66319L9.66319 5L16.7632 12.1L9.66319 19.2Z"
-                            fill="#363636"
-                        />
-                    </svg>
-                </div>
-                ):(
+                        <span className="text-lg leading-6 text-neutral-700">Book Now</span>
+                        <svg
+                            width="25"
+                            height="24"
+                            viewBox="0 0 25 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-[24px] h-[24px]"
+                        >
+                            <path
+                                d="M9.66319 19.2L9 18.5368L15.4368 12.1L9 5.66319L9.66319 5L16.7632 12.1L9.66319 19.2Z"
+                                fill="#363636"
+                            />
+                        </svg>
+                    </div>
+                ) : (
                     <div
                         className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
                             }`}
@@ -250,6 +260,8 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     </div>
                 ))}
             </div>
+
+
         </section>
     );
 };

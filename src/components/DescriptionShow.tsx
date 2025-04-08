@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import * as React from "react";
+import SectionWithContainer from "./SectionComponents/SectionWithContainer";
 
 interface DescriptonShowProps {
     altTitle?: boolean,
@@ -23,8 +24,9 @@ function DescriptionShow({
     altTitle = false,
 }: DescriptonShowProps) {
     return (
-        <article className="flex justify-center items-center px-5 py-8 mx-auto my-0 max-w-[1440px] max-md:max-w-[991px] max-sm:p-5 max-sm:max-w-screen-sm">
-            <div className="flex flex-col gap-8 items-center text-center max-w-[1064px] max-md:gap-6 max-sm:gap-5">
+        <SectionWithContainer>
+
+            <div className="flex flex-col gap-8 items-center text-center max-md:gap-6 max-sm:gap-5">
                 {altTitle ?
                     <div className="flex gap-5 items-center max-md:flex-col">
                         <h2 className="text-[40px] leading-10 text-[#2F4B26] max-md:text-4xl max-md:leading-10 max-sm:text-3xl max-sm:leading-9 playfair font-normal">
@@ -75,7 +77,8 @@ function DescriptionShow({
                     </p>}
                 </div>
             </div>
-        </article>
+        </SectionWithContainer>
+
     );
 }
 

@@ -21,9 +21,9 @@ const Navbar: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <header style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}>
+    <div className="max-w-[1600px] mx-auto" style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}>
       <Container>
-        <nav className="flex items-center justify-between p-[16px]">
+        <nav className="flex items-center justify-between py-[16px]">
           <div className="">
             <Link
               href="/"
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         </nav>
       </Container>
       <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
-    </header>
+    </div>
   );
 };
 

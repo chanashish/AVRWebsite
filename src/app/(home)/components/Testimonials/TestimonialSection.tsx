@@ -52,14 +52,14 @@ export default function TestimonialSection() {
       }
     };
   }, []);
-  
+
 
   return (
-    <section className="relative w-full px-5 pt-32 pb-4 max-md:py-24 max-sm:py-16 bg-[#F9F9F1]" style={{backgroundImage:"url(/bgmap.png)",backgroundPosition:"center"}}>
+    <section className="relative w-full px-5 pt-12 pb-4 max-md:py-24 max-sm:py-16 bg-[#F9F9F1]" style={{ backgroundImage: "url(/bgmap.png)", backgroundPosition: "center" }}>
       <div className="flex flex-col items-center mx-auto max-w-screen-lg gap-14">
         {/* Header */}
         <header className="flex flex-col items-center gap-4">
-          <h2 className="text-2xl text-lime-900 uppercase text-center">TESTIMONIALS</h2>
+          {/* <h2 className="text-2xl text-lime-900 uppercase text-center">TESTIMONIALS</h2> */}
           <div className="flex items-center gap-4">
             <Image
               src="/decor-line.png"
@@ -78,19 +78,19 @@ export default function TestimonialSection() {
             />
           </div>
         </header>
-        
+
         {/* Content container with fixed-position arrows */}
         <div className="w-full relative px-14 max-sm:px-10">
           {/* Left arrow - fixed position */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
             <NavigationArrow direction="left" onClick={handlePrevious} />
           </div>
-          
+
           {/* Testimonial content */}
           <div className="flex justify-center w-full">
             <TestimonialContent testimonial={typedTestimonials[currentIndex]} />
           </div>
-          
+
           {/* Right arrow - fixed position */}
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
             <NavigationArrow direction="right" onClick={handleNext} />

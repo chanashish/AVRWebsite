@@ -5,6 +5,7 @@ import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { Container } from "@/components";
 
 // Props Interface
 interface CardData {
@@ -39,7 +40,7 @@ const FacilitySlider: React.FC<FacilitySliderProps> = ({ cardData, title }) => {
   );
 
   return (
-    <div className="w-full max-w-[1224px] mx-auto px-4">
+    <Container className="">
       {title && <h2 className="text-2xl font-semibold mb-6 text-center">{title}</h2>}
 
       {/* Mobile Swiper */}
@@ -91,7 +92,7 @@ const FacilitySlider: React.FC<FacilitySliderProps> = ({ cardData, title }) => {
         )}
       </div>
 
-    </div>
+    </Container>
   );
 };
 

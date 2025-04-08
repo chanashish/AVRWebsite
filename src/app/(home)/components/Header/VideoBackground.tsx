@@ -26,7 +26,7 @@ export const VideoBackground: React.FC = () => {
   };
 
   return (
-    <div className="relative w-screen h-[700px] max-sm:h-[240px] overflow-hidden">
+    <div className="relative h-[700px] max-sm:h-[240px] overflow-hidden">
       {/* Video container - Click to Play/Pause */}
       <div className="absolute inset-0 w-full h-full" onClick={togglePlayPause}>
         <video

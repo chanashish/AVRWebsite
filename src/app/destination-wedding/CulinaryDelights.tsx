@@ -1,10 +1,11 @@
+import { SectionWithContainer } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 
 const CulinaryDelights = () => {
     return (
-        <section className="bg-white text-[#686767] py-[120px] px-6 md:px-16 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 relative z-10">
+        <SectionWithContainer>
+            <div className=" flex flex-col md:flex-row items-center gap-10 relative z-10">
                 {/* Left: Image */}
                 <div className="w-full md:w-1/2">
                     <Image
@@ -67,7 +68,7 @@ const CulinaryDelights = () => {
                 alt="decor bottom"
                 className="absolute bottom-0 right-0 w-20 max-md:w-[35px] max-md:h-[40px] lg:w-[93px] lg:h-[107px] z-0"
             />
-        </section>
+        </SectionWithContainer>
     );
 };
 

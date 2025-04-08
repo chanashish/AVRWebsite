@@ -7,6 +7,7 @@ import WeOffer from '@/components/SliderWellness'
 import FacilitySlider from '../about-us/Facilities'
 import CulinaryDelights from './CulinaryDelights'
 import FAQ from './FAQ'
+import { SectionWithContainer } from '@/components'
 
 const page = () => {
   const sampleCardData = [
@@ -57,7 +58,7 @@ const page = () => {
         }}
       />
       <HomeHero />
-      <div className='bg-[#F9F9F1] w-full text-center lg:py-[120px]'>
+      <div className='bg-[#F9F9F1] w-full text-center py-10 md:py-20'>
         <div className="flex gap-6 items-center text-center justify-center">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
@@ -73,8 +74,8 @@ const page = () => {
         </div>
         <WeOffer items={weOfferData} />
       </div>
-      <div className='flex flex-col gap-5 max-md:py-[32px] bg-[#F9F9F1] pb-[120px]'>
-        <div className="flex gap-6 items-center text-center justify-center">
+      <SectionWithContainer>
+        <div className="flex gap-6 items-center text-center justify-center mb-10 md:mb-20">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
             alt=""
@@ -88,8 +89,8 @@ const page = () => {
           />
         </div>
         <FacilitySlider cardData={sampleCardData} />
-        <p className='text-center hover:underline cursor-pointer lato font-normal text-[18px]'>Contact us {">"}</p>
-      </div>
+        <p className='text-center hover:underline cursor-pointer lato font-normal text-[18px] mt-10 md:mt-20'>Contact us {">"}</p>
+      </SectionWithContainer>
       <CulinaryDelights />
       <FAQ />
     </div>

@@ -35,34 +35,38 @@ export default function Home() {
       />
       {/* //here */}
       <RoomsAndSuitesCombined />
-      <WellnessSliderSection
-        title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
-        subtitle="Relax & Rejuvenation"
-        href="/spiritual-retreat/"
-        services={[
-          {
-            imageUrl:
-              "/home/relax1.png",
-            title: "Yoga & Meditation",
-            description: "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins."
-          },
-          {
-            imageUrl:
-              "/home/relax2.png",
-            title: "Panchkarma",
-            description: "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out."
-          },
-          {
-            imageUrl:
-              "/home/relax3.png",
-            title: "Naturopathy",
-            description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
-          },
-        ]}
-      />
+      <div className="mt-10">
+
+        <WellnessSliderSection
+          title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
+          subtitle="Relax & Rejuvenation"
+          href="/spiritual-retreat/"
+          services={[
+            {
+              imageUrl:
+                "/home/relax1.png",
+              title: "Yoga & Meditation",
+              description: "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins."
+            },
+            {
+              imageUrl:
+                "/home/relax2.png",
+              title: "Panchkarma",
+              description: "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out."
+            },
+            {
+              imageUrl:
+                "/home/relax3.png",
+              title: "Naturopathy",
+              description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
+            },
+          ]}
+        />
+      </div>
+
       <WellnessSliderSection
         subtitle="Explore Anand Vardhan Resort"
-        href="/spiritual-retreat/"
+        href="/things-to-do/"
         services={[
           {
             imageUrl:

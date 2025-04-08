@@ -43,12 +43,12 @@ const Footer: React.FC = () => {
     { id: 6, link: "/sightseeing/", value: "Nearby Places", className: "roboto text-xl font-light" },
   ];
 
-  // const policies = [
-  //   { id: 1, value: "Policies", className: "playfair font-normal text-2xl" },
-  //   { id: 2, value: "Check In Policy", className: "roboto text-xl font-light" },
-  //   { id: 3, value: "Privacy Policy", className: "roboto text-xl font-light" },
-  //   { id: 4, value: "Terms and Conditions", className: "roboto text-xl font-light" },
-  // ];
+  const policies = [
+    { id: 1, link: "", value: "Policies", className: "playfair font-normal text-2xl" },
+    { id: 2, link: "/", value: "Check In Policy", className: "roboto text-xl font-light" },
+    { id: 3, link: "", value: "Privacy Policy", className: "roboto text-xl font-light" },
+    { id: 4, link: "", value: "Terms and Conditions", className: "roboto text-xl font-light" },
+  ];
 
   // Arrow component for dropdowns
   const DropdownArrow = ({ isExpanded }: { isExpanded: boolean }) => (
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <div className="main-footer bg-[#262A10]">
+      <div className="max-w-[1600px] mx-auto bg-[#262A10]">
         <div className="flex max-lg:flex-col justify-between w-full py-[80px] px-[108px] max-md:px-6 max-md:py-10 text-center gap-[24px] align-middle">
           <div className="flex-1 text-center align-middle flex items-center flex-col gap-5">
             <Image src={"/footerLogo.png"} alt="Anand Vardhan Resorts" height={136} width={136} />
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Policies - collapsible on mobile */}
-          {/* <div className="flex-1 flex flex-col gap-5 text-white text-left">
+          <div className="flex-1 flex flex-col gap-5 text-white text-left">
             <div
               className="flex justify-between items-center cursor-pointer md:cursor-default"
               onClick={() => toggleSection('policies')}
@@ -142,12 +142,12 @@ const Footer: React.FC = () => {
                 transition-all duration-300 ease-in-out md:max-h-full`}
             >
               {policies.slice(1).map((item) => (
-                <div key={item.id} className={item.className}>
+                <Link href={item.link} key={item.id} className={item.className}>
                   {item.value}
-                </div>
+                </Link>
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
