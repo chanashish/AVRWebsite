@@ -1,13 +1,14 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const rooms = [
     {
         id: 1,
         images: [
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
+            "/rooms/luxury/001.jpg",
+            "/rooms/luxury/002.jpg",
+            "/rooms/luxury/003.jpg",
         ],
         title: "Luxury Suite Room",
         description:
@@ -16,22 +17,22 @@ const rooms = [
     {
         id: 2,
         images: [
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
+            "/rooms/deluxe/001.jpg",
+            "/rooms/deluxe/002.jpg",
+            "/rooms/deluxe/003.jpg",
         ],
-        title: "Executive Suite",
+        title: "Deluxe Room",
         description:
             "Experience ultimate comfort in our Executive Suite, featuring premium amenities and spectacular city views.",
     },
     {
         id: 3,
         images: [
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
-            "https://cdn.builder.io/api/v1/image/assets/TEMP/a56fbfc1705b9924b767882a99612caa4adb2d20",
+            "/rooms/sdeluxe/001.jpg",
+            "/rooms/sdeluxe/002.jpg",
+            "/rooms/sdeluxe/003.jpg",
         ],
-        title: "Royal Penthouse",
+        title: "Super Deluxe Room",
         description:
             "The pinnacle of luxury, our Royal Penthouse offers unparalleled elegance and panoramic views of the surroundings.",
     },
@@ -74,7 +75,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             const now = Date.now();
-            if (now - lastInteraction >= 10000) {
+            if (now - lastInteraction >= 3000) {
                 setCurrentRoomIndex((prevIndex) =>
                     prevIndex === rooms.length - 1 ? 0 : prevIndex + 1
                 );
@@ -141,17 +142,17 @@ const RoomsAndSuitesCombined: React.FC = () => {
                     </section>
 
                     <article className="flex gap-10 items-start px-5 py-0 max-md:flex-col max-md:items-center max-md:text-center">
-                        <h2 className="text-3xl leading-10 text-lime-900 max-sm:text-2xl max-sm:leading-8">
+                        <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
                             {currentRoom.title}
                         </h2>
                         <div className="flex flex-col gap-8 max-w-[908px] max-md:items-center">
                             <p className="text-xl font-light leading-7 text-[#686767] max-sm:text-base max-sm:leading-6">
                                 {currentRoom.description}
                             </p>
-                            <button
+                            <Link
                                 className="flex gap-2 items-center cursor-pointer group"
                                 aria-label="Learn more about the room"
-                                onClick={() => setLastInteraction(Date.now())}
+                                href={"/rooms-suites/"}
                             >
                                 <span className="text-lg leading-6 text-[#2F4B26] max-sm:text-base">
                                     Know More
@@ -169,7 +170,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
                                         fill="#363636"
                                     />
                                 </svg>
-                            </button>
+                            </Link>
                         </div>
                     </article>
                 </div>

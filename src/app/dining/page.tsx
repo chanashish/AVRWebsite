@@ -22,6 +22,7 @@ const page = () => {
         }}
       />
       <WellnessSliderSection
+      href=''
         description="Step into Govind Prasadam, where tradition meets comfort in every bite. Our indoor dining space offers a warm, inviting atmosphere to savor authentic vegetarian meals made with love and care. Whether you're here to indulge in flavors or enjoy good company, we’re delighted to have you feel at home with us."
         // title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
         subtitle="Govind Prasadam Pure Veg Restaurant"
@@ -41,6 +42,7 @@ const page = () => {
         ]}
       />
       <WellnessSliderSection
+      href=''
         description="Breathe in the fresh air and savor every bite at our Open Air Café, where nature and flavor come together. With a relaxed atmosphere and delicious vegetarian dishes, it’s the perfect spot to unwind and enjoy the simple joys of good food. Join us under the open sky, and let every meal feel like a moment of peace."
         // title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
         subtitle="Open Air Cafe"

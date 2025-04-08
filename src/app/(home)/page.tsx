@@ -38,6 +38,7 @@ export default function Home() {
       <WellnessSliderSection
         title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
         subtitle="Relax & Rejuvenation"
+        href="/spiritual-retreat/"
         services={[
           {
             imageUrl:
@@ -60,7 +61,8 @@ export default function Home() {
         ]}
       />
       <WellnessSliderSection
-        subtitle="Relax & Rejuvenation"
+        subtitle="Explore Anand Vardhan Resort"
+        href="/spiritual-retreat/"
         services={[
           {
             imageUrl:

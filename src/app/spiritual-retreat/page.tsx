@@ -106,6 +106,7 @@ const page = () => {
         <p className='text-center mt-10 roboto font-light text-[20px] text-[#686767]'>Revitalize your body and soul—cleanse, heal, and energize with AVR&apos;s spiritual energy.</p>
         <WeOffer items={weOfferData} />
         <WellnessSliderSection
+        href=''
           title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
           subtitle="Relax & Rejuvenation"
           services={[

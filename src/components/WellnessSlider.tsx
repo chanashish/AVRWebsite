@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 export interface ServiceCardData {
@@ -15,6 +16,7 @@ interface WellnessSliderSectionProps {
     title?: string;
     description?: string,
     roomdescription?: string,
+    href: string,
     facility?: FacilityData[],
     subtitle: string;
     services: ServiceCardData[];
@@ -75,6 +77,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     roomdescription,
     facility,
     services,
+    href,
     reverseLayout = false,
     showArrows = true,
     showExplore = true,
@@ -187,7 +190,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                         fill="#363636"
                     />
                 </svg>
-            </div> : <div className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
+            </div> : <Link href={href} className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Explore</span>
                 <svg
                     width="25"
@@ -202,7 +205,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                         fill="#363636"
                     />
                 </svg>
-            </div>}
+            </Link>}
             <div className="flex justify-between items-center mt-7 max-sm:flex-row-reverse sm:hidden">
                 {showArrows && <div className="hidden max-sm:flex">{<Navigation />}</div>}
                 {showExplore && (roomdescription?(
