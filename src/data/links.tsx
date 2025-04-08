@@ -14,38 +14,68 @@ export const NavLink: navLinkProps[] = [
   {
     id: 1,
     label: "home",
-    href: "#",
+    href: "/",
   },
   {
     id: 2,
-    label: "About",
-    href: "#about",
+    label: "About Us",
+    href: "/about-us/",
   },
   {
     id: 3,
-    label: "Features",
-    href: "#features",
+    label: "Rooms & Suites",
+    href: "/rooms-suites/",
   },
   {
     id: 4,
-    label: "Our Featured Dishes",
-    href: "#our_featured_dishes",
+    label: "Gallery",
+    href: "/gallery/",
   },
   {
     id: 5,
-    label: "Reviews",
-    href: "#reviews",
+    label: "Contact Us",
+    href: "/contact-us/",
   },
   {
     id: 6,
-    label: "Gallery",
-    href: "#gallery",
+    label: "Dining",
+    href: "/dining/",
   },
   {
     id: 7,
-    label: "Contact Us",
-    href: "#contact_us",
+    label: "Things To Do",
+    href: "/things-to-do/",
   },
+  {
+    id: 8,
+    label: "Destination Wedding",
+    href: "/destination-wedding/",
+  },
+  {
+    id: 9,
+    label: "Spiritual Retreat",
+    href: "/spiritual-retreat/",
+  },
+  {
+    id: 10,
+    label: "Nearby Places",
+    href: "/sightseeing/",
+  },
+  // {
+  //   id: 11,
+  //   label: "Check In Policy",
+  //   href: "#contact_us",
+  // },
+  // {
+  //   id: 12,
+  //   label: "Privacy Policy",
+  //   href: "#contact_us",
+  // },
+  // {
+  //   id: 13,
+  //   label: "Terms & Conditions",
+  //   href: "#contact_us",
+  // },
 ];
 
 export const SocialLink: socialLinkProps[] = [

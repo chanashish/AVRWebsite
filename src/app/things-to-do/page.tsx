@@ -62,7 +62,7 @@ const page = () => {
         description={{
           mainText: "Escape the ordinary and embrace the thrill at our Adventure Arena, nestled in the heart of our peaceful resort. Whether you're seeking an adrenaline rush or simply want to explore the great outdoors, there's something here for everyone. Join us for an unforgettable experience where adventure and serenity beautifully collide",
           diningText: "Our goal is to give you a truly memorable dining experience and Take a seat at an indoor dining table or enjoy the meal beside views of the mountains.",
-          phoneNumber: "+91 12345 12345"
+          phoneNumber: "+91 93172 07373"
         }}
       />
       <ActivitiesDisplay activities={activitiesData} />

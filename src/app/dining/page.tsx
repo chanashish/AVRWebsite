@@ -18,7 +18,7 @@ const page = () => {
         description={{
           mainText: "Welcome to our cozy corner, where every dish is crafted with love and a deep appreciation for fresh, plant-based ingredients. Whether you're here to savor a hearty meal or share a quiet moment, we invite you to experience food that not only nourishes your body but lifts your spirit. Come as you are—our spaces are more than just a place to eat; they're spaces to relax, connect, and feel truly at ease.",
           diningText: "Our goal is to give you a truly memorable dining experience and Take a seat at an indoor dining table or enjoy the meal beside views of the mountains.",
-          phoneNumber: "+91 12345 12345"
+          phoneNumber: "+91 93172 07373"
         }}
       />
       <WellnessSliderSection

@@ -53,7 +53,7 @@ const page = () => {
         description={{
           mainText: "Surrounded by towering trees, fresh mountain air, and the ones you love most, your destination wedding becomes an unforgettable celebration of love, peace, and adventure. Celebrate love with the nature’s most breathtaking canvas. A mountain retreat wedding is where your dreams come to life. Let the mountains whisper their blessings as you say ‘I do’.",
           diningText: "At Anand Vardhan Resorts, the best resort for destination weddings in Manali, our team of benevolent, dedicated, and ever-smiling staff, combined with our multiple amenities, will help make your BIG DAY truly unforgettable.",
-          phoneNumber: "+91 12345 12345"
+          phoneNumber: "+91 93172 07373"
         }}
       />
       <HomeHero />

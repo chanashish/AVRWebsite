@@ -73,7 +73,7 @@ const page = () => {
           description={{
             mainText: "Anand Vardhan Resort is more than just a getaway—it's a peaceful sanctuary where the soul can reconnect, recharge, and find true serenity. Nestled in the heart of nature, the resort offers a spiritual retreat that goes beyond relaxation. It’s a place where you can immerse yourself in calming practices, whether it’s through yoga, meditation, or simply enjoying the tranquil surroundings. The resort also offers naturopathy and alternative treatments, providing holistic therapies designed to heal the body, mind, and spirit. From detoxifying treatments to herbal remedies and therapeutic massages, every service is tailored to restore balance and promote well-being.",
             diningText: "Anand Vardhan Resort invites you to leave behind the noise of everyday life and embark on a journey of inner peace and self-discovery. Whether you're seeking solace, spiritual growth, or just a break from the hustle, this resort offers a haven where your spirit can truly unwind and rejuvenate.",
-            phoneNumber: "+91 12345 12345"
+            phoneNumber: "+91 93172 07373"
           }}
         />
         <div className="flex gap-5 items-center max-md:flex-col items-center justify-center">

@@ -32,19 +32,19 @@ const ContactPage = () => {
     const socials = [
         {
             id: 1,
-            link: "https://facebook.com/",
+            link: "http://facebook.com/AnandVardhanResortsManali/",
             icon: "/icons/facebook3.png",
             alt: "facebook"
         },
         {
             id: 2,
-            link: "https://instagram.com/",
+            link: "https://www.instagram.com/anandvardhanresorts/",
             icon: "/icons/instagram3.png",
             alt: "instagram"
         },
         {
             id: 3,
-            link: "https://linkedin.com/",
+            link: "https://www.linkedin.com/company/anand-vardhan-resort/",
             icon: "/icons/linkedin3.png",
             alt: "linkedin"
         }
@@ -162,10 +162,10 @@ const ContactPage = () => {
                         Manali Road, Himachal Pradesh 175104
                     </p>
                     <p className="mb-1 text-[#686767] font-light text-[20px]">
-                        Email: <a href="mailto:sales@anandvardhanresorts.com" >sales@anandvardhanresorts.com</a>
+                        Email: <Link href="mailto:sales@anandvardhanresorts.com" >sales@anandvardhanresorts.com</Link>
                     </p>
                     <p className="mb-4 text-[#686767] font-light text-[20px]">
-                        Call: <a href="tel:+911234512345" >+91 12345 12345</a>
+                        Call: <Link href="tel:+919317207373" >+91 93172 07373</Link>
                     </p>
 
                     <h2 className="text-[22px] font-medium mb-2 mt-8 roboto">FOLLOW</h2>

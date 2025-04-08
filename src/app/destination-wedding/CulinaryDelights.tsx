@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const CulinaryDelights = () => {
     return (
@@ -46,12 +47,12 @@ const CulinaryDelights = () => {
                         nature, crafted with locally sourced ingredients for your mountain
                         retreat wedding.
                     </p>
-                    <a
+                    <Link
                         href="#"
                         className="text-[#363636] text-[18px] hover:underline lato transition flex items-center gap-2 font-normal"
                     >
                         Book Your Wedding Now &gt;
-                    </a>
+                    </Link>
                 </div>
             </div>
 

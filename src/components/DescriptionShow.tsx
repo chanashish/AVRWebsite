@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import * as React from "react";
 
 interface DescriptonShowProps {
@@ -65,12 +66,12 @@ function DescriptionShow({
                     <br />
                     {description.phoneNumber && <p>
                         Call:{" "}
-                        <a
+                        <Link
                             href={`tel:${description.phoneNumber.replace(/\s+/g, "")}`}
                             className="hover:underline"
                         >
                             {description.phoneNumber}
-                        </a>
+                        </Link>
                     </p>}
                 </div>
             </div>

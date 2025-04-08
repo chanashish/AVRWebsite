@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         <nav className="flex items-center justify-between p-[16px]">
           <div className="">
             <Link
-              href="#"
+              href="/"
               className="relative h-104px w-[104px] h-[104px] max-lg:h-[40px] max-lg:w-[40px] aspect-auto block"
             >
               <Image
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
           <div className="flex gap-[8px]">
-            <Link href="tel:911234567890" className="lg:block hidden bg-[#2F4B26] text-white px-[24px] h-[56px] py-[16px]">
+            <Link href="tel:+919317207373" className="lg:block hidden bg-[#2F4B26] text-white px-[24px] h-[56px] py-[16px]">
               <span className="">Book Now</span>
             </Link>
             <button

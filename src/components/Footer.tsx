@@ -28,27 +28,27 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { id: 1, link: "", value: "Quick Links", className: "playfair font-normal text-2xl" },
     { id: 2, link: "/", value: "Home", className: "roboto text-xl font-light" },
-    { id: 3, link: "/about-us", value: "About Us", className: "roboto text-xl font-light" },
-    { id: 4, link: "/", value: "Rooms & Suites", className: "roboto text-xl font-light" },
-    { id: 5, link: "/", value: "Gallery", className: "roboto text-xl font-light" },
-    { id: 6, link: "/contact-us", value: "Contact Us", className: "roboto text-xl font-light" },
+    { id: 3, link: "/about-us/", value: "About Us", className: "roboto text-xl font-light" },
+    { id: 4, link: "/rooms-suites/", value: "Rooms & Suites", className: "roboto text-xl font-light" },
+    { id: 5, link: "/gallery/", value: "Gallery", className: "roboto text-xl font-light" },
+    { id: 6, link: "/contact-us/", value: "Contact Us", className: "roboto text-xl font-light" },
   ];
 
   const favourites = [
-    { id: 1, link: "/", value: "Favourites", className: "playfair font-normal text-2xl" },
-    { id: 2, link: "/", value: "Dining", className: "roboto text-xl font-light" },
-    { id: 3, link: "/things-to-do", value: "Things To Do", className: "roboto text-xl font-light" },
-    { id: 4, link: "/", value: "Destination Wedding", className: "roboto text-xl font-light" },
-    { id: 5, link: "/", value: "Spiritual Retreat", className: "roboto text-xl font-light" },
-    { id: 6, link: "/", value: "Nearby Places", className: "roboto text-xl font-light" },
+    { id: 1, link: "", value: "Favourites", className: "playfair font-normal text-2xl" },
+    { id: 2, link: "/dining/", value: "Dining", className: "roboto text-xl font-light" },
+    { id: 3, link: "/things-to-do/", value: "Things To Do", className: "roboto text-xl font-light" },
+    { id: 4, link: "/destination-wedding/", value: "Destination Wedding", className: "roboto text-xl font-light" },
+    { id: 5, link: "/spiritual-retreat/", value: "Spiritual Retreat", className: "roboto text-xl font-light" },
+    { id: 6, link: "/sightseeing/", value: "Nearby Places", className: "roboto text-xl font-light" },
   ];
 
-  const policies = [
-    { id: 1, value: "Policies", className: "playfair font-normal text-2xl" },
-    { id: 2, value: "Check In Policy", className: "roboto text-xl font-light" },
-    { id: 3, value: "Privacy Policy", className: "roboto text-xl font-light" },
-    { id: 4, value: "Terms and Conditions", className: "roboto text-xl font-light" },
-  ];
+  // const policies = [
+  //   { id: 1, value: "Policies", className: "playfair font-normal text-2xl" },
+  //   { id: 2, value: "Check In Policy", className: "roboto text-xl font-light" },
+  //   { id: 3, value: "Privacy Policy", className: "roboto text-xl font-light" },
+  //   { id: 4, value: "Terms and Conditions", className: "roboto text-xl font-light" },
+  // ];
 
   // Arrow component for dropdowns
   const DropdownArrow = ({ isExpanded }: { isExpanded: boolean }) => (
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
             <p className="text-white px-4">Anand Vardhan Resorts Village, Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104</p>
             <Link href={"tel:+919317207373"} className="text-white px-4">Call: +91 93172 07373</Link>
             <div className="flex gap-5">{socialLinks.map(({ href, src, alt }) => (
-              <a key={alt} href={href} aria-label={`Visit our ${alt} page`} target="_blank" rel="noopener noreferrer">
+              <Link key={alt} href={href} aria-label={`Visit our ${alt} page`} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={src}
                   alt={alt}
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                   height={40}
                   className="object-contain transition-transform duration-200 hover:scale-110"
                 />
-              </a>
+              </Link>
             ))}</div>
           </div>
 
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Policies - collapsible on mobile */}
-          <div className="flex-1 flex flex-col gap-5 text-white text-left">
+          {/* <div className="flex-1 flex flex-col gap-5 text-white text-left">
             <div
               className="flex justify-between items-center cursor-pointer md:cursor-default"
               onClick={() => toggleSection('policies')}
@@ -136,7 +136,6 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Items - Always visible on desktop, conditionally on mobile */}
             <div
               className={`flex flex-col gap-5 md:flex
                 ${expandedSections.policies ? 'max-h-96' : 'max-h-0 overflow-hidden'} 
@@ -148,7 +147,7 @@ const Footer: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -20,7 +20,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, setIsOpen }) => {
               <Link
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`w-full block text-secondary hover:text-tertiary capitalize text-lg transition-all duration-300 ease-in-out ${link.href === pathName ? "text-tertiary" : ""}`}
+                className={`w-full block text-[#2F4B26] hover:text-tertiary capitalize text-[24px] transition-all duration-300 ease-in-out playfair ${link.href === pathName ? "text-tertiary" : ""}`}
               >
                 {link.label}
               </Link>
