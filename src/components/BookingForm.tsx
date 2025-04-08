@@ -64,7 +64,7 @@ const BookingForm = () => {
           >
             {/* Full Name */}
             <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-              <input {...register("fullName", { required: "Full Name is required" })} placeholder="Full Name*" className="text-base text-neutral-700 outline-none" />
+              <input {...register("fullName", { required: "Full Name is required" })} placeholder="Full Name*" className="text-base text-neutral-700 outline-none w-[130px]" />
               {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
             </div>
 
@@ -117,7 +117,7 @@ const BookingForm = () => {
             </div>
 
             {/* Submit Button */}
-            <button type="submit" className="px-2  py-5 text-lg leading-6 text-white bg-lime-900 rounded-none w-[200px] max-md:w-full">
+            <button type="submit" className="px-2  py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full">
               Book Now
             </button>
           </form>

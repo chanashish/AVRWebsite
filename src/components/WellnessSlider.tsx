@@ -158,9 +158,9 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 </div>
             </div>
 
-            {description && <Container> <p className="roboto border font-light text-[20px] text-[#686767] max-md:px-5">{description}</p></Container>}
+            {description && <Container> <p className="roboto font-light text-[20px] text-[#686767] max-md:px-5">{description}</p></Container>}
 
-            {roomdescription && <Container><p className="roboto border font-light text-[20px] text-[#686767] max-md:px-5 ">{roomdescription}</p></Container>}
+            {roomdescription && <Container><p className="roboto font-light text-[20px] text-[#686767] max-md:px-5 ">{roomdescription}</p></Container>}
             {facility && (
                 <Container>
                     <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center max-md:px-5 py-[16px] mt-8 facility-map-border">
@@ -185,7 +185,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     </div>
                 </Container>
             )}
-            {roomdescription ? <div className="sm:flex border items-center hidden mt-7 justify-center cursor-pointer hover:underline">
+            {roomdescription ? <div className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Book Now</span>
                 <svg
                     width="25"
