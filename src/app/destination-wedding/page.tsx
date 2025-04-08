@@ -5,6 +5,8 @@ import React from 'react'
 import HomeHero from '../(home)/components/Header/HomeHero'
 import WeOffer from '@/components/SliderWellness'
 import FacilitySlider from '../about-us/Facilities'
+import CulinaryDelights from './CulinaryDelights'
+import FAQ from './FAQ'
 
 const page = () => {
   const sampleCardData = [
@@ -88,6 +90,8 @@ const page = () => {
         <FacilitySlider cardData={sampleCardData} />
         <p className='text-center hover:underline cursor-pointer lato font-normal text-[18px]'>Contact us {">"}</p>
       </div>
+      <CulinaryDelights />
+      <FAQ />
     </div>
   )
 }
