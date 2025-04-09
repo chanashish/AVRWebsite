@@ -134,7 +134,9 @@ const page = () => {
             <div className='pb-[120px] bg-[#F9F9F1]'>
                 <TestimonialSection />
             </div>
-            <BookingForm />
+            <div className="bg-[#F9F9F1]">
+      <BookingForm />
+      </div>
         </div>
     )
 }

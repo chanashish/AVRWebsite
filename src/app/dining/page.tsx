@@ -70,7 +70,9 @@ const page = () => {
         reverseLayout={true}
       />
 
+<div className="bg-[#F9F9F1]">
       <BookingForm />
+      </div>
     </div>
   )
 }

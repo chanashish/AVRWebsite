@@ -136,7 +136,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 </header>
             </Container>
 
-            <div className={`${reverseLayout ? "md:pl-32 " : "md:pl-32"}`}>
+            <div className={`${reverseLayout ? "md:pr-32 " : "md:pl-32"}`}>
 
                 <div
                     ref={scrollContainer}

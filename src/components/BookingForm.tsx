@@ -51,13 +51,11 @@ const BookingForm = () => {
   }, []);
 
   return (
-    <section className="flex flex-col gap-6 justify-center items-center px-0 pt-14 pb-20 border-t-2 border-solid bg-[#F9F9F1] border-t-neutral-400 max-sm:px-4 max-sm:py-8">
+      <Container>
+    <section className="flex flex-col gap-6 justify-center items-center px-0 pt-14 pb-20 border-t-2 border-solid border-t-neutral-400 max-sm:px-4 max-sm:py-8">
       <h2 className="text-2xl leading-8 text-center text-lime-900 max-sm:text-xl max-sm:leading-7">
         Book Your Stay With Us!
       </h2>
-      <Container>
-        <div>
-
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex items-center bg-white rounded-lg overflow-hidden border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
@@ -121,10 +119,9 @@ const BookingForm = () => {
               Book Now
             </button>
           </form>
-        </div>
 
-      </Container>
     </section>
+      </Container>
   );
 };
 
