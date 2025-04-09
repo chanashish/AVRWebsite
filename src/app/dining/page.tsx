@@ -62,6 +62,10 @@ const page = () => {
             imageUrl:
               "/exterior/IMG_8370.jpg",
           },
+          {
+            imageUrl:
+              "/exterior/IMG_8380.jpg",
+          },
         ]}
         reverseLayout={true}
       />
