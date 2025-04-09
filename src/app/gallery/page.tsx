@@ -13,7 +13,9 @@ const page = () => {
                 <h2 className='playfair text-[#2F4B26] text-[40px] font-normal'>Explore Anand Vardhan Resort</h2>
                 <GalleryImageComponent />
             </div>
-            <BookingForm />
+            <div className="bg-[#F9F9F1]">
+      <BookingForm />
+      </div>
         </div>
     )
 }

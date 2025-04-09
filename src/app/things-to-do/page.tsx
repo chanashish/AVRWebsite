@@ -66,7 +66,9 @@ const page = () => {
         }}
       />
       <ActivitiesDisplay activities={activitiesData} />
-      <BookingForm />
+      <div className="bg-[#F9F9F1]">
+        <BookingForm />
+      </div>
     </div>
   )
 }

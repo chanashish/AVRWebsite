@@ -93,7 +93,9 @@ export default function Home() {
       <FullSlideContentCarousel data={slides} />
 
       <TestimonialSection />
+      <div className="bg-[#F9F9F1]">
       <BookingForm />
+      </div>
     </main>
   );
 }

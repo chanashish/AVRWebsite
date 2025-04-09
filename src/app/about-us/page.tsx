@@ -54,7 +54,9 @@ const page = () => {
         </div>
         <FacilitySlider cardData={sampleCardData} />
       </section>
+      <div className="bg-[#F9F9F1]">
       <BookingForm />
+      </div>
     </div>
   )
 }

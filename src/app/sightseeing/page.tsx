@@ -30,7 +30,9 @@ const page = () => {
       <FullScreenCarousel data={["/carousel/sightseeing.png"]} />
       <RatingsDisplay />
       <LocationCarousel locations={data} />
+      <div className="bg-[#F9F9F1]">
       <BookingForm />
+      </div>
     </div>
   )
 }
