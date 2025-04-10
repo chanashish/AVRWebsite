@@ -1,5 +1,6 @@
 import { SectionWithContainer } from "@/components";
 import { imageUrl } from "@/data/links";
+import Image from "next/image";
 import React from "react";
 
 type PackageType = {
@@ -36,8 +37,10 @@ const packages: PackageType[] = [
 
 const Card: React.FC<PackageType> = ({ img, caption, title, desc }) => {
   return (
-    <div className="flex flex-col gap-2 border-2 rounded-md overflow-hidden text-left transition-transform hover:scale-105 bg-white">
-      <img src={img} alt={caption} className="w-full h-[250px] object-cover" />
+    <div className="flex relative flex-col gap-2 border-2 rounded-md overflow-hidden text-left transition-transform hover:scale-105 bg-white">
+       <div className="relative aspect-[4/3] w-full">
+       <Image src={img} alt={caption} fill className="object-cover" />
+      </div>
       <div className="p-4">
         <span className="text-[#2F4B26] font-normal text-[18px] roboto uppercase">
           {caption}

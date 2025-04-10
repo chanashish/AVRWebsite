@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Container } from "@/components";
+import Image from "next/image";
 
 // Props Interface
 interface CardData {
@@ -31,7 +32,7 @@ const FacilitySlider: React.FC<FacilitySliderProps> = ({ cardData, title }) => {
       transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-lg"
     >
       <div className="w-20 h-20">
-        <img className="w-full h-full object-contain" src={card.src} alt={card.alt} />
+        <Image  height={80} width={80} src={card.src} alt={card.alt} />
       </div>
       <div className="text-lg font-medium text-center text-stone-600 uppercase tracking-wide">
         {card.name}

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { countries } from '@/data/countryCode'
 import { Map } from '@/components'
+import Image from 'next/image'
 
 // Define the shape of the form data
 type FormData = {
@@ -172,7 +173,7 @@ const ContactPage = () => {
                     <div className='flex gap-[24px]'>
                         {socials.map(item => (
                             <Link key={item.id} href={item.link} target='_blank'>
-                                <img src={item.icon} alt={item.alt} className="w-[40px] h-[40px]" />
+                                <Image src={item.icon} alt={item.alt} height={40} width={40} />
                             </Link>
                         ))}
                     </div>

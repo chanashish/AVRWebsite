@@ -64,18 +64,22 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                 </div>
                 <div className="flex flex-col gap-2 items-start w-full">
                   <div className="flex gap-4 justify-center items-center w-full">
-                    <img
+                    <Image
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                       alt=""
-                      className="w-[37px] h-[10px]"
+                      height={10}
+                      width={37}
+                    // className="w-[37px] h-[10px]"
                     />
                     <h2 className="text-3xl leading-10 text-center text-lime-900">
                       {location.title}
                     </h2>
-                    <img
+                    <Image
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                       alt=""
-                      className="w-[37px] h-[10px]"
+                      height={10}
+                      width={37}
+                    // className="w-[37px] h-[10px]"
                     />
                   </div>
                   <p className="text-xl font-light leading-8 text-center text-stone-500">

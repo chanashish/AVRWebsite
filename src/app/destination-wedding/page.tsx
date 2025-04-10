@@ -9,6 +9,7 @@ import CulinaryDelights from "./CulinaryDelights";
 import FAQ from "./FAQ";
 import { SectionWithContainer } from "@/components";
 import { imageUrl } from "@/data/links";
+import Image from "next/image";
 
 const page = () => {
   const sampleCardData = [
@@ -95,36 +96,44 @@ const page = () => {
       <HomeHero />
       <div className="bg-[#F9F9F1] w-full text-center py-10 md:py-20">
         <div className="flex gap-6 items-center text-center justify-center">
-          <img
+          <Image
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
             alt=""
-            className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            height={10}
+            width={37}
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
           <h2 className="playfair font-normal text-[40px] text-[#2F4B26]">
             What We Offer
           </h2>
-          <img
+          <Image
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
             alt=""
-            className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            height={10}
+            width={37}
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
         </div>
         <WeOffer items={weOfferData} />
       </div>
       <SectionWithContainer>
         <div className="flex gap-6 items-center text-center justify-center mb-10 md:mb-20">
-          <img
+          <Image
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
             alt=""
-            className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            height={10}
+            width={37}
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
           <h2 className="playfair font-normal text-[40px] text-[#2F4B26]">
             Featured Wedding Services
           </h2>
-          <img
+          <Image
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
             alt=""
-            className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            height={10}
+            width={37}
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
         </div>
         <FacilitySlider cardData={sampleCardData} />

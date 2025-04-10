@@ -23,18 +23,22 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({ dat
         <div className="w-full max-w-[1600px] mx-auto h-full lg:min-h-screen bg-[#F9F9F1] text-[#2F4B26] py-10 flex flex-col items-center justify-between">
             {/* Heading */}
             <div className="flex flex-wrap items-center justify-center gap-2 text-center mb-14">
-                <img
+                <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                     alt=""
-                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                    height={10}
+                    width={37}
+                // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
                 />
                 <h2 className="text-3xl md:text-[40px] font-normal playfair">
                     Our Culinary Offerings
                 </h2>
-                <img
+                <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                     alt=""
-                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                    height={10}
+                    width={37}
+                // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
                 />
             </div>
 

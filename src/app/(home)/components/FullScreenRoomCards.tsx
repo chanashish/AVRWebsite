@@ -1,6 +1,7 @@
 "use client";
 import { Container } from "@/components";
 import { imageUrl } from "@/data/links";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -114,27 +115,32 @@ const RoomsAndSuitesCombined: React.FC = () => {
     return (
         <div className="bg-[#F9F9F1]">
             <div className="flex gap-4 items-center justify-center py-10">
-                <img
+                <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                     alt=""
-                    className="w-[37px] h-[10px]"
+                    height={10}
+                    width={37}
+                    // className="w-[37px] h-[10px]"
                 />
                 <h2 className="text-[40px] font-bold text-[#2F4B26] max-md:text-[32px] playfair">
                     Rooms & Suites
                 </h2>
-                <img
+                <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                     alt=""
-                    className="w-[37px] h-[10px]"
+                    height={10}
+                    width={37}
+                    // className="w-[37px] h-[10px]"
                 />
             </div>
             <main className="flex flex-col gap-14 items-center mx-auto my-0 w-full max-w-[1600px]">
                 <div className="flex flex-col gap-8 items-center w-full">
                     <section className="relative w-full h-[824px] max-sm:h-[400px]">
-                        <img
+                        <Image
                             src={currentRoom.images[currentImageIndex]}
                             alt={`${currentRoom.title} - Image ${currentImageIndex + 1}`}
                             className="object-cover size-full"
+                            fill
                         />
                         <div className="flex absolute top-2/4 justify-between items-center -translate-y-2/4 inset-x-[108px] max-md:inset-x-10 max-sm:inset-x-5">
                             <ArrowIcon direction="left" onClick={handlePreviousImage} />

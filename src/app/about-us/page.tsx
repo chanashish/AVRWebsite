@@ -5,21 +5,22 @@ import RatingsDisplay from '@/components/RatingsDisplay'
 import React from 'react'
 import FacilitySlider from './Facilities'
 import { imageUrl } from '@/data/links'
+import Image from 'next/image'
 
 const page = () => {
   const sampleCardData = [
-    { src: imageUrl+"facilities/parking.webp", alt: "Parking space icon", name: "PARKING SPACE" },
-    { src: imageUrl+"facilities/roomservice.webp", alt: "Room service icon", name: "ROOM SERVICE" },
-    { src: imageUrl+"facilities/wifi.webp", alt: "Free WiFi icon", name: "FREE WIFI" },
-    { src: imageUrl+"facilities/conferenceroom.webp", alt: "Conference room icon", name: "CONFERENCE ROOM" },
-    { src: imageUrl+"facilities/cafe.webp", alt: "Cafe icon", name: "CAFE" },
-    { src: imageUrl+"facilities/vegrestaurant.webp", alt: "Veg Restaurant icon", name: "VEG RESTAURANT" },
-    { src: imageUrl+"facilities/mountainview.webp", alt: "Mountain View icon", name: "MOUNTAIN VIEW" },
-    { src: imageUrl+"facilities/electricity.webp", alt: "24*7 Electricity icon", name: "24*7 ELECTRICITY" },
+    { src: imageUrl + "facilities/parking.webp", alt: "Parking space icon", name: "PARKING SPACE" },
+    { src: imageUrl + "facilities/roomservice.webp", alt: "Room service icon", name: "ROOM SERVICE" },
+    { src: imageUrl + "facilities/wifi.webp", alt: "Free WiFi icon", name: "FREE WIFI" },
+    { src: imageUrl + "facilities/conferenceroom.webp", alt: "Conference room icon", name: "CONFERENCE ROOM" },
+    { src: imageUrl + "facilities/cafe.webp", alt: "Cafe icon", name: "CAFE" },
+    { src: imageUrl + "facilities/vegrestaurant.webp", alt: "Veg Restaurant icon", name: "VEG RESTAURANT" },
+    { src: imageUrl + "facilities/mountainview.webp", alt: "Mountain View icon", name: "MOUNTAIN VIEW" },
+    { src: imageUrl + "facilities/electricity.webp", alt: "24*7 Electricity icon", name: "24*7 ELECTRICITY" },
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl+"carousel/sightseeing.webp"]} />
+      <FullScreenCarousel data={[imageUrl + "carousel/sightseeing.webp"]} />
       <RatingsDisplay />
       <DescriptionShow
         title={{
@@ -38,25 +39,29 @@ const page = () => {
             OUR SERVICES
           </div>
           <div className="flex gap-4 items-center justify-center">
-            <img
+            <Image
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
               alt=""
-              className="w-[37px] h-[10px]"
+              height={10}
+              width={37}
+            // className="w-[37px] h-[10px]"
             />
             <h2 className="text-4xl text-lime-900 font-bold max-md:text-3xl">
               Resort Facilities
             </h2>
-            <img
+            <Image
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
               alt=""
-              className="w-[37px] h-[10px]"
+              height={10}
+              width={37}
+            // className="w-[37px] h-[10px]"
             />
           </div>
         </div>
         <FacilitySlider cardData={sampleCardData} />
       </section>
       <div className="bg-[#F9F9F1]">
-      <BookingForm />
+        <BookingForm />
       </div>
     </div>
   )

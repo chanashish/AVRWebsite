@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Container from "./SectionComponents/Container";
+import Image from "next/image";
 
 interface Activity {
   title: string;
@@ -43,7 +44,7 @@ const ActivitySection: React.FC<{
           <h2 className={`text-3xl leading-10 text-lime-900 ${titleClassName}`}>
             {activity.title}
           </h2>
-          <img src={decorativeImageUrl} alt="" className="w-[37px] h-[10px]" />
+          <Image src={decorativeImageUrl} alt="" height={10} width={37} />
         </header>
         <p
           className={`text-xl font-light leading-8 text-stone-500 ${descriptionClassName}`}
@@ -54,11 +55,15 @@ const ActivitySection: React.FC<{
     );
 
     const image = (
-      <img
+      <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
+      <Image
         src={activity.imageUrl}
         alt={activity.imageAlt || ""}
-        className={`w-[808px] h-[488px]  rounded-[4px] object-cover max-lg:w-full ${imageClassName}`}
-      />
+        fill
+        className={`absolute rounded-[4px] object-cover ${imageClassName}`}
+        />
+        {/* w-[808px] h-[488px]  */}
+        </div>
     );
 
     return (

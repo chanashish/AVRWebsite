@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import Container from "./SectionComponents/Container";
+import Image from "next/image";
 
 export interface ServiceCardData {
     imageUrl: string;
@@ -55,11 +56,14 @@ const ServiceCard: React.FC<ServiceCardData> = ({
     description,
 }) => (
     <article className="flex flex-col gap-6 h-full">
-        <img
+      <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
+        <Image
             src={imageUrl}
-            alt={title}
+            alt={"room Image"}
+            fill
             className="w-full h-[368px] max-lg:h-[300px] max-sm:h-[240px] rounded-[4px] object-cover"
         />
+        </div>
         <div className="flex flex-col gap-4">
             <h2 className="text-2xl leading-8 text-neutral-700 max-md:text-2xl max-sm:text-xl">
                 {title}
@@ -117,18 +121,22 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                         </h1>}
                         {
                             <div className="flex gap-3 items-center">
-                                {reverseLayout && <img
+                                {reverseLayout && <Image
                                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                                     alt=""
-                                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                                    height={10}
+                                    width={37}
+                                // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
                                 />}
                                 <p className="text-4xl leading-10 text-lime-900 max-md:text-4xl max-sm:text-3xl playfair">
                                     {subtitle}
                                 </p>
-                                {!reverseLayout && <img
+                                {!reverseLayout && <Image
                                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
                                     alt=""
-                                    className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+                                    height={10}
+                                    width={37}
+                                // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
                                 />}
                             </div>}
                     </div>
@@ -149,7 +157,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="flex-none w-[calc(40%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
+                            className="flex-none w-[calc(60%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
                             style={{ scrollSnapAlign: "start" }}
                         >
                             <ServiceCard {...service} />
@@ -158,12 +166,12 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 </div>
             </div>
 
-            {description && <Container> <p className="roboto font-light text-[20px] text-[#686767] max-md:px-5">{description}</p></Container>}
+            {description && <Container> <p className="roboto font-light text-[20px] text-[#686767] ">{description}</p></Container>}
 
-            {roomdescription && <Container><p className="roboto font-light text-[20px] text-[#686767] max-md:px-5 ">{roomdescription}</p></Container>}
+            {roomdescription && <Container className="max-md:!p-0 "><p className="roboto font-light text-[20px] text-[#686767]  ">{roomdescription}</p></Container>}
             {facility && (
                 <Container>
-                    <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center max-md:px-5 py-[16px] mt-8 facility-map-border">
+                    <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center py-[16px] mt-8 facility-map-border">
                         {facility.map((item) => (
                             <div
                                 key={item.id}
