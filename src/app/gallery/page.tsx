@@ -7,7 +7,11 @@ import GalleryImageComponent from "./GalleryImageComponent";
 const page = () => {
   return (
     <div>
-      <FullScreenCarousel data={["/carousel/gallery.png"]} />
+      <FullScreenCarousel
+        data={[
+          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/avr/carousel/gallery.webp",
+        ]}
+      />
       <RatingsDisplay />
       <div className="w-full text-center flex flex-col gap-[40px]">
         <h2 className="playfair text-[#2F4B26] text-[40px] font-normal">

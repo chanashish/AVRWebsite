@@ -8,7 +8,7 @@ import {
 } from "@/icons/icons";
 
 export const imageUrl =
-  "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/yakumi/";
+  "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/avr/";
 
 export const NavLink: navLinkProps[] = [
   {

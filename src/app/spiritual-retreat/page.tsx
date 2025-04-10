@@ -8,60 +8,61 @@ import FacilitySlider from '../about-us/Facilities'
 import WellnessPackages from './WellnessPackages'
 import BookingForm from '@/components/BookingForm'
 import { SectionWithContainer } from '@/components'
+import { imageUrl } from '@/data/links'
 
 const page = () => {
   const sampleCardData = [
-    { src: "/spiritual/rebalance1.png", alt: "Abhyanga Therapy", name: "Abhyanga Therapy" },
-    { src: "/spiritual/rebalance2.png", alt: "Guided Meditation", name: "Guided Meditation" },
-    { src: "/spiritual/rebalance3.png", alt: "Spiritual Sessions", name: "Spiritual Sessions" },
-    { src: "/spiritual/rebalance4.png", alt: "Hydrotherapy", name: "Hydrotherapy" },
-    { src: "/spiritual/rebalance5.png", alt: "Reflexology", name: "Reflexology" },
-    { src: "/spiritual/rebalance6.png", alt: "Physiotherapy", name: "Physiotherapy" },
-    { src: "/spiritual/rebalance7.png", alt: "Shirodhara", name: "Shirodhara" },
-    { src: "/spiritual/rebalance8.png", alt: "AcCupressure", name: "AcCupressure" },
-    { src: "/spiritual/rebalance9.png", alt: "Sun Therapy", name: "Sun Therapy" },
-    { src: "/spiritual/rebalance10.png", alt: "Sound Healing", name: "Sound Healing" },
+    { src: imageUrl+"spiritual/rebalance1.webp", alt: "Abhyanga Therapy", name: "Abhyanga Therapy" },
+    { src: imageUrl+"spiritual/rebalance2.webp", alt: "Guided Meditation", name: "Guided Meditation" },
+    { src: imageUrl+"spiritual/rebalance3.webp", alt: "Spiritual Sessions", name: "Spiritual Sessions" },
+    { src: imageUrl+"spiritual/rebalance4.webp", alt: "Hydrotherapy", name: "Hydrotherapy" },
+    { src: imageUrl+"spiritual/rebalance5.webp", alt: "Reflexology", name: "Reflexology" },
+    { src: imageUrl+"spiritual/rebalance6.webp", alt: "Physiotherapy", name: "Physiotherapy" },
+    { src: imageUrl+"spiritual/rebalance7.webp", alt: "Shirodhara", name: "Shirodhara" },
+    { src: imageUrl+"spiritual/rebalance8.webp", alt: "AcCupressure", name: "AcCupressure" },
+    { src: imageUrl+"spiritual/rebalance9.webp", alt: "Sun Therapy", name: "Sun Therapy" },
+    { src: imageUrl+"spiritual/rebalance10.webp", alt: "Sound Healing", name: "Sound Healing" },
   ];
   const weOfferData = [
     {
-      src: "/spiritual/cleanse1.png",
+      src: imageUrl+"spiritual/cleanse1.webp",
       alt: "Stress Relief and Emotional Balance",
       description: "Calm your mind through yoga, meditation, and relaxation techniques",
     },
     {
-      src: "/spiritual/cleanse2.png",
+      src: imageUrl+"spiritual/cleanse2.webp",
       alt: "Weight and Metabolic Management",
       description: "Achieve your health goals with tailored diets and holistic therapies",
     },
     {
-      src: "/spiritual/cleanse3.png",
+      src: imageUrl+"spiritual/cleanse3.webp",
       alt: "Diabetes Care",
       description: "Natural approaches to support and stabilize blood sugar levels.",
     },
     {
-      src: "/spiritual/cleanse4.png",
+      src: imageUrl+"spiritual/cleanse4.webp",
       alt: "Sleep Management",
       description: "Improve sleep quality with holistic treatments and relaxation.",
     },
     {
-      src: "/spiritual/cleanse5.png",
+      src: imageUrl+"spiritual/cleanse5.webp",
       alt: "Hormonal Rebalance",
       description: "Improve sleep quality with holistic treatments and relaxation.",
     },
     {
-      src: "/spiritual/cleanse6.png",
+      src: imageUrl+"spiritual/cleanse6.webp",
       alt: "Pain Management",
       description: "Improve sleep quality with holistic treatments and relaxation.",
     },
     {
-      src: "/spiritual/cleanse7.png",
+      src: imageUrl+"spiritual/cleanse7.webp",
       alt: "Detox and Rejuvenation",
       description: " Cleanse and revitalize with Ayurvedic and naturopathic treatments.",
     },
   ];
   return (
     <div>
-      <FullScreenCarousel data={["/carousel/spiritualRetreat.png"]} />
+      <FullScreenCarousel data={[imageUrl+"carousel/spiritualRetreat.webp"]} />
       <RatingsDisplay />
       <div className='bg-[#F9F9F1]'>
         <DescriptionShow
@@ -113,43 +114,43 @@ const page = () => {
           services={[
             {
               imageUrl:
-                "/spiritual/relax1.png",
+                imageUrl+"spiritual/relax1.webp",
               title: "Physiotherapy",
               description: "At AVR Physiotherapy, healing isn't just a process – it's a journey. With personalized care and expert hands, we help you reclaim strength, restore confidence, and embrace life’s every move again."
             },
             {
               imageUrl:
-                "/spiritual/relax2.png",
+                imageUrl+"spiritual/relax2.webp",
               title: "Acupressure",
               description: "Acupuncture is like a reset button for your body and mind. Our team of experts works towards releasing tension, ease pain, and bring you back to a place of pure relaxation and vitality."
             },
             {
               imageUrl:
-                "/spiritual/relax3.png",
+                imageUrl+"spiritual/relax3.webp",
               title: "Guided Meditation",
               description: "Guided meditation takes you on a peaceful journey within, where stillness and clarity await. Let our soothing guidance help you quiet the noise, release your worries, and reconnect with your inner calm."
             },
             {
               imageUrl:
-                "/spiritual/relax4.png",
+                imageUrl+"spiritual/relax4.webp",
               title: "Yoga & Meditation",
               description: "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins."
             },
             {
               imageUrl:
-                "/spiritual/relax5.png",
+                imageUrl+"spiritual/relax5.webp",
               title: "Panchkarma",
               description: "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out."
             },
             {
               imageUrl:
-                "/spiritual/relax6.png",
+                imageUrl+"spiritual/relax6.webp",
               title: "Naturopathy",
               description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
             },
             {
               imageUrl:
-                "/spiritual/relax7.png",
+                imageUrl+"spiritual/relax7.webp",
               title: "Shirodhara",
               description: "At AVR, Shirodhara is more than a treatment – it’s a soulful escape. Let the gentle stream of warm oil soothe your mind, melt away stress, and bring you a sense of deep peace and balance."
             },

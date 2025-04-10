@@ -1,5 +1,6 @@
 "use client";
 import { Container } from "@/components";
+import { imageUrl } from "@/data/links";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -7,9 +8,9 @@ const rooms = [
     {
         id: 1,
         images: [
-            "/rooms/luxury/001.jpg",
-            "/rooms/luxury/002.jpg",
-            "/rooms/luxury/003.jpg",
+            imageUrl + "rooms/luxury/001.webp",
+            imageUrl + "rooms/luxury/002.webp",
+            imageUrl + "rooms/luxury/003.webp",
         ],
         title: "Luxury Suite Room",
         description:
@@ -18,9 +19,9 @@ const rooms = [
     {
         id: 2,
         images: [
-            "/rooms/deluxe/001.jpg",
-            "/rooms/deluxe/002.jpg",
-            "/rooms/deluxe/003.jpg",
+            imageUrl + "rooms/deluxe/001.webp",
+            imageUrl + "rooms/deluxe/002.webp",
+            imageUrl + "rooms/deluxe/003.webp",
         ],
         title: "Deluxe Room",
         description:
@@ -29,9 +30,9 @@ const rooms = [
     {
         id: 3,
         images: [
-            "/rooms/sdeluxe/001.jpg",
-            "/rooms/sdeluxe/002.jpg",
-            "/rooms/sdeluxe/003.jpg",
+            imageUrl + "rooms/sdeluxe/001.webp",
+            imageUrl + "rooms/sdeluxe/002.webp",
+            imageUrl + "rooms/sdeluxe/003.webp",
         ],
         title: "Super Deluxe Room",
         description:

@@ -4,21 +4,22 @@ import FullScreenCarousel from '@/components/FullScreenCarousel'
 import RatingsDisplay from '@/components/RatingsDisplay'
 import React from 'react'
 import FacilitySlider from './Facilities'
+import { imageUrl } from '@/data/links'
 
 const page = () => {
   const sampleCardData = [
-    { src: "/facilities/parking.png", alt: "Parking space icon", name: "PARKING SPACE" },
-    { src: "/facilities/roomservice.png", alt: "Room service icon", name: "ROOM SERVICE" },
-    { src: "/facilities/wifi.png", alt: "Free WiFi icon", name: "FREE WIFI" },
-    { src: "/facilities/conferenceroom.png", alt: "Conference room icon", name: "CONFERENCE ROOM" },
-    { src: "/facilities/cafe.png", alt: "Cafe icon", name: "CAFE" },
-    { src: "/facilities/vegrestaurant.png", alt: "Veg Restaurant icon", name: "VEG RESTAURANT" },
-    { src: "/facilities/mountainview.png", alt: "Mountain View icon", name: "MOUNTAIN VIEW" },
-    { src: "/facilities/electricity.png", alt: "24*7 Electricity icon", name: "24*7 ELECTRICITY" },
+    { src: imageUrl+"facilities/parking.webp", alt: "Parking space icon", name: "PARKING SPACE" },
+    { src: imageUrl+"facilities/roomservice.webp", alt: "Room service icon", name: "ROOM SERVICE" },
+    { src: imageUrl+"facilities/wifi.webp", alt: "Free WiFi icon", name: "FREE WIFI" },
+    { src: imageUrl+"facilities/conferenceroom.webp", alt: "Conference room icon", name: "CONFERENCE ROOM" },
+    { src: imageUrl+"facilities/cafe.webp", alt: "Cafe icon", name: "CAFE" },
+    { src: imageUrl+"facilities/vegrestaurant.webp", alt: "Veg Restaurant icon", name: "VEG RESTAURANT" },
+    { src: imageUrl+"facilities/mountainview.webp", alt: "Mountain View icon", name: "MOUNTAIN VIEW" },
+    { src: imageUrl+"facilities/electricity.webp", alt: "24*7 Electricity icon", name: "24*7 ELECTRICITY" },
   ];
   return (
     <div>
-      <FullScreenCarousel data={["/carousel/sightseeing.png"]} />
+      <FullScreenCarousel data={[imageUrl+"carousel/sightseeing.webp"]} />
       <RatingsDisplay />
       <DescriptionShow
         title={{
