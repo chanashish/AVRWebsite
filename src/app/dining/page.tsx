@@ -34,11 +34,11 @@ const page = () => {
           },
           {
             imageUrl:
-              "/restaurant/273A8371.jpg",
+              "/IMG_8160.jpg",
           },
           {
             imageUrl:
-              "/restaurant/IMG_8224.jpg",
+              "/IMG_8158.jpg",
           },
         ]}
       />
