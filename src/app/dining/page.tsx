@@ -9,7 +9,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl + "carousel/carousel1.webp"]} />
+      <FullScreenCarousel name="Culinary Experience" data={[imageUrl + "carousel/carousel1.webp"]} />
       <RatingsDisplay />
       <DescriptionShow
         title={{

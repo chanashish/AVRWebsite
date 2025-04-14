@@ -62,7 +62,7 @@ const page = () => {
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl+"carousel/spiritualRetreat.webp"]} />
+      <FullScreenCarousel data={[imageUrl+"carousel/spiritualRetreat.webp"]} name='Spiritual Retreat' />
       <RatingsDisplay />
       <div className='bg-[#F9F9F1]'>
         <DescriptionShow

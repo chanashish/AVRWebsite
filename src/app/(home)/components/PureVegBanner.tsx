@@ -1,16 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import * as React from "react";
 
 function PureVegBanner() {
   return (
-    <aside
-      role="complementary"
-      aria-label="Pure Veg Resort Banner"
-      className="z-50 sticky left-[1rem] top-[50vh] h-fit w-fit gap-2 px-4 py-2 text-lg leading-6 text-white uppercase bg-lime-900 rounded-none -rotate-90 origin-[0_50%] transform max-md:p-3 max-md:text-base max-sm:p-2.5 max-sm:text-sm"
-    >
-      PURE VEG RESORT
-    </aside>
+    <div className="hidden lg:flex flex-col z-[999999999] fixed left-0 top-1/3 z-50 items-center space-y-16 pointer-events-none">
+      <Image
+        src="/img.png"
+        alt="award"
+        height={108}
+        width={108}
+        className="pointer-events-auto -translate-x-[35%]"
+      />
+      <p
+        role="complementary"
+        aria-label="Pure Veg Resort Banner"
+        className="px-4 py-2 text-lg leading-6 text-white uppercase bg-lime-900 transform -rotate-90 origin-center whitespace-nowrap pointer-events-auto -translate-x-[40%]"
+      >
+        PURE VEG RESORT
+      </p>
+    </div>
   );
 }
 

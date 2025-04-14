@@ -30,7 +30,7 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({ dat
                     width={37}
                 // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
                 />
-                <h2 className="text-3xl md:text-[40px] font-normal playfair">
+                <h2 className="text-[40px] font-bold text-[#2F4B26] max-md:text-[32px] playfair">
                     Our Culinary Offerings
                 </h2>
                 <Image

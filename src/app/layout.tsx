@@ -3,6 +3,7 @@ import { Geist, Nunito } from "next/font/google";
 // import Script from "next/script";
 import "./globals.scss";
 import { Call, Footer, Navbar, Whatsapp } from "@/components";
+import PureVegBanner from "./(home)/components/PureVegBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,6 +65,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript> */}
+        <PureVegBanner/>
         <Navbar />
         {children}
         <Footer />

@@ -16,25 +16,15 @@ export const NavLink: navLinkProps[] = [
     label: "home",
     href: "/",
   },
-  {
-    id: 2,
-    label: "About Us",
-    href: "/about-us/",
-  },
+  // {
+  //   id: 2,
+  //   label: "About Us",
+  //   href: "/about-us/",
+  // },
   {
     id: 3,
     label: "Rooms & Suites",
     href: "/rooms-suites/",
-  },
-  {
-    id: 4,
-    label: "Gallery",
-    href: "/gallery/",
-  },
-  {
-    id: 5,
-    label: "Contact Us",
-    href: "/contact-us/",
   },
   {
     id: 6,
@@ -47,9 +37,9 @@ export const NavLink: navLinkProps[] = [
     href: "/things-to-do/",
   },
   {
-    id: 8,
-    label: "Destination Wedding",
-    href: "/destination-wedding/",
+    id: 10,
+    label: "Nearby Places",
+    href: "/sightseeing/",
   },
   {
     id: 9,
@@ -57,9 +47,19 @@ export const NavLink: navLinkProps[] = [
     href: "/spiritual-retreat/",
   },
   {
-    id: 10,
-    label: "Nearby Places",
-    href: "/sightseeing/",
+    id: 8,
+    label: "Destination Wedding",
+    href: "/destination-wedding/",
+  },
+  {
+    id: 4,
+    label: "Gallery",
+    href: "/gallery/",
+  },
+  {
+    id: 5,
+    label: "Contact Us",
+    href: "/contact-us/",
   },
   // {
   //   id: 11,

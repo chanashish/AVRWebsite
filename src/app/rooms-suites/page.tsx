@@ -15,6 +15,7 @@ const page = () => {
           imageUrl + "carousel/roomssuites.webp",
           imageUrl + "carousel/roomssuites.webp",
         ]}
+        name="Rooms & Suites"
       />
       <RatingsDisplay />
       <h2 className="playfair font-normal text-[#2F4B26] text-[40px] text-center mb-[120px]">

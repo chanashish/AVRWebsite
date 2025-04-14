@@ -7,48 +7,6 @@ import { imageUrl } from "@/data/links";
 // Sample image data with tags matching headings
 const imageData = [
   {
-    id: 1,
-    src: imageUrl + "restaurant/IMG_8203.webp",
-    alt: "Restaurant bar",
-    tags: "RESTAURANT",
-  },
-  {
-    id: 2,
-    src: imageUrl + "restaurant/IMG_8206.webp",
-    alt: "Restaurant bar",
-    tags: "RESTAURANT",
-  },
-  {
-    id: 3,
-    src: imageUrl + "restaurant/IMG_8224.webp",
-    alt: "Restaurant bar",
-    tags: "RESTAURANT",
-  },
-  {
-    id: 4,
-    src: imageUrl + "restaurant/273A8371.webp",
-    alt: "Restaurant bar",
-    tags: "RESTAURANT",
-  },
-  {
-    id: 5,
-    src: imageUrl + "restaurant/273A8372.webp",
-    alt: "Restaurant bar",
-    tags: "RESTAURANT",
-  },
-  {
-    id: 6,
-    src: imageUrl + "reception/273A8341.webp",
-    alt: "Reception lounge",
-    tags: "RECEPTION",
-  },
-  {
-    id: 7,
-    src: imageUrl + "reception/273A8357.webp",
-    alt: "Reception lounge",
-    tags: "RECEPTION",
-  },
-  {
     id: 8,
     src: imageUrl + "rooms/deluxe/001.webp",
     alt: "Deluxe room",
@@ -197,6 +155,72 @@ const imageData = [
     src: imageUrl + "rooms/luxury/009.webp",
     alt: "Luxury room",
     tags: "ROOMS",
+  },
+  {
+    id: 6,
+    src: imageUrl + "reception/273A8341.webp",
+    alt: "Reception lounge",
+    tags: "RECEPTION",
+  },
+  {
+    id: 7,
+    src: imageUrl + "reception/273A8357.webp",
+    alt: "Reception lounge",
+    tags: "RECEPTION",
+  },
+  {
+    id: 1,
+    src: imageUrl + "restaurant/IMG_8203.webp",
+    alt: "Restaurant bar",
+    tags: "RESTAURANT",
+  },
+  {
+    id: 2,
+    src: imageUrl + "restaurant/IMG_8206.webp",
+    alt: "Restaurant bar",
+    tags: "RESTAURANT",
+  },
+  {
+    id: 3,
+    src: imageUrl + "restaurant/IMG_8224.webp",
+    alt: "Restaurant bar",
+    tags: "RESTAURANT",
+  },
+  {
+    id: 4,
+    src: imageUrl + "restaurant/273A8371.webp",
+    alt: "Restaurant bar",
+    tags: "RESTAURANT",
+  },
+  {
+    id: 5,
+    src: imageUrl + "restaurant/273A8372.webp",
+    alt: "Restaurant bar",
+    tags: "RESTAURANT",
+  },
+  {
+    id: 99,
+    src: imageUrl + "exterior/IMG_8344.webp",
+    alt: "Hotel exterior",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 98,
+    src: imageUrl + "exterior/IMG_8344.webp",
+    alt: "Hotel exterior",
+    tags: "ACTIVITIES",
+  },
+  {
+    id: 97,
+    src: imageUrl + "exterior/IMG_8344.webp",
+    alt: "Hotel exterior",
+    tags: "AMENITIES",
+  },
+  {
+    id: 96,
+    src: imageUrl + "exterior/IMG_8344.webp",
+    alt: "Hotel exterior",
+    tags: "OUTDOOR",
   },
   {
     id: 33,

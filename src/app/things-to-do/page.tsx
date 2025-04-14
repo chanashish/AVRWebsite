@@ -16,18 +16,18 @@ const page = () => {
       imageAlt: "cycling",
     },
     {
-      title: "Outdoor Kids Area",
-      description:
-        "Let your kids' imaginations run wild in our outdoor play area, where adventure is just a swing away! From soaring through the air on swings, jumping with joy on the trampoline, to diving into classic board games- every moment is a new memory waiting to be made. Here, fun is boundless—watch their faces light up as they explore, play, and create memories in the great outdoors.",
-      imageUrl: imageUrl + "thingstodo/2.webp",
-      imageAlt: "Outdoor Kids Area",
-    },
-    {
       title: "Trekking",
       description:
         "Lace up your boots and embark on a journey through breathtaking mountain trails—every step brings you closer to nature's wonders. Feel the excitement build as you trek to new heights, where every peak offers a view that takes your breath away. Trekking here isn’t just a hike—it’s an experience that will leave you with a sense of accomplishment and a heart full of memories.",
       imageUrl: imageUrl + "thingstodo/3.webp",
       imageAlt: "Trekking",
+    },
+    {
+      title: "Outdoor Kids Area",
+      description:
+        "Let your kids' imaginations run wild in our outdoor play area, where adventure is just a swing away! From soaring through the air on swings, jumping with joy on the trampoline, to diving into classic board games- every moment is a new memory waiting to be made. Here, fun is boundless—watch their faces light up as they explore, play, and create memories in the great outdoors.",
+      imageUrl: imageUrl + "thingstodo/2.webp",
+      imageAlt: "Outdoor Kids Area",
     },
     {
       title: "Adventure Park",
@@ -66,6 +66,7 @@ const page = () => {
           imageUrl + "carousel/carousel1.webp",
           imageUrl + "carousel/carousel1.webp",
         ]}
+        name="Adventure Activities"
       />
       <RatingsDisplay />
       <DescriptionShow

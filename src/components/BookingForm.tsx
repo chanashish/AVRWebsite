@@ -58,7 +58,7 @@ const BookingForm = () => {
       </h2>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex items-center bg-white rounded-lg overflow-hidden border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
+            className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
           >
             {/* Full Name */}
             <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">

@@ -11,6 +11,7 @@ const page = () => {
         data={[
           "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/avr/carousel/gallery.webp",
         ]}
+        name="Gallery"
       />
       <RatingsDisplay />
       <div className="w-full text-center flex flex-col gap-[40px]">

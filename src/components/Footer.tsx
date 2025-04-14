@@ -66,12 +66,12 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <div className="max-w-[1600px] mx-auto bg-[#262A10]">
+      <div className="mx-auto bg-[#262A10]">
         <div className="flex max-lg:flex-col justify-between w-full py-[80px] px-[108px] max-md:px-6 max-md:py-10 text-center gap-[24px] align-middle">
           <div className="flex-1 text-center align-middle flex items-center flex-col gap-5">
             <Image src={"/footerLogo.png"} alt="Anand Vardhan Resorts" height={136} width={136} />
-            <p className="text-white px-4">Anand Vardhan Resorts Village, Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104</p>
-            <Link href={"tel:+919317207373"} className="text-white px-4">Call: +91 93172 07373</Link>
+            <p className="text-white px-4 text-[20px] font-light">Anand Vardhan Resorts Village, Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104</p>
+            <Link href={"tel:+919317207373"} className="text-white px-4 text-[20px] font-light">Call: +91 93172 07373</Link>
             <div className="flex gap-5">{socialLinks.map(({ href, src, alt }) => (
               <Link key={alt} href={href} aria-label={`Visit our ${alt} page`} target="_blank" rel="noopener noreferrer">
                 <Image

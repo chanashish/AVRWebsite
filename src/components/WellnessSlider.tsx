@@ -61,7 +61,7 @@ const ServiceCard: React.FC<ServiceCardData> = ({
             src={imageUrl}
             alt={"room Image"}
             fill
-            className="w-full h-[368px] max-lg:h-[300px] max-sm:h-[240px] rounded-[4px] object-cover"
+            // className="w-full h-[368px] max-lg:h-[300px] max-sm:h-[240px] rounded-[4px] object-cover"
         />
         </div>
         <div className="flex flex-col gap-4">

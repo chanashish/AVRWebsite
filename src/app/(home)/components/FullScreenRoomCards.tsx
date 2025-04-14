@@ -43,8 +43,9 @@ const rooms = [
 
 const ArrowIcon: React.FC<{
     direction: "left" | "right";
+    colour: "white" | "black"
     onClick: () => void;
-}> = ({ direction, onClick }) => {
+}> = ({ direction, onClick, colour }) => {
     const path =
         direction === "left"
             ? "M26.6666 35.1663L28.0833 33.7497L14.3333 19.9997L28.0833 6.24967L26.6666 4.83301L11.4999 19.9997L26.6666 35.1663Z"
@@ -64,7 +65,7 @@ const ArrowIcon: React.FC<{
                 xmlns="http://www.w3.org/2000/svg"
                 className="cursor-pointer"
             >
-                <path d={path} fill="white" />
+                <path d={path} fill={colour} />
             </svg>
         </button>
     );
@@ -73,22 +74,6 @@ const ArrowIcon: React.FC<{
 const RoomsAndSuitesCombined: React.FC = () => {
     const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [lastInteraction, setLastInteraction] = useState(Date.now());
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const now = Date.now();
-            if (now - lastInteraction >= 3000) {
-                setCurrentRoomIndex((prevIndex) =>
-                    prevIndex === rooms.length - 1 ? 0 : prevIndex + 1
-                );
-                setCurrentImageIndex(0);
-                setLastInteraction(now);
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, [lastInteraction]);
 
     useEffect(() => {
         setCurrentImageIndex(0);
@@ -99,7 +84,6 @@ const RoomsAndSuitesCombined: React.FC = () => {
         setCurrentImageIndex((prevIndex) =>
             prevIndex === currentRoom.images.length - 1 ? 0 : prevIndex + 1
         );
-        setLastInteraction(Date.now());
     };
 
     const handlePreviousImage = () => {
@@ -107,7 +91,18 @@ const RoomsAndSuitesCombined: React.FC = () => {
         setCurrentImageIndex((prevIndex) =>
             prevIndex === 0 ? currentRoom.images.length - 1 : prevIndex - 1
         );
-        setLastInteraction(Date.now());
+    };
+
+    const handleNextRoom = () => {
+        setCurrentRoomIndex((prevIndex) =>
+            prevIndex === rooms.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const handlePreviousRoom = () => {
+        setCurrentRoomIndex((prevIndex) =>
+            prevIndex === 0 ? rooms.length - 1 : prevIndex - 1
+        );
     };
 
     const currentRoom = rooms[currentRoomIndex];
@@ -120,7 +115,6 @@ const RoomsAndSuitesCombined: React.FC = () => {
                     alt=""
                     height={10}
                     width={37}
-                    // className="w-[37px] h-[10px]"
                 />
                 <h2 className="text-[40px] font-bold text-[#2F4B26] max-md:text-[32px] playfair">
                     Rooms & Suites
@@ -130,7 +124,6 @@ const RoomsAndSuitesCombined: React.FC = () => {
                     alt=""
                     height={10}
                     width={37}
-                    // className="w-[37px] h-[10px]"
                 />
             </div>
             <main className="flex flex-col gap-14 items-center mx-auto my-0 w-full max-w-[1600px]">
@@ -143,18 +136,22 @@ const RoomsAndSuitesCombined: React.FC = () => {
                             fill
                         />
                         <div className="flex absolute top-2/4 justify-between items-center -translate-y-2/4 inset-x-[108px] max-md:inset-x-10 max-sm:inset-x-5">
-                            <ArrowIcon direction="left" onClick={handlePreviousImage} />
-                            <ArrowIcon direction="right" onClick={handleNextImage} />
+                            <ArrowIcon direction="left" colour="white" onClick={handlePreviousImage} />
+                            <ArrowIcon direction="right" colour="white" onClick={handleNextImage} />
                         </div>
                     </section>
 
-                    {/* <article className="flex gap-10 items-start px-5 py-0 max-md:flex-col max-md:items-center max-md:text-center"> */}
                     <Container>
-                        <div className="flex gap-10 items-start max-md:px-5 py-5 max-md:flex-col max-md:items-center max-md:text-center">
-
-                            <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
-                                {currentRoom.title}
-                            </h2>
+                        <div className="flex flex-col gap-6 px-5 py-5 max-md:items-center max-md:text-center">
+                            <div className="flex max-md:flex-col lg:items-center lg:justify-between">
+                                <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
+                                    {currentRoom.title}
+                                </h2>
+                                <div className="flex gap-6 max-md:mx-auto max-md:mt-4">
+                                    <ArrowIcon direction="left" colour="black" onClick={handlePreviousRoom} />
+                                    <ArrowIcon direction="right" colour="black" onClick={handleNextRoom} />
+                                </div>
+                            </div>
                             <div className="flex flex-col gap-8 max-w-[908px] max-md:items-center">
                                 <p className="text-xl font-light leading-7 text-[#686767] max-sm:text-base max-sm:leading-6">
                                     {currentRoom.description}
@@ -181,11 +178,10 @@ const RoomsAndSuitesCombined: React.FC = () => {
                                         />
                                     </svg>
                                 </Link>
+                                {/* New room navigation buttons */}
                             </div>
                         </div>
-
                     </Container>
-                    {/* </article> */}
                 </div>
             </main>
         </div>

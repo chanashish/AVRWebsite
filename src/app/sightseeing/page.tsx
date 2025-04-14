@@ -28,7 +28,7 @@ const page = () => {
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl+"carousel/sightseeing.webp"]} />
+      <FullScreenCarousel data={[imageUrl+"carousel/sightseeing.webp"]} name='Sight Seeing' />
       <RatingsDisplay />
       <LocationCarousel locations={data} />
       <div className="bg-[#F9F9F1]">
