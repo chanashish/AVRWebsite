@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <main>
-      <HomeHero />
+      <HomeHero display={true} />
       <RatingsDisplay />
       <DescriptionShow
         altTitle={true}

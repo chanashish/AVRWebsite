@@ -62,9 +62,9 @@ const page = () => {
     <div>
       <FullScreenCarousel
         data={[
-          imageUrl + "carousel/carousel1.webp",
-          imageUrl + "carousel/carousel1.webp",
-          imageUrl + "carousel/carousel1.webp",
+          imageUrl + "carousel/thingstodo.png",
+          imageUrl + "carousel/thingstodo.png",
+          imageUrl + "carousel/thingstodo.png",
         ]}
         name="Adventure Activities"
       />

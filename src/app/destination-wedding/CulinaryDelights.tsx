@@ -51,14 +51,13 @@ const CulinaryDelights = () => {
               mountain retreat wedding.
             </p>
             <Image
-                src={imageUrl + "destination/flowerbottom.webp"}
-                alt="decor"
-                width={40}
-                height={40}
-                className="w-[40px] h-[40px] absolute right-0 md:hidden"
-              />
-            <Link
-              href="#"
+              src={imageUrl + "destination/flowerbottom.webp"}
+              alt="decor"
+              width={40}
+              height={40}
+              className="w-[40px] h-[40px] absolute right-0 md:hidden"
+            />
+            <Link href={`https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`} target="blank"
               className="text-[#363636] text-[18px] hover:underline lato transition flex items-center gap-2 font-normal"
             >
               Book Your Wedding Now &gt;

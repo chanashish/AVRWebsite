@@ -9,9 +9,10 @@ interface MobileNavProps {
 }
 const MobileNav: React.FC<MobileNavProps> = ({ isOpen, setIsOpen }) => {
   const pathName = usePathname();
-  return (
+  if(isOpen)
+    return (
     <header
-      className={`fixed top-19 w-full h-screen bg-[#F9F9F1]/100 z-50 transform transition-transform duration-300  ${isOpen ? "translate-x-0 " : "-translate-x-full  z-50"}`}
+      className={`fixed top-19 w-full h-screen bg-[#F9F9F1]/100 z-50 transform transition-transform duration-300  ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}
     >
       <nav>
         <ul className="flex flex-col gap-4 p-8">

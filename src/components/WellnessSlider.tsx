@@ -24,6 +24,7 @@ interface WellnessSliderSectionProps {
     services: ServiceCardData[];
     reverseLayout?: boolean;
     showArrows?: boolean;
+    hideExplore?: boolean;
     showExplore?: boolean;
 }
 
@@ -56,13 +57,13 @@ const ServiceCard: React.FC<ServiceCardData> = ({
     description,
 }) => (
     <article className="flex flex-col gap-6 h-full">
-      <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
-        <Image
-            src={imageUrl}
-            alt={"room Image"}
-            fill
+        <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
+            <Image
+                src={imageUrl}
+                alt={"room Image"}
+                fill
             // className="w-full h-[368px] max-lg:h-[300px] max-sm:h-[240px] rounded-[4px] object-cover"
-        />
+            />
         </div>
         <div className="flex flex-col gap-4">
             <h2 className="text-2xl leading-8 text-neutral-700 max-md:text-2xl max-sm:text-xl">
@@ -80,6 +81,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     subtitle,
     description,
     roomdescription,
+    hideExplore = false,
     facility,
     services,
     href,
@@ -193,7 +195,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     </div>
                 </Container>
             )}
-            {roomdescription ? <div className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
+            {roomdescription ? <Link href={`https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`} target="blank" className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Book Now</span>
                 <svg
                     width="25"
@@ -208,7 +210,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                         fill="#363636"
                     />
                 </svg>
-            </div> : <Link href={href} className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
+            </Link> : hideExplore ? <></> : <Link href={href} className="sm:flex items-center hidden mt-7 justify-center cursor-pointer hover:underline">
                 <span className="text-lg leading-6 text-neutral-700 ">Explore</span>
                 <svg
                     width="25"
@@ -227,7 +229,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
             <div className="flex justify-between items-center mt-7 max-sm:flex-row-reverse sm:hidden">
                 {showArrows && <div className="hidden max-sm:flex">{<Navigation />}</div>}
                 {showExplore && (roomdescription ? (
-                    <div
+                    <Link href={`https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`} target="blank"
                         className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
                             }`}
                     >
@@ -245,8 +247,8 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                                 fill="#363636"
                             />
                         </svg>
-                    </div>
-                ) : (
+                    </Link>
+                ) : hideExplore ? <></> : (
                     <div
                         className={`flex gap-2 items-center cursor-pointer hover:underline ${!reverseLayout ? "mr-auto" : ""
                             }`}

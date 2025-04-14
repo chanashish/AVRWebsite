@@ -24,7 +24,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
       </h1>
 
       {/* Swiper carousel */}
-      <div className="w-full max-w-[1400px] px-0 relative overflow-visible">
+      <div className="w-full max-w-[1400px] px-0 relative overflow-hidden">
         <Swiper
           modules={[Navigation]}
           navigation={{

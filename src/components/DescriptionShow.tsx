@@ -67,12 +67,11 @@ function DescriptionShow({
                     <p>{description.diningText}</p>
                     <br />
                     {description.phoneNumber && <p>
-                        Call:{" "}
                         <Link
                             href={`tel:${description.phoneNumber.replace(/\s+/g, "")}`}
                             className="hover:underline"
                         >
-                            {description.phoneNumber}
+                            Call Now {">"}
                         </Link>
                     </p>}
                 </div>

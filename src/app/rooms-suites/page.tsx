@@ -29,23 +29,23 @@ const page = () => {
           facility={[
             {
               id: 1,
-              name: "Free Wifi",
+              name: "Hot Running Water",
             },
             {
               id: 2,
-              name: "Comfortable & Spacious Beds",
+              name: "Tea coffee Kitchenette",
             },
             {
               id: 3,
-              name: "Hygiene Focused",
+              name: "Luggage Racks",
             },
             {
               id: 4,
-              name: "Luxurious Sofa Set",
+              name: "Sofa Unit",
             },
             {
               id: 5,
-              name: "LED TV",
+              name: "32“ LED TV",
             },
           ]}
           services={[
@@ -66,23 +66,23 @@ const page = () => {
           facility={[
             {
               id: 1,
-              name: "Free Wifi",
+              name: "Shower Cubical",
             },
             {
               id: 2,
-              name: "Comfortable & Spacious Beds",
+              name: "Mountain View",
             },
             {
               id: 3,
-              name: "Balcony Views",
+              name: "Luggage Racks",
             },
             {
               id: 4,
-              name: "Luxurious Sofa Set",
+              name: "Sofa Unit",
             },
             {
               id: 5,
-              name: "Shower Cubical",
+              name: "32“ LED TV",
             },
           ]}
           services={[
@@ -106,23 +106,23 @@ const page = () => {
           facility={[
             {
               id: 1,
-              name: "Free Wifi",
+              name: "Shower Cubical",
             },
             {
               id: 2,
-              name: "Comfortable & Spacious Beds",
+              name: "Snow-capped Mountain View",
             },
             {
               id: 3,
-              name: "Hygiene Focused",
+              name: "Hot & Cold Air Conditioner",
             },
             {
               id: 4,
-              name: "Luxurious Sofa Set",
+              name: "Sofa Unit",
             },
             {
               id: 5,
-              name: "LED TV",
+              name: "42“ LED TV",
             },
           ]}
           services={[
