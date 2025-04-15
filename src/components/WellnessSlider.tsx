@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Container from "./SectionComponents/Container";
 import Image from "next/image";
+import FullscreenImagePopup1 from "./FullscreenImagePopup1";
+import FullScreenCarousel from "./FullScreenCarousel";
 
 export interface ServiceCardData {
     imageUrl: string;
@@ -91,6 +93,10 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
 }) => {
     const scrollContainer = React.useRef<HTMLDivElement>(null);
 
+    const [openImgPopup, setOpenImgPopup] = useState(false)
+    const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+
     const scroll = (direction: "left" | "right") => {
         if (scrollContainer.current) {
             const scrollAmount = scrollContainer.current.clientWidth * 0.8;
@@ -98,6 +104,21 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 direction === "left" ? -scrollAmount : scrollAmount;
         }
     };
+
+
+    const handleOpen = ({
+        images,
+        index,
+    }: {
+        images: string[];
+        index: number;
+    }) => {
+        setOpenImgPopup(true);
+        setCurrentImage(images);
+        setCurrentIndex(index);
+    };
+
+    console.log(services)
 
     const Navigation = () => (
         <div className="flex gap-4 items-center">
@@ -159,6 +180,10 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     {services.map((service, index) => (
                         <div
                             key={index}
+                            onClick={() => handleOpen({
+                                images: services.map((item) => item.imageUrl),
+                                index,
+                            })}
                             className="flex-none w-[calc(60%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
                             style={{ scrollSnapAlign: "start" }}
                         >
@@ -173,7 +198,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
             {roomdescription && <Container className="max-md:!p-0 "><p className="roboto font-light text-[20px] text-[#686767]  ">{roomdescription}</p></Container>}
             {facility && (
                 <Container>
-                    <div className="flex flex-wrap place-content-between gap-4 sm:gap-6 justify-center py-[16px] mt-8 facility-map-border">
+                    <div className="flex max-lg:flex-wrap lg:overflow-auto place-content-between gap-4 sm:gap-6 max-lg:justify-center py-[16px] mt-8 facility-map-border">
                         {facility.map((item) => (
                             <div
                                 key={item.id}
@@ -271,7 +296,12 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 ))}
             </div>
 
-
+            <FullscreenImagePopup1
+                openImgPopup={openImgPopup}
+                setOpenImgPopup={setOpenImgPopup}
+                image={currentImage}
+                currentIndex={currentIndex}
+            />
         </section>
     );
 };

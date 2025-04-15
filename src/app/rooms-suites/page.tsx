@@ -29,24 +29,31 @@ const page = () => {
           facility={[
             {
               id: 1,
-              name: "Hot Running Water",
+              name: "Double Bed with Spring Mattress",
             },
             {
               id: 2,
-              name: "Tea coffee Kitchenette",
+              name: "Hot Running Water",
             },
             {
               id: 3,
-              name: "Luggage Racks",
+              name: "Tea coffee Kitchenette",
             },
+
             {
               id: 4,
-              name: "Sofa Unit",
+              name: "Wifi",
             },
             {
               id: 5,
-              name: "32“ LED TV",
+              name: "Luggage Racks",
             },
+            {
+              id: 6,
+              name: "Sofa Unit",
+            },
+
+
           ]}
           services={[
             { imageUrl: imageUrl + "rooms/deluxe/001.webp" },
@@ -64,6 +71,10 @@ const page = () => {
           roomdescription="This super deluxe room, spanning 350 sq. ft in size is a perfect luxury for all. Its your perfect retreat, featuring a spacious bed that promises ultimate comfort for a restful night’s sleep. Unwind on the luxurious sofa set, or take a break at the stylish work desk, designed to help you feel at ease whether you're relaxing or getting work done. The wardrobe offers plenty of space to keep your belongings organized, while high-speed internet keeps you connected throughout your stay. Step out onto your private balcony and be greeted by breathtaking views of the orchard, with outdoor furniture perfect for a peaceful moment in nature. "
           subtitle="Super Deluxe Room"
           facility={[
+            {
+              id: 1,
+              name: "Double Bed with Spring Mattress",
+            },
             {
               id: 1,
               name: "Shower Cubical",
@@ -84,6 +95,7 @@ const page = () => {
               id: 5,
               name: "32“ LED TV",
             },
+
           ]}
           services={[
             { imageUrl: imageUrl + "rooms/sdeluxe/001.webp" },
