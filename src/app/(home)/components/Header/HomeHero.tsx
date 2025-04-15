@@ -8,7 +8,7 @@ interface HomeHeroProps {
 
 export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
 
-  const [temp, setTemp] = useState<Number>(0.0)
+  const [temp, setTemp] = useState<number>(0.0)
 
   useEffect(() => {
     const getTemp = async () => {
@@ -22,7 +22,7 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
       getTemp()
     }
 
-  }, [])
+  }, [display])
 
   const getTime = () => {
     const date = new Date();
@@ -31,7 +31,7 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
 
   return (
     <section className="relative w-full h-[700px] max-sm:h-[240px] max-w-[1600px] mx-auto">
-      {display && <div className="absolute right-[10px] top-[10px] text-white text-[26px] max-md:text-[20px] z-[100]">
+      {display && <div className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
         {getTime()}, {temp.toString()}°C
       </div>}
       <VideoBackground />

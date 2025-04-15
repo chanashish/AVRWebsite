@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Container from "./SectionComponents/Container";
 import Image from "next/image";
 import FullscreenImagePopup1 from "./FullscreenImagePopup1";
-import FullScreenCarousel from "./FullScreenCarousel";
 
 export interface ServiceCardData {
     imageUrl: string;
