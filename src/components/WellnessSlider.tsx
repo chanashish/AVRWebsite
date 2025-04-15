@@ -117,7 +117,6 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
         setCurrentIndex(index);
     };
 
-    console.log(services)
 
     const Navigation = () => (
         <div className="flex gap-4 items-center">
