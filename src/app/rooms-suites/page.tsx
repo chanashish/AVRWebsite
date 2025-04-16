@@ -76,7 +76,7 @@ const page = () => {
               name: "Double Bed with Spring Mattress",
             },
             {
-              id: 1,
+              id: 6,
               name: "Shower Cubical",
             },
             {
