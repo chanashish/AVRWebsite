@@ -27,27 +27,27 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { id: 1, link: "", value: "Quick Links", className: "playfair font-normal text-2xl" },
-    { id: 2, link: "/", value: "Home", className: "roboto text-xl font-light" },
-    { id: 3, link: "/about-us/", value: "About Us", className: "roboto text-xl font-light" },
-    { id: 4, link: "/rooms-suites/", value: "Rooms & Suites", className: "roboto text-xl font-light" },
-    { id: 5, link: "/gallery/", value: "Gallery", className: "roboto text-xl font-light" },
-    { id: 6, link: "/contact-us/", value: "Contact Us", className: "roboto text-xl font-light" },
+    { id: 2, link: "/", value: "Home", className: "roboto text-xl font-light hover:underline" },
+    { id: 3, link: "/about-us/", value: "About Us", className: "roboto text-xl font-light hover:underline" },
+    { id: 4, link: "/rooms-suites/", value: "Rooms & Suites", className: "roboto text-xl font-light hover:underline" },
+    { id: 5, link: "/gallery/", value: "Gallery", className: "roboto text-xl font-light hover:underline" },
+    { id: 6, link: "/contact-us/", value: "Contact Us", className: "roboto text-xl font-light hover:underline" },
   ];
 
   const favourites = [
     { id: 1, link: "", value: "Favourites", className: "playfair font-normal text-2xl" },
-    { id: 2, link: "/dining/", value: "Dining", className: "roboto text-xl font-light" },
-    { id: 3, link: "/things-to-do/", value: "Things To Do", className: "roboto text-xl font-light" },
-    { id: 4, link: "/destination-wedding/", value: "Destination Wedding", className: "roboto text-xl font-light" },
-    { id: 5, link: "/spiritual-retreat/", value: "Spiritual Retreat", className: "roboto text-xl font-light" },
-    { id: 6, link: "/sightseeing/", value: "Nearby Places", className: "roboto text-xl font-light" },
+    { id: 2, link: "/dining/", value: "Dining", className: "roboto text-xl font-light hover:underline" },
+    { id: 3, link: "/things-to-do/", value: "Things To Do", className: "roboto text-xl font-light hover:underline" },
+    { id: 4, link: "/destination-wedding/", value: "Destination Wedding", className: "roboto text-xl font-light hover:underline" },
+    { id: 5, link: "/spiritual-retreat/", value: "Spiritual Retreat", className: "roboto text-xl font-light hover:underline" },
+    { id: 6, link: "/sightseeing/", value: "Nearby Places", className: "roboto text-xl font-light hover:underline" },
   ];
 
   const policies = [
     { id: 1, link: "", value: "Policies", className: "playfair font-normal text-2xl" },
-    { id: 2, link: "/", value: "Check In Policy", className: "roboto text-xl font-light" },
-    { id: 3, link: "", value: "Privacy Policy", className: "roboto text-xl font-light" },
-    { id: 4, link: "", value: "Terms and Conditions", className: "roboto text-xl font-light" },
+    { id: 2, link: "/", value: "Check In Policy", className: "roboto text-xl font-light hover:underline" },
+    { id: 3, link: "", value: "Privacy Policy", className: "roboto text-xl font-light hover:underline" },
+    { id: 4, link: "", value: "Terms and Conditions", className: "roboto text-xl font-light hover:underline" },
   ];
 
   // Arrow component for dropdowns
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
           <div className="flex-1 text-center align-middle flex items-center flex-col gap-5">
             <Image src={"/footerLogo.png"} alt="Anand Vardhan Resorts" height={136} width={136} />
             <p className="text-white px-4 text-[20px] font-light">Anand Vardhan Resorts Village, Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104</p>
-            <Link href={"tel:+919317207373"} className="text-white px-4 text-[20px] font-light">Call: +91 93172 07373</Link>
+            <Link href={"tel:+919317207373"} className="text-white px-4 text-[20px] font-light hover:underline">Call: +91 93172 07373</Link>
             <div className="flex gap-5">{socialLinks.map(({ href, src, alt }) => (
               <Link key={alt} href={href} aria-label={`Visit our ${alt} page`} target="_blank" rel="noopener noreferrer">
                 <Image
