@@ -71,10 +71,10 @@ export default function Home() {
         href="/things-to-do/"
         services={[
           {
-            imageUrl: imageUrl + "home/explore1.webp",
-            title: "Bonfire",
+            title: "Cycling",
             description:
-              "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars.",
+              "Feel the rush of adrenaline as you pedal through rugged trails, surrounded by towering peaks and endless sky.",
+            imageUrl: imageUrl + "thingstodo/1.webp",
           },
           {
             imageUrl: imageUrl + "home/explore2.webp",

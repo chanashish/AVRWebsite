@@ -64,7 +64,7 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({ dat
                                     />
                                 </div>
 
-                                <p className=" relative text-base md:text-lg max-w-2xl">{item.description}</p>
+                                <p className=" relative  text-2xl max-md:text-xl max-sm:text-lg max-w-2xl">{item.description}</p>
                             </div>
                         </SwiperSlide>
 

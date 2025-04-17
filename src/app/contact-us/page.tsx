@@ -39,7 +39,7 @@ const ContactPage = () => {
         },
         {
             id: 2,
-            link: "https://www.instagram.com/anandvardhanresorts/",
+            link: "https://www.instagram.com/anandvardhanresortmanali/",
             icon: "/icons/instagram3.png",
             alt: "instagram"
         },

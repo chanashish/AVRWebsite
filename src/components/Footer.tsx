@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { href: "http://facebook.com/AnandVardhanResortsManali/", src: "/icons/facebook2.png", alt: "Facebook" },
-    { href: "https://www.instagram.com/anandvardhanresorts/", src: "/icons/instagram2.png", alt: "Instagram" },
+    { href: "https://www.instagram.com/anandvardhanresortmanali/", src: "/icons/instagram2.png", alt: "Instagram" },
     { href: "https://www.linkedin.com/company/anand-vardhan-resort/", src: "/icons/linkedin2.png", alt: "Linkedin" },
   ];
 

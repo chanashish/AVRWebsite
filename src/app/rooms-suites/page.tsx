@@ -42,7 +42,7 @@ const page = () => {
 
             {
               id: 4,
-              name: "Wifi",
+              name: "270sq ft. Area",
             },
             {
               id: 5,
@@ -93,7 +93,7 @@ const page = () => {
             },
             {
               id: 5,
-              name: "32“ LED TV",
+              name: "350 sq. ft Area",
             },
 
           ]}
@@ -135,6 +135,10 @@ const page = () => {
             {
               id: 5,
               name: "42“ LED TV",
+            },
+            {
+              id: 6,
+              name: "500 sq. ft Area",
             },
           ]}
           services={[
