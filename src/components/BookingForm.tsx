@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { ChevronDownIcon, DropdownIcon } from "./Icons";
 import { countries } from "../data/countryCode";
 import Container from "./SectionComponents/Container";
+import axios from "axios";
+
 interface FormData {
   fullName: string;
   phoneNumber: string;
@@ -22,21 +24,78 @@ const BookingForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>();
 
   const [selectedCountry, setSelectedCountry] = useState("+91");
   const [selectedRoom, setSelectedRoom] = useState("Luxury Suite Room");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [roomDropdownOpen, setRoomDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const countryDropdownRef = useRef<HTMLDivElement>(null);
   const roomDropdownRef = useRef<HTMLDivElement>(null);
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted", { ...data, countryCode: selectedCountry, roomType: selectedRoom });
+  const submitForm = async (formBody: {
+    email: string;
+    name: string;
+    phone: string;
+    other_fields: string;
+  }): Promise<boolean> => {
+    try {
+      const { data } = await axios.post(
+        "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/XJVYRzPn#generic-webhook",
+        {
+          Email: formBody.email,
+          Domain: "anandvardhanresort",
+          Name: formBody.name,
+          Contact: formBody.phone,
+          Description: formBody.other_fields,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (data.success) {
+        return true;
+      } else {
+        console.error("API Response Error:", data);
+        return false;
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      return false;
+    }
   };
 
-  // Close dropdown when clicking outside
+  const onSubmit = async (data: FormData) => {
+    setLoading(true);
+
+    const fullPhoneNumber = `${selectedCountry} ${data.phoneNumber}`;
+    const formBody = {
+      email: data.email,
+      name: data.fullName,
+      phone: fullPhoneNumber,
+      other_fields: `Check-in: ${data.checkIn}, Check-out: ${data.checkOut}, Room Type: ${selectedRoom}`,
+    };
+
+    const success = await submitForm(formBody);
+
+    if (success) {
+      console.log("Form successfully submitted to API");
+      reset(); // Reset form fields
+      setSelectedCountry("+91"); // Reset dropdowns
+      setSelectedRoom("Luxury Suite Room");
+    } else {
+      console.error("Failed to submit form to API");
+    }
+
+    setLoading(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
@@ -51,77 +110,126 @@ const BookingForm = () => {
   }, []);
 
   return (
-      <Container>
-    <section className="flex flex-col gap-6 justify-center items-center px-0 pt-14 pb-20 max-sm:px-4 max-sm:py-8">
-      <h2 className="text-2xl leading-8 text-center text-lime-900 max-sm:text-xl max-sm:leading-7">
-        Book Your Stay With Us!
-      </h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
+    <Container>
+      <section className="flex flex-col gap-6 justify-center items-center px-0 pt-14 pb-20 max-sm:px-4 max-sm:py-8">
+        <h2 className="text-2xl leading-8 text-center text-lime-900 max-sm:text-xl max-sm:leading-7">
+          Book Your Stay With Us!
+        </h2>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
+        >
+          {/* Full Name */}
+          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+            <input
+              {...register("fullName", { required: "Full Name is required" })}
+              placeholder="Full Name*"
+              className="text-base text-neutral-700 outline-none w-[130px]"
+            />
+            {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+          </div>
+
+          {/* Phone Number with Country Code */}
+          <div className="relative flex items-center px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
+            <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
+              <span className="text-base leading-6 text-neutral-700">{selectedCountry}</span>
+              <DropdownIcon />
+            </div>
+            {dropdownOpen && (
+              <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-30 max-h-[200px] overflow-scroll">
+                {countries.map((code, index) => (
+                  <li
+                    key={index}
+                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => {
+                      setSelectedCountry(code.code);
+                      setDropdownOpen(false);
+                    }}
+                  >
+                    {code.name} {code.code}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <input
+              {...register("phoneNumber", { required: "Phone number is required" })}
+              placeholder="Phone Number*"
+              className="ml-4 text-base text-neutral-700 outline-none"
+            />
+            {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+            <input
+              {...register("email", {
+                required: "Email is required",
+                pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" },
+              })}
+              placeholder="Email ID*"
+              className="text-base text-neutral-700 outline-none"
+            />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+          </div>
+
+          {/* Check-in Date */}
+          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+            <input
+              type="date"
+              {...register("checkIn", { required: "Check-in date is required" })}
+              className="text-base text-neutral-700 outline-none"
+            />
+            {errors.checkIn && <p className="text-red-500 text-sm">{errors.checkIn.message}</p>}
+          </div>
+
+          {/* Check-out Date */}
+          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+            <input
+              type="date"
+              {...register("checkOut", { required: "Check-out date is required" })}
+              className="text-base text-neutral-700 outline-none"
+            />
+            {errors.checkOut && <p className="text-red-500 text-sm">{errors.checkOut.message}</p>}
+          </div>
+
+          {/* Room Type Dropdown */}
+          <div
+            className="relative flex items-center px-4 py-5 max-md:w-full max-md:border-b cursor-pointer whitespace-nowrap"
+            ref={roomDropdownRef}
+            onClick={() => setRoomDropdownOpen(!roomDropdownOpen)}
           >
-            {/* Full Name */}
-            <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-              <input {...register("fullName", { required: "Full Name is required" })} placeholder="Full Name*" className="text-base text-neutral-700 outline-none w-[130px]" />
-              {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
-            </div>
+            <span className="text-base leading-6 text-neutral-700">{selectedRoom}</span>
+            <ChevronDownIcon />
+            {roomDropdownOpen && (
+              <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-48">
+                {roomTypes.map((room) => (
+                  <li
+                    key={room}
+                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => {
+                      setSelectedRoom(room);
+                      setRoomDropdownOpen(false);
+                    }}
+                  >
+                    {room}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
-            {/* Phone Number with Country Code */}
-            <div className="relative flex items-center px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
-              <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
-                <span className="text-base leading-6 text-neutral-700">{selectedCountry}</span>
-                <DropdownIcon />
-              </div>
-              {dropdownOpen && (
-                <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-30 max-h-[200px] overflow-scroll">
-                  {countries.map((code, index) => (
-                    <li key={index} className="px-3 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => { setSelectedCountry(code.code); setDropdownOpen(false); }}>{code.name}{" "}{code.code}</li>
-                  ))}
-                </ul>
-              )}
-              <input {...register("phoneNumber", { required: "Phone number is required" })} placeholder="Phone Number*" className="ml-4 text-base text-neutral-700 outline-none" />
-              {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-              <input {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" } })} placeholder="Email ID*" className="text-base text-neutral-700 outline-none" />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-            </div>
-
-            {/* Check-in Date */}
-            <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-              <input type="date" {...register("checkIn", { required: "Check-in date is required" })} className="text-base text-neutral-700 outline-none" />
-              {errors.checkIn && <p className="text-red-500 text-sm">{errors.checkIn.message}</p>}
-            </div>
-
-            {/* Check-out Date */}
-            <div className="flex flex-col px-4  py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-              <input type="date" {...register("checkOut", { required: "Check-out date is required" })} className="text-base text-neutral-700 outline-none" />
-              {errors.checkOut && <p className="text-red-500 text-sm">{errors.checkOut.message}</p>}
-            </div>
-
-            {/* Room Type Dropdown */}
-            <div className="relative flex items-center px-4  py-5 max-md:w-full max-md:border-b cursor-pointer whitespace-nowrap" ref={roomDropdownRef} onClick={() => setRoomDropdownOpen(!roomDropdownOpen)}>
-              <span className="text-base leading-6 text-neutral-700">{selectedRoom}</span>
-              <ChevronDownIcon />
-              {roomDropdownOpen && (
-                <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-48">
-                  {roomTypes.map((room) => (
-                    <li key={room} className="px-3 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => { setSelectedRoom(room); setRoomDropdownOpen(false); }}>{room}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <button type="submit" className="px-2  py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full">
-              Book Now
-            </button>
-          </form>
-
-    </section>
-      </Container>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={loading}
+            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full ${loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+          >
+            {loading ? "Booking..." : "Book Now"}
+          </button>
+        </form>
+      </section>
+    </Container>
   );
 };
 
