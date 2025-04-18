@@ -25,6 +25,7 @@ const BookingForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm<FormData>();
 
   const [selectedCountry, setSelectedCountry] = useState("+91");
@@ -35,6 +36,19 @@ const BookingForm = () => {
 
   const countryDropdownRef = useRef<HTMLDivElement>(null);
   const roomDropdownRef = useRef<HTMLDivElement>(null);
+
+  const checkInDate = watch("checkIn");
+
+  const getToday = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  };
+
+  const getTomorrow = (dateString: string) => {
+    const date = new Date(dateString);
+    date.setDate(date.getDate() + 1);
+    return date.toISOString().split("T")[0];
+  };
 
   const submitForm = async (formBody: {
     email: string;
@@ -59,12 +73,7 @@ const BookingForm = () => {
         }
       );
 
-      if (data.success) {
-        return true;
-      } else {
-        console.error("API Response Error:", data);
-        return false;
-      }
+      return data.success;
     } catch (error) {
       console.error("Form submission error:", error);
       return false;
@@ -86,8 +95,8 @@ const BookingForm = () => {
 
     if (success) {
       console.log("Form successfully submitted to API");
-      reset(); // Reset form fields
-      setSelectedCountry("+91"); // Reset dropdowns
+      reset();
+      setSelectedCountry("+91");
       setSelectedRoom("Luxury Suite Room");
     } else {
       console.error("Failed to submit form to API");
@@ -178,6 +187,7 @@ const BookingForm = () => {
               type="date"
               {...register("checkIn", { required: "Check-in date is required" })}
               className="text-base text-neutral-700 outline-none"
+              min={getToday()}
             />
             {errors.checkIn && <p className="text-red-500 text-sm">{errors.checkIn.message}</p>}
           </div>
@@ -188,6 +198,7 @@ const BookingForm = () => {
               type="date"
               {...register("checkOut", { required: "Check-out date is required" })}
               className="text-base text-neutral-700 outline-none"
+              min={checkInDate ? getTomorrow(checkInDate) : getToday()}
             />
             {errors.checkOut && <p className="text-red-500 text-sm">{errors.checkOut.message}</p>}
           </div>
