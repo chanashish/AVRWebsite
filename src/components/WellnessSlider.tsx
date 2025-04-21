@@ -95,6 +95,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     const [openImgPopup, setOpenImgPopup] = useState(false)
     const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [roomName, setRoomName] = useState<string>("");
 
     const scroll = (direction: "left" | "right") => {
         if (scrollContainer.current) {
@@ -108,13 +109,16 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
     const handleOpen = ({
         images,
         index,
+        roomNameThis,
     }: {
         images: string[];
         index: number;
+        roomNameThis:string;
     }) => {
         setOpenImgPopup(true);
         setCurrentImage(images);
         setCurrentIndex(index);
+        setRoomName(roomNameThis)
     };
 
 
@@ -178,10 +182,13 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            onClick={() => handleOpen({
+                            onClick={() => {
+                                console.log(subtitle)
+                                handleOpen({
                                 images: services.map((item) => item.imageUrl),
                                 index,
-                            })}
+                                roomNameThis: subtitle
+                            })}}
                             className="flex-none w-[calc(60%-12px)] max-md:w-[calc(50%-12px)] max-sm:w-full"
                             style={{ scrollSnapAlign: "start" }}
                         >
@@ -299,6 +306,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
                 setOpenImgPopup={setOpenImgPopup}
                 image={currentImage}
                 currentIndex={currentIndex}
+                roomName={roomName}
             />
         </section>
     );

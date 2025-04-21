@@ -4,14 +4,15 @@ import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
 import { OutLineBtnNext, OutLineBtnPrev } from "@/icons/icons";
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
-import { AiOutlineZoomIn } from "react-icons/ai";
-import { AiOutlineZoomOut } from "react-icons/ai";
+// import { AiOutlineZoomIn } from "react-icons/ai";
+// import { AiOutlineZoomOut } from "react-icons/ai";
 
 const FullscreenImagePopup1 = ({
   openImgPopup,
   setOpenImgPopup,
   image,
   currentIndex,
+  roomName=""
 }) => {
   const [imgIndex, setImgIndex] = useState(currentIndex);
   const [zoom, setZoom] = useState(false);
@@ -187,6 +188,9 @@ const FullscreenImagePopup1 = ({
           >
             <OutLineBtnNext />
           </button>
+          {roomName &&<span className=" bg-clr4/30 p-2  text-[18px] text-white lato font-normal image-title-center">
+            {roomName}
+          </span>}
         </div>
       </div>
     </div>

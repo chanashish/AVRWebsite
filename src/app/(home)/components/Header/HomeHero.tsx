@@ -12,6 +12,7 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
   const [time, setTime] = useState<string>("");
 
   useEffect(() => {
+    // `https://api.openweathermap.org/data/3.0/onecall?lat={32.10190294728198}&lon={77.156027572247}&appid=${apiKey}&units={"metric"}`
     const getTemp = async () => {
       const apiKey = "8611baa95180437492f54121230505";
       const response = await axios.get(

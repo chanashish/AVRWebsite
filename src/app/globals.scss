@@ -353,3 +353,9 @@
   border-style: solid !important;
   border-color: rgba(178, 178, 178, 1) !important;
 }
+
+.image-title-center{
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
