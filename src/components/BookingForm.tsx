@@ -17,7 +17,7 @@ interface FormData {
   roomType: string;
 }
 
-const roomTypes = ["Luxury Suite Room", "Deluxe Room", "Standard Room"];
+const roomTypes = ["Luxury Suite Room", "Deluxe Room", "Super Deluxe Room"];
 
 const BookingForm = () => {
   const {
@@ -33,6 +33,7 @@ const BookingForm = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [roomDropdownOpen, setRoomDropdownOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submissionResult, setSubmissionResult] = useState<"success" | "error" | null>(null);
 
   const countryDropdownRef = useRef<HTMLDivElement>(null);
   const roomDropdownRef = useRef<HTMLDivElement>(null);
@@ -50,21 +51,33 @@ const BookingForm = () => {
     return date.toISOString().split("T")[0];
   };
 
-  const submitForm = async (formBody: {
-    email: string;
-    name: string;
-    phone: string;
-    other_fields: string;
-  }): Promise<boolean> => {
+  const submitForm = async (formBody:
+    {
+      email: string;
+      name: string;
+      phone: string;
+      other_fields: string;
+    }
+  ): Promise<boolean> => {
     try {
       const { data } = await axios.post(
-        "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/XJVYRzPn#generic-webhook",
+        // "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/XJVYRzPn#generic-webhook",
+        "https://nexon.eazotel.com/eazotel/addcontacts",
+        // {
+        //   Email: formBody.email,
+        //   Domain: "anandvardhanresort",
+        //   Name: formBody.name,
+        //   Contact: formBody.phone,
+        //   Description: formBody.other_fields,
+        // },
         {
-          Email: formBody.email,
           Domain: "anandvardhanresort",
+          email: formBody.email,
           Name: formBody.name,
           Contact: formBody.phone,
+          Subjec: "",
           Description: formBody.other_fields,
+          created_from: "Website"
         },
         {
           headers: {
@@ -73,7 +86,7 @@ const BookingForm = () => {
         }
       );
 
-      return data.success;
+      return data.Status;
     } catch (error) {
       console.error("Form submission error:", error);
       return false;
@@ -82,6 +95,7 @@ const BookingForm = () => {
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
+    setSubmissionResult(null); // Reset previous result
 
     const fullPhoneNumber = `${selectedCountry} ${data.phoneNumber}`;
     const formBody = {
@@ -98,13 +112,25 @@ const BookingForm = () => {
       reset();
       setSelectedCountry("+91");
       setSelectedRoom("Luxury Suite Room");
+      setSubmissionResult("success");
     } else {
       console.error("Failed to submit form to API");
+      setSubmissionResult("error");
     }
 
     setLoading(false);
   };
 
+  useEffect(() => {
+    if (submissionResult) {
+      const timer = setTimeout(() => {
+        setSubmissionResult(null);
+      }, 5000);
+  
+      return () => clearTimeout(timer);
+    }
+  }, [submissionResult]);
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
@@ -124,6 +150,14 @@ const BookingForm = () => {
         <h2 className="text-2xl leading-8 text-center text-lime-900 max-sm:text-xl max-sm:leading-7">
           Book Your Stay With Us!
         </h2>
+
+        {submissionResult === "success" && (
+          <p className="text-green-600 text-sm mb-2">Your booking has been successfully submitted!</p>
+        )}
+        {submissionResult === "error" && (
+          <p className="text-red-600 text-sm mb-2">There was an error submitting your booking. Please try again.</p>
+        )}
+
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
