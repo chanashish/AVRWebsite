@@ -77,7 +77,7 @@ const page = () => {
             },
             {
               id: 6,
-              name: "Shower Cubical",
+              name: "Shower Cubicle",
             },
             {
               id: 2,
@@ -118,7 +118,7 @@ const page = () => {
           facility={[
             {
               id: 1,
-              name: "Shower Cubical",
+              name: "Shower Cubicle",
             },
             {
               id: 2,
