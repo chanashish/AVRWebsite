@@ -50,7 +50,7 @@ export const ImageViewerProvider = ({ children }: { children: ReactNode }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  });
 
   // Handle touch swipe gestures
   const handleTouchStart = (event: React.TouchEvent) => {
