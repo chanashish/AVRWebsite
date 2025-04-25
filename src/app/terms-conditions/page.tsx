@@ -75,7 +75,7 @@ const page = () => {
                             Please email to sales@anandvardhanresorts.com
                         </p>
                         <p className="roboto text-[20px] text-[#686767] font-light">
-                            For all legal matters, the Indian laws are applicable. For any disputes, jurisdiction of courts of Dehradun will apply.
+                            For all legal matters, the Indian laws are applicable. For any disputes, jurisdiction of courts of Manali will apply.
                         </p>
                     </div>
                 </div>
