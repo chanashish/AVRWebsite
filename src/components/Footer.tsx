@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
 
   const policies = [
     { id: 1, link: "", value: "Policies", className: "playfair font-normal text-2xl" },
-    { id: 2, link: "/", value: "Check In Policy", className: "roboto text-xl font-light hover:underline" },
-    { id: 3, link: "", value: "Privacy Policy", className: "roboto text-xl font-light hover:underline" },
-    { id: 4, link: "", value: "Terms and Conditions", className: "roboto text-xl font-light hover:underline" },
+    { id: 2, link: "/check-in-policy/", value: "Check In Policy", className: "roboto text-xl font-light hover:underline" },
+    { id: 3, link: "/privacy-policy/", value: "Privacy Policy", className: "roboto text-xl font-light hover:underline" },
+    { id: 4, link: "/terms-conditions/", value: "Terms and Conditions", className: "roboto text-xl font-light hover:underline" },
   ];
 
   // Arrow component for dropdowns
