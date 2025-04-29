@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { VideoBackground } from "./VideoBackground";
-import axios from "axios";
+// import axios from "axios";
 
 interface HomeHeroProps {
   display?: boolean;
