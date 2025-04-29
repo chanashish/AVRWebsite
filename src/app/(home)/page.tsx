@@ -57,7 +57,7 @@ export default function Home() {
                 "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out.",
             },
             {
-              imageUrl: imageUrl + "home/relax3.webp",
+              imageUrl: imageUrl + "home/relax3.jpg",
               title: "Naturopathy",
               description:
                 "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy.",

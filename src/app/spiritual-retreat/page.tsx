@@ -144,7 +144,7 @@ const page = () => {
             },
             {
               imageUrl:
-                imageUrl+"spiritual/relax6.webp",
+                imageUrl+"home/relax3.jpg",
               title: "Naturopathy",
               description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
             },

@@ -50,13 +50,13 @@ const page = () => {
       imageUrl: imageUrl + "thingstodo/6.webp",
       imageAlt: "Indoor Game Studio",
     },
-    {
-      title: "Conference Room",
-      description:
-        "Host your next meeting in our serene conference room, where stunning mountain views inspire creativity and fresh ideas. Perfect for team collaborations or intimate brainstorming sessions, our conference room blends comfort with productivity. Get down to business in a space designed to energize and focus, with the mountains as your backdrop to success.",
-      imageUrl: imageUrl + "thingstodo/7.webp",
-      imageAlt: "Conference Room",
-    },
+    // {
+    //   title: "Conference Room",
+    //   description:
+    //     "Host your next meeting in our serene conference room, where stunning mountain views inspire creativity and fresh ideas. Perfect for team collaborations or intimate brainstorming sessions, our conference room blends comfort with productivity. Get down to business in a space designed to energize and focus, with the mountains as your backdrop to success.",
+    //   imageUrl: imageUrl + "thingstodo/7.webp",
+    //   imageAlt: "Conference Room",
+    // },
   ];
   return (
     <div>

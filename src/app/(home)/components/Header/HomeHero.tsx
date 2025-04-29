@@ -8,23 +8,23 @@ interface HomeHeroProps {
 }
 
 export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
-  const [temp, setTemp] = useState<number>(0.0);
+  // const [temp, setTemp] = useState<number>(0.0);
   const [time, setTime] = useState<string>("");
 
-  useEffect(() => {
-    // `https://api.openweathermap.org/data/3.0/onecall?lat={32.10190294728198}&lon={77.156027572247}&appid=${apiKey}&units={"metric"}`
-    const getTemp = async () => {
-      const apiKey = "8611baa95180437492f54121230505";
-      const response = await axios.get(
-        `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=32.10190294728198,77.156027572247`
-      );
-      setTemp(response?.data?.current?.temp_c);
-    };
+  // useEffect(() => {
+  //   // `https://api.openweathermap.org/data/3.0/onecall?lat={32.10190294728198}&lon={77.156027572247}&appid=${apiKey}&units={"metric"}`
+  //   const getTemp = async () => {
+  //     const apiKey = "8611baa95180437492f54121230505";
+  //     const response = await axios.get(
+  //       `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=32.10190294728198,77.156027572247`
+  //     );
+  //     setTemp(response?.data?.current?.temp_c);
+  //   };
 
-    if (display) {
-      getTemp();
-    }
-  }, [display]);
+  //   if (display) {
+  //     getTemp();
+  //   }
+  // }, [display]);
 
   useEffect(() => {
     const updateTime = () => {
@@ -47,7 +47,7 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
     <section className="relative w-full h-[700px] max-sm:h-[240px] max-w-[1600px] mx-auto">
       {display && (
         <div className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
-          {time}, {temp.toFixed(1)}°C
+          {time}
         </div>
       )}
       <VideoBackground />
