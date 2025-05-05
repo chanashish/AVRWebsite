@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.scss";
 import { Call, Footer, Navbar, Whatsapp } from "@/components";
 import PureVegBanner from "./(home)/components/PureVegBanner";
+import RenderChatBot from "@/components/chatbot/RenderChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Footer />
         <Whatsapp whatsAppNumber="9317207373" />
         <Call callNumber="919317207373" />
+        <RenderChatBot/>
       </body>
     </html>
   );
