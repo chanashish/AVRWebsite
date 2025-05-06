@@ -160,7 +160,7 @@ const FullscreenImagePopup1 = ({
                 src={imageSrc ? imageSrc : "/images/placeholder.png"}
                 alt={currentIndex}
                 fill
-                className={`object-cover  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"} ${zoom ? "scale-150" : ""} transition-all duration-300 ease-in-out`}
+                className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"} ${zoom ? "scale-150" : ""} transition-all duration-300 ease-in-out`}
                 onClick={toggleFullscreen}
               />
             )}

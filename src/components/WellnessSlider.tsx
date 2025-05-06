@@ -58,10 +58,10 @@ const ServiceCard: React.FC<ServiceCardData> = ({
     description,
 }) => (
     <article className="flex flex-col gap-6 h-full">
-        <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
+        <div className="lg:aspect-[4/3] relative h-[250px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
             <Image
                 src={imageUrl}
-                alt={"room Image"}
+                alt={"serice Image"}
                 fill
             // className="w-full h-[368px] max-lg:h-[300px] max-sm:h-[240px] rounded-[4px] object-cover"
             />
