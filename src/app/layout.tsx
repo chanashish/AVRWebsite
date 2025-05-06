@@ -52,13 +52,13 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
+        <RenderChatBot />
         <PureVegBanner />
         <Navbar />
         {children}
         <Footer />
         <Whatsapp whatsAppNumber="9317207373" />
         <Call callNumber="919317207373" />
-        <RenderChatBot/>
       </body>
     </html>
   );
