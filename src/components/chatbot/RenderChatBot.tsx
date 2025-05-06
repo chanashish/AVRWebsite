@@ -12,7 +12,7 @@ export interface FormData {
 
 const RenderChatBot = () => {
   const welcomeMessage =
-    " Welcome to Anand Vardhan Resorts, How can I help you today?.";
+    " Welcome to Anand Vardhan Resorts , How can I help you today?.";
   const thankYouMessage = `Thank you so much for filling up the details, one of our representative will speak to you as soon as possible!`;
 
   const messageFlows = [
@@ -63,10 +63,10 @@ const RenderChatBot = () => {
         messages={welcomeMessage}
         finalMessage={thankYouMessage}
         messageFlows={messageFlows}
-        title="Anand Vardhan Resort"
-        theme={"#29422C"}
+        title="Anand Vardhan Resorts "
+        theme={"#2F4B26"}
         openInterval={2000}
-        logo={"/footerLogo.png"}
+        logo={"/favicon.png"}
       />
     </div>
   );

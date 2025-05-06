@@ -398,7 +398,7 @@ const ChatWindow = ({
       <div
         className="p-4 flex justify-between items-center "
         style={{
-          background: theme || "#FD5C01",
+          background: "#2F4B26",
           color: "white",
         }}
       >
@@ -462,7 +462,7 @@ const ChatWindow = ({
         </div>
 
         {chat.map((msg, index) => (
-          <div key={index}>
+          <>
             {msg.sender === "bot" && index !== 0 && (
               <p className="text-lg rounded-lg text-[#474747]">{title}</p>
             )}
@@ -470,7 +470,13 @@ const ChatWindow = ({
             <div
               key={index}
               style={{
-                background: `${msg?.sender === "user" ? (!Array.isArray(msg.text) ? theme : "") : "#EEEEEE"}`,
+                background: `${
+                  msg?.sender === "user"
+                    ? !Array.isArray(msg.text)
+                      ? theme
+                      : ""
+                    : "#EEEEEE"
+                }`,
               }}
               className={`max-w-[85%] break-words whitespace-wrap px-3 py-2 rounded-lg text-lg ${
                 msg.sender === "user"
@@ -545,7 +551,7 @@ const ChatWindow = ({
                   )}
               </div>
             )}
-          </div>
+          </>
         ))}
 
         {showFinalMessage && (
@@ -654,7 +660,9 @@ const ChatWindow = ({
                 <IoIosSend
                   size={24}
                   color={theme || "C2185B"}
-                  opacity={`${messageFlows?.length === currentStep ? "0.4" : "1"}`}
+                  opacity={`${
+                    messageFlows?.length === currentStep ? "0.4" : "1"
+                  }`}
                 />
               </span>
             </button>
