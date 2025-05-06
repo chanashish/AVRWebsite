@@ -462,7 +462,7 @@ const ChatWindow = ({
         </div>
 
         {chat.map((msg, index) => (
-          <>
+          <div key={index}>
             {msg.sender === "bot" && index !== 0 && (
               <p className="text-lg rounded-lg text-[#474747]">{title}</p>
             )}
@@ -545,7 +545,7 @@ const ChatWindow = ({
                   )}
               </div>
             )}
-          </>
+          </div>
         ))}
 
         {showFinalMessage && (
