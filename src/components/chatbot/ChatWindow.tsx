@@ -54,9 +54,7 @@ const ChatWindow = ({
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [chat, setChat] = useState<ChatMessage[]>([]);
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
-  const [countryCode, setCountryCode] = useState<string | null>(
-    countries[0].code
-  );
+  const [countryCode, setCountryCode] = useState<string>("+91");
 
   const [startDate] = useState(new Date());
 
@@ -73,9 +71,9 @@ const ChatWindow = ({
   const chatEndRef = useRef<HTMLDivElement | null>(null);
   // const dateRef = useRef<HTMLInputElement | null>(null);
 
-  const selectCountryCode = (e: ChangeEvent<HTMLSelectElement>) => {
-    setCountryCode(e.target.value);
-  };
+  // const selectCountryCode = (e: ChangeEvent<HTMLSelectElement>) => {
+  //   setCountryCode(e.target.value);
+  // };
 
   // check date validation
   const isValidDate = (dateStr: string) => {
@@ -591,8 +589,8 @@ const ChatWindow = ({
             <div className="w-full flex items-center">
               {messageFlows[currentIndex]?.key === "phone" && (
                 <select
-                  onChange={selectCountryCode}
-                  defaultValue={countries[0].code}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  value={countryCode}
                 >
                   {countries.map((countryCode, idx) => (
                     <option key={idx} value={countryCode.code}>

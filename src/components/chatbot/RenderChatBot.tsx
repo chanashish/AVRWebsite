@@ -16,12 +16,16 @@ const RenderChatBot = () => {
   const thankYouMessage = `Thank you so much for filling up the details, one of our representative will speak to you as soon as possible!`;
 
   const messageFlows = [
-    { key: "name", question: "What's your Name?", type: "text" },
-    { key: "email", question: "What's your Email ?", type: "email" },
-    { key: "phone", question: "What's your Phone Number?", type: "number" },
+    { key: "name", question: "What's your name?", type: "text" },
+    { key: "email", question: "What's your email ?", type: "email" },
+    { key: "phone", question: "What's your phone number?", type: "number" },
     { key: "check-in", question: "Check-in date!", type: "date" },
     { key: "check-out", question: "Check-out date!", type: "date" },
-    { key: "number of guest", question: "Number of guest!", type: "text" },
+    {
+      key: "number of guest",
+      question: "How many guests will be staying?",
+      type: "text",
+    },
   ];
 
   const handleSumbit = async (formData: Record<string, string | string[]>) => {
