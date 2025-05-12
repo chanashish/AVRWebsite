@@ -33,57 +33,62 @@ const ActivitySection: React.FC<{
   activity,
   isReversed,
   decorativeImageUrl = "https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a",
-  sectionClassName = "",
   titleClassName = "",
   descriptionClassName = "",
   imageClassName = "",
 }) => {
-    const content = (
-      <article className="flex flex-col gap-6 items-start  max-md:w-full">
-        <header className="flex gap-4 items-center w-full">
-          <h2 className={`text-3xl leading-10 text-lime-900 ${titleClassName}`}>
-            {activity.title}
-          </h2>
-          <Image src={decorativeImageUrl} alt="" height={10} width={37} />
-        </header>
-        <p
-          className={`text-xl font-light leading-8 text-stone-500 ${descriptionClassName}`}
-        >
-          {activity.description}
-        </p>
-      </article>
-    );
+  const content = (
+    <article className="flex flex-col gap-6 items-start  max-md:w-full">
+      <header className="flex gap-4 items-center w-full">
+        <h2 className={`text-3xl leading-10 text-lime-900 ${titleClassName}`}>
+          {activity.title}
+        </h2>
+        <Image src={decorativeImageUrl} alt="" height={10} width={37} />
+      </header>
+      <p
+        className={`text-xl font-light leading-8 text-stone-500 ${descriptionClassName}`}
+      >
+        {activity.description}
+      </p>
+    </article>
+  );
 
-    const image = (
-      <div className="lg:aspect-[4/3] relative h-[300px] md:h-[488px] max-lg:aspect-[4/3] w-full ">
+  const image = (
+    <div className="relative lg:aspect-[4/3] aspect-[4/2.8] w-full">
       <Image
         src={activity.imageUrl}
         alt={activity.imageAlt || ""}
         fill
-        className={`absolute rounded-[4px] object-cover ${imageClassName}`}
-        />
-        {/* w-[808px] h-[488px]  */}
-        </div>
-    );
+        className={`rounded-[4px] object-cover ${imageClassName}`}
+      />
+      {/* w-[808px] h-[488px]  */}
+    </div>
+  );
 
-    return (
-      <section
-        className={`flex gap-6 items-start w-full max-md:flex-col ${isReversed ? "max-md:flex-[col]" : ""} ${sectionClassName}`}
-      >
-        {isReversed ? (
-          <>
-            {content}
-            {image}
-          </>
-        ) : (
-          <>
-            {image}
-            {content}
-          </>
-        )}
-      </section>
-    );
-  };
+  return (
+    <section>
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className={`${isReversed ? "md:order-2" : ""}`}>{image}</div>
+        <div className={`${isReversed ? "order-1" : ""}`}>{content}</div>
+      </div>
+    </section>
+    // <section
+    //   className={`flex gap-6 items-start w-full max-md:flex-col ${isReversed ? "max-md:flex-[col]" : ""} ${sectionClassName}`}
+    // >
+    //   {isReversed ? (
+    //     <>
+    //       {content}
+    //       {image}
+    //     </>
+    //   ) : (
+    //     <>
+    //       {image}
+    //       {content}
+    //     </>
+    //   )}
+    // </section>
+  );
+};
 
 export const ActivitiesDisplay: React.FC<ActivitiesDisplayProps> = ({
   activities,

@@ -1,5 +1,6 @@
 "use client";
 import { Container } from "@/components";
+import FullscreenImagePopup1 from "@/components/FullscreenImagePopup1";
 import { imageUrl } from "@/data/links";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,6 +76,11 @@ const RoomsAndSuitesCombined: React.FC = () => {
   const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const [openImgPopup, setOpenImgPopup] = useState(false);
+  const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [roomName, setRoomName] = useState<string>("");
+
   useEffect(() => {
     setCurrentImageIndex(0);
   }, [currentRoomIndex]);
@@ -109,7 +115,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
 
   return (
     <div className="bg-[#F9F9F1]">
-      <div className="flex gap-4 items-center justify-center py-10">
+      <div className="flex md:flex-row flex-col gap-4 items-center justify-center py-10">
         <Image
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
           alt=""
@@ -134,6 +140,12 @@ const RoomsAndSuitesCombined: React.FC = () => {
               src={currentRoom.images[currentImageIndex]}
               alt={`${currentRoom.title} - Image ${currentImageIndex + 1}`}
               className="object-cover size-full"
+              onClick={() => {
+                setOpenImgPopup(true);
+                setCurrentImage(currentRoom.images);
+                setCurrentIndex(currentImageIndex);
+                setRoomName(currentRoom.title);
+              }}
               fill
             />
             <div className="flex absolute top-2/4 justify-between items-center -translate-y-2/4 inset-x-[108px] max-md:inset-x-10 max-sm:inset-x-5">
@@ -201,6 +213,14 @@ const RoomsAndSuitesCombined: React.FC = () => {
           </Container>
         </div>
       </main>
+
+      <FullscreenImagePopup1
+        openImgPopup={openImgPopup}
+        setOpenImgPopup={setOpenImgPopup}
+        image={currentImage}
+        currentIndex={currentIndex}
+        roomName={roomName}
+      />
     </div>
   );
 };

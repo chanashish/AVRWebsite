@@ -39,6 +39,7 @@ export default function Home() {
       />
       {/* //here */}
       <RoomsAndSuitesCombined />
+
       <div className="mt-10">
         <WellnessSliderSection
           title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"

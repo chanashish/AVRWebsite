@@ -68,7 +68,9 @@ const page = () => {
         ]}
         name="Adventure Activities"
       />
+
       <RatingsDisplay />
+
       <DescriptionShow
         title={{
           firstLine: "New Experiences:",
@@ -82,7 +84,9 @@ const page = () => {
           phoneNumber: "+91 93172 07373",
         }}
       />
+
       <ActivitiesDisplay activities={activitiesData} />
+
       <div className="bg-[#F9F9F1]">
         <BookingForm />
       </div>
