@@ -4,7 +4,7 @@ import * as React from "react";
 
 const RatingsDisplay: React.FC = () => {
   return (
-    <section className="flex flex-col gap-[32px] items-center mx-auto my-[120px] w-full max-w-[994px]">
+    <section className="flex flex-col gap-[32px] items-center mx-auto md:my-[120px] my-8 w-full max-w-[994px]">
       <h2 className="text-2xl leading-8 text-center text-lime-900">
         Reviews and Ratings Across Platforms
       </h2>
