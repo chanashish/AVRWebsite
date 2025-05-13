@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
 import { OutLineBtnNext, OutLineBtnPrev } from "@/icons/icons";
@@ -12,10 +12,12 @@ const FullscreenImagePopup1 = ({
   setOpenImgPopup,
   image,
   currentIndex,
-  roomName=""
+  roomName = "",
 }) => {
   const [imgIndex, setImgIndex] = useState(currentIndex);
   const [zoom, setZoom] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
   const handleNext = useCallback(() => {
     if (imgIndex < image.length - 1) {
@@ -69,6 +71,27 @@ const FullscreenImagePopup1 = ({
     [setOpenImgPopup, handleNext, handlePrev]
   );
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 50) {
+      // Swipe Left
+      handleNext();
+    } else if (touchEndX - touchStartX > 50) {
+      // Swipe Right
+      handlePrev();
+    }
+    // Reset
+    setTouchStartX(0);
+    setTouchEndX(0);
+  };
+
   useEffect(() => {
     if (openImgPopup) {
       document.addEventListener("keydown", handleKeydown);
@@ -114,6 +137,9 @@ const FullscreenImagePopup1 = ({
       onKeyDown={(e) => {
         if (e.key === "Escape") setOpenImgPopup(false);
       }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <div className="w-full flex items-center justify-between md:px-4 px-0">
         <span className=" bg-clr4/30 p-2  text-sm text-white poppins">
@@ -188,9 +214,11 @@ const FullscreenImagePopup1 = ({
           >
             <OutLineBtnNext />
           </button>
-          {roomName &&<span className=" bg-clr4/30 p-2  text-[18px] text-white lato font-normal image-title-center">
-            {roomName}
-          </span>}
+          {roomName && (
+            <span className=" bg-clr4/30 p-2  text-[18px] text-white lato font-normal image-title-center">
+              {roomName}
+            </span>
+          )}
         </div>
       </div>
     </div>
