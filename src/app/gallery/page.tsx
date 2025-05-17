@@ -3,13 +3,14 @@ import FullScreenCarousel from "@/components/FullScreenCarousel";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import React from "react";
 import GalleryImageComponent from "./GalleryImageComponent";
+import { imageUrl } from '../../data/links';
 
 const page = () => {
   return (
     <div>
       <FullScreenCarousel
         data={[
-          "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/avr/carousel/gallery.webp",
+          imageUrl+"IMG_8174.webp",
         ]}
         name="Gallery"
       />

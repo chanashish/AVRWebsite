@@ -11,9 +11,9 @@ const page = () => {
     <div>
       <FullScreenCarousel
         data={[
-          imageUrl + "carousel/roomssuites.webp",
-          imageUrl + "carousel/roomssuites.webp",
-          imageUrl + "carousel/roomssuites.webp",
+          imageUrl + "Deluxe/003.webp",
+          imageUrl + "superDeluxe/001.webp",
+          imageUrl + "luxurySuite/001.webp",
         ]}
         name="Rooms & Suites"
       />
@@ -56,14 +56,13 @@ const page = () => {
 
           ]}
           services={[
-            { imageUrl: imageUrl + "rooms/deluxe/001.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/002.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/003.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/004.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/005.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/006.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/007.webp" },
-            { imageUrl: imageUrl + "rooms/deluxe/008.webp" },
+            { imageUrl: imageUrl + "Deluxe/003.webp" },
+            { imageUrl: imageUrl + "Deluxe/004.webp" },
+            { imageUrl: imageUrl + "Deluxe/001.webp" },
+            { imageUrl: imageUrl + "Deluxe/005.webp" },
+            { imageUrl: imageUrl + "Deluxe/006.webp" },
+            { imageUrl: imageUrl + "Deluxe/007.webp" },
+            { imageUrl: imageUrl + "Deluxe/008.webp" },
           ]}
         />
         <WellnessSliderSection
@@ -98,16 +97,16 @@ const page = () => {
 
           ]}
           services={[
-            { imageUrl: imageUrl + "rooms/sdeluxe/001.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/002.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/003.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/004.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/005.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/006.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/007.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/008.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/009.webp" },
-            { imageUrl: imageUrl + "rooms/sdeluxe/010.webp" },
+            { imageUrl: imageUrl + "superDeluxe/003.webp" },
+            { imageUrl: imageUrl + "superDeluxe/005.webp" },
+            { imageUrl: imageUrl + "superDeluxe/001.webp" },
+            { imageUrl: imageUrl + "superDeluxe/002.webp" },
+            { imageUrl: imageUrl + "superDeluxe/004.webp" },
+            { imageUrl: imageUrl + "superDeluxe/006.webp" },
+            { imageUrl: imageUrl + "superDeluxe/007.webp" },
+            { imageUrl: imageUrl + "superDeluxe/008.webp" },
+            { imageUrl: imageUrl + "superDeluxe/009.webp" },
+            { imageUrl: imageUrl + "superDeluxe/010.webp" },
           ]}
           reverseLayout={true}
         />
@@ -142,18 +141,18 @@ const page = () => {
             },
           ]}
           services={[
-            { imageUrl: imageUrl + "rooms/luxury/001.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/002.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/003.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/004.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/005.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/006.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/007.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/008.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/009.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/010.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/011.webp" },
-            { imageUrl: imageUrl + "rooms/luxury/012.webp" },
+            { imageUrl: imageUrl + "luxurySuite/005.webp" },
+            { imageUrl: imageUrl + "luxurySuite/003.webp" },
+            { imageUrl: imageUrl + "luxurySuite/002.webp" },
+            { imageUrl: imageUrl + "luxurySuite/001.webp" },
+            { imageUrl: imageUrl + "luxurySuite/007.webp" },
+            { imageUrl: imageUrl + "luxurySuite/009.webp" },
+            { imageUrl: imageUrl + "luxurySuite/008.webp" },
+            { imageUrl: imageUrl + "luxurySuite/006.webp" },
+            { imageUrl: imageUrl + "luxurySuite/004.webp" },
+            { imageUrl: imageUrl + "luxurySuite/010.webp" },
+            { imageUrl: imageUrl + "luxurySuite/011.webp" },
+            { imageUrl: imageUrl + "luxurySuite/012.webp" },
           ]}
         />
       </div>

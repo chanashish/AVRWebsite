@@ -79,7 +79,7 @@ const page = () => {
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl + "carousel/destination.webp"]} name="Destination Wedding" />
+      <FullScreenCarousel data={[imageUrl + "destination.webp"]} name="Destination Wedding" />
       <RatingsDisplay />
       <DescriptionShow
         title={{

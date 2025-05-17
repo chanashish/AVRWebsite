@@ -178,7 +178,7 @@ const FullscreenImagePopup1 = ({
         </button> */}
         <div className="relative max-width">
           <div
-            className={`w-full max-w-6xl mx-auto md:-mt-14  aspect-[4/2.2] relative image-container cursor-pointer  transition-all duration-300 ease-in-out`}
+            className={`w-full max-w-6xl mx-auto md:-mt-14  aspect-[4/2.2] md:aspect-[4/2] relative image-container cursor-pointer  transition-all duration-300 ease-in-out`}
             onClick={(e) => e.stopPropagation()}
           >
             {openImgPopup && (

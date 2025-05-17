@@ -62,7 +62,7 @@ const page = () => {
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl+"carousel/spiritualRetreat.webp"]} name='Spiritual Retreat' />
+      <FullScreenCarousel data={[imageUrl+"273A8478.webp", imageUrl+"IMG_8234.webp"]} name='Spiritual Retreat' />
       <RatingsDisplay />
       <div className='bg-[#F9F9F1]'>
         <DescriptionShow
@@ -132,7 +132,7 @@ const page = () => {
             },
             {
               imageUrl:
-                imageUrl+"spiritual/relax4.webp",
+                imageUrl+"273A8482.webp",
               title: "Yoga & Meditation",
               description: "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins."
             },
@@ -144,7 +144,7 @@ const page = () => {
             },
             {
               imageUrl:
-                imageUrl+"home/relax3.jpg",
+                imageUrl+"relax3.webp",
               title: "Naturopathy",
               description: "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy."
             },

@@ -10,9 +10,9 @@ const rooms = [
   {
     id: 1,
     images: [
-      imageUrl + "rooms/luxury/001.webp",
-      imageUrl + "rooms/luxury/002.webp",
-      imageUrl + "rooms/luxury/003.webp",
+      imageUrl + "luxurySuite/005.webp",
+      imageUrl + "luxurySuite/003.webp",
+      imageUrl + "luxurySuite/002.webp",
     ],
     title: "Luxury Suite Room",
     description:
@@ -21,9 +21,9 @@ const rooms = [
   {
     id: 2,
     images: [
-      imageUrl + "rooms/deluxe/001.webp",
-      imageUrl + "rooms/deluxe/002.webp",
-      imageUrl + "rooms/deluxe/003.webp",
+      imageUrl + "Deluxe/003.webp",
+      imageUrl + "Deluxe/004.webp",
+      imageUrl + "Deluxe/001.webp",
     ],
     title: "Deluxe Room",
     description:
@@ -32,9 +32,9 @@ const rooms = [
   {
     id: 3,
     images: [
-      imageUrl + "rooms/sdeluxe/001.webp",
-      imageUrl + "rooms/sdeluxe/002.webp",
-      imageUrl + "rooms/sdeluxe/003.webp",
+      imageUrl + "superDeluxe/003.webp",
+      imageUrl + "superDeluxe/005.webp",
+      imageUrl + "superDeluxe/001.webp",
     ],
     title: "Super Deluxe Room",
     description:

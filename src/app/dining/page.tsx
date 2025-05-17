@@ -9,7 +9,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <FullScreenCarousel name="Culinary Experience" data={[imageUrl + "carousel/carousel1.webp"]} />
+      <FullScreenCarousel name="Culinary Experience" data={[imageUrl + "IMG_8160.webp"]} />
       <RatingsDisplay />
       <DescriptionShow
         title={{
@@ -32,7 +32,7 @@ const page = () => {
         subtitle="Govind Prasadam Pure Veg Restaurant"
         services={[
           {
-            imageUrl: imageUrl + "restaurant/IMG_8203.webp",
+            imageUrl: imageUrl + "IMG_8203.webp",
           },
           {
             imageUrl: imageUrl + "IMG_8160.webp",
@@ -50,17 +50,17 @@ const page = () => {
         subtitle="Open Air Cafe"
         services={[
           {
-            imageUrl: imageUrl + "exterior/IMG_8354.webp",
+            imageUrl: imageUrl + "IMG_8354.webp",
           },
 
           {
-            imageUrl: imageUrl + "exterior/IMG_8377.webp",
+            imageUrl: imageUrl + "IMG_8377.webp",
           },
           {
-            imageUrl: imageUrl + "exterior/IMG_8370.webp",
+            imageUrl: imageUrl + "IMG_8370.webp",
           },
           {
-            imageUrl: imageUrl + "exterior/IMG_8380.webp",
+            imageUrl: imageUrl + "IMG_8380.webp",
           },
         ]}
         reverseLayout={true}

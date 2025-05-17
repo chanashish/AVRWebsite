@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <div className="mx-auto bg-[#262A10] z-[100]">
+      <div className="mx-auto bg-[#262A10] ">
         <div className="flex max-lg:flex-col justify-between w-full py-[80px] px-[108px] max-md:px-6 max-md:py-10 text-center gap-[24px] align-middle">
           <div className="flex-1 text-center align-middle flex items-center flex-col gap-5">
             <Image src={"/footerLogo.png"} alt="Anand Vardhan Resorts" height={136} width={136} />

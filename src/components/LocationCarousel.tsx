@@ -17,6 +17,7 @@ interface Props {
 }
 
 const LocationCarousel: React.FC<Props> = ({ locations }) => {
+  const cardData = locations.length > 4 ? locations : [...locations, ...locations];
   return (
     <section className="flex flex-col gap-14 items-center px-0 py-32 mx-auto max-w-none bg-[#F9F9F1] max-sm:py-16">
       <h1 className="text-4xl leading-10 text-center text-lime-900 max-md:text-3xl max-sm:text-3xl playfair">
@@ -31,25 +32,23 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
             nextEl: ".swiper-button-next-custom",
             prevEl: ".swiper-button-prev-custom",
           }}
-          loop={locations.length > 3}
-          centeredSlides={locations.length > 2}
+          loop={true}
           spaceBetween={30}
           slidesPerView={1.5}
           breakpoints={{
             0: {
               slidesPerView: 1,
-              centeredSlides: false,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: locations.length > 1 ? 1.5 : 1,
-              centeredSlides: locations.length > 2,
+              slidesPerView: 2,
+              centeredSlides: true,
               spaceBetween: 30,
             },
           }}
           className="!overflow-visible"
         >
-          {locations.map((location) => (
+          {cardData.map((location) => (
             <SwiperSlide key={location.title}>
               <article className="flex flex-col gap-6 items-center w-full">
                 <div className="w-full aspect-[3/2] relative bg-[#F9F9F1] rounded overflow-visible">
@@ -57,7 +56,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                     src={location.image}
                     alt={location.title}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 700px"
                   />
 
