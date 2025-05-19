@@ -1,2 +1,3 @@
 import RatingCard from "./RatingCard";
-export { RatingCard };
+import ToDoSliderCard from './ToDoSliderCard';
+export { RatingCard, ToDoSliderCard };

@@ -158,24 +158,14 @@ const FullscreenImagePopup1 = ({
               )}
             </span>
           </button>
-          {/* <button onClick={() => setZoom(true)}>
-            <AiOutlineZoomIn className="w-8 h-8 text-base flex justify-center items-center   font-bold text-white" />
-          </button>
-          <button onClick={() => setZoom(false)}>
-            <AiOutlineZoomOut className="w-8 h-8 text-base flex justify-center items-center   font-bold text-white" />
-          </button> */}
+         
           <button onClick={() => setOpenImgPopup(false)}>
             <IoCloseSharp className=" w-8 h-8 text-base flex justify-center items-center  font-bold text-white" />
           </button>
         </div>
       </div>
       <div className="relative w-full h-full flex items-center justify-center">
-        {/* <button
-          onClick={() => setOpenImgPopup(false)}
-          className="absolute z-50 top-[0.6rem] right-[1.5rem] lg:top-6 lg:right-36 w-8 h-8 lg:w-10 lg:h-10 lg:text-2xl flex justify-center items-center  rounded-full bg-gray-600 hover:bg-primary/90 font-bold text-white"
-        >
-          <IoCloseSharp />
-        </button> */}
+       
         <div className="relative max-width">
           <div
             className={`w-full max-w-6xl mx-auto md:-mt-14  aspect-[4/2.2] md:aspect-[4/2] relative image-container cursor-pointer  transition-all duration-300 ease-in-out`}
@@ -191,16 +181,7 @@ const FullscreenImagePopup1 = ({
               />
             )}
 
-            {/* <div className="absolute top-14 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button
-                className="w-full h-full cursor-pointer flex items-end justify-end bg-clr7/30"
-                onClick={toggleFullscreen}
-              >
-                <span className="p-7 bg-tertiary/70 w-max rounded-md text-slate-50">
-                  {isFullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
-                </span>
-              </button>
-            </div> */}
+           
           </div>
           <button
             onClick={handlePrev}

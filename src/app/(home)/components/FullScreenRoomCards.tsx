@@ -1,10 +1,13 @@
 "use client";
-import { Container } from "@/components";
+import { Container, Section } from "@/components";
 import FullscreenImagePopup1 from "@/components/FullscreenImagePopup1";
+import SwiperCarousel from "@/components/SwiperCarousel";
 import { imageUrl } from "@/data/links";
+import { BtnNext, BtnPrev, TitleIcon } from "@/icons/icons";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { EffectFade, Navigation } from "swiper/modules";
 
 const rooms = [
   {
@@ -42,177 +45,111 @@ const rooms = [
   },
 ];
 
-const ArrowIcon: React.FC<{
-  direction: "left" | "right";
-  colour: "white" | "black";
-  onClick: () => void;
-}> = ({ direction, onClick, colour }) => {
-  const path =
-    direction === "left"
-      ? "M26.6666 35.1663L28.0833 33.7497L14.3333 19.9997L28.0833 6.24967L26.6666 4.83301L11.4999 19.9997L26.6666 35.1663Z"
-      : "M13.3332 35.1663L11.9165 33.7497L25.6665 19.9997L11.9165 6.24967L13.3332 4.83301L28.4998 19.9997L13.3332 35.1663Z";
-
-  return (
-    <button
-      onClick={onClick}
-      aria-label={`${direction} arrow`}
-      className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 rounded-full"
-    >
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="cursor-pointer"
-      >
-        <path d={path} fill={colour} />
-      </svg>
-    </button>
-  );
-};
-
 const RoomsAndSuitesCombined: React.FC = () => {
-  const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const [openImgPopup, setOpenImgPopup] = useState(false);
   const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [roomName, setRoomName] = useState<string>("");
 
-  useEffect(() => {
-    setCurrentImageIndex(0);
-  }, [currentRoomIndex]);
-
-  const handleNextImage = () => {
-    const currentRoom = rooms[currentRoomIndex];
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === currentRoom.images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePreviousImage = () => {
-    const currentRoom = rooms[currentRoomIndex];
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? currentRoom.images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextRoom = () => {
-    setCurrentRoomIndex((prevIndex) =>
-      prevIndex === rooms.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePreviousRoom = () => {
-    setCurrentRoomIndex((prevIndex) =>
-      prevIndex === 0 ? rooms.length - 1 : prevIndex - 1
-    );
-  };
-
-  const currentRoom = rooms[currentRoomIndex];
-
   return (
-    <div className="bg-[#F9F9F1]">
-      <div className="flex md:flex-row flex-col gap-4 items-center justify-center py-10">
-        <Image
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
-          alt=""
-          height={10}
-          width={37}
-        />
+    <Section className="bg-[#F9F9F1]">
+      <div className="flex md:flex-row flex-col gap-4 items-center justify-center pb-10">
+        <TitleIcon />
         <h2 className="text-[40px] font-bold text-[#2F4B26] max-md:text-[32px] playfair">
           Rooms & Suites
         </h2>
-        <Image
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
-          alt=""
-          height={10}
-          width={37}
-        />
+        <TitleIcon />
       </div>
 
-      <main className="flex flex-col gap-14 items-center mx-auto my-0 w-full max-w-[1600px]">
-        <div className="flex flex-col gap-8 items-center w-full">
-          <section className="relative w-full h-[824px] max-sm:h-[400px]">
-            <Image
-              src={currentRoom.images[currentImageIndex]}
-              alt={`${currentRoom.title} - Image ${currentImageIndex + 1}`}
-              className="object-cover size-full"
-              onClick={() => {
-                setOpenImgPopup(true);
-                setCurrentImage(currentRoom.images);
-                setCurrentIndex(currentImageIndex);
-                setRoomName(currentRoom.title);
-              }}
-              fill
-            />
-            <div className="flex absolute top-2/4 justify-between items-center -translate-y-2/4 inset-x-[108px] max-md:inset-x-10 max-sm:inset-x-5">
-              <ArrowIcon
-                direction="left"
-                colour="white"
-                onClick={handlePreviousImage}
-              />
-              <ArrowIcon
-                direction="right"
-                colour="white"
-                onClick={handleNextImage}
-              />
-            </div>
-          </section>
-
-          <Container>
-            <div className="flex flex-col gap-6 px-5 py-5 max-md:items-center max-md:text-center">
-              <div className="flex max-md:flex-col lg:items-center lg:justify-between">
-                <h2 className="text-[32px] playfair font-normal leading-10 text-[#2F4B26] max-sm:text-2xl max-sm:leading-8">
-                  {currentRoom.title}
-                </h2>
-                <div className="flex gap-6 max-md:mx-auto max-md:mt-4">
-                  <ArrowIcon
-                    direction="left"
-                    colour="black"
-                    onClick={handlePreviousRoom}
-                  />
-                  <ArrowIcon
-                    direction="right"
-                    colour="black"
-                    onClick={handleNextRoom}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-8 max-w-[908px] max-md:items-center">
-                <p className="text-xl font-light leading-7 text-[#686767] max-sm:text-base max-sm:leading-6">
-                  {currentRoom.description}
-                </p>
-                <Link
-                  className="flex gap-2 items-center cursor-pointer group"
-                  aria-label="Learn more about the room"
-                  href={"/rooms-suites/"}
-                >
-                  <span className="text-lg leading-6 text-[#2F4B26] max-sm:text-base">
-                    Know More
-                  </span>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-transform group-hover:translate-x-1"
+      <div className="max-screen relative">
+        <SwiperCarousel
+          data={rooms}
+          modules={[Navigation, EffectFade]}
+          navigation={{
+            nextEl: ".room-next",
+            prevEl: ".room-prev",
+          }}
+          effect={"fade"}
+          speed={1000}
+          loop={true}
+          className="w-full"
+          spaceBetween={0}
+          slidesPerView={1}
+          renderSlide={(item, index) => (
+            <div className="w-full flex flex-col gap-4 md:gap-8 relative" key={index}>
+              {/* imageSlider */}
+              <SwiperCarousel
+                data={item.images}
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: ".room-img-next",
+                  prevEl: ".room-img-prev",
+                }}
+                loop={true}
+                className="w-full"
+                spaceBetween={0}
+                slidesPerView={1}
+                renderSlide={(src, index) => (
+                  <div
+                    className="w-full md:aspect-[4/1.8] aspect-[3/2.5] relative cursor-pointer"
+                    key={index}
                   >
-                    <path
-                      d="M9.16319 19.2L8.5 18.5368L14.9368 12.1L8.5 5.66319L9.16319 5L16.2632 12.1L9.16319 19.2Z"
-                      fill="#363636"
+                    <Image
+                      src={src}
+                      alt={"room image"}
+                      onClick={() => {
+                        setOpenImgPopup(true);
+                        setCurrentImage(item.images);
+                        setCurrentIndex(index ? index : 0);
+                        setRoomName(item.title);
+                      }}
+                      fill
+                      className="object-cover"
                     />
-                  </svg>
-                </Link>
-                {/* New room navigation buttons */}
-              </div>
+                  </div>
+                )}
+              />
+
+                <button className="room-img-prev absolute md:top-1/3 top-1/4 lg:left-24 left-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-50 ">
+                  <BtnPrev className="w-8 aspect-square " />
+                </button>
+                <button className="room-img-next absolute md:top-1/3 top-1/4 lg:right-24 right-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-10">
+                  <BtnNext className="w-8 aspect-square " />
+                </button>
+              {/* imageSlider */}
+              <Container className="bg-[#F9F9F1]">
+                <div className="flex flex-col md:gap-4 gap-3 w-full md:aspect-[4/.5] aspect-[4/2.5]">
+                  <h3 className="md:text-[2rem]/[2rem] text-xl text-[#2F4B26] playfair">
+                    {item.title}
+                  </h3>
+                  <p className="md:text-xl text-base font-light text-[#686767] roboto max-w-6xl">
+                    {item.description}
+                  </p>
+                  <Link
+                    href={"/rooms-and-suites"}
+                    className="text-[#2F4B26] text-lg lato flex items-center gap-1 w-fit pe-2 py-1 hover:text-[#363636] transition-all duration-300"
+                  >
+                    Know More{" "}
+                    <span className="">
+                      <BtnNext className="w-4 aspect-square" />
+                    </span>
+                  </Link>
+                </div>
+              </Container>
             </div>
-          </Container>
+          )}
+        />
+        <div className="flex justify-between mt-4 absolute md:bottom-28 bottom-[9.4rem]  md:right-20 right-0 z-10 ">
+          <button className="room-prev p-4 text-[#363636]">
+            <BtnPrev className="md:w-8 w-6 aspect-square" />
+            <span className="sr-only">Previous</span>
+          </button>
+          <button className="room-next p-4 text-[#363636]">
+            <BtnNext className="md:w-8 w-6 aspect-square" />
+            <span className="sr-only">Next</span>
+          </button>
         </div>
-      </main>
+      </div>
 
       <FullscreenImagePopup1
         openImgPopup={openImgPopup}
@@ -221,7 +158,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
         currentIndex={currentIndex}
         roomName={roomName}
       />
-    </div>
+    </Section>
   );
 };
 

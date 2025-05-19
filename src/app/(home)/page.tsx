@@ -4,10 +4,12 @@ import TestimonialSection from "./components/Testimonials/TestimonialSection";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import BookingForm from "@/components/BookingForm";
 import DescriptionShow from "@/components/DescriptionShow";
-import WellnessSliderSection from "@/components/WellnessSlider";
+// import WellnessSliderSection from "@/components/WellnessSlider";
 import RoomsAndSuitesCombined from "./components/FullScreenRoomCards";
 import FullSlideContentCarousel from "@/components/ImageCarouselCard";
 import { imageUrl } from "@/data/links";
+import { todoData } from "@/data/pageDate";
+import TodoSection from "@/components/SectionComponents/TodoSection";
 
 export default function Home() {
   const slides = [
@@ -39,7 +41,7 @@ export default function Home() {
       />
       {/* //here */}
       <RoomsAndSuitesCombined />
-
+{/* 
       <div className="mt-10">
         <WellnessSliderSection
           title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
@@ -66,9 +68,9 @@ export default function Home() {
             },
           ]}
         />
-      </div>
+      </div> */}
 
-      <WellnessSliderSection
+      {/* <WellnessSliderSection
         subtitle="Explore Anand Vardhan Resort"
         href="/things-to-do/"
         services={[
@@ -92,8 +94,10 @@ export default function Home() {
           },
         ]}
         reverseLayout={true}
-      />
-
+      /> */}
+      {todoData.map((item, index) => (
+        <TodoSection key={index} {...item} index={index} textEnd={index % 2 !== 0} />
+      ))}
       <FullSlideContentCarousel data={slides} />
 
       <TestimonialSection />

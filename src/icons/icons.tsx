@@ -86,7 +86,6 @@ export const FillFacebook = () => (
       </clipPath>
     </defs>
   </svg>
-
 );
 
 export const FillInstagram = () => (
@@ -104,7 +103,6 @@ export const FillInstagram = () => (
       fill="currentColor"
     />
   </svg>
-
 );
 
 export const FillLinkedin = () => (
@@ -142,8 +140,7 @@ export const FillLinkedin = () => (
       </clipPath>
     </defs>
   </svg>
-
-)
+);
 
 export const FillPrevButton = () => (
   <svg
@@ -196,9 +193,7 @@ export const RatingIcon = () => (
       fill="#F2B203"
     />
   </svg>
-
-)
-
+);
 
 export const OutLineLocation = () => (
   <svg
@@ -286,7 +281,6 @@ export const Divider = () => (
   </svg>
 );
 
-
 export const Outlinecall = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -330,6 +324,69 @@ export const MenuBurger = () => (
     <path
       d="M6.66406 28.7829V27.1163H33.3307V28.7829H6.66406ZM6.66406 20.8342V19.1675H33.3307V20.8342H6.66406ZM6.66406 12.8854V11.2188H33.3307V12.8854H6.66406Z"
       fill="#2A2A2A"
+    />
+  </svg>
+);
+
+export const TitleIcon = ({ ...props }) => (
+  <svg
+    width={37}
+    height={10}
+    viewBox="0 0 37 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    {...props}
+  >
+    <path fill="url(#pattern0_595_670)" d="M0 0H37V10H0z" />
+    <defs>
+      <pattern
+        id="pattern0_595_670"
+        patternContentUnits="objectBoundingBox"
+        width={1}
+        height={1}
+      >
+        <use xlinkHref="#image0_595_670" transform="scale(.02703 .1)" />
+      </pattern>
+      <image
+        id="image0_595_670"
+        width={37}
+        height={10}
+        preserveAspectRatio="none"
+        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAKCAMAAAAEumfSAAAAflBMVEUAAACqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFOqhFNOvrazAAAAKXRSTlMACfjFHOLZk42Id0o9EwTpvKCYf0Mr8dPLZ2I2MSUP69G1sKtxgFtaUtMcJUIAAAC/SURBVBjTXZDXAoMgDEURUKZ71NXh6Mj//2CpgqPnBZLc3ATQjub1HceE6wid8FS43YtB9iEtcgLg5/SoyoA4fVq7hqu4A570rpKAfwd9JjE8Utm7lpcxfDSeDSMYTU6wrtRvFphRorSVPsVQZcWyoQoo8pLZVkrhA5DmtkahvABUCeMDMxkOHnJEasKAU+02bHl28Rf7Cgp0IJyNRSCvNvzU63MDSNCZLouNkLVKNWNuB9H2hv6JOkFi7JPt3754iQzdLMfZzQAAAABJRU5ErkJggg=="
+      />
+    </defs>
+  </svg>
+);
+
+export const BtnNext = ({ ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M13.333 35.166l-1.417-1.416L25.666 20 11.916 6.25l1.417-1.417L28.5 20 13.333 35.166z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const BtnPrev = ({ ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M26.667 35.166l1.416-1.416L14.334 20l13.75-13.75-1.416-1.417L11.5 20l15.167 15.166z"
+      fill="currentColor"
     />
   </svg>
 );
