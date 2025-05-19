@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Nunito } from "next/font/google";
 import Script from "next/script";
 import "./globals.scss";
 import { Call, Footer, Navbar, Whatsapp } from "@/components";
 import PureVegBanner from "./(home)/components/PureVegBanner";
 import RenderChatBot from "@/components/chatbot/RenderChatBot";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Anand Vardhan Resort",
@@ -40,7 +29,7 @@ export default function RootLayout({
         </Script>
         {/* End Google Tag Manager */}
       </head>
-      <body className={`${geistSans.variable} ${nunito.variable}`}>
+      <body className={``} suppressHydrationWarning={true}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

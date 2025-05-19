@@ -1,12 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 .roboto {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -64,6 +63,21 @@
 }
 
 @layer utilities {
+  .roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  .lato {
+    font-family: "Lato", serif;
+    font-optical-sizing: auto;
+  }
+
+  .playfair {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -167,7 +181,6 @@
 }
 
 .our_features_swiper {
-
   .pagination,
   .pagination_1,
   .pagination_2,
@@ -315,7 +328,6 @@
   }
 }
 
-
 .font-family-head {
   font-family: "Playfair Display";
 }
@@ -329,7 +341,7 @@
 }
 
 .bg-yellow-cards {
-  background: #F9F9F1 !important
+  background: #f9f9f1 !important;
 }
 
 .we-offer-slider .swiper-slide:not(.swiper-slide-active) {
@@ -354,8 +366,9 @@
   border-color: rgba(178, 178, 178, 1) !important;
 }
 
-.image-title-center{
+.image-title-center {
   position: absolute !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
+
