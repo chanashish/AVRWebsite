@@ -51,3 +51,55 @@ export const todoData = [
     ],
   },
 ];
+
+export const wellnessData = [
+  {
+    title: "ANAND VARDHAN RESORT X RISHIBHUMI BRINGS",
+    subTitle: "Relax & Rejuvenation",
+    href: "/spiritual-retreat/",
+    cardData: [
+      {
+        src: imageUrl + "spiritual/relax1.webp",
+        title: "Physiotherapy",
+        description:
+          "At AVR Physiotherapy, healing isn't just a process – it's a journey. With personalized care and expert hands, we help you reclaim strength, restore confidence, and embrace life’s every move again.",
+      },
+      {
+        src: imageUrl + "spiritual/relax2.webp",
+        title: "Acupressure",
+        description:
+          "Acupuncture is like a reset button for your body and mind. Our team of experts works towards releasing tension, ease pain, and bring you back to a place of pure relaxation and vitality.",
+      },
+      {
+        src: imageUrl + "spiritual/relax3.webp",
+        title: "Guided Meditation",
+        description:
+          "Guided meditation takes you on a peaceful journey within, where stillness and clarity await. Let our soothing guidance help you quiet the noise, release your worries, and reconnect with your inner calm.",
+      },
+      {
+        src: imageUrl + "273A8482.webp",
+        title: "Yoga & Meditation",
+        description:
+          "Take a break from the chaos and find your center with Yoga and Meditation at Anand Vardhan Resorts. Breathe, relax, and let go – this is where your journey to peace begins.",
+      },
+      {
+        src: imageUrl + "spiritual/relax5.webp",
+        title: "Panchkarma",
+        description:
+          "Ready to hit the reset button? Experience Panchkarma, a rejuvenating detox that clears your mind and body. At Anand Vardhan Resorts, we’ll help you feel refreshed, inside and out.",
+      },
+      {
+        src: imageUrl + "relax3.webp",
+        title: "Naturopathy",
+        description:
+          "Feel the natural healing energy at Anand Vardhan Resorts with our Naturopathy treatments. Reconnect with the earth’s simple, yet powerful remedies to restore your balance and energy.",
+      },
+      {
+        src: imageUrl + "spiritual/relax7.webp",
+        title: "Shirodhara",
+        description:
+          "At AVR, Shirodhara is more than a treatment – it’s a soulful escape. Let the gentle stream of warm oil soothe your mind, melt away stress, and bring you a sense of deep peace and balance.",
+      },
+    ],
+  },
+];

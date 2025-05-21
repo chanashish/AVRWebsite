@@ -11,7 +11,7 @@ interface PolicyHeadingProps {
 const PolicyHeading: React.FC<PolicyHeadingProps> = ({ heading, description1, description2, className }) => {
     return (
         <SectionWithContainer sectionClassName={className + " bg-[#F9F9F1]"} containerClassName='flex flex-col gap-5'>
-            <h1 className='playfair text-[56px] font-medium text-[#2F4B26] underline'>{heading}</h1>
+            <h1 className='playfair md:text-[56px] text-2xl font-medium text-[#2F4B26] underline'>{heading}</h1>
             <div>
                 {description1 && (
                     <p className='roboto font-light text-[20px]'>

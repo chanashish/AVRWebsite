@@ -1,6 +1,7 @@
 import { SectionWithContainer } from "@/components";
 import { imageUrl } from "@/data/links";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type PackageType = {
@@ -72,9 +73,9 @@ const WellnessPackages: React.FC = () => {
           <Card key={item.id} {...item} />
         ))}
       </div>
-      <p className="text-center hover:underline cursor-pointer lato font-normal text-[18px]">
+      <Link href={"/contact-us/"} className="text-center hover:underline mx-auto w-fit flex items-center cursor-pointer lato font-normal text-[18px]">
         Contact us {">"}
-      </p>
+      </Link>
     </SectionWithContainer>
   );
 };

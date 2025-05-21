@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
           <div className="">
             <Link
               href="/"
-              className="relative h-104px w-[104px] h-[104px] max-lg:h-[40px] max-lg:w-[40px] aspect-auto block"
+              className="relative h-104px w-[80px] h-[80px] max-lg:h-[40px] max-lg:w-[40px] aspect-auto block"
             >
               <Image
                 src={"/logo.png"}

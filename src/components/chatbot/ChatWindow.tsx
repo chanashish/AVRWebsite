@@ -458,7 +458,7 @@ const ChatWindow = ({
         <p className="text-sm rounded-lg text-[#474747]">{title}</p>
 
         <div
-          className={`max-w-[80%] px-3 py-2 rounded-lg text-lg self-start bg-gray-200 text-gray-800`}
+          className={`max-w-[80%] px-3 py-2 rounded-lg text-sm self-start bg-gray-200 text-gray-800`}
         >
           {messages}
         </div>
@@ -466,7 +466,7 @@ const ChatWindow = ({
         {chat.map((msg, index) => (
           <>
             {msg.sender === "bot" && index !== 0 && (
-              <p className="text-lg rounded-lg text-[#474747]">{title}</p>
+              <p className="text-sm rounded-lg text-[#474747]">{title}</p>
             )}
 
             <div
@@ -480,7 +480,7 @@ const ChatWindow = ({
                     : "#EEEEEE"
                 }`,
               }}
-              className={`max-w-[85%] break-words whitespace-wrap px-3 py-2 rounded-lg text-lg ${
+              className={`max-w-[85%] break-words whitespace-wrap px-3 py-2 rounded-lg text-sm ${
                 msg.sender === "user"
                   ? "self-end bg-gray-100 text-white"
                   : "self-start bg-gray-200 text-gray-800"
@@ -557,7 +557,7 @@ const ChatWindow = ({
         ))}
 
         {showFinalMessage && (
-          <div className="max-w-full px-3 py-2 rounded-lg text-lg self-start bg-gray-200 text-gray-800">
+          <div className="max-w-full px-3 py-2 rounded-lg text-sm self-start bg-gray-200 text-gray-800">
             {`🎉 ${finalMessage}` || "🎉 Thank you for your responses!"}
           </div>
         )}

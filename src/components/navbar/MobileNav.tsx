@@ -12,7 +12,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, setIsOpen }) => {
   if (isOpen)
     return (
       <header
-        className={`fixed top-19 w-full h-screen bg-[#F9F9F1]/100 z-[9999999999999] transform transition-transform duration-300  ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}
+        className={`fixed top-19 w-full h-dvh bg-[#F9F9F1]/100 z-[9999999999999] transform transition-all duration-300 ease-in-out  ${isOpen ? "translate-x-0 " : "-translate-x-full"}`}
       >
         <nav>
           <ul className="flex flex-col gap-4 p-8">
