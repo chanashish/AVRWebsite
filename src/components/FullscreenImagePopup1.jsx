@@ -137,9 +137,6 @@ const FullscreenImagePopup1 = ({
       onKeyDown={(e) => {
         if (e.key === "Escape") setOpenImgPopup(false);
       }}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
     >
       <div className="w-full flex items-center justify-between md:px-4 px-0">
         <span className=" bg-clr4/30 p-2  text-sm text-white poppins">
@@ -158,17 +155,16 @@ const FullscreenImagePopup1 = ({
               )}
             </span>
           </button>
-         
+
           <button onClick={() => setOpenImgPopup(false)}>
             <IoCloseSharp className=" w-8 h-8 text-base flex justify-center items-center  font-bold text-white" />
           </button>
         </div>
       </div>
       <div className="relative w-full h-full flex items-center justify-center">
-       
         <div className="relative max-width">
           <div
-            className={`w-full max-w-6xl mx-auto md:-mt-14  aspect-[4/2.2] md:aspect-[4/2] relative image-container cursor-pointer  transition-all duration-300 ease-in-out`}
+            className={`w-full max-w-6xl mx-auto md:-mt-14  aspect-[4/3.2] md:aspect-[4/2] relative image-container cursor-pointer  transition-all duration-300 ease-in-out`}
             onClick={(e) => e.stopPropagation()}
           >
             {openImgPopup && (
@@ -178,10 +174,11 @@ const FullscreenImagePopup1 = ({
                 fill
                 className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"} ${zoom ? "scale-150" : ""} transition-all duration-300 ease-in-out`}
                 onClick={toggleFullscreen}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
               />
             )}
-
-           
           </div>
           <button
             onClick={handlePrev}
