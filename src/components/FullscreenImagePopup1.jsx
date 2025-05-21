@@ -15,7 +15,6 @@ const FullscreenImagePopup1 = ({
   roomName = "",
 }) => {
   const [imgIndex, setImgIndex] = useState(currentIndex);
-  const [zoom, setZoom] = useState(false);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
@@ -172,7 +171,7 @@ const FullscreenImagePopup1 = ({
                 src={imageSrc ? imageSrc : "/images/placeholder.png"}
                 alt={currentIndex}
                 fill
-                className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"} ${zoom ? "scale-150" : ""} transition-all duration-300 ease-in-out`}
+                className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"}  transition-all duration-300 ease-in-out`}
                 onClick={toggleFullscreen}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
