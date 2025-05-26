@@ -13,9 +13,9 @@ const rooms = [
   {
     id: 1,
     images: [
+      imageUrl + "luxurySuite/002.webp",
       imageUrl + "luxurySuite/005.webp",
       imageUrl + "luxurySuite/003.webp",
-      imageUrl + "luxurySuite/002.webp",
     ],
     title: "Luxury Suite Room",
     description:
@@ -126,7 +126,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
                     {item.description}
                   </p>
                   <Link
-                    href={"/rooms-and-suites"}
+                    href={"/rooms-suites"}
                     className="text-[#2F4B26] text-lg lato flex items-center gap-1 w-fit pe-2 py-1 hover:text-[#363636] transition-all duration-300"
                   >
                     Know More{" "}

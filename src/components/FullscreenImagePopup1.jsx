@@ -63,9 +63,9 @@ const FullscreenImagePopup1 = ({
       } else if (event.key === "ArrowLeft") {
         handlePrev();
       }
-      if (event.key === "f") {
-        toggleFullscreen();
-      }
+      // if (event.key === "f") {
+      //   toggleFullscreen();
+      // }
     },
     [setOpenImgPopup, handleNext, handlePrev]
   );
@@ -106,14 +106,14 @@ const FullscreenImagePopup1 = ({
     };
   }, [openImgPopup, handleKeydown]);
 
-  const toggleFullscreen = useCallback(() => {
-    const element = document.querySelector(".image-container img");
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else if (element) {
-      element.requestFullscreen().catch((err) => console.error(err));
-    }
-  }, []);
+  // const toggleFullscreen = useCallback(() => {
+  //   const element = document.querySelector(".image-container img");
+  //   if (document.fullscreenElement) {
+  //     document.exitFullscreen();
+  //   } else if (element) {
+  //     element.requestFullscreen().catch((err) => console.error(err));
+  //   }
+  // }, []);
 
   const handleFullscreenChange = useCallback(() => {
     setIsFullscreen(!!document.fullscreenElement);
@@ -142,7 +142,7 @@ const FullscreenImagePopup1 = ({
           {imgIndex + 1}/{image.length}
         </span>
         <div className="flex items-center justify-center gap-4">
-          <button
+          {/* <button
             className="w-full h-full cursor-pointer flex items-end justify-end bg-clr7/30"
             onClick={toggleFullscreen}
           >
@@ -153,7 +153,7 @@ const FullscreenImagePopup1 = ({
                 <MdFullscreen className="w-8 h-8 text-base flex justify-center items-center   font-bold text-white" />
               )}
             </span>
-          </button>
+          </button> */}
 
           <button onClick={() => setOpenImgPopup(false)}>
             <IoCloseSharp className=" w-8 h-8 text-base flex justify-center items-center  font-bold text-white" />
@@ -172,7 +172,7 @@ const FullscreenImagePopup1 = ({
                 alt={currentIndex}
                 fill
                 className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"}  transition-all duration-300 ease-in-out`}
-                onClick={toggleFullscreen}
+                // onClick={toggleFullscreen}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}

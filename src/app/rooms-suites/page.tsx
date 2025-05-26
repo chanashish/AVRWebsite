@@ -141,9 +141,9 @@ const page = () => {
             },
           ]}
           services={[
+            { imageUrl: imageUrl + "luxurySuite/002.webp" },
             { imageUrl: imageUrl + "luxurySuite/005.webp" },
             { imageUrl: imageUrl + "luxurySuite/003.webp" },
-            { imageUrl: imageUrl + "luxurySuite/002.webp" },
             { imageUrl: imageUrl + "luxurySuite/001.webp" },
             { imageUrl: imageUrl + "luxurySuite/007.webp" },
             { imageUrl: imageUrl + "luxurySuite/009.webp" },

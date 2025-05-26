@@ -81,7 +81,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                     // className="w-[37px] h-[10px]"
                     />
                   </div>
-                  <p className="text-xl font-light leading-8 text-center text-stone-500">
+                  <p className="text-xl font-light leading-8 text-center text-stone-500 px-2">
                     {location.description}
                   </p>
                 </div>

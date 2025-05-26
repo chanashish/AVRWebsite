@@ -61,7 +61,7 @@ const ServiceCard: React.FC<ServiceCardData> = ({
     <div className="md:aspect-[4/2.6] aspect-[4/2.5] relative w-full ">
       <Image
         src={imageUrl}
-        alt={"serice Image"}
+        alt={"service Image"}
         fill
         className="object-cover"
       />

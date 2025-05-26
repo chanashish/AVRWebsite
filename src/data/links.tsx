@@ -61,21 +61,21 @@ export const NavLink: navLinkProps[] = [
     label: "Contact Us",
     href: "/contact-us/",
   },
-  {
-    id: 11,
-    label: "Check In Policy",
-    href: "/check-in-policy/",
-  },
-  {
-    id: 12,
-    label: "Privacy Policy",
-    href: "/privacy-policy/",
-  },
-  {
-    id: 13,
-    label: "Terms & Conditions",
-    href: "/terms-conditions/",
-  },
+  // {
+  //   id: 11,
+  //   label: "Check In Policy",
+  //   href: "/check-in-policy/",
+  // },
+  // {
+  //   id: 12,
+  //   label: "Privacy Policy",
+  //   href: "/privacy-policy/",
+  // },
+  // {
+  //   id: 13,
+  //   label: "Terms & Conditions",
+  //   href: "/terms-conditions/",
+  // },
 ];
 
 export const SocialLink: socialLinkProps[] = [

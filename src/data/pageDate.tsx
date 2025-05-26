@@ -48,6 +48,24 @@ export const todoData = [
         description:
           "Let your kids' imaginations run wild in our outdoor play area, where adventure is just a swing away",
       },
+      {
+        title: "Adventure Park",
+        description:
+          "Get your adrenaline pumping with our heart-racing adventure activities—feel the thrill of soaring on the zipline or conquering the commando net! Take on the challenge of crossing the bamboo bridge, balancing on the Burma bridge, and testing your aim with archery—every activity is an adventure in itself. Ready to push your limits and embrace the excitement? Each adventure here offers a new way to connect with nature and discover your inner thrill-seeker!",
+        src: imageUrl + "IMG_8279.webp",
+      },
+      {
+        title: "Bonfire",
+        description:
+          "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars. Feel the warmth of the fire on your face, the cool mountain air in your hair, and the magic of the moment as the flames dance and flicker. There's something special about a bonfire in the mountains—it's where memories are made, and connections are strengthened by the glow of the flames!",
+        src: imageUrl + "img3.webp",
+      },
+      {
+        title: "Indoor Game Studio",
+        description:
+          "When the weather calls for a break, our indoor game studio is the perfect escape—where fun, laughter, and friendly competition come alive. Whether it's  board games, or something new, it’s the perfect spot to unwind, bond, and create memories that’ll last. In our cozy game studio, the mountains may be outside, but the excitement and joy are always in full swing indoors.",
+        src: imageUrl + "6.webp",
+      },
     ],
   },
 ];

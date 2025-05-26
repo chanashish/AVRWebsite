@@ -25,6 +25,21 @@ const page = () => {
       title: "Kullu City",
       description: "Kullu is a municipal council town that serves as the administrative headquarters of the Kullu district of the Indian state of Himachal Pradesh. It is located on the banks of the Beas River in the Kullu Valley about 10 kilometres north of the airport.",
     },
+    {
+      image: imageUrl+"castle.png",
+      title: "Naggar Castle",
+      description: "Naggar Castle is a historic 15th-century structure built by Raja Sidh Singh of Kullu. It showcases a unique blend of Himalayan and European architecture using stone and wood. Once a royal residence, it now serves as a heritage hotel and offers stunning views of the Kullu Valley.",
+    },
+    {
+      image: imageUrl+"gallery.png",
+      title: "Roerich Art Gallery",
+      description: "The Roerich Art Gallery is dedicated to the works of Russian painter Nicholas Roerich. It houses his landscapes of the Himalayas and portraits, along with artifacts and personal items.Surrounded by serene nature, the gallery is part of the Roerich Estate in Naggar.",
+    },
+    {
+      image: imageUrl+"waterfall.png",
+      title: "Jana Water Fall",
+      description: "Jana Waterfall is a scenic, multi-tiered waterfall nestled in the village of Jana near Naggar. It's surrounded by pine forests and apple orchards, offering a peaceful retreat. Local cafes nearby serve traditional Himachali food, making it a popular day trip spot.",
+    },
   ];
   return (
     <div>
