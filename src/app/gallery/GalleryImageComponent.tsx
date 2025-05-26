@@ -449,7 +449,7 @@ const GalleryImageComponent = () => {
                 category === currentCategory
                   ? "bg-[#2F4B26] text-white"
                   : "bg-white text-[#2F4B26]"
-              } px-4 py-2 rounded-sm border text-nowrap border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
+              } px-4 py-2 rounded-sm border text-nowrap md:text-base text-sm border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
             >
               {category}
             </button>
