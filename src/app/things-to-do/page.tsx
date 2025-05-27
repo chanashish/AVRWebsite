@@ -33,7 +33,7 @@ const page = () => {
       title: "Adventure Park",
       description:
         "Get your adrenaline pumping with our heart-racing adventure activities—feel the thrill of soaring on the zipline or conquering the commando net! Take on the challenge of crossing the bamboo bridge, balancing on the Burma bridge, and testing your aim with archery—every activity is an adventure in itself. Ready to push your limits and embrace the excitement? Each adventure here offers a new way to connect with nature and discover your inner thrill-seeker!",
-      imageUrl: imageUrl + "IMG_8279.webp",
+      imageUrl: imageUrl + "img4.jpg",
       imageAlt: "Adventure Park",
     },
     {
@@ -47,7 +47,7 @@ const page = () => {
       title: "Indoor Game Studio",
       description:
         "When the weather calls for a break, our indoor game studio is the perfect escape—where fun, laughter, and friendly competition come alive. Whether it's  board games, or something new, it’s the perfect spot to unwind, bond, and create memories that’ll last. In our cozy game studio, the mountains may be outside, but the excitement and joy are always in full swing indoors.",
-      imageUrl: imageUrl + "6.webp",
+      imageUrl: imageUrl + "6.png",
       imageAlt: "Indoor Game Studio",
     },
     // {

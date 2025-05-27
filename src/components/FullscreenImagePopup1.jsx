@@ -15,8 +15,6 @@ const FullscreenImagePopup1 = ({
   roomName = "",
 }) => {
   const [imgIndex, setImgIndex] = useState(currentIndex);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
 
   const handleNext = useCallback(() => {
     if (imgIndex < image.length - 1) {
@@ -51,7 +49,7 @@ const FullscreenImagePopup1 = ({
     [image, imgIndex]
   );
 
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  // const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleKeydown = useCallback(
     (event) => {
@@ -70,26 +68,37 @@ const FullscreenImagePopup1 = ({
     [setOpenImgPopup, handleNext, handlePrev]
   );
 
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartTime, setTouchStartTime] = useState(0);
+
+
   const handleTouchStart = (e) => {
+    if (e.touches.length !== 1) return; // Ignore multi-touch
     setTouchStartX(e.touches[0].clientX);
+    setTouchStartTime(Date.now());
   };
 
-  const handleTouchMove = (e) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndTime = Date.now();
 
-  const handleTouchEnd = () => {
-    if (touchStartX - touchEndX > 50) {
-      // Swipe Left
-      handleNext();
-    } else if (touchEndX - touchStartX > 50) {
-      // Swipe Right
-      handlePrev();
+    const deltaX = touchEndX - touchStartX;
+    const deltaTime = touchEndTime - touchStartTime;
+
+    // Only proceed if swipe was quick and significant enough
+    if (deltaTime < 500 && Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        handleNext(); // Swipe left
+      } else {
+        handlePrev(); // Swipe right
+      }
     }
-    // Reset
+
     setTouchStartX(0);
-    setTouchEndX(0);
+    setTouchStartTime(0);
   };
+
+
 
   useEffect(() => {
     if (openImgPopup) {
@@ -115,17 +124,17 @@ const FullscreenImagePopup1 = ({
   //   }
   // }, []);
 
-  const handleFullscreenChange = useCallback(() => {
-    setIsFullscreen(!!document.fullscreenElement);
-  }, []);
+  // const handleFullscreenChange = useCallback(() => {
+  //   setIsFullscreen(!!document.fullscreenElement);
+  // }, []);
 
-  useEffect(() => {
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
+  // useEffect(() => {
+  //   document.addEventListener("fullscreenchange", handleFullscreenChange);
 
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-    };
-  }, [handleFullscreenChange]);
+  //   return () => {
+  //     document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  //   };
+  // }, [handleFullscreenChange]);
 
   return (
     <div
@@ -167,16 +176,19 @@ const FullscreenImagePopup1 = ({
             onClick={(e) => e.stopPropagation()}
           >
             {openImgPopup && (
-              <Image
-                src={imageSrc ? imageSrc : "/images/placeholder.png"}
-                alt={currentIndex}
-                fill
-                className={`md:object-cover object-contain  ${imageSrc ? "opacity-100 " : "opacity-0 animate-pulse"}  transition-all duration-300 ease-in-out`}
-                // onClick={toggleFullscreen}
+              <div
+                className="w-full h-full"
                 onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
-              />
+              >
+                <Image
+                  src={imageSrc}
+                  alt={roomName}
+                  fill
+                  className="md:object-cover object-contain transition-all duration-300 ease-in-out"
+                />
+              </div>
+
             )}
           </div>
           <button

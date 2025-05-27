@@ -277,6 +277,30 @@ const imageData = [
     alt: "Activities",
     tags: "ACTIVITIES",
   },
+  {
+    id: 195,
+    src: imageUrl + "img1.webp",
+    alt: "Activities",
+    tags: "ACTIVITIES",
+  },
+  {
+    id: 196,
+    src: imageUrl + "img2.webp",
+    alt: "Activities",
+    tags: "ACTIVITIES",
+  },
+  {
+    id: 197,
+    src: imageUrl + "img3.webp",
+    alt: "Activities",
+    tags: "ACTIVITIES",
+  },
+  {
+    id: 198,
+    src: imageUrl + "img4.jpg",
+    alt: "Activities",
+    tags: "ACTIVITIES",
+  },
   // {
   //   id: 97,
   //   src: imageUrl + "IMG_8344.webp",

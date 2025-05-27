@@ -33,7 +33,7 @@ const page = () => {
             },
             {
               id: 2,
-              name: "Hot Running Water",
+              name: "Running Hot Water",
             },
             {
               id: 3,
