@@ -74,7 +74,7 @@ export const wellnessData = [
   {
     title: "ANAND VARDHAN RESORT X RISHIBHUMI BRINGS",
     subTitle: "Relax & Rejuvenation",
-    href: "/spiritual-retreat/",
+    // href: "/spiritual-retreat/",
     cardData: [
       {
         src: imageUrl + "spiritual/relax1.webp",

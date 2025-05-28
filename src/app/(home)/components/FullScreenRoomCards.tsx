@@ -139,7 +139,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
             </div>
           )}
         />
-        <div className="flex justify-between mt-4 absolute md:bottom-28 bottom-[9.4rem]  md:right-20 right-0 z-10 ">
+        <div className="flex justify-between mt-4 absolute max-md:bottom-16 bottom-[9.4rem]  md:right-20 right-0 z-10 ">
           <button className="room-prev p-4 text-[#363636]">
             <BtnPrev className="md:w-8 w-6 aspect-square" />
             <span className="sr-only">Previous</span>

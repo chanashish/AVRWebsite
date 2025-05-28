@@ -303,7 +303,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
       )}
       <div className="flex justify-between items-center mt-7 max-sm:flex-row-reverse sm:hidden">
         {showArrows && (
-          <div className="hidden max-sm:flex">{<Navigation />}</div>
+          <div className={`hidden max-sm:flex ${hideExplore?"mx-auto":""}`}>{<Navigation />}</div>
         )}
         {showExplore &&
           (roomdescription ? (

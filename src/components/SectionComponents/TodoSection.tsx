@@ -135,7 +135,7 @@ const TodoSection: React.FC<TodoSectionProps> = ({
       <Container>
         {/* slider Buttons */}
         <div className="flex justify-between items-center gap-4 w-full mt-6">
-          <div className="lg:hidden flex items-center gap-2">
+          <div className={`lg:hidden flex items-center gap-2 ${!href?"mx-auto":""}`}>
             <button className={`todo-prev-${index} py-2 pe-2`}>
               <BtnPrev className="w-7 aspect-square" />
               <span className="sr-only">Previous</span>
@@ -145,12 +145,14 @@ const TodoSection: React.FC<TodoSectionProps> = ({
               <span className="sr-only">Next</span>
             </button>
           </div>
-          <Link
+          {href && (
+            <Link
             href={href || "/"}
             className="text-[#363636] hover:underline underline-offset-4 lg:mx-auto w-fit text-lg lato flex items-center gap-2"
           >
             Explore <BtnNext className="w-4 aspect-square" />
           </Link>
+          )}
         </div>
       </Container>
       <FullscreenImagePopup1
