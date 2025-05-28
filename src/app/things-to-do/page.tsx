@@ -40,7 +40,7 @@ const page = () => {
       title: "Bonfire",
       description:
         "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars. Feel the warmth of the fire on your face, the cool mountain air in your hair, and the magic of the moment as the flames dance and flicker. There's something special about a bonfire in the mountains—it's where memories are made, and connections are strengthened by the glow of the flames!",
-      imageUrl: imageUrl + "img3.webp",
+      imageUrl: imageUrl + "img-bonfire.webp",
       imageAlt: "Bonfire",
     },
     {

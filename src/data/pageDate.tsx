@@ -51,19 +51,19 @@ export const todoData = [
       {
         title: "Adventure Park",
         description:
-          "Get your adrenaline pumping with our heart-racing adventure activities—feel the thrill of soaring on the zipline or conquering the commando net!",
+          "Get your adrenaline pumping with our heart-racing adventure activities—feel the thrill of soaring on the zipline or conquering the commando net",
         src: imageUrl + "img4.jpg",
       },
       {
         title: "Bonfire",
         description:
-          "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars.",
-        src: imageUrl + "img3.webp",
+          "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars",
+        src: imageUrl + "img-bonfire.webp",
       },
       {
         title: "Indoor Game Studio",
         description:
-          "When the weather calls for a break, our indoor game studio is the perfect escape—where fun, laughter, and friendly competition come alive.",
+          "When the weather calls for a break, our indoor game studio is the perfect escape—where fun, laughter, and friendly competition come alive",
         src: imageUrl + "6.png",
       },
     ],
