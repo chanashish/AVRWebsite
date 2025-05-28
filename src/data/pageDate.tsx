@@ -58,7 +58,7 @@ export const todoData = [
         title: "Bonfire",
         description:
           "Gather around the crackling bonfire as the mountain night wraps around you, sharing stories and laughter under a sky full of stars",
-        src: imageUrl + "img-bonfire.webp",
+        src: imageUrl + "img-bonfire.png",
       },
       {
         title: "Indoor Game Studio",
