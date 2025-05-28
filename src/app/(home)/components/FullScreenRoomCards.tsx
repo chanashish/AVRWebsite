@@ -110,12 +110,12 @@ const RoomsAndSuitesCombined: React.FC = () => {
                 )}
               />
 
-                <button className="room-img-prev absolute md:top-1/3 top-1/4 lg:left-24 left-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-50 ">
-                  <BtnPrev className="w-8 aspect-square " />
-                </button>
-                <button className="room-img-next absolute md:top-1/3 top-1/4 lg:right-24 right-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-10">
-                  <BtnNext className="w-8 aspect-square " />
-                </button>
+              <button className="room-img-prev absolute md:top-1/3 top-1/4 lg:left-24 left-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-50 ">
+                <BtnPrev className="w-8 aspect-square " />
+              </button>
+              <button className="room-img-next absolute md:top-1/3 top-1/4 lg:right-24 right-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-10">
+                <BtnNext className="w-8 aspect-square " />
+              </button>
               {/* imageSlider */}
               <Container className="bg-[#F9F9F1]">
                 <div className="flex flex-col md:gap-4 gap-3 w-full md:aspect-[4/.5] aspect-[4/2.5]">
@@ -125,30 +125,32 @@ const RoomsAndSuitesCombined: React.FC = () => {
                   <p className="md:text-xl text-base font-light text-[#686767] roboto max-w-6xl">
                     {item.description}
                   </p>
-                  <Link
-                    href={"/rooms-suites"}
-                    className="text-[#2F4B26] text-lg lato flex items-center gap-1 w-fit pe-2 py-1 hover:text-[#363636] transition-all duration-300"
-                  >
-                    Know More{" "}
-                    <span className="">
-                      <BtnNext className="w-4 aspect-square" />
-                    </span>
-                  </Link>
+                  <div className="flex items-center">
+                    <Link
+                      href={"/rooms-suites"}
+                      className="text-[#2F4B26] text-lg lato flex items-center gap-1 w-fit pe-2 py-1 hover:text-[#363636] transition-all duration-300"
+                    >
+                      Know More{" "}
+                      <span className="">
+                        <BtnNext className="w-4 aspect-square" />
+                      </span>
+                    </Link>
+                    <div className="flex justify-between absolute md:right-20 right-0 z-10 ">
+                      <button className="room-prev p-4 text-[#363636]">
+                        <BtnPrev className="md:w-8 w-6 aspect-square" />
+                        <span className="sr-only">Previous</span>
+                      </button>
+                      <button className="room-next p-4 text-[#363636]">
+                        <BtnNext className="md:w-8 w-6 aspect-square" />
+                        <span className="sr-only">Next</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </Container>
             </div>
           )}
         />
-        <div className="flex justify-between mt-4 absolute max-md:bottom-16 bottom-[9.4rem]  md:right-20 right-0 z-10 ">
-          <button className="room-prev p-4 text-[#363636]">
-            <BtnPrev className="md:w-8 w-6 aspect-square" />
-            <span className="sr-only">Previous</span>
-          </button>
-          <button className="room-next p-4 text-[#363636]">
-            <BtnNext className="md:w-8 w-6 aspect-square" />
-            <span className="sr-only">Next</span>
-          </button>
-        </div>
       </div>
 
       <FullscreenImagePopup1
