@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useRef, useEffect, ChangeEvent } from "react";
 import { ChevronDownIcon, DropdownIcon } from "./Icons";
 import { countries } from "../data/countryCode";
 import Container from "./SectionComponents/Container";
 import axios from "axios";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface FormData {
   fullName: string;
@@ -13,70 +14,147 @@ interface FormData {
   email: string;
   checkIn: string;
   checkOut: string;
-  countryCode: string;
-  roomType: string;
 }
 
 const roomTypes = ["Luxury Suite Room", "Deluxe Room", "Super Deluxe Room"];
 
 const BookingForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    watch,
-  } = useForm<FormData>();
+  const [formData, setFormData] = useState<FormData>({
+    fullName: "",
+    phoneNumber: "",
+    email: "",
+    checkIn: "",
+    checkOut: "",
+  });
 
   const [selectedCountry, setSelectedCountry] = useState("+91");
   const [selectedRoom, setSelectedRoom] = useState("Luxury Suite Room");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [roomDropdownOpen, setRoomDropdownOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState<"success" | "error" | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const countryDropdownRef = useRef<HTMLDivElement>(null);
   const roomDropdownRef = useRef<HTMLDivElement>(null);
 
-  const checkInDate = watch("checkIn");
-
-  const getToday = () => {
-    const today = new Date();
-    return today.toISOString().split("T")[0];
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   };
 
-  const getTomorrow = (dateString: string) => {
-    const date = new Date(dateString);
-    date.setDate(date.getDate() + 1);
-    return date.toISOString().split("T")[0];
+  const validatePhone = (phone: string) => {
+    const re = /^[0-9]{10,15}$/;
+    return re.test(phone);
   };
 
-  const submitForm = async (formBody:
-    {
-      email: string;
-      name: string;
-      phone: string;
-      other_fields: string;
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name as keyof FormData]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  ): Promise<boolean> => {
+  };
+
+  const handleDateChange = (
+    date: Date | null,
+    field: "checkIn" | "checkOut"
+  ) => {
+    const dateString = date ? date.toISOString().split("T")[0] : "";
+
+    setFormData((prev) => ({
+      ...prev,
+      [field]: dateString,
+    }));
+
+    if (field === "checkIn") {
+      setStartDate(date);
+      // Clear check-out error if both dates are selected
+      if (date && endDate && date > endDate) {
+        setEndDate(null);
+        setFormData((prev) => ({ ...prev, checkOut: "" }));
+      }
+    } else {
+      setEndDate(date);
+    }
+
+    // Clear error when date is selected
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: "" }));
+    }
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors: Partial<FormData> = {};
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full Name is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+      isValid = false;
+    }
+
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone number is required";
+      isValid = false;
+    } else if (!validatePhone(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number must be 10-15 digits";
+      isValid = false;
+    }
+
+    if (!formData.checkIn.trim()) {
+      newErrors.checkIn = "Check-in date is required";
+      isValid = false;
+    }
+
+    if (!formData.checkOut.trim()) {
+      newErrors.checkOut = "Check-out date is required";
+      isValid = false;
+    } else if (formData.checkIn && formData.checkOut && new Date(formData.checkIn) >= new Date(formData.checkOut)) {
+      newErrors.checkOut = "Check-out must be after check-in";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const submitForm = async (formBody: {
+    email: string;
+    name: string;
+    phone: string;
+    checkin: string;
+    checkout: string;
+    other_fields: string;
+  }): Promise<boolean> => {
     try {
       const { data } = await axios.post(
-        // "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/XJVYRzPn#generic-webhook",
         "https://nexon.eazotel.com/eazotel/addcontacts",
-        // {
-        //   Email: formBody.email,
-        //   Domain: "anandvardhanresort",
-        //   Name: formBody.name,
-        //   Contact: formBody.phone,
-        //   Description: formBody.other_fields,
-        // },
         {
           Domain: "anandvardhanresort",
-          email: formBody.email,
-          Name: formBody.name,
-          Contact: formBody.phone,
-          Subjec: "",
-          Description: formBody.other_fields,
+          email: `${formBody.email}`,
+          Name: `${formBody.name}`,
+          Contact: `${formBody.phone}`,
+          check_in: `${formBody.checkin}`,
+          check_out: `${formBody.checkout}`,
+          Subject: null,
+          Description: `${formBody.other_fields}`,
           created_from: "Website"
         },
         {
@@ -93,44 +171,54 @@ const BookingForm = () => {
     }
   };
 
-  const onSubmit = async (data: FormData) => {
-    setLoading(true);
-    setSubmissionResult(null); // Reset previous result
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const fullPhoneNumber = `${selectedCountry} ${data.phoneNumber}`;
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const fullPhoneNumber = `${selectedCountry} ${formData.phoneNumber}`;
     const formBody = {
-      email: data.email,
-      name: data.fullName,
+      email: formData.email,
+      name: formData.fullName,
       phone: fullPhoneNumber,
-      other_fields: `Check-in: ${data.checkIn}, Check-out: ${data.checkOut}, Room Type: ${selectedRoom}`,
+      checkin: formData.checkIn,
+      checkout: formData.checkOut,
+      other_fields: `Room Type: ${selectedRoom}`,
     };
 
-    const success = await submitForm(formBody);
+    try {
+      const success = await submitForm(formBody);
 
-    if (success) {
-      console.log("Form successfully submitted to API");
-      reset();
-      setSelectedCountry("+91");
-      setSelectedRoom("Luxury Suite Room");
-      setSubmissionResult("success");
-    } else {
-      console.error("Failed to submit form to API");
-      setSubmissionResult("error");
+      if (success) {
+        console.log("Form successfully submitted to API");
+        setFormData({
+          fullName: "",
+          phoneNumber: "",
+          email: "",
+          checkIn: "",
+          checkOut: "",
+        });
+        setStartDate(null);
+        setEndDate(null);
+        setSelectedCountry("+91");
+        setSelectedRoom("Luxury Suite Room");
+        setSubmitSuccess(true);
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        alert("Something went wrong! Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setLoading(false);
   };
 
-  useEffect(() => {
-    if (submissionResult) {
-      const timer = setTimeout(() => {
-        setSubmissionResult(null);
-      }, 5000);
-  
-      return () => clearTimeout(timer);
-    }
-  }, [submissionResult]);
-  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
@@ -151,90 +239,102 @@ const BookingForm = () => {
           Book Your Stay With Us!
         </h2>
 
-        {submissionResult === "success" && (
+        {submitSuccess && (
           <p className="text-green-600 text-sm mb-2">Your booking has been successfully submitted!</p>
-        )}
-        {submissionResult === "error" && (
-          <p className="text-red-600 text-sm mb-2">There was an error submitting your booking. Please try again.</p>
         )}
 
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
           className="flex items-center bg-white rounded-lg border border-solid border-zinc-300 max-lg:w-[100%] max-md:flex-col"
         >
           {/* Full Name */}
           <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <input
-              {...register("fullName", { required: "Full Name is required" })}
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleInputChange}
               placeholder="Full Name*"
               className="text-base text-neutral-700 outline-none w-[130px]"
             />
-            {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+            {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
           </div>
 
           {/* Phone Number with Country Code */}
-          <div className="relative flex items-center px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
-            <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
-              <span className="text-base leading-6 text-neutral-700">{selectedCountry}</span>
-              <DropdownIcon />
+          <div className="relative flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
+            <div className="flex items-center">
+              <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                <span className="text-base leading-6 text-neutral-700">{selectedCountry}</span>
+                <DropdownIcon />
+              </div>
+              {dropdownOpen && (
+                <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-30 max-h-[200px] overflow-scroll z-10">
+                  {countries.map((country, index) => (
+                    <li
+                      key={index}
+                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => {
+                        setSelectedCountry(country.code);
+                        setDropdownOpen(false);
+                      }}
+                    >
+                      {country.name} {country.code}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <input
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                placeholder="Phone Number*"
+                className="ml-4 text-base text-neutral-700 outline-none"
+              />
             </div>
-            {dropdownOpen && (
-              <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-30 max-h-[200px] overflow-scroll">
-                {countries.map((code, index) => (
-                  <li
-                    key={index}
-                    className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-                    onClick={() => {
-                      setSelectedCountry(code.code);
-                      setDropdownOpen(false);
-                    }}
-                  >
-                    {code.name} {code.code}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <input
-              {...register("phoneNumber", { required: "Phone number is required" })}
-              placeholder="Phone Number*"
-              className="ml-4 text-base text-neutral-700 outline-none"
-            />
-            {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
+            {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>}
           </div>
 
           {/* Email */}
           <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <input
-              {...register("email", {
-                required: "Email is required",
-                pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" },
-              })}
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
               placeholder="Email ID*"
               className="text-base text-neutral-700 outline-none"
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
           </div>
 
           {/* Check-in Date */}
           <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-            <input
-              type="date"
-              {...register("checkIn", { required: "Check-in date is required" })}
-              className="text-base text-neutral-700 outline-none"
-              min={getToday()}
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => handleDateChange(date, "checkIn")}
+              selectsStart
+              startDate={startDate}
+              endDate={endDate}
+              minDate={new Date()}
+              placeholderText="Check in*"
+              className="text-base text-neutral-700 outline-none w-full cursor-pointer"
+              wrapperClassName="w-full"
             />
-            {errors.checkIn && <p className="text-red-500 text-sm">{errors.checkIn.message}</p>}
+            {errors.checkIn && <p className="text-red-500 text-xs mt-1">{errors.checkIn}</p>}
           </div>
 
           {/* Check-out Date */}
           <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
-            <input
-              type="date"
-              {...register("checkOut", { required: "Check-out date is required" })}
-              className="text-base text-neutral-700 outline-none"
-              min={checkInDate ? getTomorrow(checkInDate) : getToday()}
+            <DatePicker
+              selected={endDate}
+              onChange={(date) => handleDateChange(date, "checkOut")}
+              selectsEnd
+              startDate={startDate}
+              endDate={endDate}
+              minDate={startDate || new Date()}
+              placeholderText="Check out*"
+              className="text-base text-neutral-700 outline-none w-full cursor-pointer"
+              wrapperClassName="w-full"
             />
-            {errors.checkOut && <p className="text-red-500 text-sm">{errors.checkOut.message}</p>}
+            {errors.checkOut && <p className="text-red-500 text-xs mt-1">{errors.checkOut}</p>}
           </div>
 
           {/* Room Type Dropdown */}
@@ -246,7 +346,7 @@ const BookingForm = () => {
             <span className="text-base leading-6 text-neutral-700">{selectedRoom}</span>
             <ChevronDownIcon />
             {roomDropdownOpen && (
-              <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-48">
+              <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-48 z-10">
                 {roomTypes.map((room) => (
                   <li
                     key={room}
@@ -266,11 +366,17 @@ const BookingForm = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            disabled={loading}
-            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full ${loading ? "opacity-50 cursor-not-allowed" : ""
+            disabled={isSubmitting}
+            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
               }`}
           >
-            {loading ? "Booking..." : "Book Now"}
+            {isSubmitting ? (
+              <span className="border-t-2 border-white w-6 h-6 rounded-full animate-spin mx-auto block" />
+            ) : submitSuccess ? (
+              "Thank You!"
+            ) : (
+              "Book Now"
+            )}
           </button>
         </form>
       </section>
