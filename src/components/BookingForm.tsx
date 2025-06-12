@@ -154,7 +154,7 @@ const BookingForm = () => {
           check_in: `${formBody.checkin}`,
           check_out: `${formBody.checkout}`,
           Subject: null,
-          Description: `${formBody.other_fields}`,
+          Description: `checkin: ${formBody.checkin}, checkout: ${formBody.checkout}, ${formBody.other_fields}`,
           created_from: "Website"
         },
         {
@@ -306,7 +306,7 @@ const BookingForm = () => {
           </div>
 
           {/* Check-in Date */}
-          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+          <div className="flex flex-col px-4 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <DatePicker
               selected={startDate}
               onChange={(date) => handleDateChange(date, "checkIn")}
@@ -322,7 +322,7 @@ const BookingForm = () => {
           </div>
 
           {/* Check-out Date */}
-          <div className="flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+          <div className="flex flex-col px-4  border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <DatePicker
               selected={endDate}
               onChange={(date) => handleDateChange(date, "checkOut")}
@@ -367,7 +367,7 @@ const BookingForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-none w-[200px] max-md:w-full ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-r-md text-nowrap max-md:w-full ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
               }`}
           >
             {isSubmitting ? (
