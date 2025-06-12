@@ -248,6 +248,48 @@ const imageData = [
     tags: "WELLNESS CENTER",
   },
   {
+    id: 118,
+    src: imageUrl + "well1.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 119,
+    src: imageUrl + "well2.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 120,
+    src: imageUrl + "well3.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 121,
+    src: imageUrl + "well4.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 122,
+    src: imageUrl + "well5.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 123,
+    src: imageUrl + "well6.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
+    id: 124,
+    src: imageUrl + "well7.jpg",
+    alt: "Wellness Center",
+    tags: "WELLNESS CENTER",
+  },
+  {
     id: 99,
     src: imageUrl + "273A8474.webp",
     alt: "Activities",
