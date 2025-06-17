@@ -47,8 +47,10 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
     <section className="relative w-full h-[700px] max-sm:h-[240px] max-w-[1600px] mx-auto">
       {display && (
         <div className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
-          {time}
+          {/* {time} */}
+          <div className="elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c" data-elfsight-app-lazy></div>
         </div>
+
       )}
       <VideoBackground />
     </section>

@@ -27,6 +27,9 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-T8NF9RC');
           `}
         </Script>
+
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
         {/* End Google Tag Manager */}
       </head>
       <body className={``} suppressHydrationWarning={true}>
