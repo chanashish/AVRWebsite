@@ -38,7 +38,7 @@ const RenderChatBot = () => {
     const checkInDate = formData["check-in"];
     const checkOutDate = formData["check-out"];
     const guest = formData["number of guest"];
-    
+
     try {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
@@ -50,9 +50,9 @@ const RenderChatBot = () => {
           Name: `${name}`,
           Remark: "",
           Subject: null,
-          "check_in": `${checkInDate}`,
-          "check_out": `${checkOutDate}`,
-          "numbers_of_guest": `${guest}`,
+          check_in: `${checkInDate}`,
+          check_out: `${checkOutDate}`,
+          numbers_of_guest: `${guest}`,
           created_from: "Eazobot",
         },
         {
@@ -76,7 +76,7 @@ const RenderChatBot = () => {
         messageFlows={messageFlows}
         title="Anand Vardhan Resorts "
         theme={"#2F4B26"}
-        openInterval={2000}
+        openInterval={15000}
         logo={"/favicon.png"}
       />
     </div>
