@@ -1,11 +1,11 @@
 "use client";
-import Link from "next/link";
-import Container from "../SectionComponents/Container";
-import Image from "next/image";
-import { IoMdClose } from "react-icons/io";
-import { useEffect, useState } from "react";
-import MobileNav from "./MobileNav";
 import { MenuBurger } from "@/icons/icons";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import Container from "../SectionComponents/Container";
+import MobileNav from "./MobileNav";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +21,10 @@ const Navbar: React.FC = () => {
   }, [isOpen]);
 
   return (
-    <div className="max-w-[1600px] mx-auto" style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}>
+    <div
+      className="max-w-[1600px] mx-auto"
+      style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}
+    >
       <Container>
         <nav className="flex items-center justify-between py-[16px]">
           <div className="">
@@ -38,8 +41,25 @@ const Navbar: React.FC = () => {
               />
             </Link>
           </div>
+
+          <div className="lg:hidden flex">
+            {/* <Link href={"tel:+919317207373"}>
+              <Outlinecall />
+            </Link> */}
+
+            <Link
+              href="tel:+919317207373"
+              className="bg-[#2F4B26] text-white px-4 py-2 rounded-sm"
+            >
+              <span className="">Book Now</span>
+            </Link>
+          </div>
+
           <div className="flex gap-[8px]">
-            <Link href="tel:+919317207373" className="lg:block hidden bg-[#2F4B26] text-white px-[24px] h-[56px] py-[16px]">
+            <Link
+              href="tel:+919317207373"
+              className="lg:block hidden bg-[#2F4B26] text-white px-[24px] h-[56px] py-[16px]"
+            >
               <span className="">Book Now</span>
             </Link>
             <button

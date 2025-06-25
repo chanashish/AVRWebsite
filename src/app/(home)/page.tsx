@@ -41,7 +41,7 @@ export default function Home() {
       />
       {/* //here */}
       <RoomsAndSuitesCombined />
-{/* 
+      {/* 
       <div className="mt-10">
         <WellnessSliderSection
           title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
@@ -96,7 +96,12 @@ export default function Home() {
         reverseLayout={true}
       /> */}
       {todoData.map((item, index) => (
-        <TodoSection key={index} {...item} index={index} textEnd={index % 2 !== 0} />
+        <TodoSection
+          key={index}
+          {...item}
+          index={index}
+          textEnd={index % 2 !== 0}
+        />
       ))}
       <FullSlideContentCarousel data={slides} />
 
