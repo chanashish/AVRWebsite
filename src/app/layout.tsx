@@ -17,6 +17,66 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="AI8uiz0tsMf569ZnqOVsiTjO-HxasZqwK77F_sYcLrA"
+        />
+        {/* <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Y5YZX33V7B'); </script> */}
+
+        {/* <script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "Anand Vardhan Resort Manali",
+"url": "https://anandvardhanresorts.com/",
+"logo": "",
+"sameAs": [
+"https://www.facebook.com/AnandVardhanResortsManali/",
+"https://www.instagram.com/anandvardhanresortmanali/",
+"https://www.linkedin.com/company/anand-vardhan-resort/"
+]
+}
+</script> */}
+
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Anand Vardhan Resort Manali",
+              "url": "https://anandvardhanresorts.com/",
+              "logo": "",
+              "sameAs": [
+              "https://www.facebook.com/AnandVardhanResortsManali/",
+              "https://www.instagram.com/anandvardhanresortmanali/",
+              "https://www.linkedin.com/company/anand-vardhan-resort/"
+              ]
+            }
+            `,
+          }}
+        />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"
+          strategy="afterInteractive"
+        />
+
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Y5YZX33V7B');
+            `,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <Script id="gtm-init" strategy="afterInteractive">
           {`
