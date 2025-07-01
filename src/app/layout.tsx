@@ -6,9 +6,10 @@ import PureVegBanner from "./(home)/components/PureVegBanner";
 import RenderChatBot from "@/components/chatbot/RenderChatBot";
 
 export const metadata: Metadata = {
-  title: "Anand Vardhan Resort",
+  title:
+    "Manali Retreat Resort | Wellness Resort in Manali - AnandVardhan Resorts",
   description:
-    "Unwind with fascinating views of the mountains at our resort offering cosy rooms, a restaurant, outdoor activities and world-class facilities.",
+    "Looking for a spiritual resort in Manali? AnandVardhan Resorts offers wellness retreats, guided meditation, spa treatments, and a soulful café experience.",
 };
 
 export default function RootLayout({

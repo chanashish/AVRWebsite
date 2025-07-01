@@ -12,6 +12,12 @@ import { imageUrl } from "@/data/links";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Destination Wedding in Manali  - Anand Vardhan Resorts",
+  description:
+    "Celebrate love with a magical destination wedding at Anand Vardhan Resorts. A perfect blend of tradition, nature, and unforgettable moments.",
+};
+
 const page = () => {
   const sampleCardData = [
     {
@@ -79,7 +85,10 @@ const page = () => {
   ];
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl + "destination.webp"]} name="Destination Wedding" />
+      <FullScreenCarousel
+        data={[imageUrl + "destination.webp"]}
+        name="Destination Wedding"
+      />
       <RatingsDisplay />
       <DescriptionShow
         title={{
@@ -102,7 +111,7 @@ const page = () => {
             alt=""
             height={10}
             width={37}
-          // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
           <h2 className="playfair font-normal text-[40px] text-[#2F4B26]">
             What We Offer
@@ -112,7 +121,7 @@ const page = () => {
             alt=""
             height={10}
             width={37}
-          // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
         </div>
         <WeOffer items={weOfferData} />
@@ -124,7 +133,7 @@ const page = () => {
             alt=""
             height={10}
             width={37}
-          // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
           <h2 className="playfair font-normal text-[40px] text-[#2F4B26]">
             Featured Wedding Services
@@ -134,12 +143,16 @@ const page = () => {
             alt=""
             height={10}
             width={37}
-          // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
+            // className="w-[30px] h-[8px] md:w-[37px] md:h-[10px]"
           />
         </div>
         <FacilitySlider cardData={sampleCardData} />
         <div className="w-full text-center mt-10 md:mt-20">
-          <Link href={`https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`} target="blank" className="text-center hover:underline cursor-pointer lato font-normal text-[18px]">
+          <Link
+            href={`https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`}
+            target="blank"
+            className="text-center hover:underline cursor-pointer lato font-normal text-[18px]"
+          >
             Contact us {">"}
           </Link>
         </div>

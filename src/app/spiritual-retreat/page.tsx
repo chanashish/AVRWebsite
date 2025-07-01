@@ -11,6 +11,12 @@ import { imageUrl } from "@/data/links";
 import TodoSection from "@/components/SectionComponents/TodoSection";
 import { wellnessData } from "@/data/pageDate";
 
+export const metadata = {
+  title: "Spiritual Retreat - Anand Vardhan Resorts",
+  description:
+    "Anand Vardhan Resorts offers a divine escape. Discover spiritual wellness with guided meditation, sacred spaces, and natural serenity.",
+};
+
 const page = () => {
   const sampleCardData = [
     {
@@ -235,10 +241,7 @@ const page = () => {
           AVR&apos;s spiritual energy.
         </p>
         <WeOffer items={weOfferData} />
-        <TodoSection
-          {...wellnessData[0]}
-          index={0}
-        />
+        <TodoSection {...wellnessData[0]} index={0} />
         <SectionWithContainer>
           <div className="flex flex-col gap-5">
             <div className="flex gap-5 items-center max-md:flex-col justify-center">

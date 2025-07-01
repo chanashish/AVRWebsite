@@ -6,6 +6,12 @@ import RatingsDisplay from "@/components/RatingsDisplay";
 import { imageUrl } from "@/data/links";
 import React from "react";
 
+export const metadata = {
+  title: "Epic Adventure Activities in Manali  - Anand Vardhan Resorts ",
+  description:
+    "Looking for things to do? Anand Vardhan Resorts blends leisure, nature, and culture with curated experiences in cycling, Trekking, and Adventure parks for a fulfilling vacation.",
+};
+
 const page = () => {
   const activitiesData = [
     {

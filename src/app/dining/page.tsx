@@ -6,10 +6,20 @@ import WellnessSliderSection from "@/components/WellnessSlider";
 import { imageUrl } from "@/data/links";
 import React from "react";
 
+export const metadata = {
+  title:
+    "Fine Dining and Luxurious Culinary Experience -Anand Vardhan Resorts ",
+  description:
+    "Enjoy a luxury Culinary Experience  dining at Anand Vardhan Resorts with delicious menus, serene surroundings, and exceptional service that make every bite unforgettable.",
+};
+
 const page = () => {
   return (
     <div>
-      <FullScreenCarousel name="Culinary Experience" data={[imageUrl + "IMG_8160.webp"]} />
+      <FullScreenCarousel
+        name="Culinary Experience"
+        data={[imageUrl + "IMG_8160.webp"]}
+      />
       <RatingsDisplay />
       <DescriptionShow
         title={{

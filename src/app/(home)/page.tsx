@@ -1,4 +1,3 @@
-"use client";
 import HomeHero from "./components/Header/HomeHero";
 import TestimonialSection from "./components/Testimonials/TestimonialSection";
 import RatingsDisplay from "@/components/RatingsDisplay";

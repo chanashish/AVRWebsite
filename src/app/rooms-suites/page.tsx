@@ -6,6 +6,11 @@ import TestimonialSection from "../(home)/components/Testimonials/TestimonialSec
 import BookingForm from "@/components/BookingForm";
 import { imageUrl } from "@/data/links";
 
+export const metadata = {
+  title: "Rooms & Suites | AnandVardhan Resorts",
+  description: "Rooms & Suites | AnandVardhan Resorts",
+};
+
 const page = () => {
   return (
     <div>
@@ -52,8 +57,6 @@ const page = () => {
               id: 6,
               name: "Sofa Unit",
             },
-
-
           ]}
           services={[
             { imageUrl: imageUrl + "Deluxe/003.webp" },
@@ -94,7 +97,6 @@ const page = () => {
               id: 5,
               name: "350 sq. ft Area",
             },
-
           ]}
           services={[
             { imageUrl: imageUrl + "superDeluxe/003.webp" },
