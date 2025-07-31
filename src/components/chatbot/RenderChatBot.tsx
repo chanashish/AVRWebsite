@@ -78,7 +78,7 @@ const RenderChatBot = () => {
         messageFlows={messageFlows}
         title="Anand Vardhan Resorts "
         theme={"#2F4B26"}
-        openInterval={15000}
+        openInterval={40000}
         logo={"/favicon.png"}
       />
     </div>
