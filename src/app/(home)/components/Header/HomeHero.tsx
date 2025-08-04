@@ -46,15 +46,8 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
   return (
     <section className="relative w-full h-[700px] max-sm:h-[240px] max-w-[1600px] mx-auto">
       {display && (
-<<<<<<< HEAD
-        <div className="absolute right-[10px] flex gap-4 md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
-          {time}
-
-          <div>16°C</div>
-=======
         <div className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
           <div className="elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c" data-elfsight-app-lazy></div>
->>>>>>> aab686274eda364765e3f37ad43a79557664c994
         </div>
 
       )}

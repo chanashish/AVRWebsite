@@ -1,4 +1,3 @@
-import HomeHero from "./components/Header/HomeHero";
 import TestimonialSection from "./components/Testimonials/TestimonialSection";
 import RatingsDisplay from "@/components/RatingsDisplay";
 import BookingForm from "@/components/BookingForm";
@@ -9,6 +8,7 @@ import FullSlideContentCarousel from "@/components/ImageCarouselCard";
 import { imageUrl } from "@/data/links";
 import { todoData } from "@/data/pageDate";
 import TodoSection from "@/components/SectionComponents/TodoSection";
+import { HomeHero } from "./components/Header/HomeHero";
 
 export default function Home() {
   const slides = [

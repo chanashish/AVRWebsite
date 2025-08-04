@@ -6,8 +6,17 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Container from "../SectionComponents/Container";
 import MobileNav from "./MobileNav";
+import { NavLink } from "@/data/links";
+import { usePathname } from "next/navigation";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = usePathname();
+
+  const ignoreIds = [7, 9, 10];
+
+  const updatedNavLinks = NavLink.filter((link) => link.id).filter(
+    (link) => !ignoreIds.includes(link.id)
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -41,6 +50,21 @@ const Navbar: React.FC = () => {
               />
             </Link>
           </div>
+          <ul className="md:flex hidden items-center justify-center gap-8">
+            {updatedNavLinks.map((link) => (
+              <li key={link.id} className="w-full">
+                <Link
+                  href={link.href}
+                  className={`text-nowrap text-[#2F4B26] relative capitalize transition-all duration-300 ease-in-out group flex items-center justify-center`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#2F4B26] group-hover:w-full transition-all duration-300 ease-in-out ${link.href === pathName ? "w-full" : ""}`}
+                  ></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <div className="lg:hidden flex">
             {/* <Link href={"tel:+919317207373"}>
@@ -63,7 +87,7 @@ const Navbar: React.FC = () => {
               <span className="">Book Now</span>
             </Link>
             <button
-              className={`text-4xl ${isOpen ? "rotate-90" : ""} transition-all duration-300 ease-in-out`}
+              className={`text-4xl ${isOpen ? "rotate-90" : ""} transition-all duration-300 ease-in-out max-md:block hidden`}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <IoMdClose /> : <MenuBurger />}
