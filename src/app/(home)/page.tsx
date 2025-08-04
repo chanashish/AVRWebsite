@@ -105,7 +105,7 @@ export default function Home() {
       <FullSlideContentCarousel data={slides} />
 
       <TestimonialSection />
-      <div className="bg-[#F9F9F1]">
+      <div className="bg-[#F9F9F1] border border-solid border-1 border-t-black">
         <BookingForm />
       </div>
     </main>
