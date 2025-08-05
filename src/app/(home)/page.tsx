@@ -33,10 +33,16 @@ export default function Home() {
           secondLine: "Happiness",
           thirdLine: "Harmony",
         }}
-        description={{
-          mainText:
-            "We take you to a wonderland of breeze, leaves, and stars. Wake up feeling fresh and breezy every morning -experience waking up right in the heart of India’s wealthiest woodlands and reconnecting with your soul. With the sound of chirping birds, and the snow-clad mountains of the Dhauladhar and Pir Panjal range, this resort will enchant you with the holy vibes away from the hustle and bustle of the busy town of Manali. Located around apple orchards and surrounded by Pine trees we provide top-notch hospitality. Discover a haven of natural beauty and culinary delight at Anand Vardhan, the finest luxury resort in Manali, serving exquisite vegetarian cuisine.",
-        }}
+        description2={[
+          "As a leading wellness resort in Manali, Anand Vardhan provides a comprehensive suite of rejuvenating experiences. Guests can immerse themselves in yoga and meditation sessions, indulge in Panchkarma therapies, and explore naturopathy treatments, all designed to harmonize the body and mind. The resort's collaboration with Rishibhumi enhances its offerings, making it a sought-after destination for those searching for a meditation retreat in Himachal Pradesh.",
+
+            `For travelers looking for a "resort spa near me," Anand Vardhan delivers with its state-of-the-art spa facilities, steam and sauna rooms, and a dedicated wellness center. The resort's commitment to spiritual rejuvenation is evident in its serene ambiance, making it a top choice for spiritual retreats in Manali.`,
+
+            "Accommodations at Anand Vardhan are designed to provide comfort and luxury. From Deluxe Rooms to Luxury Suites, each space offers breathtaking views of the surrounding mountains and forests. The resort's pure vegetarian dining options, including the Govind Prasadam restaurant and an open-air café, ensure a nourishing culinary experience.",
+
+            "Beyond relaxation, the resort offers a plethora of activities. Guests can engage in trekking, cycling, and adventure sports like zip-lining and archery. Evenings can be spent around a bonfire, under the starlit sky, sharing stories and creating memories.",
+
+            "For those seeking wellness retreats near me or a spiritual resort in Manali, Anand Vardhan Resort promises an experience that rejuvenates the soul and invigorates the senses. Book your stay today and embark on a transformative journey in the heart of the Himalayas."]}
       />
       {/* //here */}
       <RoomsAndSuitesCombined />

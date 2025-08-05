@@ -11,16 +11,18 @@ interface DescriptonShowProps {
     secondLine?: string;
     thirdLine?: string;
   };
-  description: {
-    mainText: string;
+  description?: {
+    mainText?: string;
     diningText?: string;
     phoneNumber?: string;
   };
+  description2?: string[];
 }
 
 function DescriptionShow({
   title,
   description,
+  description2,
   altTitle = false,
 }: DescriptonShowProps) {
   return (
@@ -135,14 +137,18 @@ function DescriptionShow({
         )}
 
         <div className="text-xl font-light leading-8 text-stone-500 max-md:text-lg max-md:leading-7 max-sm:text-base max-sm:leading-6">
-          <p>{description.mainText}</p>
+          {description && <p>{description.mainText}</p>}
           <br />
-          <p>{description.diningText}</p>
+          {description && <p>{description.diningText}</p>}
           <br />
-          {description.phoneNumber && (
+          {description2 &&
+            description2.map((item: string, index: number) => (
+              <p key={index} className="mb-2">{item}</p>
+            ))}
+          {description && (
             <p>
               <Link
-                href={`tel:${description.phoneNumber.replace(/\s+/g, "")}`}
+                href={`tel:${description?.phoneNumber?.replace(/\s+/g, "")}`}
                 className="hover:underline"
               >
                 Call Now {">"}

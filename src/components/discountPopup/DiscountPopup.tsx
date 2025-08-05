@@ -53,7 +53,7 @@ const DiscountPopup = ({
   useEffect(() => {
     const id = setTimeout(() => {
       setShow(true);
-    }, 4000);
+    }, 90000); // 1.5 mins
 
     return () => clearTimeout(id);
   }, []);

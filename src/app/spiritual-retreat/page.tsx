@@ -130,12 +130,19 @@ const page = () => {
             thirdLine: "Wellness",
           }}
           description={{
-            mainText:
-              "Anand Vardhan Resort is more than just a getaway—it's a peaceful sanctuary where the soul can reconnect, recharge, and find true serenity. Nestled in the heart of nature, the resort offers a spiritual retreat that goes beyond relaxation. It’s a place where you can immerse yourself in calming practices, whether it’s through yoga, meditation, or simply enjoying the tranquil surroundings. The resort also offers naturopathy and alternative treatments, providing holistic therapies designed to heal the body, mind, and spirit. From detoxifying treatments to herbal remedies and therapeutic massages, every service is tailored to restore balance and promote well-being.",
-            diningText:
-              "Anand Vardhan Resort invites you to leave behind the noise of everyday life and embark on a journey of inner peace and self-discovery. Whether you're seeking solace, spiritual growth, or just a break from the hustle, this resort offers a haven where your spirit can truly unwind and rejuvenate.",
+            // mainText:
+            //   "Anand Vardhan Resort is more than just a getaway—it's a peaceful sanctuary where the soul can reconnect, recharge, and find true serenity. Nestled in the heart of nature, the resort offers a spiritual retreat that goes beyond relaxation. It’s a place where you can immerse yourself in calming practices, whether it’s through yoga, meditation, or simply enjoying the tranquil surroundings. The resort also offers naturopathy and alternative treatments, providing holistic therapies designed to heal the body, mind, and spirit. From detoxifying treatments to herbal remedies and therapeutic massages, every service is tailored to restore balance and promote well-being.",
+            // diningText:
+            //   "Anand Vardhan Resort invites you to leave behind the noise of everyday life and embark on a journey of inner peace and self-discovery. Whether you're seeking solace, spiritual growth, or just a break from the hustle, this resort offers a haven where your spirit can truly unwind and rejuvenate.",
             phoneNumber: "+91 93172 07373",
           }}
+          description2={[
+           "Anand Vardhan Resort offering an unparalleled spiritual retreat in Manali. Nestled amidst the serene landscapes of Himachal Pradesh, our resort provides the perfect setting to disconnect from the chaos of daily life and reconnect with your inner self.",
+
+          "Our retreat is designed to cater to those seeking holistic wellness and spiritual growth. Engage in guided meditation sessions, yoga practices, and naturopathy treatments that aim to harmonize the body, mind, and spirit. The tranquil environment, surrounded by lush greenery and majestic mountains, enhances the experience, allowing for deep introspection and healing.",
+
+          "Anand Vardhan Resort is not just about spiritual practices; it's about embracing a lifestyle that promotes well-being. Our facilities include a dedicated meditation hall, wellness center, and spaces for outdoor activities like trekking and cycling, ensuring a balanced experience of relaxation and adventure."
+          ]}
         />
         <div className="flex gap-5 items-center max-md:flex-col justify-center">
           <h2 className="text-[40px] leading-10 text-[#2F4B26] max-md:text-4xl max-md:leading-10 max-sm:text-3xl max-sm:leading-9 playfair font-normal">

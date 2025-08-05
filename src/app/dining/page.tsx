@@ -37,7 +37,7 @@ const page = () => {
       <WellnessSliderSection
         href=""
         hideExplore={true}
-        description="Step into Govind Prasadam, where tradition meets comfort in every bite. Our indoor dining space offers a warm, inviting atmosphere to savor authentic vegetarian meals made with love and care. Whether you're here to indulge in flavors or enjoy good company, we’re delighted to have you feel at home with us."
+        // description="Step into Govind Prasadam, where tradition meets comfort in every bite. Our indoor dining space offers a warm, inviting atmosphere to savor authentic vegetarian meals made with love and care. Whether you're here to indulge in flavors or enjoy good company, we’re delighted to have you feel at home with us."
         // title="ANAND VARDHAN RESORT X RISHIBHUMI BRINGS"
         subtitle="Govind Prasadam Pure Veg Restaurant"
         services={[
@@ -50,6 +50,13 @@ const page = () => {
           {
             imageUrl: imageUrl + "IMG_8158.webp",
           },
+        ]}
+        description2={[
+          "Indulge in a fine dining and luxurious culinary experience in Manali at Anand Vardhan Resort, where the essence of vegetarian cuisine meets the serenity of the Himalayas. Our dining venues are thoughtfully designed to offer not just meals, but memorable gastronomic journeys that delight the senses.",
+
+          "At Govind Prasadam, our indoor restaurant, tradition and comfort converge. Here, guests can savor authentic vegetarian dishes crafted with fresh, plant-based ingredients, all within a warm and inviting atmosphere. Whether you're indulging in hearty meals or sharing quiet moments, Govind Prasadam ensures a dining experience that nourishes both body and soul. anandvardhanresorts.com",
+
+          "For those who prefer dining amidst nature, our Open Air Café offers the perfect setting. Breathe in the crisp mountain air as you enjoy delicious vegetarian fare under the open sky. The relaxed ambiance, combined with panoramic views of the surrounding landscapes, makes every meal a moment of peace and connection with nature",
         ]}
       />
       <WellnessSliderSection

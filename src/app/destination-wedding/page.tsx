@@ -96,12 +96,33 @@ const page = () => {
           secondLine: "Himachal Pradesh”",
         }}
         description={{
-          mainText:
-            "Surrounded by towering trees, fresh mountain air, and the ones you love most, your destination wedding becomes an unforgettable celebration of love, peace, and adventure. Celebrate love with the nature’s most breathtaking canvas. A mountain retreat wedding is where your dreams come to life. Let the mountains whisper their blessings as you say ‘I do’.",
-          diningText:
-            "At Anand Vardhan Resorts, the best resort for destination weddings in Manali, our team of benevolent, dedicated, and ever-smiling staff, combined with our multiple amenities, will help make your BIG DAY truly unforgettable.",
+          // mainText:
+          //   "Surrounded by towering trees, fresh mountain air, and the ones you love most, your destination wedding becomes an unforgettable celebration of love, peace, and adventure. Celebrate love with the nature’s most breathtaking canvas. A mountain retreat wedding is where your dreams come to life. Let the mountains whisper their blessings as you say ‘I do’.",
+          // diningText:
+          //   "At Anand Vardhan Resorts, the best resort for destination weddings in Manali, our team of benevolent, dedicated, and ever-smiling staff, combined with our multiple amenities, will help make your BIG DAY truly unforgettable.",
           phoneNumber: "+91 93172 07373",
         }}
+        description2={[
+          "At Anand Vardhan Resort, we offer comprehensive wedding services to make your celebration seamless:",
+
+          "Pre-Wedding Events: Engagements, Mehendi, and Haldi ceremonies.",
+
+          "Catering: Pure vegetarian meals crafted from locally sourced ingredients.",
+
+          "Decor and Entertainment: Customized themes and live performances.",
+
+          "Hospitality: Guest accommodations with modern amenities.",
+
+          "Safety and Hygiene: Adherence to the highest standards for your peace of mind. anandvardhanresorts.com",
+
+          "Our dedicated team collaborates with you to personalize every detail, ensuring your wedding reflects your unique love story. From the initial planning stages to the final farewell, we are committed to making your dream wedding a reality.",
+
+          "Experience the magic of a destination wedding in Manali at Anand Vardhan Resort, where nature's beauty and heartfelt hospitality come together to create unforgettable memories.",
+
+
+          "For those seeking a spiritual retreat in Manali, Anand Vardhan Resort stands as a beacon of tranquility and holistic healing. Join us to embark on a transformative journey that nurtures your soul and revitalizes your spirit.",
+
+        ]}
       />
       <HomeHero />
       <div className="bg-[#F9F9F1] w-full text-center py-10 md:py-20">

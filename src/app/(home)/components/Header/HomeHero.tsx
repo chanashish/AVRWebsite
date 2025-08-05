@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { VideoBackground } from "./VideoBackground";
 // import axios from "axios";
 
@@ -42,14 +42,51 @@ export const HomeHero: React.FC<HomeHeroProps> = ({ display = false }) => {
 
   //   return () => clearInterval(interval);
   // }, []);
+  useEffect(() => {
+    const hideWidgetLink = () => {
+      const widget = document.querySelector(
+        ".elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c a"
+      ) as HTMLElement | null;
+      if (widget) {
+        widget.style.setProperty("display", "none", "important");
+      }
+    };
+    hideWidgetLink();
+
+    const observer = new MutationObserver(hideWidgetLink);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+  const iframe = document.querySelector('.elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c iframe') as HTMLIFrameElement | null;
+  if (iframe) {
+    iframe.onload = () => {
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+      const link = iframeDoc?.querySelector('a[style*="display: flex"]') as HTMLElement | null;
+      if (link) {
+        link.style.setProperty('display', 'none', 'important');
+      }
+    };
+  }
+}, []);
 
   return (
     <section className="relative w-full h-[700px] max-sm:h-[240px] max-w-[1600px] mx-auto">
       {display && (
-        <div className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]">
-          <div className="elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c" data-elfsight-app-lazy></div>
+        <div
+          id="widget"
+          className="absolute right-[10px] md:right-20 top-[10px] md:top-5 text-white text-[26px] max-md:text-[20px] z-[100]"
+        >
+          <div
+            className="elfsight-app-e3e6d9a0-7d7f-4530-8524-7ef96c38507c"
+            data-elfsight-app-lazy
+          ></div>
         </div>
-
       )}
       <VideoBackground />
     </section>

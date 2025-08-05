@@ -18,6 +18,7 @@ export interface FacilityData {
 interface WellnessSliderSectionProps {
   title?: string;
   description?: string;
+  description2?: string[];
   roomdescription?: string;
   href: string;
   facility?: FacilityData[];
@@ -81,6 +82,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
   title,
   subtitle,
   description,
+  description2,
   roomdescription,
   hideExplore = false,
   facility,
@@ -210,6 +212,15 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
           <p className="roboto font-light text-[20px] text-[#686767] ">
             {description}
           </p>
+        </Container>
+      )}
+      {description2 && (
+        <Container>
+          {description2.map((item) => (
+            <p key={item} className="roboto font-light text-xl text-[#686767] mt-4">
+              {item}
+            </p>
+          ))}
         </Container>
       )}
 
