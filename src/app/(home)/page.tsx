@@ -9,6 +9,7 @@ import { imageUrl } from "@/data/links";
 import { todoData } from "@/data/pageDate";
 import TodoSection from "@/components/SectionComponents/TodoSection";
 import { HomeHero } from "./components/Header/HomeHero";
+import Link from "next/link";
 
 export default function Home() {
   const slides = [
@@ -25,6 +26,13 @@ export default function Home() {
   return (
     <main>
       <HomeHero display={true} />
+      <div className="bg-[#F9F9F1] border border-solid border-1 border-t-black">
+        <BookingForm />
+        <p className="text-center text-xl text-[#2F4B26] py-8">
+          Connect with us on <Link href="tel:+919267989157">+919267989157</Link>{" "}
+          for Travel Agent, Corporate, and Group Booking rates
+        </p>
+      </div>
       <RatingsDisplay />
       <DescriptionShow
         altTitle={true}
@@ -36,13 +44,14 @@ export default function Home() {
         description2={[
           "As a leading wellness resort in Manali, Anand Vardhan provides a comprehensive suite of rejuvenating experiences. Guests can immerse themselves in yoga and meditation sessions, indulge in Panchkarma therapies, and explore naturopathy treatments, all designed to harmonize the body and mind. The resort's collaboration with Rishibhumi enhances its offerings, making it a sought-after destination for those searching for a meditation retreat in Himachal Pradesh.",
 
-            `For travelers looking for a "resort spa near me," Anand Vardhan delivers with its state-of-the-art spa facilities, steam and sauna rooms, and a dedicated wellness center. The resort's commitment to spiritual rejuvenation is evident in its serene ambiance, making it a top choice for spiritual retreats in Manali.`,
+          `For travelers looking for a "resort spa near me," Anand Vardhan delivers with its state-of-the-art spa facilities, steam and sauna rooms, and a dedicated wellness center. The resort's commitment to spiritual rejuvenation is evident in its serene ambiance, making it a top choice for spiritual retreats in Manali.`,
 
-            "Accommodations at Anand Vardhan are designed to provide comfort and luxury. From Deluxe Rooms to Luxury Suites, each space offers breathtaking views of the surrounding mountains and forests. The resort's pure vegetarian dining options, including the Govind Prasadam restaurant and an open-air café, ensure a nourishing culinary experience.",
+          "Accommodations at Anand Vardhan are designed to provide comfort and luxury. From Deluxe Rooms to Luxury Suites, each space offers breathtaking views of the surrounding mountains and forests. The resort's pure vegetarian dining options, including the Govind Prasadam restaurant and an open-air café, ensure a nourishing culinary experience.",
 
-            "Beyond relaxation, the resort offers a plethora of activities. Guests can engage in trekking, cycling, and adventure sports like zip-lining and archery. Evenings can be spent around a bonfire, under the starlit sky, sharing stories and creating memories.",
+          "Beyond relaxation, the resort offers a plethora of activities. Guests can engage in trekking, cycling, and adventure sports like zip-lining and archery. Evenings can be spent around a bonfire, under the starlit sky, sharing stories and creating memories.",
 
-            "For those seeking wellness retreats near me or a spiritual resort in Manali, Anand Vardhan Resort promises an experience that rejuvenates the soul and invigorates the senses. Book your stay today and embark on a transformative journey in the heart of the Himalayas."]}
+          "For those seeking wellness retreats near me or a spiritual resort in Manali, Anand Vardhan Resort promises an experience that rejuvenates the soul and invigorates the senses. Book your stay today and embark on a transformative journey in the heart of the Himalayas.",
+        ]}
       />
       {/* //here */}
       <RoomsAndSuitesCombined />
@@ -111,9 +120,6 @@ export default function Home() {
       <FullSlideContentCarousel data={slides} />
 
       <TestimonialSection />
-      <div className="bg-[#F9F9F1] border border-solid border-1 border-t-black">
-        <BookingForm />
-      </div>
     </main>
   );
 }
