@@ -23,7 +23,7 @@ const page = () => {
         name="Rooms & Suites"
       />
       <RatingsDisplay />
-      <h2 className="playfair font-normal text-[#2F4B26] text-[40px] text-center mb-[120px]">
+      <h2 className="playfair font-normal text-[#2F4B26] md:text-[40px] text-3xl text-center md:mb-[120px] mb-10">
         “Your Personal Place Of Retreat”
       </h2>
       <div className="bg-[#F9F9F1]">
@@ -158,10 +158,10 @@ const page = () => {
           ]}
         />
       </div>
-      <div className="pb-[120px] bg-[#F9F9F1]">
+      <div className="md:pb-[60px] bg-[#F9F9F1]">
         <TestimonialSection />
       </div>
-      <div className="bg-[#F9F9F1]">
+      <div className="bg-[#F9F9F1] mb-8">
         <BookingForm />
       </div>
     </div>

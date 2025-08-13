@@ -23,7 +23,7 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({
   return (
     <div className="w-full max-w-[1600px] mx-auto h-full lg:min-h-screen bg-[#F9F9F1] text-[#2F4B26] py-10 flex flex-col items-center justify-between">
       {/* Heading */}
-      <div className="flex md:flex-row flex-col items-center justify-center gap-2 text-center mb-14">
+      <div className="flex md:flex-row flex-col items-center justify-center gap-2 text-center md:mb-14 mb-4">
         <Image
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/46a742dbacc5989d42fa9cb23ae88f1bbc3a907a"
           alt=""
@@ -77,7 +77,7 @@ const FullSlideContentCarousel: React.FC<FullSlideContentCarouselProps> = ({
       {/* Know More */}
       <Link
         href={"/dining"}
-        className="text-center mt-4 text-[#2F4B26] text-lg font-medium cursor-pointer hover:underline"
+        className="text-center md:mt-4 text-[#2F4B26] text-lg font-medium cursor-pointer hover:underline"
       >
         Know More &gt;
       </Link>

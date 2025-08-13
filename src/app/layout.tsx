@@ -88,16 +88,19 @@ export default function RootLayout({
             }
             `,
           }}
+          strategy="lazyOnload"
         />
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"
-          strategy="afterInteractive"
+          // strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          // strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -109,7 +112,7 @@ export default function RootLayout({
         />
 
         {/* Google Tag Manager */}
-        <Script id="gtm-init" strategy="afterInteractive">
+        <Script id="gtm-init" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -119,7 +122,11 @@ export default function RootLayout({
           `}
         </Script>
 
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          async
+          defer
+        ></script>
 
         {/* End Google Tag Manager */}
       </head>

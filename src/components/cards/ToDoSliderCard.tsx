@@ -15,7 +15,7 @@ const ToDoSliderCard: React.FC<ToDoSliderCardProps> = ({
   handleClick,
 }) => {
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col md:gap-2 gap-4 w-full">
       <div className="w-full relative md:aspect-[4/3] aspect-[4/3]">
         <Image
           src={src}
@@ -32,7 +32,7 @@ const ToDoSliderCard: React.FC<ToDoSliderCardProps> = ({
         {title}
       </h3>
       <p
-        className={`text-xl text-[#686767] roboto text-start ${textEnd ? "text-end" : "text-start"}`}
+        className={`md:text-xl text-base text-[#686767] !font-light roboto  text-start ${textEnd ? "text-end" : "text-start"}`}
       >
         {description}
       </p>

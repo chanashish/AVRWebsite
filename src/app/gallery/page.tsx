@@ -22,7 +22,7 @@ const page = () => {
         </h2>
         <GalleryImageComponent />
       </div>
-      <div className="bg-[#F9F9F1] mt-5">
+      <div className="bg-[#F9F9F1] mt- mb-6">
         <BookingForm />
       </div>
     </div>

@@ -126,7 +126,11 @@ const BookingForm = () => {
     if (!formData.checkOut.trim()) {
       newErrors.checkOut = "Check-out date is required";
       isValid = false;
-    } else if (formData.checkIn && formData.checkOut && new Date(formData.checkIn) >= new Date(formData.checkOut)) {
+    } else if (
+      formData.checkIn &&
+      formData.checkOut &&
+      new Date(formData.checkIn) >= new Date(formData.checkOut)
+    ) {
       newErrors.checkOut = "Check-out must be after check-in";
       isValid = false;
     }
@@ -155,7 +159,7 @@ const BookingForm = () => {
           check_out: `${formBody.checkout}`,
           Subject: null,
           Description: `checkin: ${formBody.checkin}, checkout: ${formBody.checkout}, ${formBody.other_fields}`,
-          created_from: "Website"
+          created_from: "Website",
         },
         {
           headers: {
@@ -221,10 +225,16 @@ const BookingForm = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
+      if (
+        countryDropdownRef.current &&
+        !countryDropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
-      if (roomDropdownRef.current && !roomDropdownRef.current.contains(event.target as Node)) {
+      if (
+        roomDropdownRef.current &&
+        !roomDropdownRef.current.contains(event.target as Node)
+      ) {
         setRoomDropdownOpen(false);
       }
     };
@@ -240,7 +250,9 @@ const BookingForm = () => {
         </h2>
 
         {submitSuccess && (
-          <p className="text-green-600 text-sm mb-2">Your booking has been successfully submitted!</p>
+          <p className="text-green-600 text-sm mb-2">
+            Your booking has been successfully submitted!
+          </p>
         )}
 
         <form
@@ -256,14 +268,24 @@ const BookingForm = () => {
               placeholder="Full Name*"
               className="text-base text-neutral-700 outline-none w-[130px]"
             />
-            {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
+            {errors.fullName && (
+              <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>
+            )}
           </div>
 
           {/* Phone Number with Country Code */}
-          <div className="relative flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b" ref={countryDropdownRef}>
+          <div
+            className="relative flex flex-col px-4 py-5 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b"
+            ref={countryDropdownRef}
+          >
             <div className="flex items-center">
-              <div className="flex gap-2 items-center cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
-                <span className="text-base leading-6 text-neutral-700">{selectedCountry}</span>
+              <div
+                className="flex gap-2 items-center cursor-pointer"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              >
+                <span className="text-base leading-6 text-neutral-700">
+                  {selectedCountry}
+                </span>
                 <DropdownIcon />
               </div>
               {dropdownOpen && (
@@ -290,7 +312,9 @@ const BookingForm = () => {
                 className="ml-4 text-base text-neutral-700 outline-none"
               />
             </div>
-            {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>}
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -302,11 +326,13 @@ const BookingForm = () => {
               placeholder="Email ID*"
               className="text-base text-neutral-700 outline-none"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            )}
           </div>
 
           {/* Check-in Date */}
-          <div className="flex flex-col px-4 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+          <div className="flex flex-col px-1 py-2 border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <DatePicker
               selected={startDate}
               onChange={(date) => handleDateChange(date, "checkIn")}
@@ -318,11 +344,13 @@ const BookingForm = () => {
               className="text-base text-neutral-700 outline-none w-full cursor-pointer"
               wrapperClassName="w-full"
             />
-            {errors.checkIn && <p className="text-red-500 text-xs mt-1">{errors.checkIn}</p>}
+            {errors.checkIn && (
+              <p className="text-red-500 text-xs mt-1">{errors.checkIn}</p>
+            )}
           </div>
 
           {/* Check-out Date */}
-          <div className="flex flex-col px-4  border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
+          <div className="flex flex-col px-1 py-2  border-r border-solid border-r-zinc-100 max-md:w-full max-md:border-b">
             <DatePicker
               selected={endDate}
               onChange={(date) => handleDateChange(date, "checkOut")}
@@ -334,7 +362,9 @@ const BookingForm = () => {
               className="text-base text-neutral-700 outline-none w-full cursor-pointer"
               wrapperClassName="w-full"
             />
-            {errors.checkOut && <p className="text-red-500 text-xs mt-1">{errors.checkOut}</p>}
+            {errors.checkOut && (
+              <p className="text-red-500 text-xs mt-1">{errors.checkOut}</p>
+            )}
           </div>
 
           {/* Room Type Dropdown */}
@@ -343,7 +373,9 @@ const BookingForm = () => {
             ref={roomDropdownRef}
             onClick={() => setRoomDropdownOpen(!roomDropdownOpen)}
           >
-            <span className="text-base leading-6 text-neutral-700">{selectedRoom}</span>
+            <span className="text-base leading-6 text-neutral-700">
+              {selectedRoom}
+            </span>
             <ChevronDownIcon />
             {roomDropdownOpen && (
               <ul className="absolute top-full left-4 bg-white shadow-md border border-zinc-200 rounded-md w-48 z-10">
@@ -367,8 +399,9 @@ const BookingForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 rounded-r-md text-nowrap max-md:w-full ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+            className={`px-2 py-5 text-lg leading-6 text-white bg-lime-900 border !border-lime-900 max-md:rounded-b-md lg:rounded-r text-nowrap max-md:w-full ${
+              isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
             {isSubmitting ? (
               <span className="border-t-2 border-white w-6 h-6 rounded-full animate-spin mx-auto block" />

@@ -17,12 +17,16 @@ export default function TestimonialSection() {
   const intervalRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? typedTestimonials.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? typedTestimonials.length - 1 : prev - 1
+    );
     resetAutoSlide();
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === typedTestimonials.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === typedTestimonials.length - 1 ? 0 : prev + 1
+    );
     resetAutoSlide();
   };
 
@@ -33,7 +37,9 @@ export default function TestimonialSection() {
 
   const startAutoSlide = () => {
     intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev === typedTestimonials.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) =>
+        prev === typedTestimonials.length - 1 ? 0 : prev + 1
+      );
     }, 5000);
   };
 
@@ -53,9 +59,14 @@ export default function TestimonialSection() {
     };
   }, []);
 
-
   return (
-    <section className="relative w-full px-5 pt-12 pb-4 max-md:py-24 max-sm:py-16 bg-[#F9F9F1]" style={{ backgroundImage: "url(/bgmap.png)", backgroundPosition: "center" }}>
+    <section
+      className="relative w-full px-5 pt-12 pb-4 max-md:py-24 max-sm:py-8 bg-[#F9F9F1]"
+      style={{
+        backgroundImage: "url(/bgmap.png)",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="flex flex-col items-center mx-auto max-w-screen-lg gap-14">
         {/* Header */}
         <header className="flex flex-col items-center gap-4">

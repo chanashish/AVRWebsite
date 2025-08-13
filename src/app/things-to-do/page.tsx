@@ -93,7 +93,7 @@ const page = () => {
 
       <ActivitiesDisplay activities={activitiesData} />
 
-      <div className="bg-[#F9F9F1]">
+      <div className="bg-[#F9F9F1] mb-6">
         <BookingForm />
       </div>
     </div>

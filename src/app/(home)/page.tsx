@@ -1,15 +1,21 @@
-import TestimonialSection from "./components/Testimonials/TestimonialSection";
-import RatingsDisplay from "@/components/RatingsDisplay";
+"use client";
 import BookingForm from "@/components/BookingForm";
 import DescriptionShow from "@/components/DescriptionShow";
+import RatingsDisplay from "@/components/RatingsDisplay";
+import TestimonialSection from "./components/Testimonials/TestimonialSection";
 // import WellnessSliderSection from "@/components/WellnessSlider";
-import RoomsAndSuitesCombined from "./components/FullScreenRoomCards";
 import FullSlideContentCarousel from "@/components/ImageCarouselCard";
+import TodoSection from "@/components/SectionComponents/TodoSection";
 import { imageUrl } from "@/data/links";
 import { todoData } from "@/data/pageDate";
-import TodoSection from "@/components/SectionComponents/TodoSection";
-import { HomeHero } from "./components/Header/HomeHero";
 import Link from "next/link";
+import RoomsAndSuitesCombined from "./components/FullScreenRoomCards";
+import dynamic from "next/dynamic";
+
+const HomeHero = dynamic(() => import("./components/Header/HomeHero"), {
+  ssr: false, // Only load in browser
+  loading: () => <div style={{ height: "60vh", background: "#f0f0f0" }} />, // Placeholder
+});
 
 export default function Home() {
   const slides = [

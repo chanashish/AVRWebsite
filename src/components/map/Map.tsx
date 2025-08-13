@@ -8,7 +8,7 @@ const Map = ({
 }) => {
   return (
     <SectionWithContainer>
-      <div className="relative aspect-square md:aspect-[4/1.35] border-2 border-[#29422C] w-screen max-w-[1224px] lg:mx-auto max-md:w-[360px]">
+      <div className="relative aspect-square md:aspect-[4/1.35] border-2 border-[#29422C] w-screen max-w-[1224px] lg:mx-auto max-md:w-full">
         <LazyLoadedMap src={src} />
       </div>
       {/* <div className="flex flex-col items-center justify-center mt-4">

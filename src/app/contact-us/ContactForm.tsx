@@ -215,6 +215,7 @@ const ContacForm = () => {
           </div>
         </div>
       </div>
+
       <Map
         src={
           "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3379.79279196907!2d77.1560288!3d32.1018854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3904894ef256381d%3A0x536f0a9a306a271!2sAnand%20Vardhan%20Resort%20Manali%2C%20Village%2C%20Ghurdaur%20PO%20Larakelo%2C%20Kullu%20-%20Naggar%20-%20Manali%20Rd%2C%20Manali%2C%20Himachal%20Pradesh%20175104!3m2!1d32.1018854!2d77.1560288!5e0!3m2!1sen!2sin!4v1744033170925!5m2!1sen!2sin"

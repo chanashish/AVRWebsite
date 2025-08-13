@@ -27,9 +27,9 @@ function DescriptionShow({
 }: DescriptonShowProps) {
   return (
     <SectionWithContainer>
-      <div className="flex flex-col gap-8 items-center text-center max-md:gap-6 max-sm:gap-5">
+      <div className="flex flex-col gap-8 items-center text-center max-md:gap-6 max-sm:gap-0">
         {altTitle ? (
-          <div className="flex gap-5 items-center max-md:flex-col">
+          <div className="flex md:gap-5 gap-3 items-center max-md:flex-col">
             <h2 className="text-[40px] leading-10 text-[#2F4B26] max-md:text-4xl max-md:leading-10 max-sm:text-3xl max-sm:leading-9 playfair font-normal">
               {title.firstLine}
             </h2>
@@ -136,20 +136,22 @@ function DescriptionShow({
           </h2>
         )}
 
-        <div className="text-xl font-light leading-8 text-stone-500 max-md:text-lg max-md:leading-7 max-sm:text-base max-sm:leading-6">
+        <div className="text-xl font-light text-stone-500 max-md:text-lg max-sm:text-base mt-4">
           {description && <p>{description.mainText}</p>}
           <br />
           {description && <p>{description.diningText}</p>}
           <br />
           {description2 &&
             description2.map((item: string, index: number) => (
-              <p key={index} className="mb-2">{item}</p>
+              <p key={index} className="mb-2">
+                {item}
+              </p>
             ))}
           {description && (
             <p>
               <Link
                 href={`tel:${description?.phoneNumber?.replace(/\s+/g, "")}`}
-                className="hover:underline"
+                className="hover:underline text-[#2F4B26] font-me"
               >
                 Call Now {">"}
               </Link>

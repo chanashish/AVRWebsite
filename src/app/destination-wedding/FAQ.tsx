@@ -3,6 +3,8 @@
 import { SectionWithContainer } from "@/components";
 import { useState } from "react";
 
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+
 const faqData = [
   {
     id: 1,
@@ -42,14 +44,21 @@ const FAQ = () => {
                 onClick={() => toggleFAQ(item.id)}
                 className="w-full text-left flex justify-between items-center group"
               >
-                <h3 className="text-[#2f4b26] text-[24px] md:text-[22px] playfair font-normal group-hover:underline transition-all duration-200">
+                <h3 className="text-[#2f4b26] md:text-[24px] text-[22px] playfair font-normal group-hover:underline transition-all duration-200">
                   {item.ques}
                 </h3>
                 {/* Arrow */}
-                <span
-                  className={`transform transition-transform duration-300 w-3 h-3 border-t-2 border-r-2 border-[#686767] ${isOpen ? "rotate-[315deg]" : "rotate-[135deg]"
-                    }`}
-                ></span>
+                {/* <span
+                  className={`transform transition-transform duration-300 size-6 border-t-2 border-r-2 border-[#686767] ${
+                    isOpen ? "rotate-[315deg]" : "rotate-[135deg]"
+                  }`}
+                ></span> */}
+
+                {!isOpen ? (
+                  <MdKeyboardArrowDown size={30} />
+                ) : (
+                  <MdKeyboardArrowUp size={30} />
+                )}
               </button>
 
               {/* Answer */}

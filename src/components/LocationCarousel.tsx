@@ -17,9 +17,10 @@ interface Props {
 }
 
 const LocationCarousel: React.FC<Props> = ({ locations }) => {
-  const cardData = locations.length > 4 ? locations : [...locations, ...locations];
+  const cardData =
+    locations.length > 4 ? locations : [...locations, ...locations];
   return (
-    <section className="flex flex-col gap-14 items-center px-0 py-32 mx-auto max-w-none bg-[#F9F9F1] max-sm:py-16">
+    <section className="flex flex-col gap-14 items-center px-0 py-32 mx-auto max-w-none bg-[#F9F9F1] max-sm:py-4">
       <h1 className="text-4xl leading-10 text-center text-lime-900 max-md:text-3xl max-sm:text-3xl playfair">
         &quot;A sheer rejuvenation from monotonous life&quot;
       </h1>
@@ -59,7 +60,6 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 700px"
                   />
-
                 </div>
                 <div className="flex flex-col gap-2 items-start w-full">
                   <div className="flex gap-4 justify-center items-center w-full">
@@ -68,7 +68,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                       alt=""
                       height={10}
                       width={37}
-                    // className="w-[37px] h-[10px]"
+                      // className="w-[37px] h-[10px]"
                     />
                     <h2 className="text-3xl leading-10 text-center text-lime-900">
                       {location.title}
@@ -78,7 +78,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
                       alt=""
                       height={10}
                       width={37}
-                    // className="w-[37px] h-[10px]"
+                      // className="w-[37px] h-[10px]"
                     />
                   </div>
                   <p className="text-xl font-light leading-8 text-center text-stone-500 px-2">
@@ -128,7 +128,7 @@ const LocationCarousel: React.FC<Props> = ({ locations }) => {
           </button>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

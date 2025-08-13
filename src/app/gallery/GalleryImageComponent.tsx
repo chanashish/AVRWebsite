@@ -503,7 +503,7 @@ const GalleryImageComponent = () => {
   };
 
   return (
-    <div className="text-center w-full lg:px-32 md:px-16 px-4">
+    <div className="text-center w-full lg:px-32 md:px-16 px-0">
       {/* Headings - Stack in pairs on mobile */}
       <Container>
         <div className="grid lg:flex  md:grid-cols-4 grid-cols-2 gap-4 items-center w-full md:justify-center">

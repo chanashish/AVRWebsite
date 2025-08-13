@@ -134,7 +134,7 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
   );
 
   return (
-    <section className="max-w-[1600px] mx-auto py-20 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-16 bg-[#F9F9F1]">
+    <section className="max-w-[1600px] mx-auto py-10 w-full max-md:px-12 max-md:py-24 max-sm:px-6 max-sm:py-6 bg-[#F9F9F1]">
       <Container className="!px-0">
         <header
           className={`flex justify-between items-center mb-14 max-sm:mb-8 ${
@@ -207,17 +207,18 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
       </div>
 
       {description && (
-        <Container>
+        <Container className="!p-0">
           {" "}
           <p className="roboto font-light text-[20px] text-[#686767] ">
             {description}
           </p>
         </Container>
       )}
+
       {description2 && (
-        <Container>
+        <Container className="!p-0">
           {description2.map((item) => (
-            <p key={item} className="roboto font-light text-xl text-[#686767] mt-4">
+            <p key={item} className="roboto font-light text-xl text-[#686767]">
               {item}
             </p>
           ))}
@@ -314,7 +315,9 @@ const WellnessSliderSection: React.FC<WellnessSliderSectionProps> = ({
       )}
       <div className="flex justify-between items-center mt-7 max-sm:flex-row-reverse sm:hidden">
         {showArrows && (
-          <div className={`hidden max-sm:flex ${hideExplore?"mx-auto":""}`}>{<Navigation />}</div>
+          <div className={`hidden max-sm:flex ${hideExplore ? "mx-auto" : ""}`}>
+            {<Navigation />}
+          </div>
         )}
         {showExplore &&
           (roomdescription ? (

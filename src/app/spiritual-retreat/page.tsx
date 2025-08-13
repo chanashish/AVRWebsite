@@ -137,11 +137,11 @@ const page = () => {
             phoneNumber: "+91 93172 07373",
           }}
           description2={[
-           "Anand Vardhan Resort offering an unparalleled spiritual retreat in Manali. Nestled amidst the serene landscapes of Himachal Pradesh, our resort provides the perfect setting to disconnect from the chaos of daily life and reconnect with your inner self.",
+            "Anand Vardhan Resort offering an unparalleled spiritual retreat in Manali. Nestled amidst the serene landscapes of Himachal Pradesh, our resort provides the perfect setting to disconnect from the chaos of daily life and reconnect with your inner self.",
 
-          "Our retreat is designed to cater to those seeking holistic wellness and spiritual growth. Engage in guided meditation sessions, yoga practices, and naturopathy treatments that aim to harmonize the body, mind, and spirit. The tranquil environment, surrounded by lush greenery and majestic mountains, enhances the experience, allowing for deep introspection and healing.",
+            "Our retreat is designed to cater to those seeking holistic wellness and spiritual growth. Engage in guided meditation sessions, yoga practices, and naturopathy treatments that aim to harmonize the body, mind, and spirit. The tranquil environment, surrounded by lush greenery and majestic mountains, enhances the experience, allowing for deep introspection and healing.",
 
-          "Anand Vardhan Resort is not just about spiritual practices; it's about embracing a lifestyle that promotes well-being. Our facilities include a dedicated meditation hall, wellness center, and spaces for outdoor activities like trekking and cycling, ensuring a balanced experience of relaxation and adventure."
+            "Anand Vardhan Resort is not just about spiritual practices; it's about embracing a lifestyle that promotes well-being. Our facilities include a dedicated meditation hall, wellness center, and spaces for outdoor activities like trekking and cycling, ensuring a balanced experience of relaxation and adventure.",
           ]}
         />
         <div className="flex gap-5 items-center max-md:flex-col justify-center">
@@ -243,12 +243,14 @@ const page = () => {
             Energise
           </h2>
         </div>
-        <p className="text-center mt-10 roboto font-light text-[20px] text-[#686767]">
+        <p className="text-center mt-10 roboto font-light text-[20px] text-[#686767] md:px-0 px-2">
           Revitalize your body and soul—cleanse, heal, and energize with
           AVR&apos;s spiritual energy.
         </p>
         <WeOffer items={weOfferData} />
-        <TodoSection {...wellnessData[0]} index={0} />
+        <div className="md:mt-0 mt-10">
+          <TodoSection {...wellnessData[0]} index={0} />
+        </div>
         <SectionWithContainer>
           <div className="flex flex-col gap-5">
             <div className="flex gap-5 items-center max-md:flex-col justify-center">
@@ -313,7 +315,7 @@ const page = () => {
         </SectionWithContainer>
       </div>
       <WellnessPackages />
-      <div className="bg-[#F9F9F1]">
+      <div className="bg-[#F9F9F1] mb-6">
         <BookingForm />
       </div>
     </div>

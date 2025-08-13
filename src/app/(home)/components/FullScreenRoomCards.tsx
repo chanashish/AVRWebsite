@@ -76,7 +76,10 @@ const RoomsAndSuitesCombined: React.FC = () => {
           spaceBetween={0}
           slidesPerView={1}
           renderSlide={(item, index) => (
-            <div className="w-full flex flex-col gap-4 md:gap-8 relative" key={index}>
+            <div
+              className="w-full flex flex-col gap-4 md:gap-8 relative"
+              key={index}
+            >
               {/* imageSlider */}
               <SwiperCarousel
                 data={item.images}
@@ -110,11 +113,17 @@ const RoomsAndSuitesCombined: React.FC = () => {
                 )}
               />
 
-              <button className="room-img-prev absolute md:top-1/3 top-1/4 lg:left-24 left-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-50 ">
-                <BtnPrev className="w-8 aspect-square " />
+              <button
+                className="room-img-prev absolute md:top-1/3 top-1/4 lg:left-24 left-4 rounded-full md:size-12 size-10 flex items-center justify-center hover:bg-white text-white hover:text-primary z-50 "
+                aria-label="previous"
+              >
+                <BtnPrev className="md:w-8 w-6 aspect-square " />
               </button>
-              <button className="room-img-next absolute md:top-1/3 top-1/4 lg:right-24 right-4 rounded-full w-12 flex items-center justify-center aspect-square hover:bg-white text-white hover:text-primary z-10">
-                <BtnNext className="w-8 aspect-square " />
+              <button
+                className="room-img-next absolute md:top-1/3 top-1/4 lg:right-24 right-4 rounded-full md:size-12 size-10 flex items-center justify-center hover:bg-white text-white hover:text-primary z-10"
+                aria-label="next"
+              >
+                <BtnNext className="md:w-8 w-6 aspect-square " />
               </button>
               {/* imageSlider */}
               <Container className="bg-[#F9F9F1]">

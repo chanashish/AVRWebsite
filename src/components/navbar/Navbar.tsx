@@ -87,6 +87,7 @@ const Navbar: React.FC = () => {
               <span className="">Book Now</span>
             </Link>
             <button
+              aria-label="ham-burger-menu"
               className={`text-4xl ${isOpen ? "rotate-90" : ""} transition-all duration-300 ease-in-out max-md:block hidden`}
               onClick={() => setIsOpen(!isOpen)}
             >

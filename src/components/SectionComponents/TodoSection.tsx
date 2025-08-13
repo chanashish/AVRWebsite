@@ -57,7 +57,7 @@ const TodoSection: React.FC<TodoSectionProps> = ({
             className={`flex items-center justify-between w-full max-w-7xl ${index % 2 !== 0 ? "md:flex-row-reverse justify-between mr-0 ml-auto" : "justify-between "} `}
           >
             <div className="flex flex-col gap-2">
-              <h2 className="uppercase md:text-[1.375rem]/[2rem] max-md:text-[20px] text-2xl roboto text-[#2F4B26]">
+              <h2 className="uppercase md:text-[1.375rem]/[2rem] max-md:text-[20px] roboto text-[#2F4B26]">
                 {title}{" "}
               </h2>
               <p className="md:text-[2.5rem]/[3rem] text-[2rem]/[2rem] leading-8 text-[#2F4B26] playfair">
@@ -135,7 +135,9 @@ const TodoSection: React.FC<TodoSectionProps> = ({
       <Container>
         {/* slider Buttons */}
         <div className="flex justify-between items-center gap-4 w-full mt-6">
-          <div className={`lg:hidden flex items-center gap-2 ${!href?"mx-auto":""}`}>
+          <div
+            className={`lg:hidden flex items-center gap-2 ${!href ? "mx-auto" : ""}`}
+          >
             <button className={`todo-prev-${index} py-2 pe-2`}>
               <BtnPrev className="w-7 aspect-square" />
               <span className="sr-only">Previous</span>
@@ -147,11 +149,11 @@ const TodoSection: React.FC<TodoSectionProps> = ({
           </div>
           {href && (
             <Link
-            href={href || "/"}
-            className="text-[#363636] hover:underline underline-offset-4 lg:mx-auto w-fit text-lg lato flex items-center gap-2"
-          >
-            Explore <BtnNext className="w-4 aspect-square" />
-          </Link>
+              href={href || "/"}
+              className="text-[#363636] hover:underline underline-offset-4 lg:mx-auto w-fit text-lg lato flex items-center gap-2"
+            >
+              Explore <BtnNext className="w-4 aspect-square" />
+            </Link>
           )}
         </div>
       </Container>
