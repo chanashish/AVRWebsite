@@ -129,6 +129,22 @@ export default function RootLayout({
         ></script>
 
         {/* End Google Tag Manager */}
+
+        {/* ✅ Chatbot config */}
+        {/* <Script id="chatbot-config" strategy="afterInteractive">
+          {`
+            window.eazbotConfig = {
+              ndid: "5f556106-94d6-401d-a226-a777df3a92ea",
+              hid: "70592479",
+            };
+          `}
+        </Script> */}
+
+        {/* ✅ Chatbot script */}
+        {/* <Script
+          src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
+          strategy="afterInteractive"
+        /> */}
       </head>
       <body className={``} suppressHydrationWarning={true}>
         {/* Google Tag Manager (noscript) */}

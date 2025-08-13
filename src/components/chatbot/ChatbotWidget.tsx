@@ -50,11 +50,10 @@ const ChatbotWidget = ({
   };
 
   useEffect(() => {
-    const interval = setTimeout(() => {
-      setIsOpen(true);
-    }, openInterval || 3000);
-
-    return () => clearInterval(interval);
+    // const interval = setTimeout(() => {
+    //   setIsOpen(true);
+    // }, openInterval || 3000);
+    // return () => clearInterval(interval);
   }, [openInterval]);
 
   const [innerWidth, setInnerWidth] = useState<number | null>(null);
