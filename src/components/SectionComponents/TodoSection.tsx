@@ -54,7 +54,7 @@ const TodoSection: React.FC<TodoSectionProps> = ({
       >
         <div className="flex flex-col gap-4 w-full ">
           <div
-            className={`flex items-center justify-between w-full max-w-7xl ${index % 2 !== 0 ? "md:flex-row-reverse justify-between mr-0 ml-auto" : "justify-between "} `}
+            className={`flex items-center justify-between w-full max-w-[1275px] ${index % 2 !== 0 ? "md:flex-row-reverse justify-between mr-0 ml-auto" : "justify-between "} `}
           >
             <div className="flex flex-col gap-2">
               <h2 className="uppercase md:text-[1.375rem]/[2rem] max-md:text-[20px] roboto text-[#2F4B26]">

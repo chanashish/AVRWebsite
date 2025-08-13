@@ -126,7 +126,7 @@ const RoomsAndSuitesCombined: React.FC = () => {
                 <BtnNext className="md:w-8 w-6 aspect-square " />
               </button>
               {/* imageSlider */}
-              <Container className="bg-[#F9F9F1]">
+              <Container className="bg-[#F9F9F1] flex justify-between relative">
                 <div className="flex flex-col md:gap-4 gap-3 w-full md:aspect-[4/.5] aspect-[4/2.5]">
                   <h3 className="md:text-[2rem]/[2rem] text-xl text-[#2F4B26] playfair">
                     {item.title}
@@ -144,22 +144,34 @@ const RoomsAndSuitesCombined: React.FC = () => {
                         <BtnNext className="w-4 aspect-square" />
                       </span>
                     </Link>
-                    <div className="flex justify-between absolute md:right-20 right-0 z-10 ">
-                      <button className="room-prev p-4 text-[#363636]">
-                        <BtnPrev className="md:w-8 w-6 aspect-square" />
-                        <span className="sr-only">Previous</span>
-                      </button>
-                      <button className="room-next p-4 text-[#363636]">
-                        <BtnNext className="md:w-8 w-6 aspect-square" />
-                        <span className="sr-only">Next</span>
-                      </button>
-                    </div>
                   </div>
+                </div>
+
+                <div className="flex justify-between z-10 absolute md:top-0 top-28 right-0">
+                  <button className="room-prev p-4 text-[#363636]">
+                    <BtnPrev className="md:w-8 w-6 aspect-square" />
+                    <span className="sr-only">Previous</span>
+                  </button>
+                  <button className="room-next p-4 text-[#363636]">
+                    <BtnNext className="md:w-8 w-6 aspect-square" />
+                    <span className="sr-only">Next</span>
+                  </button>
                 </div>
               </Container>
             </div>
           )}
         />
+
+        {/* <div className="flex justify-between absolute md:bottom-[20%] bottom-16 md:right-10 right-4 z-10 ">
+          <button className="room-prev p-4 text-[#363636]">
+            <BtnPrev className="md:w-8 w-6 aspect-square" />
+            <span className="sr-only">Previous</span>
+          </button>
+          <button className="room-next p-4 text-[#363636]">
+            <BtnNext className="md:w-8 w-6 aspect-square" />
+            <span className="sr-only">Next</span>
+          </button>
+        </div> */}
       </div>
 
       <FullscreenImagePopup1

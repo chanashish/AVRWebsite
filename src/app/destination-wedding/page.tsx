@@ -119,9 +119,7 @@ const page = () => {
 
           "Experience the magic of a destination wedding in Manali at Anand Vardhan Resort, where nature's beauty and heartfelt hospitality come together to create unforgettable memories.",
 
-
           "For those seeking a spiritual retreat in Manali, Anand Vardhan Resort stands as a beacon of tranquility and holistic healing. Join us to embark on a transformative journey that nurtures your soul and revitalizes your spirit.",
-
         ]}
       />
       <HomeHero />

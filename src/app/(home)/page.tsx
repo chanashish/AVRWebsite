@@ -10,12 +10,13 @@ import { imageUrl } from "@/data/links";
 import { todoData } from "@/data/pageDate";
 import Link from "next/link";
 import RoomsAndSuitesCombined from "./components/FullScreenRoomCards";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
+import FullScreenCarousel from "@/components/FullScreenCarousel";
 
-const HomeHero = dynamic(() => import("./components/Header/HomeHero"), {
-  ssr: false, // Only load in browser
-  loading: () => <div style={{ height: "60vh", background: "#f0f0f0" }} />, // Placeholder
-});
+// const HomeHero = dynamic(() => import("./components/Header/HomeHero"), {
+//   ssr: false, // Only load in browser
+//   loading: () => <div style={{ height: "60vh", background: "#f0f0f0" }} />, // Placeholder
+// });
 
 export default function Home() {
   const slides = [
@@ -31,7 +32,8 @@ export default function Home() {
 
   return (
     <main>
-      <HomeHero display={true} />
+      {/* <HomeHero display={true} /> */}
+      <FullScreenCarousel data={["/Home.webp"]} name="" />
       <div className="bg-[#F9F9F1] border border-solid border-1 border-t-black">
         <BookingForm />
         <p className="text-center text-xl text-[#2F4B26] py-8">
