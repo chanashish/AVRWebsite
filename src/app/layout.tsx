@@ -69,7 +69,7 @@ export default function RootLayout({
 }
 </script> */}
 
-        <Script
+        {/* <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -89,6 +89,220 @@ export default function RootLayout({
             `,
           }}
           strategy="lazyOnload"
+        /> */}
+
+        <Script
+          id="anand-vardhan-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Resort",
+                  "@id": "https://anandvardhanresorts.com/#resort",
+                  name: "Anand Vardhan Resort",
+                  url: "https://anandvardhanresorts.com/",
+                  description:
+                    "Pure-veg wellness resort in Naggar/Manali offering deluxe & luxury suites, vegetarian dining (Govind Prasadam), spa, yoga & meditation, naturopathy, kids play area, adventure activities and bonfire evenings.",
+                  email: "sales@anandvardhanresorts.com",
+                  telephone: "‪+91-93172-07373‬",
+                  checkinTime: "14:00",
+                  checkoutTime: "12:00",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress:
+                      "Village, Ghurdaur PO Larakelo, Kullu Naggar, Manali Road",
+                    addressLocality: "Manali",
+                    addressRegion: "Himachal Pradesh",
+                    postalCode: "175104",
+                    addressCountry: "IN",
+                  },
+                  amenityFeature: [
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Parking Space",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Free WiFi",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Room Service",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Conference Room",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Vegetarian Restaurant (Govind Prasadam)",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Cafe / Open Air Cafe",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Spa / Panchkarma / Naturopathy",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Steam & Sauna",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Kids Play Area",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Adventure Park / Zipline / Trekking / Cycling",
+                      value: true,
+                    },
+                    {
+                      "@type": "LocationFeatureSpecification",
+                      name: "Mountain View Rooms",
+                      value: true,
+                    },
+                  ],
+                  hasMenu: [
+                    {
+                      "@type": "Menu",
+                      name: "Govind Prasadam Pure Veg Restaurant",
+                      url: "https://anandvardhanresorts.com/dining/",
+                    },
+                  ],
+                  makesOffer: [
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Room",
+                        name: "Deluxe Room",
+                        floorSize: {
+                          "@type": "QuantitativeValue",
+                          value: 270,
+                          unitText: "SQ_FT",
+                        },
+                      },
+                      url: "https://anandvardhanresorts.com/rooms-suites/",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Room",
+                        name: "Super Deluxe Room",
+                        floorSize: {
+                          "@type": "QuantitativeValue",
+                          value: 350,
+                          unitText: "SQ_FT",
+                        },
+                      },
+                      url: "https://anandvardhanresorts.com/rooms-suites/",
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Suite",
+                        name: "Luxury Suite Room",
+                        floorSize: {
+                          "@type": "QuantitativeValue",
+                          value: 500,
+                          unitText: "SQ_FT",
+                        },
+                      },
+                      url: "https://anandvardhanresorts.com/rooms-suites/",
+                    },
+                  ],
+                  sameAs: [
+                    "https://www.facebook.com/AnandVardhanResortsManali/",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://anandvardhanresorts.com/#website",
+                  name: "Anand Vardhan Resorts",
+                  url: "https://anandvardhanresorts.com/",
+                  publisher: {
+                    "@id": "https://anandvardhanresorts.com/#resort",
+                  },
+                  inLanguage: "en",
+                  hasPart: [
+                    { "@id": "https://anandvardhanresorts.com/#webpage-home" },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/about-us/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/rooms-suites/#webpage",
+                    },
+                    {
+                      "@id": "https://anandvardhanresorts.com/dining/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/destination-wedding/#webpage",
+                    },
+                    {
+                      "@id": "https://anandvardhanresorts.com/gallery/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/things-to-do/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/spiritual-retreat/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/sightseeing/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/contact-us/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/check-in-policy/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/privacy-policy/#webpage",
+                    },
+                    {
+                      "@id":
+                        "https://anandvardhanresorts.com/terms-conditions/#webpage",
+                    },
+                  ],
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://anandvardhanresorts.com/#webpage-home",
+                  url: "https://anandvardhanresorts.com/",
+                  name: "Manali Retreat Resort | Wellness Resort in Manali - Anand Vardhan Resorts",
+                  isPartOf: {
+                    "@id": "https://anandvardhanresorts.com/#website",
+                  },
+                  primaryImageOfPage: {
+                    "@type": "ImageObject",
+                    url: "https://anandvardhanresorts.com/",
+                  },
+                },
+                // ... Remaining WebPage nodes here (same as your original schema)
+              ],
+            }),
+          }}
         />
 
         <Script
