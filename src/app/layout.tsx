@@ -1,10 +1,9 @@
+import { Call, Footer, Navbar, Whatsapp } from "@/components";
+import DiscountPopup from "@/components/discountPopup/DiscountPopup";
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.scss";
-import { Call, Footer, Navbar, Whatsapp } from "@/components";
 import PureVegBanner from "./(home)/components/PureVegBanner";
-import RenderChatBot from "@/components/chatbot/RenderChatBot";
-import DiscountPopup from "@/components/discountPopup/DiscountPopup";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title:
@@ -345,20 +344,20 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
 
         {/* ✅ Chatbot config */}
-        {/* <Script id="chatbot-config" strategy="afterInteractive">
+        <Script id="chatbot-config" strategy="afterInteractive">
           {`
             window.eazbotConfig = {
               ndid: "5f556106-94d6-401d-a226-a777df3a92ea",
               hid: "70592479",
             };
           `}
-        </Script> */}
+        </Script>
 
         {/* ✅ Chatbot script */}
-        {/* <Script
+        <Script
           src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
           strategy="afterInteractive"
-        /> */}
+        />
       </head>
       <body className={``} suppressHydrationWarning={true}>
         {/* Google Tag Manager (noscript) */}
@@ -372,7 +371,7 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        <RenderChatBot />
+        {/* <RenderChatBot /> */}
         <PureVegBanner />
         <Navbar />
         <DiscountPopup {...data} />
