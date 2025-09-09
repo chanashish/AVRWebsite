@@ -14,6 +14,7 @@ import PopupForm from "./PopupForm";
 import Call from "./ContactButton/Call";
 import Whatsapp from "./ContactButton/WhatsApp";
 import { RatingCard } from "./cards";
+import StickyLogo from './StickyLogo';
 export {
   Container,
   Section,
@@ -31,4 +32,5 @@ export {
   Call,
   Whatsapp,
   RatingCard,
+  StickyLogo
 };

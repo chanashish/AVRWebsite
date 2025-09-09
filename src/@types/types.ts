@@ -36,29 +36,111 @@ export interface AboutUsDataProps {
   index?: number;
 }
 
-export interface FeaturesDataProps {
+export interface GalleryDataProps {
   title: string;
-  desc: string;
-  
+  images: string[];
 }
 
-export interface FeatureCardProps {
+// home page props types
+
+export interface BannerPropsTypes {
+  images: string[];
+  title: string;
+  subTitle: string;
+  description: string;
+}
+
+export interface AboutUsPropsTypes {
   title: string;
   subtitle: string;
-  icon: JSX.Element;
+  desc: string[];
+  images: string[];
+  link: {
+    label: string;
+    href: string;
+  };
 }
 
-export interface OurFeaturesDataProps {
+export interface RoomsAndSuitesPropsTypes {
   title: string;
-  desc: string;
-  images: {
-    id: number;
+  subTitle?: string;
+  description?: string;
+  cards: {
+    images: string[];
+    title: string;
+    description?: string;
+    facilityList?: string[];
+    link: {
+      label: string;
+      href: string;
+    };
+  }[];
+}
+
+export interface ExperiencesDataPropsTypes {
+  title: string;
+  subTitle: string;
+  cards: {
     src: string;
     title: string;
   }[];
 }
 
-export interface GalleryDataProps {
+export interface WhyChooseUsPropsTypes {
   title: string;
-  images: string[];
+  subTitle: string;
+  description: string;
+  cards: {
+    icon: JSX.Element;
+    title: string;
+  }[];
+}
+
+export interface OurCulinaryOfferingsPropsTypes {
+  title: string;
+  subTitle: string;
+  link: {
+    href: string;
+    label: string;
+  };
+  cards: {
+    src: string;
+    description: string;
+  }[];
+}
+
+export interface OnlinePlatformsPropsTypes {
+  title: string;
+  cards: {
+    icon: JSX.Element;
+    partnerName: string;
+    ratings: string;
+  }[];
+}
+
+export interface TestimonialsPropsTypes {
+  title: string;
+  subTitle: string;
+  reviewPartners: {
+    name: string;
+    logo: string;
+    rating: string;
+  }[];
+  cards: {
+    id: number;
+    link: string;
+    logo: string;
+    rating: number;
+    name: string;
+    review: string;
+  }[];
+}
+
+export interface AddCardDataPropsTypes {
+  title: string;
+  description: string;
+  link: {
+    href: string;
+    label: string;
+  };
 }

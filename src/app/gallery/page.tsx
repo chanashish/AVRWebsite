@@ -1,9 +1,10 @@
-import BookingForm from "@/components/BookingForm";
+import { Addcard } from "@/components/cards";
 import FullScreenCarousel from "@/components/FullScreenCarousel";
-import RatingsDisplay from "@/components/RatingsDisplay";
-import React from "react";
-import GalleryImageComponent from "./GalleryImageComponent";
 import { imageUrl } from "../../data/links";
+import GalleryImageComponent from "./GalleryImageComponent";
+import { galleryPageData } from "./galleryPageData";
+import { SectionWithContainer } from "@/components/sectionComponants";
+import { SectionHeading } from "@/components/typography";
 
 export const metadata = {
   title: "Gallery - Anandvardhan Resorts",
@@ -15,16 +16,16 @@ const page = () => {
   return (
     <div>
       <FullScreenCarousel data={[imageUrl + "IMG_8174.webp"]} name="Gallery" />
-      <RatingsDisplay />
-      <div className="w-full text-center flex flex-col gap-[40px]">
-        <h2 className="playfair text-[#2F4B26] text-[40px] font-normal">
-          Explore Anand Vardhan Resort
-        </h2>
-        <GalleryImageComponent />
-      </div>
-      <div className="bg-[#F9F9F1] mt- mb-6">
-        <BookingForm />
-      </div>
+      <SectionWithContainer>
+        <SectionHeading
+          title={galleryPageData.galleryLayoutData.title}
+          subTitle={galleryPageData.galleryLayoutData.subTitle}
+          textCenter
+          wrapperClassName="md:pt-10"
+        />
+      </SectionWithContainer>
+      <GalleryImageComponent imageData={galleryPageData.images} />
+      <Addcard {...galleryPageData.addCardData} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
 
-  const ignoreIds = [7, 9, 10];
+  const ignoreIds = [6, 7, 9, 10];
 
   const updatedNavLinks = NavLink.filter((link) => link.id).filter(
     (link) => !ignoreIds.includes(link.id)
@@ -35,6 +35,12 @@ const Navbar: React.FC = () => {
       style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}
     >
       <Container>
+        <nav className="">
+          
+        </nav>
+      </Container>
+      <Container>
+        {/* navbar bottom */}
         <nav className="flex items-center justify-between py-[16px]">
           <div className="">
             <Link
@@ -55,11 +61,11 @@ const Navbar: React.FC = () => {
               <li key={link.id} className="w-full">
                 <Link
                   href={link.href}
-                  className={`text-nowrap text-[#2F4B26] relative capitalize transition-all duration-300 ease-in-out group flex items-center justify-center`}
+                  className={`text-nowrap text-clr font-medium relative transition-all duration-300 ease-in-out group flex items-center justify-center uppercase ${link.href === pathName ? "text-clr1" : ""}`}
                 >
                   {link.label}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#2F4B26] group-hover:w-full transition-all duration-300 ease-in-out ${link.href === pathName ? "w-full" : ""}`}
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-clr1 group-hover:w-full transition-all duration-300 ease-in-out ${link.href === pathName ? "w-full" : ""}`}
                   ></span>
                 </Link>
               </li>
@@ -73,26 +79,29 @@ const Navbar: React.FC = () => {
 
             <Link
               href="tel:+919317207373"
-              className="bg-[#2F4B26] text-white px-4 py-2 rounded-sm"
+              className="bg-clr text-white px-4 py-2 rounded-sm"
             >
               <span className="">Book Now</span>
             </Link>
           </div>
 
           <div className="flex gap-[8px]">
-            <Link
-              href="tel:+919317207373"
-              className="lg:block hidden bg-[#2F4B26] text-white px-[24px] h-[56px] py-[16px]"
-            >
-              <span className="">Book Now</span>
-            </Link>
             <button
               aria-label="ham-burger-menu"
-              className={`text-4xl ${isOpen ? "rotate-90" : ""} transition-all duration-300 ease-in-out max-md:block hidden`}
+              className={`text-4xl ${isOpen ? "rotate-90" : ""} hidden transition-all duration-300 ease-in-out`}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <IoMdClose /> : <MenuBurger />}
             </button>
+            <Link
+              href="tel:+919317207373"
+              className="hidden bg-clr1 text-white hover:bg-white border border-clr1 hover:text-clr1 px-8 py-4 lg:flex items-center justify-center gap-2 uppercase"
+            >
+              Book Now
+              <span className="">
+                <ArrowUpIcon />
+              </span>
+            </Link>
           </div>
         </nav>
       </Container>
@@ -102,3 +111,22 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+export const ArrowUpIcon = ({ ...props }) => (
+  <svg
+    width={14}
+    height={16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M13.706 1.293a1 1 0 010 1.414L2.373 14.04A1 1 0 01.96 12.626L12.292 1.293a1 1 0 011.414 0z"
+      fill="currentColor"
+    />
+    <path
+      d="M0 2a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 11-2 0V3H1a1 1 0 01-1-1z"
+      fill="currentColor"
+    />
+  </svg>
+);

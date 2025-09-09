@@ -47,14 +47,14 @@ export const NavLink: navLinkProps[] = [
     href: "/spiritual-retreat/",
   },
   {
-    id: 8,
-    label: "Destination Wedding",
-    href: "/destination-wedding/",
-  },
-  {
     id: 4,
     label: "Gallery",
     href: "/gallery/",
+  },
+  {
+    id: 8,
+    label: "Destination Wedding",
+    href: "/destination-wedding/",
   },
   {
     id: 5,

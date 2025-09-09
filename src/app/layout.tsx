@@ -1,9 +1,20 @@
-import { Call, Footer, Navbar, Whatsapp } from "@/components";
-import DiscountPopup from "@/components/discountPopup/DiscountPopup";
+import { Call, Navbar, StickyLogo, Whatsapp } from "@/components";
 import type { Metadata } from "next";
 import Script from "next/script";
-import PureVegBanner from "./(home)/components/PureVegBanner";
 import "./globals.scss";
+
+import Footer from "@/components/Footer/Footer";
+import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
 
 export const metadata: Metadata = {
   title:
@@ -53,20 +64,20 @@ export default function RootLayout({
         />
         {/* <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Y5YZX33V7B'); </script> */}
 
-        {/* <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Organization",
-"name": "Anand Vardhan Resort Manali",
-"url": "https://anandvardhanresorts.com/",
-"logo": "",
-"sameAs": [
-"https://www.facebook.com/AnandVardhanResortsManali/",
-"https://www.instagram.com/anandvardhanresortmanali/",
-"https://www.linkedin.com/company/anand-vardhan-resort/"
-]
-}
-</script> */}
+                  {/* <script type="application/ld+json">
+          {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Anand Vardhan Resort Manali",
+          "url": "https://anandvardhanresorts.com/",
+          "logo": "",
+          "sameAs": [
+          "https://www.facebook.com/AnandVardhanResortsManali/",
+          "https://www.instagram.com/anandvardhanresortmanali/",
+          "https://www.linkedin.com/company/anand-vardhan-resort/"
+          ]
+          }
+          </script> */}
 
         {/* <Script
           id="structured-data"
@@ -359,7 +370,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={``} suppressHydrationWarning={true}>
+      <body className={`${montserrat.variable} ${plusJakartaSans.variable} antialiased`} suppressHydrationWarning={true}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -372,11 +383,12 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
 
         {/* <RenderChatBot /> */}
-        <PureVegBanner />
+        {/* <PureVegBanner /> */}
         <Navbar />
-        <DiscountPopup {...data} />
+        {/* <DiscountPopup {...data} /> */}
         {children}
         <Footer />
+        <StickyLogo />
         <Whatsapp whatsAppNumber="9317207373" />
         <Call callNumber="919317207373" />
       </body>
