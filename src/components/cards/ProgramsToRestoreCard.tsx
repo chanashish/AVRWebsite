@@ -10,7 +10,7 @@ const ProgramsToRestoreCard: FC<ProgramsToRestorePropsTypes["cards"][0]> = ({
 }) => {
   return (
     <div className="rounded-2xl overflow-hidden shadow-lg bg-white">
-      <div className="w-full relative aspect-[4/2.5]">
+      <div className="w-full relative md:aspect-[4/2.5] aspect-square">
         <Image
           src={src}
           alt={title}
@@ -19,7 +19,7 @@ const ProgramsToRestoreCard: FC<ProgramsToRestorePropsTypes["cards"][0]> = ({
           sizes="100vw"
         />
       </div>
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6 min-h-[20rem]">
         <div className="flex items-center gap-4 justify-between">
           <h3 className="md:text-[2rem] text-2xl text-clr font-plus">{title}</h3>
           <div className="w-[58px] aspect-square flex items-center justify-center bg-clr rounded-full flex-shrink-0">

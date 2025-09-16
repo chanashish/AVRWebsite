@@ -61,6 +61,11 @@ export const NavLink: navLinkProps[] = [
     label: "Contact Us",
     href: "/contact-us/",
   },
+  {
+    id: 6,
+    label: "Blog",
+    href: "/blog/",
+  },
   // {
   //   id: 11,
   //   label: "Check In Policy",

@@ -9,7 +9,8 @@ const OurPackages: FC<OurPackagesPropsTypes> = ({
   cards,
 }) => {
   return (
-    <SectionWithContainer sectionClassName="bg-clr">
+    <SectionWithContainer sectionClassName="our-packages">
+      <span className="span"></span>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <h2 className="text-3xl font-semibold text-white">{title}</h2>
         <p className="text-white">{description}</p>

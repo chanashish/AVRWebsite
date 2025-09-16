@@ -22,23 +22,23 @@ const AboutSpiritual: FC<AboutSpiritualPropsTypes> = ({
   link,
 }) => {
   return (
-    <SectionWithContainer>
+    <SectionWithContainer sectionClassName="spiritual-about">
       <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
-        <div className="w-full relative md:aspect-[4/3] aspect-[4/3] md:col-span-3">
+        <div className="w-full relative md:aspect-[4/3] aspect-[4/4] md:col-span-3">
           <Image
             src={src}
             alt={title}
             fill
             sizes="100%"
-            className="object-contain"
+            className="md:object-contain"
           />
         </div>
         <div className="w-full flex flex-col gap-4 md:gap-8 md:col-span-4">
-          <SectionHeading title={title} subTitle={subTitle} />
-          <p className="text-Light md:text-lg mb-4">{description}</p>
+          <SectionHeading title={title} subTitle={subTitle} smTextCenter />
+          <p className="text-Light md:text-lg max-md:text-center mb-4">{description}</p>
           <Link
             href={link.href}
-            className="px-6 py-3 bg-clr1 text-white rounded-full transition flex items-center w-fit gap-2"
+            className="px-6 md:py-3 py-4 bg-clr1 text-white rounded-full transition flex items-center justify-center md:w-fit gap-2"
           >
             {link.label}
             <span aria-label="arrow-up">

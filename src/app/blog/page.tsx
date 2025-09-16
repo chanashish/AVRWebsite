@@ -16,7 +16,7 @@ export default function BlogPage() {
               key={index}
               className="w-full rounded-lg overflow-hidden box-shadow"
             >
-              <div className="w-full relative md:aspect-[4/2.5] aspect-[3/4]">
+              <div className="w-full relative md:aspect-[4/2.5] aspect-[3/2.2]">
                 <Image
                   src={card.src}
                   alt={card.title}

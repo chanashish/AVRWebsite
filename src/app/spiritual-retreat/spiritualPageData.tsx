@@ -7,8 +7,8 @@ export const spiritualPageData = {
     images: ["/spiritual-retreat-bnr.jpg"],
   },
   aboutSpiritual: {
-    title: "LOREM IPSUM",
-    subTitle: "Enhance Your Inner Energy",
+    title: "Channelise",
+    subTitle: "Your Inner Energy",
     description:
       "Our holistic Innergise stays are transformative wellness retreats designed for those seeking renewal. Relax, deepen your awareness, restore balance, and reconnect with what matters most – your mind, body, and inner energy.",
     src: "/Enhance-Your-Inner-Energy.png",
@@ -49,28 +49,28 @@ export const spiritualPageData = {
       {
         src: imageUrl + "spiritual/relax1.webp",
         title: "Physiotherapy",
-        icon: "/images/spiritual/spiritual-icon1.png",
+        icon: "/icons/physiotherapy.png",
         description:
           "At AVR Physiotherapy, healing isn't just a process – it's a journey. With personalized care and expert hands, we help you reclaim strength, restore confidence, and embrace life’s every move again.",
       },
       {
         src: imageUrl + "spiritual/relax2.webp",
         title: "Acupressure",
-        icon: "/images/spiritual/spiritual-icon1.png",
+        icon: "/Icons/acupressure.png",
         description:
           "Acupuncture is like a reset button for your body and mind. Our team of experts works towards releasing tension, ease pain, and bring you back to a place of pure relaxation and vitality.",
       },
       {
         src: imageUrl + "spiritual/relax3.webp",
         title: "Guided Meditation",
-        icon: "/images/spiritual/spiritual-icon1.png",
+        icon: "/icons/guided-meditation.png",
         description:
           "Guided meditation takes you on a peaceful journey within, where stillness and clarity await. Let our soothing guidance help you quiet the noise, release your worries, and reconnect with your inner calm.",
       },
       {
         src: imageUrl + "spiritual/relax7.webp",
         title: "Shirodhara",
-        icon: "/images/spiritual/spiritual-icon1.png",
+        icon: "/icons/shirodhara.png",
         description:
           "At AVR, Shirodhara is more than a treatment – it’s a soulful escape. Let the gentle stream of warm oil soothe your mind, melt away stress, and bring you a sense of deep peace and balance.",
       },

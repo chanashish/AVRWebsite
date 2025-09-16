@@ -32,31 +32,31 @@ export const thingsToDoData = {
     {
       title: "Archery",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "Master the ancient art of archery with our professional instructors. Perfect for beginners and experienced archers, this outdoor adventure activity combines skill-building with stress relief. Set against stunning mountain views, our archery range offers an engaging experience for families, couples, and corporate team building events.",
       src: "/IMG_8279.png",
     },
     {
       title: "Commando Net",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "Challenge yourself on our towering Commando Net obstacle course. This military-inspired adventure activity tests strength, agility, and teamwork while providing incredible valley views. With full safety equipment and expert guidance, it's perfect for fitness enthusiasts and adventure seekers looking for an exciting physical challenge that builds confidence and creates lasting memories.",
       src: "/commando-net.png",
     },
     {
       title: "Bamboo Bridge",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "Cross our traditional Bamboo Bridge suspended high above the valley floor. This rope bridge adventure tests your balance and courage while offering spectacular mountain views. Suitable for different fitness levels, it's a favorite family activity that helps overcome fears and builds self-confidence. Professional guides ensure safety while you experience this authentic outdoor challenge.",
       src: "/bamboo-bridge.png",
     },
     {
       title: "Burma Bridge",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        `Conquer the legendary Burma Bridge, one of adventure tourism's most thrilling rope bridge experiences. This narrow suspension bridge challenges your balance and focus while delivering stunning forest views. Originally from military training, it's now a popular adventure activity for team building, personal challenges, and creating unforgettable "I did it!" moments at our resort.`,
       src: "/burma-bridge.png",
     },
     {
       title: "Zip Line",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "Soar through the forest canopy on our exhilarating zip line adventure. Glide above treetops at thrilling speeds while enjoying panoramic mountain views. This popular aerial adventure features advanced safety equipment. Perfect for adventure seekers, couples, and families wanting an unforgettable canopy tour experience with incredible photo opportunities.",
       src: "/zip-line.png",
     },
     {

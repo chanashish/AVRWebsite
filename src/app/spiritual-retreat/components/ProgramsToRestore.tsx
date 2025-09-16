@@ -24,7 +24,7 @@ const ProgramsToRestore: FC<ProgramsToRestorePropsTypes> = ({
                             wrapperClassName="gap-4 max-w-2xl mx-auto"
                         />
                         <ProgramsToRestoreSlider programs={cards} />
-                        <Link href={link.href} className="mx-auto w-fit px-8 py-3 rounded-full flex items-center gap-2 bg-clr1 text-white font-medium hover:bg-clr/90 transition-colors duration-300">
+                        <Link href={link.href} className="mx-auto md:w-fit px-8 py-4 rounded-full flex items-center justify-center w-full gap-2 bg-clr1 text-white font-medium hover:bg-clr/90 transition-colors duration-300">
                             {link.label}
                             <span><ArrowUpIcon /></span>
                         </Link>

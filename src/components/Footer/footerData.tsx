@@ -79,6 +79,10 @@ export const footerData = {
           label: "Nearby Places",
           href: "/nearby-places/",
         },
+        {
+          label: "Blog",
+          href: "/blog/",
+        },
       ],
     },
     {

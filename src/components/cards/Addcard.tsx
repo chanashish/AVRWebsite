@@ -1,23 +1,26 @@
 import { AddCardDataPropsTypes } from "@/@types/types";
+import { ArrowUpIcon } from "@/icons/icons";
+import Link from "next/link";
 import { FC } from "react";
 import SectionWithContainer from "../SectionComponents/SectionWithContainer";
-import { SectionHeading } from "../typography";
-import Link from "next/link";
-import { ArrowUpIcon } from "@/icons/icons";
 
 const Addcard: FC<AddCardDataPropsTypes> = ({ title, description, link }) => {
   return (
     <SectionWithContainer>
       <div className="max-w-6xl mx-auto bg-clr2 rounded-[24px] box-shadow">
-        <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-6 max-w-4xl mx-auto md:py-16 py-8 max-md:px-4">
-          <div className="md:col-span-2">
-            <SectionHeading subTitle={title} />
-            <p className="text-[#686767] md:text-lg mt-4">{description}</p>
+        <div className="grid grid-cols-1 items-center md:grid-cols-4 gap-6 max-w-5xl mx-auto md:py-16 py-8 max-md:px-4">
+          <div className="md:col-span-3">
+            <h2 className="md:text-3xl text-2xl font-bold text-clr max-md:text-center">
+              {title}
+            </h2>
+            <p className="text-[#686767] md:text-lg max-md:text-center mt-4">
+              {description}
+            </p>
           </div>
           <div className="">
             <Link
               href={link}
-              className="bg-clr1 ml-auto rounded-full w-fit flex items-center text-white py-3 px-6 shadow-inner md:text-lg hover:bg-clr transition"
+              className="bg-clr1 ml-auto rounded-full md:w-fit flex justify-center items-center text-white py-4 px-6 shadow-inner md:text-lg hover:bg-clr transition"
             >
               {link.label}{" "}
               <span className="ml-2">

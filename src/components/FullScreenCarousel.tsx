@@ -45,9 +45,9 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ images, title, 
                     {subTitle && <span className="md:text-[2rem] mb-1">{subTitle}</span>}
                     {title && <h1 className="md:text-5xl text-3xl font-bold mb-2">{title}</h1>}
                     {description && <div className="flex justify-center items-center gap-4" >
-                        <span><LeftLinesIcon /></span>
+                        <span className="max-md:hidden"><LeftLinesIcon /></span>
                         <p className="text-lg md:text-[1.375rem]">{description}</p>
-                        <span><RightLinesIcon /></span>
+                        <span className="max-md:hidden"><RightLinesIcon /></span>
                     </div>}
                 </div>
             )}
@@ -55,18 +55,18 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({ images, title, 
                 <div className="absolute z-10 inset-0 flex flex-col items-center  bg-black/30 text-white p-4 text-center">
                     {title && <h1 className="md:text-5xl text-3xl font-bold mb-2 mt-8">{title}</h1>}
                     {description && <div className="flex justify-center items-center gap-4" >
-                        <span><LeftLinesIcon /></span>
+                        <span className="max-md:hidden"><LeftLinesIcon /></span>
                         <p className="text-lg md:text-[1.375rem]">{description}</p>
-                        <span><RightLinesIcon /></span>
+                        <span className="max-md:hidden"><RightLinesIcon /></span>
                     </div>}
                 </div>
             )}
             {title && !description && !subTitle && (
                 <div className="absolute z-20 inset-0 flex flex-col items-center justify-center bg-black/30 text-white p-4 text-center">
                     <div className="flex justify-center items-center gap-4" >
-                        <span><LeftLinesIcon /></span>
+                        <span className="max-md:hidden"><LeftLinesIcon /></span>
                         <h1 className="md:text-5xl text-3xl font-bold">{title}</h1>
-                        <span><RightLinesIcon /></span>
+                        <span className="max-md:hidden"><RightLinesIcon /></span>
                     </div>
                 </div>
             )}

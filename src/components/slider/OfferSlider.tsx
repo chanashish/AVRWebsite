@@ -3,17 +3,17 @@ import { OfferSliderPropsTypes } from "@/@types/types";
 import { FC } from "react";
 import { SectionWithContainer } from "../sectionComponants";
 import SwiperCarousel from "./SwiperCarousel";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 const OfferSlider: FC<OfferSliderPropsTypes> = ({ title, cards }) => {
   return (
-    <SectionWithContainer>
+    <SectionWithContainer sectionClassName="offer">
       <div className="flex flex-col md:gap-14 gap-8">
         <h2 className="text-3xl font-semibold text-center text-clr">{title}</h2>
         <SwiperCarousel
           data={cards}
-          modules={[EffectCoverflow, Navigation]}
+          modules={[EffectCoverflow, Navigation, Autoplay]}
           navigation={{
             nextEl: ".about-next",
             prevEl: ".about-prev",
@@ -31,6 +31,10 @@ const OfferSlider: FC<OfferSliderPropsTypes> = ({ title, cards }) => {
             modifier: 2.5, // Makes the central slide more prominent
             slideShadows: false, // Disable shadows
           }}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
           speed={800}
           breakpoints={{
             640: {
@@ -44,6 +48,7 @@ const OfferSlider: FC<OfferSliderPropsTypes> = ({ title, cards }) => {
             1024: {
               slidesPerView: 2,
               spaceBetween: 24,
+              
             },
           }}
           renderSlide={(card) => (

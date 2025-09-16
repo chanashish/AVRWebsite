@@ -22,9 +22,9 @@ const AboutComponent: FC<AboutComponentPropsTypes> = ({
 }) => {
   return (
     <SectionWithContainer>
-      <div id="about-us" className="flex flex-col md:gap-12 gap-8 w-full">
+      <div id="about-us" className="flex flex-col md:gap-12 gap-4 w-full">
         <div>
-          <h2 className="md:text-[2.5rem] text-clr font-plus text-2xl text-center">
+          <h2 className="md:text-[2.5rem] font-bold text-clr font-plus text-2xl text-center">
             {title}
           </h2>
         </div>

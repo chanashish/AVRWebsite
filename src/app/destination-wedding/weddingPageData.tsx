@@ -9,9 +9,8 @@ export const weddingPageData = {
   aboutWeddingData: {
     src: "/weddingimg.png",
     title: "WE CREATE . YOU CELEBRATE",
-    subTitle: "Lorem Ipsum Dolor Sit Amet",
-    description:
-      "Surrounded by towering trees, fresh mountain air, and the ones you love most, your destination wedding becomes an unforgettable celebration of love, peace, and adventure. Celebrate love with the nature’s most breathtaking canvas. A mountain retreat wedding is where your dreams come to life. Let the mountains whisper their blessings as you say ‘I do’.",
+    subTitle: "Your Forever Starts Here",
+    description: `Imagine saying "I do" against the breathtaking backdrop of snow-capped Himalayan peaks and verdant valleys – welcome to Anand Vardhan Resort, Manali's premier luxury wedding destination. Nestled between Kullu and Manali in the heart of Himachal Pradesh, our exclusive mountain wedding resort transforms your dream celebration into an unforgettable reality. From intimate hill station weddings surrounded by lush green lawns to grand destination wedding celebrations that can host thousands of guests, every moment becomes a picture-perfect memory etched against nature's most stunning canvas. Our dedicated wedding specialists craft bespoke experiences that blend traditional Indian wedding ceremonies with modern luxury amenities, ensuring your special day is nothing short of magical. Whether you're planning a romantic mountain wedding, a lavish destination wedding in Himachal Pradesh, or an enchanting outdoor ceremony under starlit Himalayan skies, Anand Vardhan Resort offers the perfect venue where dreams become forever memories.`,
     links: [
       {
         href: "tel:" + contact.phone,
@@ -115,9 +114,9 @@ export const weddingPageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
       href: "",
       label: "Book Now",

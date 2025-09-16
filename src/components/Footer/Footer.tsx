@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="max_screen_width">
-      <div className="bg-clr rounded-lg mx-4 box-shadow py-12 footer">
+      <div className="bg-clr rounded-[24px] mx-4 box-shadow py-12 footer">
         <Container>
           <div className="grid lg:grid-cols-9 md:grid-cols-5 items-center grid-cols-1 gap-4 md:gap-16">
             <div className="md:col-span-3 space-y-4">
@@ -57,13 +57,13 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="lg:col-span-6 md:col-span-2  grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4">
+            <div className="lg:col-span-6 md:col-span-2  grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 lg:gap-12 gap-6">
               {footerData.listOfLinks.map((list, index) => (
                 <div key={index} className="flex flex-col gap-4 col-span-2">
-                  <h3 className="text-lg md:text-2xl font-plus font-semibold text-white">
+                  <h3 className="text-2xl font-plus font-semibold text-white">
                     {list.title}
                   </h3>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     {list.links.map((link, index) => (
                       <Link
                         key={index}

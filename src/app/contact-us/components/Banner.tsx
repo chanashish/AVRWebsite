@@ -25,7 +25,7 @@ const Banner: FC<BannerDataProps> = ({ title, src, listOfLinks }) => {
           />
         </div>
         <div className="md:col-span-2">
-          <h1 className="text-5xl text-clr font-plus capitalize font-semibold">
+          <h1 className="md:text-5xl text-2xl text-clr font-plus capitalize font-bold">
             {title}
           </h1>
           <ul className="flex flex-col gap-4 mt-4">
@@ -38,7 +38,7 @@ const Banner: FC<BannerDataProps> = ({ title, src, listOfLinks }) => {
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-4">Follow us</h2>
+          <h2 className="text-2xl text-clr font-semibold mt-4">Follow us</h2>
           <ul className="flex gap-4 mt-4">
             {listOfLinks.slice(3).map((link, index) => (
               <li key={index}>

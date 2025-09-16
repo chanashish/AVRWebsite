@@ -33,9 +33,9 @@ export const diningPageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
       href: "",
       label: "Book Now",

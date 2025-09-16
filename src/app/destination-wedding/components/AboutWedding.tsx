@@ -14,7 +14,7 @@ const AboutWedding: FC<AboutWeddingPropsTypes> = ({
   links,
 }) => {
   return (
-    <Section>
+    <Section className="about-wedding">
       <div className="max-w-[1450px] max-lg:px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
           <div className="relative w-full aspect-[4/4.1] md:col-span-3">

@@ -10,7 +10,7 @@ interface WhyChooseUsSliderProps {
 
 const WhyChooseUsSlider: FC<WhyChooseUsSliderProps> = ({ cards }) => {
   return (
-    <div className="w-full">
+    <div className="w-full max-w-[20rem] mx-auto">
       <SwiperCarousel
         data={cards}
         slidesPerView={1}

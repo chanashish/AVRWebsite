@@ -8,9 +8,9 @@ export const roomsPageData = {
     title: "ROOMS & SUITES",
   },
   roomsData: {
-    title: "The Well Living Spaces",
+    title: "Your Tranquil Space",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Experience luxury mountain resort rooms designed for comfort and tranquillity. Choose from our deluxe rooms, super deluxe accommodations, and luxury suites - each featuring modern amenities, mountain views, and premium hospitality at Anand Vardhan Resort..",
     cards: [
       {
         title: "Deluxe Room",
@@ -116,12 +116,13 @@ export const roomsPageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title:
+      "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      label: "Book Now",
       href: "",
+      label: "Book Now",
     },
   },
 };

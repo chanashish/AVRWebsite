@@ -47,8 +47,8 @@ const OurCulinaryOfferingsSlider: React.FC<OurCulinaryOfferingsSliderProps> = ({
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 w-full z-10 bg-gradient-to-t from-black/30 to-black/0" />
-            <div className="absolute bottom-4 left-0 z-20 w-full">
+            <div className="absolute inset-0 w-full z-10 bg-gradient-to-t from-black/40 to-black/0" />
+            <div className="absolute md:bottom-4 bottom-0 left-0 z-20 w-full">
               <h3 className="text-lg text-white text-center">{card.description}</h3>
             </div>
           </div>

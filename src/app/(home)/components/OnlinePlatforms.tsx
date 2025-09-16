@@ -11,7 +11,7 @@ const OnlinePlatforms: FC<OnlinePlatformsPropsTypes> = ({ title, cards }) => {
   return (
     <SectionWithContainer>
       <div className="">
-        <SectionHeading title={title} textCenter />
+        <SectionHeading title={title} textCenter titleClassName="underline-none" />
         <div className="w-full mt-4 h-px bg-[linear-gradient(to_right,_#FFFFFF,_#B2B2B2,_#FFFFFF)]" />
         <div className="md:grid hidden grid-cols-1 md:grid-cols-4 gap-6 mt-8">
           {cards.map((card, index) => (

@@ -21,6 +21,14 @@ const WhyChooseUs: FC<WhyChooseSpiritualPropsTypes> = ({
             wrapperClassName="gap-2"
           />
           <p className="text-Light md:text-lg">{description}</p>
+          <div className="w-full relative md:aspect-[4/2.5] md:hidden aspect-[4/3]">
+            <Image
+              src={src}
+              alt={title}
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
           {cards.map((card, index) => (
             <div key={index} className="flex items-center gap-4">
               <div className="w-20 aspect-square flex items-center justify-center bg-clr1/20 rounded-full flex-shrink-0">
@@ -34,14 +42,16 @@ const WhyChooseUs: FC<WhyChooseSpiritualPropsTypes> = ({
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-clr">{card.title}</h3>
+                <h3 className="text-2xl font-semibold text-clr">
+                  {card.title}
+                </h3>
                 <p className="text-Light md:text-lg">{card.description}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="w-full h-full md:mt-12">
-          <div className="w-full relative md:aspect-[4/2.5]  aspect-[4/3]">
+          <div className="w-full relative md:aspect-[4/2.5] max-md:hidden aspect-[4/3]">
             <Image
               src={src}
               alt={title}

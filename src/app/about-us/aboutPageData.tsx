@@ -11,7 +11,7 @@ export const aboutPageData = {
     images: [
       imageUrl + "DSC_9716.webp",
     ],
-    title: "About us banner image",
+    title: "About Us",
   },
   aboutUsData: {
     title: "About Anand Vardhan Resort",
