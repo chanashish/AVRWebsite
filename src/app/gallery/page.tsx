@@ -1,10 +1,9 @@
 import { Addcard } from "@/components/cards";
 import FullScreenCarousel from "@/components/FullScreenCarousel";
-import { imageUrl } from "../../data/links";
-import GalleryImageComponent from "./GalleryImageComponent";
-import { galleryPageData } from "./galleryPageData";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
+import GalleryImageComponent from "./GalleryImageComponent";
+import { galleryPageData } from "./galleryPageData";
 
 export const metadata = {
   title: "Gallery - Anandvardhan Resorts",
@@ -15,7 +14,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <FullScreenCarousel data={[imageUrl + "IMG_8174.webp"]} name="Gallery" />
+      <FullScreenCarousel {...galleryPageData.bannerData} />
       <SectionWithContainer>
         <SectionHeading
           title={galleryPageData.galleryLayoutData.title}

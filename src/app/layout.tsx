@@ -1,4 +1,4 @@
-import { Call, Navbar, StickyLogo, Whatsapp } from "@/components";
+import { Call, Navbar, Whatsapp } from "@/components";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.scss";
@@ -23,34 +23,28 @@ export const metadata: Metadata = {
     "Looking for a spiritual resort in Manali? AnandVardhan Resorts offers wellness retreats, guided meditation, spa treatments, and a soulful café experience.",
 };
 
-const data = {
-  // contact: {
-  //   href: "tel:+919317207373",
-  //   label: "Call Us",
-  //   bgColor: "#365314",
-  //   textColor: "#fff",
-  // },
-  content: {
-    discount: 25,
-    _html: `<p class="content-para">Luxury stays. Serene views. And up to 25% off <br><span class="purple-purse italic"> just for you!</span></br></p>`,
-    // subTitle: "Luxury stays. Serene views. And up to 25% off",
-    title: "RESERVE NOW",
-    borderColor: "#fff",
-  },
-  logo: {
-    alt: "Luxury Vibe Stay",
-    src: "/favicon.ico",
-  },
-  image: {
-    alt: "Luxury Vibe Stay",
-    src: "/DiscountImg.jpg",
-  },
-  whatsApp: {
-    href: `https://wa.me/+91${9317207373}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`,
-    bgColor: "#fff",
-    textColor: "#2F4B26",
-  },
-};
+// const data = {
+//   content: {
+//     discount: 25,
+//     _html: `<p class="content-para">Luxury stays. Serene views. And up to 25% off <br><span class="purple-purse italic"> just for you!</span></br></p>`,
+//     // subTitle: "Luxury stays. Serene views. And up to 25% off",
+//     title: "RESERVE NOW",
+//     borderColor: "#fff",
+//   },
+//   logo: {
+//     alt: "Luxury Vibe Stay",
+//     src: "/favicon.ico",
+//   },
+//   image: {
+//     alt: "Luxury Vibe Stay",
+//     src: "/DiscountImg.jpg",
+//   },
+//   whatsApp: {
+//     href: `https://wa.me/+91${9317207373}?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.`,
+//     bgColor: "#fff",
+//     textColor: "#2F4B26",
+//   },
+// };
 
 export default function RootLayout({
   children,
@@ -388,7 +382,7 @@ export default function RootLayout({
         {/* <DiscountPopup {...data} /> */}
         {children}
         <Footer />
-        <StickyLogo />
+        {/* <StickyLogo /> */}
         <Whatsapp whatsAppNumber="9317207373" />
         <Call callNumber="919317207373" />
       </body>

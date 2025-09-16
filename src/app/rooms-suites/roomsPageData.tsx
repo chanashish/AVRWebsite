@@ -3,9 +3,7 @@ import { imageUrl } from "@/data/links";
 export const roomsPageData = {
   bannerData: {
     images: [
-      imageUrl + "Deluxe/003.webp",
-      imageUrl + "superDeluxe/001.webp",
-      imageUrl + "luxurySuite/001.webp",
+      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/avr/luxurySuite/002.webp",
     ],
     title: "ROOMS & SUITES",
   },

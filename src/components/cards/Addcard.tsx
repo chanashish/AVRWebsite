@@ -9,7 +9,7 @@ const Addcard: FC<AddCardDataPropsTypes> = ({ title, description, link }) => {
   return (
     <SectionWithContainer>
       <div className="max-w-6xl mx-auto bg-clr2 rounded-[24px] box-shadow">
-        <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-6 max-w-4xl mx-auto py-16">
+        <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-6 max-w-4xl mx-auto md:py-16 py-8 max-md:px-4">
           <div className="md:col-span-2">
             <SectionHeading subTitle={title} />
             <p className="text-[#686767] md:text-lg mt-4">{description}</p>

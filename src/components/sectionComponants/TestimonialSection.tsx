@@ -25,9 +25,9 @@ export default function TestimonialSection(props: TestimonialsPropsTypes) {
               {/* Blur background */}
               <div className="absolute inset-0 rounded-[20px]  bg-white/20 backdrop-blur-[20px] z-0" />
               {/* Content */}
-              <div className="relative md:grid grid-cols-2 py-6 box-shadow rounded-[20px] divide-x divide-white z-10">
+              <div className="relative md:grid  grid-cols-2 py-6 box-shadow rounded-[20px] max-md:px-4 md:divide-x max-md:divide-y divide-white z-10">
                 {props.reviewPartners.map((partner, index) => (
-                  <div key={index} className="flex items-center gap-4 px-6">
+                  <div key={index} className="flex items-center gap-4 md:px-4 max-md:py-4">
                     <div className="w-full max-w-[2.5rem] aspect-square relative">
                       <Image
                         src={partner.logo}

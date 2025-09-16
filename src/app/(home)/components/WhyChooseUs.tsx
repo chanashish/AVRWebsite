@@ -13,9 +13,9 @@ const WhyChooseUs: FC<WhyChooseUsPropsTypes> = ({
 }) => {
   return (
     <SectionWithContainer>
-      <div className="grid md:grid-cols-4 grid-cols-1 gap-6">
+      <div className="grid md:grid-cols-4 grid-cols-1 gap-6 items-center">
         <div className="md:col-span-1 md:space-y-4 space-y-6">
-          <SectionHeading title={title} subTitle={subTitle} />
+          <SectionHeading title={title} subTitle={subTitle} smTextCenter />
           <div className="md:hidden">
             <WhyChooseUsSlider cards={cards} />
           </div>

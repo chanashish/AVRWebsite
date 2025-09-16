@@ -11,21 +11,16 @@ import {
   WhyChooseUs,
 } from "./components";
 import { homePageData } from "./homePageData";
-import { Experiences, TestimonialSection } from "@/components/sectionComponants";
+import { Experiences, SectionWithContainer, TestimonialSection } from "@/components/sectionComponants";
+import CheckInOutForm from "@/components/cards/CheckInOutForm";
 
 export default function Home() {
   return (
     <main>
-      {/* <HomeHero display={true} /> */}
-      <FullScreenCarousel data={["/Home.webp"]} name="" />
-      {/* <div className="bg-[#F9F9F1] border border-solid border-1 border-t-black">
-        <BookingForm />
-        <p className="text-center text-xl text-[#2F4B26] py-8">
-          Connect with us on <Link href="tel:+919267989157">+919267989157</Link>{" "}
-          for Travel Agent, Corporate, and Group Booking rates
-        </p>
-      </div> */}
-
+      <FullScreenCarousel {...homePageData.bannerData} />
+      <SectionWithContainer sectionClassName="bg-clr lg:hidden">
+        <CheckInOutForm />
+      </SectionWithContainer>
       <AboutUsHome {...homePageData.aboutUsData} />
       <RoomAndSuites {...homePageData.roomsAndSuites} />
       <Experiences {...homePageData.experiences} />

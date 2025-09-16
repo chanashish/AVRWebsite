@@ -1,6 +1,10 @@
 import { imageUrl } from "@/data/links";
 
 export const galleryPageData = {
+  bannerData: {
+    images: [imageUrl + "IMG_8174.webp"],
+    title: "Gallery",
+  },
   galleryLayoutData: {
     title: "EXPLORE",
     subTitle: "ANAND VARDHAN RESORT",

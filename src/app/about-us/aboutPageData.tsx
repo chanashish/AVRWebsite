@@ -7,6 +7,12 @@ import {
 } from "@/icons/icons";
 
 export const aboutPageData = {
+  bannerData: {
+    images: [
+      imageUrl + "DSC_9716.webp",
+    ],
+    title: "About us banner image",
+  },
   aboutUsData: {
     title: "About Anand Vardhan Resort",
     description: [
@@ -17,7 +23,7 @@ export const aboutPageData = {
       label: "Call for reservation: +91 93172 07373",
       href: "tel:+919317207373",
     },
-    images: ["", "", ""],
+    images: ["/DSC02744.png", imageUrl + "IMG_8258.webp", "/DSC03262.png"],
   },
   onlinePlatforms: {
     title: "Highest Ratings On Online Platforms",
@@ -95,15 +101,15 @@ export const aboutPageData = {
     subTitle: "Lorem Ipsum Dolor Sit Amet",
     cards: [
       {
-        src: "",
+        src: "/destination-wedding.png",
         title: "Destination Wedding",
       },
       {
-        src: "",
+        src: "/spiritual-retreat.png",
         title: "Spiritual Retreat",
       },
       {
-        src: "",
+        src: imageUrl + "IMG_8155.webp",
         title: "Pure Vegetarian Dining",
       },
     ],

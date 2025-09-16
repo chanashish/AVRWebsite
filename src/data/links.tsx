@@ -39,7 +39,7 @@ export const NavLink: navLinkProps[] = [
   {
     id: 10,
     label: "Nearby Places",
-    href: "/sightseeing/",
+    href: "/nearby-places/",
   },
   {
     id: 9,

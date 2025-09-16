@@ -8,12 +8,13 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 interface RoomAndSuitesSliderProps {
     cards: RoomsAndSuitesPropsTypes["cards"];
+    boxShadow?: boolean;
 }
-const RoomAndSuitesSlider: FC<RoomAndSuitesSliderProps> = ({cards}) => {
+const RoomAndSuitesSlider: FC<RoomAndSuitesSliderProps> = ({cards, boxShadow}) => {
     return (
         <div>
             <SwiperCarousel data={cards} slidesPerView={1} spaceBetween={24}
-            className="w-full box-shadow"
+            className={`w-full ${boxShadow ? "box-shadow" : ""} !p-1`}
             loop={true}
             autoplay={{
                 delay: 2500,

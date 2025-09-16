@@ -44,10 +44,10 @@ export interface GalleryDataProps {
 // home page props types
 
 export interface BannerPropsTypes {
-  images: string[];
+  images?: string[];
   title: string;
-  subTitle: string;
-  description: string;
+  subTitle?: string;
+  description?: string;
 }
 
 export interface AboutUsPropsTypes {
@@ -111,6 +111,7 @@ export interface OurCulinaryOfferingsPropsTypes {
 
 export interface OnlinePlatformsPropsTypes {
   title: string;
+  defaultPadding?: boolean;
   cards: {
     icon: JSX.Element;
     partnerName: string;
@@ -143,4 +144,103 @@ export interface AddCardDataPropsTypes {
     href: string;
     label: string;
   };
+}
+
+export interface NearByPlacesSliderPropsTypes {
+  cards: {
+    src: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface pureVegSectionDataPropsTypes {
+  title: string;
+  subTitle: string;
+  cards: {
+    images: string[];
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface WeddingServicesPropsTypes {
+    title: string;
+    cards: {
+        src: string;
+        alt: string;
+        name: string;
+    }[];
+}
+
+export interface OfferSliderPropsTypes {
+    title: string;
+    cards: {
+        src: string;
+        alt: string;
+    }[];
+}
+
+export interface AboutWeddingPropsTypes {
+    src: string;
+    title: string;
+    subTitle: string;
+    description: string;
+    links: {
+        href: string;
+        label: string;
+    }[];
+}
+
+export interface  WhyChooseSpiritualPropsTypes {
+    title: string;
+    subTitle: string;
+    description: string;
+    src: string;
+    cards: {
+        title: string;
+        description: string;
+        src: string;
+    }[];
+}
+
+export interface OurPackagesPropsTypes {
+    title: string;
+    description: string;
+    cards: {
+        packageType: string;
+        days: string;
+        description: string;
+        src: string;
+        link: {
+            href: string;
+            label: string;
+        };
+    }[];
+}
+
+
+export interface ProgramsToRestorePropsTypes {
+    title: string;
+    subTitle: string;
+    link: {
+        href: string;
+        label: string;
+    };
+    cards: {
+        src: string;
+        title: string;
+        icon: string;
+        description: string;
+    }[];
+}
+
+export interface OurServicesPropsTypes {
+    title: string;
+    subTitle: string;
+    cards: {
+        src: string;
+        alt: string;
+        name: string;
+    }[];
 }

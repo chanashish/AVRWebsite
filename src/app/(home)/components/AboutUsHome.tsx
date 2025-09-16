@@ -16,10 +16,10 @@ const AboutUsHome: FC<AboutUsPropsTypes> = ({
   return (
     <SectionWithContainer>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-        <div className="grid grid-cols-2 gap-6">
-          {images.map((image, index) => (
+        <div className="md:grid hidden grid-cols-2 gap-6 w-full">
+          {images.slice(0, 2).map((image, index) => (
             <div
-              className="max-w-[50%] w-full aspect-[4/5] relative"
+              className={`w-full aspect-[4/6] relative ${index === 0 ? "" : "lg:mt-12"}`}
               key={index}
             >
               <Image
@@ -39,11 +39,26 @@ const AboutUsHome: FC<AboutUsPropsTypes> = ({
             wrapperClassName="lg:max-w-xl"
           />
           <div className="space-y-6 max-w-xl">
-            {desc.map((item, index) => (
-              <p key={index} className="lg:text-lg">
-                {item}
-              </p>
-            ))}
+            <div className="md:hidden w-full aspect-[4/3] relative">
+              <Image
+                src={images[2]}
+                alt={title}
+                className="object-cover object-top"
+                sizes="100vw"
+                fill
+              />
+            </div>
+            <p className="lg:text-lg">{desc[0]}</p>
+            <div className="md:hidden w-full aspect-[4/3] relative">
+              <Image
+                src={images[3]}
+                alt={title}
+                className="object-cover object-top"
+                sizes="100vw"
+                fill
+              />
+            </div>
+            <p className="lg:text-lg">{desc[1]}</p>
           </div>
           {link && (
             <Link

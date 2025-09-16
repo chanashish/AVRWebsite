@@ -1,9 +1,7 @@
 "use client";
-import * as React from "react";
 import Image from "next/image";
 import { SocialMediaButton } from "./SocialMediaButton";
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from "./SocialIcons";
-import footerLogo from "@/public/footerLogo.png";
 import { useRouter } from "next/navigation";
 
 export default function ThankYou() {
@@ -12,7 +10,7 @@ export default function ThankYou() {
     <main className="flex justify-center items-center w-full bg-stone-100 min-h-screen">
       <section className="flex justify-between items-center px-28 py-48 max-md:px-14 max-md:py-24 max-sm:flex-col max-sm:gap-12 gap-14 max-sm:px-6 max-sm:py-12">
         <Image
-          src={footerLogo}
+          src="logo.png"
           alt="LOGO footer Image"
           width={370}
           height={370}

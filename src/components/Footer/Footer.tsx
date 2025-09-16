@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="max_screen_width">
       <div className="bg-clr rounded-lg mx-4 box-shadow py-12 footer">
         <Container>
-          <div className="grid lg:grid-cols-9 items-center grid-cols-1 gap-4 md:gap-16">
+          <div className="grid lg:grid-cols-9 md:grid-cols-5 items-center grid-cols-1 gap-4 md:gap-16">
             <div className="md:col-span-3 space-y-4">
               <div className="w-full max-w-[9rem] mx-auto relative aspect-square">
                 <Image
@@ -18,7 +18,7 @@ const Footer = () => {
                   className="object-contain"
                 />
               </div>
-              <h2 className="text-xl text-center leading-10 text-white">
+              <h2 className="text-lg font-semibold text-center text-white">
                 {footerData.title}
               </h2>
               <Link
@@ -27,10 +27,10 @@ const Footer = () => {
               >
                 {footerData.ContactLink[0].label}
               </Link>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center items-center gap-4">
                 <span className="">{footerData.ContactLink[1].icon}</span>
                 <div className="">
-                  <span className="text-white md:text-lg">Call Us Now</span>
+                  <span className="text-white text-sm">Call Us Now</span>
                   <Link
                     href={footerData.ContactLink[1].href}
                     className="text-white md:text-lg flex items-center text-center"
@@ -57,10 +57,10 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-            <div className="col-span-6 grid grid-cols-6 gap-4">
+            <div className="lg:col-span-6 md:col-span-2  grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-4">
               {footerData.listOfLinks.map((list, index) => (
                 <div key={index} className="flex flex-col gap-4 col-span-2">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg md:text-2xl font-plus font-semibold text-white">
                     {list.title}
                   </h3>
                   <div className="flex flex-col gap-2">
@@ -82,11 +82,11 @@ const Footer = () => {
       </div>
       <div className="py-4">
         <Container>
-          <div className="flex items-center justify-center text-dark md:text-lg">
+          <div className="flex max-md:flex-col items-center justify-center text-dark md:text-lg">
             <span className="">© 2025 Anand Vardhan Resorts</span>
-            <span className="mx-2">•</span>
+            <span className="mx-2 max-md:hidden">•</span>
             <span className="">All rights reserved</span>
-            <span className="mx-2">•</span>
+            <span className="mx-2 max-md:hidden">•</span>
             <span className="">
               Powered by{" "}
               <Link

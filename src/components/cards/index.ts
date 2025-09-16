@@ -5,6 +5,11 @@ import Addcard from "./Addcard";
 import OnlinePlatformsCard from "./OnlinePlatformsCard";
 import WhyChooseUsCard from "./WhyChooseUsCard";
 import RoomAndSuitesCard from "./RoomAndSuitesCard";
+import NearByPlacesCard from "./NearByPlacesCard";
+import PureVegCard from "./PureVegCard";
+import ThingsToDoCard from './ThingsToDoCard';
+import Accordion from './Accordion';
+import OurPackagesCard from './OurPackagesCard';
 export {
   RatingCard,
   ToDoSliderCard,
@@ -13,4 +18,9 @@ export {
   OnlinePlatformsCard,
   WhyChooseUsCard,
   RoomAndSuitesCard,
+  NearByPlacesCard,
+  PureVegCard,
+  ThingsToDoCard,
+  Accordion,
+  OurPackagesCard
 };

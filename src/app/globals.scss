@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   font-family: "Montserrat", sans-serif;
   // margin: 0;
@@ -46,33 +45,10 @@
 }
 
 @layer utilities {
-  .roboto {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-  }
-
-  .lato {
-    font-family: "Lato", serif;
-    font-optical-sizing: auto;
-  }
-
-  .playfair {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-  }
-
   .text-balance {
     text-wrap: balance;
   }
 
-  .font_go {
-    font-family: "font_go Regular" sans-serif;
-    font-optical-sizing: auto;
-  }
-
-  // .letter_spacing {
-  //   letter-spacing: -0.07em;
-  // }
   .no-spinner::-webkit-outer-spin-button,
   .no-spinner::-webkit-inner-spin-button {
     @apply appearance-none;
@@ -89,6 +65,16 @@
   }
   .box-shadow {
     box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  }
+
+  .contact-Banner {
+    &::after {
+      box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+    }
+  }
+
+  .underline-none {
+    text-decoration: none;
   }
 
   .max-width {
@@ -363,18 +349,11 @@
 
 .we-offer-slider .swiper-slide:not(.swiper-slide-active) {
   filter: blur(5px);
-  transition: all;
-  transition-duration: 1000ms;
+  transition: all 0.3s;
 
   h3 {
     opacity: 0;
   }
-}
-
-.we-offer-slider .swiper-slide:not(.swiper-slide-active) {
-  filter: blur(5px);
-  transition: all;
-  transition-duration: 1000ms;
 }
 
 .facility-map-border {
@@ -426,5 +405,76 @@
   }
   .swiper-wrapper {
     transition-timing-function: linear !important;
+  }
+}
+
+.our-services {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+
+    inset: 0;
+    background-color: #f9f9f1;
+    box-shadow: 0px 7px 29px 0px #64646f33;
+    z-index: -2;
+    margin-inline: 1rem;
+  }
+}
+
+.wedding-services {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    inset: 0;
+    background-color: #f9f9f1;
+    box-shadow: 0px 7px 29px 0px #64646f33;
+    z-index: -2;
+    margin-inline: 1rem;
+  }
+  &::after {
+    background-image: url("/Group.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    right: 16px;
+    width: 120px;
+    height: 120px;
+    aspect-ratio: 1/1;
+    z-index: -1;
+  }
+}
+
+.banner-swiper {
+  .swiper-pagination-bullet {
+    background-color: #ffffff;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  .swiper-pagination-bullet-active {
+    width: 32px;
+    height: 8px;
+    border-radius: 4px;
+  }
+}
+
+.pagination {
+  .swiper-pagination-bullet {
+    background-color: #ffffff;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  .swiper-pagination-bullet-active {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
   }
 }

@@ -10,10 +10,13 @@ import {
 
 export const homePageData = {
   bannerData: {
-    images: [""],
-    title: "A PURE VEGETARIAN RESORT IN MANALI",
+    images: [
+      imageUrl + "IMG_8380.webp",
+      "/home.webp",
+    ],
+    title: "Anand Vardhan Resort",
     subTitle: "Welcome to",
-    description: "Anand Vardhan Resort",
+    description: "A PURE VEGETARIAN RESORT IN MANALI",
   },
   aboutUsData: {
     title: "ABOUT US",
@@ -22,7 +25,11 @@ export const homePageData = {
       "Discover a haven of natural beauty and culinary delight at Anand Vardhan, the finest luxury resort in Manali, serving exquisite vegetarian cuisine.",
       "Wake up to fresh mountain air, chirping birds, and breathtaking views of the Dhauladhar and Pir Panjal ranges. Nestled amid apple orchards and pine forests near Manali, our resort offers soulful escapes and warm hospitality away from the city’s hustle.",
     ],
-    images: [""],
+    images: [
+      "/home-about2.png", 
+      "/home-about1.png", 
+      "/home-about3.jpg", 
+      "/home-about4.jpg",],
     link: {
       label: "More About Us",
       href: "/about-us/",
@@ -75,15 +82,15 @@ export const homePageData = {
     subTitle: "Lorem Ipsum Dolor Sit Amet",
     cards: [
       {
-        src: "",
+        src: "/destination-wedding.png",
         title: "Destination Wedding",
       },
       {
-        src: "",
+        src: "/spiritual-retreat.png",
         title: "Spiritual Retreat",
       },
       {
-        src: "",
+        src: imageUrl + "IMG_8155.webp",
         title: "Pure Vegetarian Dining",
       },
     ],
@@ -95,7 +102,7 @@ export const homePageData = {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     cards: [
       {
-        icon: <CuratedLuxury/>,
+        icon: <CuratedLuxury />,
         title: "Curated Luxury",
       },
       {
@@ -121,7 +128,7 @@ export const homePageData = {
         description: "Govind Prasadam Pure Vegetarian Restaurant",
       },
       {
-        src: imageUrl + "IMG_8354.webp",
+        src: imageUrl + "IMG_8383.webp",
         description: "Open Air Cafe",
       },
     ],
