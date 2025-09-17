@@ -11,7 +11,7 @@ const RoomSection: FC<RoomsAndSuitesPropsTypes> = ({
 }) => {
   return (
     <SectionWithContainer sectionClassName="bg-clr2 box-shadow">
-      <div className="flex flex-col md:gap-14 gap-8">
+      <div className="flex flex-col md:gap-14 gap-8" >
         <SectionHeading subTitle={title} textCenter />
         {description && (
           <p className="text-Light md:text-lg text-center">{description}</p>

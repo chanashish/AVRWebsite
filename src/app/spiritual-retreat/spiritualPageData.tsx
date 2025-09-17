@@ -17,6 +17,92 @@ export const spiritualPageData = {
       label: "Download Brochure",
     },
   },
+  exclusivePackages: {
+    title: "ANAND VARDHAN RESORTS, NAGGAR",
+    subTitle: "Exclusive Holiday Packages",
+    cards: [
+      {
+        src: "/Explore-Manali.jpg",
+        title: "Explore Manali (4 Days)",
+        description:
+          "Perfect for adventure lovers & those seeking to explore the beauty of Manali",
+        link: {
+          href: "/contact-us",
+          label: "Book Package",
+        },
+      },
+      {
+        src: "/Spiritual-Retreat.jpg",
+        title: "Spiritual Retreat (4 Days)",
+        description:
+          "Ideal for peace seekers, wellness enthusiasts & those seeking rejuvenation.",
+        link: {
+          href: "/contact-us",
+          label: "Book Package",
+        },
+      },
+    ],
+  },
+  packages: {
+    title: "SELECT ANY PACKAGE FROM ABOVE",
+    subTitle: "Costing for 2 Persons (Couple)",
+    table: [
+      {
+        tableHeader: [
+          { title: "Room Category" },
+          { title: "Hotel", subtitle: "3 Nights, MAPA" },
+          { title: "Cab", subtitle: "Incl. Patlikuhal Transfe Vrosl" },
+          { title: "Volvo", subtitle: "Delhi–Manali–Delhi" },
+          { title: "Total Package Cost" },
+        ],
+      },
+      {
+        tableBody: [
+          {
+            roomCategory: "Deluxe Room",
+            hotel: "₹12,600",
+            cab: "₹7,000",
+            volvo: "₹4,000",
+            totalPackageCost: "₹23,600",
+          },
+          {
+            roomCategory: "Super Deluxe Room",
+            hotel: "₹15,000",
+            cab: "₹7,000",
+            volvo: "₹4,000",
+            totalPackageCost: "₹26,000",
+          },
+          {
+            roomCategory: "Luxury Suite",
+            hotel: "₹16,500",
+            cab: "₹7,000",
+            volvo: "₹4,000",
+            totalPackageCost: "₹28,500",
+          },
+        ],
+      },
+    ],
+    faq: [
+      {
+        ques: "*Package Inclusions:",
+        ans: [
+          "Volvo transfers (Kashmiri Gate ISBT – Manali – Kashmiri Gate ISBT)",
+          "Cab transfers (Patlikuhal Bus Stop – Resort – Patlikuhal Bus Stop)",
+          "Accommodation with MAPAI (Breakfast & Dinner)",
+          "Private cab for sightseeing & excursions",
+          "Guided tours & activities as per itinerary",
+        ],
+      },
+      {
+        ques: "*Package Exclusions:",
+        ans: [
+          "GST & applicable taxes",
+          "Personal expenses (shopping, extra meals, etc.)",
+          "Any activities not mentioned in the itinerary",
+        ],
+      },
+    ],
+  },
   programsToRestore: {
     title: "ANAND VARDHAN RESORT X RISHIBHUMI BRINGS",
     subTitle: "Holistic Programs To Restore Balance And Vitality",

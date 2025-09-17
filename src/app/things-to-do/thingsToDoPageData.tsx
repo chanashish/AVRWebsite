@@ -1,6 +1,5 @@
 import { imageUrl } from "@/data/links";
 
-
 export const thingsToDoData = {
   bannner: {
     title: "Adventure Activities",
@@ -49,8 +48,7 @@ export const thingsToDoData = {
     },
     {
       title: "Burma Bridge",
-      description:
-        `Conquer the legendary Burma Bridge, one of adventure tourism's most thrilling rope bridge experiences. This narrow suspension bridge challenges your balance and focus while delivering stunning forest views. Originally from military training, it's now a popular adventure activity for team building, personal challenges, and creating unforgettable "I did it!" moments at our resort.`,
+      description: `Conquer the legendary Burma Bridge, one of adventure tourism's most thrilling rope bridge experiences. This narrow suspension bridge challenges your balance and focus while delivering stunning forest views. Originally from military training, it's now a popular adventure activity for team building, personal challenges, and creating unforgettable "I did it!" moments at our resort.`,
       src: "/burma-bridge.png",
     },
     {
@@ -73,9 +71,10 @@ export const thingsToDoData = {
     },
   ],
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title:
+      "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
       href: "",
       label: "Book Now",

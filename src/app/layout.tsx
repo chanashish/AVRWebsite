@@ -5,6 +5,7 @@ import "./globals.scss";
 
 import Footer from "@/components/Footer/Footer";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
+import { WebsiteProvider } from "@/context/WebsiteContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -58,7 +59,7 @@ export default function RootLayout({
         />
         {/* <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Y5YZX33V7B'); </script> */}
 
-                  {/* <script type="application/ld+json">
+        {/* <script type="application/ld+json">
           {
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -364,7 +365,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${montserrat.variable} ${plusJakartaSans.variable} antialiased`} suppressHydrationWarning={true}>
+      <body
+        className={`${montserrat.variable} ${plusJakartaSans.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -377,14 +381,15 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
 
         {/* <RenderChatBot /> */}
-        {/* <PureVegBanner /> */}
-        <Navbar />
-        {/* <DiscountPopup {...data} /> */}
-        {children}
-        <Footer />
-        {/* <StickyLogo /> */}
-        <Whatsapp whatsAppNumber="9317207373" />
-        <Call callNumber="919317207373" />
+        <WebsiteProvider>
+          <Navbar />
+          {/* <DiscountPopup {...data} /> */}
+          {children}
+          <Footer />
+          {/* <StickyLogo /> */}
+          <Whatsapp whatsAppNumber="9317207373" />
+          <Call callNumber="919317207373" />
+        </WebsiteProvider>
       </body>
     </html>
   );

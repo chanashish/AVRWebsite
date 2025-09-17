@@ -12,7 +12,7 @@ interface RoomAndSuitesSliderProps {
 }
 const RoomAndSuitesSlider: FC<RoomAndSuitesSliderProps> = ({cards, boxShadow}) => {
     return (
-        <div>
+        <div id="rooms">
             <SwiperCarousel data={cards} slidesPerView={1} spaceBetween={24}
             className={`w-full ${boxShadow ? "box-shadow" : ""} !p-1`}
             loop={true}

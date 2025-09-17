@@ -47,7 +47,7 @@ export const homePageData = {
         ],
         title: "Luxury Suite Room",
         link: {
-          href: "",
+          href: "/rooms-suites/#rooms",
           label: "Room Details",
         },
       },
@@ -57,9 +57,9 @@ export const homePageData = {
           imageUrl + "superDeluxe/005.webp",
           imageUrl + "superDeluxe/001.webp",
         ],
-        title: "Super Delux Room",
+        title: "Super Deluxe Room",
         link: {
-          href: "",
+          href: "/rooms-suites/#rooms",
           label: "Room Details",
         },
       },
@@ -71,7 +71,7 @@ export const homePageData = {
         ],
         title: "Deluxe Room",
         link: {
-          href: "",
+          href: "/rooms-suites/#rooms",
           label: "Room Details",
         },
       },

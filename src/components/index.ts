@@ -1,36 +1,22 @@
+import Banner from "./Banner/Banner";
+import Button from "./Button";
+import Call from "./ContactButton/Call";
+import Whatsapp from "./ContactButton/WhatsApp";
+import Footer from "./Footer";
+import MainHeading from "./Heading/MainHeading";
+import LazyLoadedVideo from "./LazyLoadedVideo";
+import Paragraph from "./Paragraph/Paragraph";
+import SEOVideo from "./SEOVideo";
 import Container from "./SectionComponents/Container";
 import Section from "./SectionComponents/Section";
 import SectionWithContainer from "./SectionComponents/SectionWithContainer";
-import Navbar from "./navbar/Navbar";
-import Footer from "./Footer";
-import LazyLoadedVideo from "./LazyLoadedVideo";
-import SEOVideo from "./SEOVideo";
-import Map from "./map/Map";
-import Button from "./Button";
-import Banner from "./Banner/Banner";
-import MainHeading from "./Heading/MainHeading";
-import Paragraph from "./Paragraph/Paragraph";
-import PopupForm from "./PopupForm";
-import Call from "./ContactButton/Call";
-import Whatsapp from "./ContactButton/WhatsApp";
-import { RatingCard } from "./cards";
 import StickyLogo from './StickyLogo';
+import { RatingCard } from "./cards";
+import Map from "./map/Map";
+import Navbar from "./navbar/Navbar";
 export {
-  Container,
-  Section,
-  SectionWithContainer,
-  Navbar,
-  Footer,
-  LazyLoadedVideo,
-  SEOVideo,
-  Map,
-  Button,
-  Banner,
-  MainHeading,
-  Paragraph,
-  PopupForm,
-  Call,
-  Whatsapp,
-  RatingCard,
-  StickyLogo
+  Banner, Button, Call, Container, Footer,
+  LazyLoadedVideo, MainHeading, Map, Navbar, Paragraph, RatingCard, Section,
+  SectionWithContainer, SEOVideo, StickyLogo, Whatsapp
 };
+

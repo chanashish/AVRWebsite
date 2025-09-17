@@ -2,14 +2,15 @@
 import { JSX, useEffect, useState } from "react";
 
 interface AccordionProps {
-    id: number;
-    ques: string;
-    ans: string;
+  id: number;
+  ques: string;
+  ans: string | string[];
   className?: string;
   questionClassName?: string;
   answerClassName?: string;
   icon?: JSX.Element;
   index?: number;
+  iconColor?: string;
 }
 const Accordion: React.FC<AccordionProps> = ({
   ques,
@@ -18,6 +19,7 @@ const Accordion: React.FC<AccordionProps> = ({
   questionClassName,
   answerClassName,
   index,
+  iconColor,
 }) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
@@ -36,7 +38,7 @@ const Accordion: React.FC<AccordionProps> = ({
           className={`flex items-center justify-between gap-4 w-full md:py-6 py-4`}
         >
           <h3
-            className={`font-semibold md:text-2xl text-xl text-clr ${questionClassName}`}
+            className={`font-semibold text-[1.375rem] text-clr ${questionClassName}`}
           >
             {ques}
           </h3>
@@ -44,8 +46,8 @@ const Accordion: React.FC<AccordionProps> = ({
             aria-label="accordion icon"
             role="svg"
             onClick={() => setIsAccordionOpen(!isAccordionOpen)}
-            className={`text-dark text-lg ${
-              isAccordionOpen ? "-rotate-180 text-clr" : ""
+            className={`cursor-pointer ${iconColor ? iconColor : "text-[#FF8A47]"} text-lg ${
+              isAccordionOpen ? "rotate-360" : "rotate-180"
             }  p-1 duration-300 transition-all ease-in-out`}
           >
             <OutlineDropdown />
@@ -58,11 +60,21 @@ const Accordion: React.FC<AccordionProps> = ({
           }`}
           onClick={() => setIsAccordionOpen(!isAccordionOpen)}
         >
-          <p
-            key={index}
-            className={`text-Light text-xl font-normal`}
-            dangerouslySetInnerHTML={{ __html: ans }}
-          ></p>
+          {ans instanceof Array ? (
+            <ul className="flex flex-col gap-4 list-disc pl-6">
+              {ans.map((ans, index) => (
+                <li key={index} className={`text-white md:text-lg font-normal`}>
+                  {ans}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p
+              key={index}
+              className={`text-Light text-xl font-normal`}
+              dangerouslySetInnerHTML={{ __html: ans }}
+            ></p>
+          )}
         </div>
       </div>
     </>
@@ -81,7 +93,7 @@ export const OutlineDropdown = () => (
   >
     <path
       d="M5.73 21.0535L6.67668 22L15.865 12.8129L25.0533 22L26 21.0535L15.865 10.9198L5.73 21.0535Z"
-      fill="#FF8A47"
+      fill="currentColor"
     />
   </svg>
 );
