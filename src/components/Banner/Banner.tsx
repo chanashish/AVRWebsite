@@ -18,7 +18,7 @@ const Banner: React.FC<BannerProps> = ({ title, desc, src, buttons }) => {
       <div className="grid lg:grid-cols-9 items-center gap-3 justify-center grid-cols-1">
         <div className="lg:col-span-4 w-full max-md:px-5 max-md:pt-4">
           <div className="flex flex-col gap-4 ml-auto max-w-lg w-full">
-            <h1 className="largeHeading font_go uppercase letter_spacing font-semibold max-sm:text-center">
+            <h1 className="largeHeading font-plus uppercase letter_spacing font-semibold max-sm:text-center">
               {title}
             </h1>
             <Paragraph className={"mt-4 description1 text-white max-sm:text-center"} text={desc} />

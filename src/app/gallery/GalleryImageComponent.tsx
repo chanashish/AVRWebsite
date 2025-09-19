@@ -6,7 +6,7 @@ import FullscreenImagePopup1 from "../../components/FullscreenImagePopup1";
 
 // Sample image data with tags matching headings
 interface ImageDataProps {
-  imageData: { src: string; alt: string; tags: string }[];
+  imageData: { src: string; alt: string; tags: string; id: number }[];
 }
 
 const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
@@ -19,18 +19,31 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
     "lg:col-span-2 lg:row-span-1",
   ];
 
+  const order = ["luxury suite room", "super deluxe room", "deluxe room", "rooms & suites"];
+
+  const sortedImages = [...imageData].sort((a, b) => {
+    const aIndex = order.indexOf(a.alt.toLowerCase());
+    const bIndex = order.indexOf(b.alt.toLowerCase());
+    return aIndex - bIndex;
+  });
+
   const [currentCategory, setCurrentCategory] = useState("All");
-  const categories = ["All", ...new Set(imageData.map((item) => item.tags))];
+  const categories = [
+    "All",
+    ...new Set(sortedImages.map((item) => item.tags.toLowerCase())),
+  ];
 
   const filterData = useCallback(
     (category: string) => {
       if (category === "All") {
-        return imageData;
+        return sortedImages;
       } else {
-        return imageData.filter((item) => item.tags.includes(category));
+        return sortedImages.filter((item) =>
+          item.tags.toLowerCase().includes(category)
+        );
       }
     },
-    [imageData]
+    [sortedImages]
   );
 
   const filteredData = filterData(currentCategory);
@@ -63,7 +76,7 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
               category === currentCategory
                 ? "bg-[#2F4B26] text-white"
                 : "bg-white text-[#2F4B26]"
-            } px-4 py-3 md:py-1 rounded-full border text-nowrap md:text-base text-sm border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
+            } px-4 py-3 md:py-1 uppercase rounded-full border text-nowrap md:text-base text-sm border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
           >
             {category}
           </button>
@@ -94,6 +107,11 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
                 fill
                 className={`w-full h-full cursor-pointer object-cover hover:scale-110 duration-1000 transition ease-linear`}
               />
+              {src.tags?.trim().toLowerCase() === "rooms & suites" && (
+                <div className="absolute top-2 left-2 bg-white px-2 py-1 text-sm font-medium text-gray-900">
+                  {src.alt}
+                </div>
+              )}
             </div>
           ))}
 

@@ -38,7 +38,7 @@ const Banner: FC<BannerDataProps> = ({ title, src, listOfLinks }) => {
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl text-clr font-semibold mt-4">Follow us</h2>
+          <h2 className="text-2xl text-clr font-plus font-semibold mt-4">Follow us</h2>
           <ul className="flex gap-4 mt-4">
             {listOfLinks.slice(3).map((link, index) => (
               <li key={index}>

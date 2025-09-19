@@ -38,7 +38,7 @@ const Accordion: React.FC<AccordionProps> = ({
           className={`flex items-center justify-between gap-4 w-full md:py-6 py-4`}
         >
           <h3
-            className={`font-semibold text-[1.375rem] text-clr ${questionClassName}`}
+            className={`font-semibold font-plus text-[1.375rem] text-clr ${questionClassName}`}
           >
             {ques}
           </h3>

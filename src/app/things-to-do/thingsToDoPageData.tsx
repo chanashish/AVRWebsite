@@ -2,7 +2,7 @@ import { imageUrl } from "@/data/links";
 
 export const thingsToDoData = {
   bannner: {
-    title: "Adventure Activities",
+    title: "Things To Do",
     images: [
       imageUrl + "273A8501.webp",
       // imageUrl + "273A8504.webp",

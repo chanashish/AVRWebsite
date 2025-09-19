@@ -10,7 +10,7 @@ const Footer = () => {
         <Container>
           <div className="grid lg:grid-cols-9 md:grid-cols-5 items-center grid-cols-1 gap-4 md:gap-16">
             <div className="md:col-span-3 space-y-4">
-              <div className="w-full max-w-[9rem] mx-auto relative aspect-square">
+              <div className="w-full max-w-[7rem] mx-auto relative aspect-square">
                 <Image
                   src={footerData.logo}
                   alt="logo"

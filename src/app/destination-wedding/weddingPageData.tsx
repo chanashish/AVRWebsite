@@ -3,7 +3,7 @@ import { contact } from "../../../constent";
 
 export const weddingPageData = {
   bannerData: {
-    title: "DESTINATION WEDDING",
+    title: "Destination Wedding",
     images: ["/wedding-bnr.png"],
   },
   aboutWeddingData: {
@@ -45,11 +45,11 @@ export const weddingPageData = {
         alt: "Photography",
         name: "Photography",
       },
-      {
-        src: "/icons/hygiene.png",
-        alt: "Hygiene",
-        name: "Hygiene",
-      },
+      // {
+      //   src: "/icons/hygiene.png",
+      //   alt: "Hygiene",
+      //   name: "Hygiene",
+      // },
       {
         src: "/icons/vegmenu.png",
         alt: "Pure Veg Menu",

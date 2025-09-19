@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
 
-  const ignoreIds = [6, 7, 9, 10];
+  const ignoreIds = [6, 9, 5, 10];
 
   const updatedNavLinks = NavLink.filter((link) => link.id).filter(
     (link) => !ignoreIds.includes(link.id)

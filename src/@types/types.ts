@@ -126,6 +126,7 @@ export interface TestimonialsPropsTypes {
     name: string;
     logo: string;
     rating: string;
+    href: string;
   }[];
   cards: {
     id: number;

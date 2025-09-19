@@ -28,7 +28,29 @@ const AboutComponent: FC<AboutComponentPropsTypes> = ({
             {title}
           </h2>
         </div>
-
+        {/* slider */}
+        <div className="md:hidden">
+          <SwiperCarousel
+            slidesPerView={1}
+            spaceBetween={20}
+            data={images}
+            loop={true}
+            modules={[Autoplay]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            className="!p-2"
+            renderSlide={(img) => (
+              <div className="w-full relative aspect-[4/3]">
+                <Image
+                  src={img}
+                  alt={title}
+                  fill
+                  sizes="100%"
+                  className="w-full object-cover"
+                />
+              </div>
+            )}
+          />
+        </div>
         <p className="md:text-lg text-base text-center md:mt-2">
           {description[0]}
         </p>
@@ -48,29 +70,7 @@ const AboutComponent: FC<AboutComponentPropsTypes> = ({
           ))}
         </div>
         {/* slider */}
-        {/* slider */}
-        <div className="md:hidden">
-          <SwiperCarousel
-            slidesPerView={1}
-            spaceBetween={20}
-            data={images}
-            loop={true}
-            modules={[Autoplay]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            className="!p-2"
-            renderSlide={(img) => (
-              <div className="w-full relative aspect-square">
-                <Image
-                  src={img}
-                  alt={title}
-                  fill
-                  sizes="100%"
-                  className="w-full object-cover"
-                />
-              </div>
-            )}
-          />
-        </div>
+
         <div className="flex flex-col gap-4">
           {description.slice(1).map((item, index) => (
             <p key={index} className="md:text-lg text-base text-center md:mt-2">

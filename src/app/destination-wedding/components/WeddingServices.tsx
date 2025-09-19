@@ -10,7 +10,7 @@ const WeddingServices: FC<WeddingServicesPropsTypes> = ({ title, cards }) => {
   return (
     <Section className="wedding-services">
       <div className="flex flex-col md:gap-14 gap-4 max-w-[1400px] mx-auto">
-        <h2 className="md:text-[2.5rem] text-2xl font-semibold text-center text-clr">{title}</h2>
+        <h2 className="md:text-[2.5rem] font-plus text-2xl font-semibold text-center text-clr">{title}</h2>
         <div className="md:flex hidden flex-wrap gap-6 justify-center">
           {cards.map((card, index) => (
             <div

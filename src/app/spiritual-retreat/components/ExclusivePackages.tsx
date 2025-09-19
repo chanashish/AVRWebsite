@@ -41,7 +41,7 @@ const ExclusivePackages: React.FC<ExclusivePackagesPropsTypes> = ({
                 />
               </div>
               <div className="px-4 py-6 flex flex-col gap-4 bg-clr2">
-                <h3 className="text-2xl md:text-[2rem] text-clr">{card.title}</h3>
+                <h3 className="text-2x font-plus md:text-[2rem] text-clr">{card.title}</h3>
                 <p className="md:text-lg text-clr">{card.description}</p>
                 <Link
                   href={card.link.href}

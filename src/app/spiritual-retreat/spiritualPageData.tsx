@@ -33,9 +33,9 @@ export const spiritualPageData = {
       },
       {
         src: "/Spiritual-Retreat.jpg",
-        title: "Spiritual Retreat (4 Days)",
+        title: "Lorem ipsum",
         description:
-          "Ideal for peace seekers, wellness enthusiasts & those seeking rejuvenation.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
         link: {
           href: "/contact-us",
           label: "Book Package",

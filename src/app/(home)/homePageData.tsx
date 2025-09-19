@@ -1,12 +1,11 @@
 import { imageUrl } from "@/data/links";
-import { NestledInNature, PeacefulLocation } from '../../icons/icons';
 import {
   BookingRatingIcon,
-  CuratedLuxury,
   ExpediaRatingIcon,
   HotelRatingIcon,
-  TripAdvisorRatingIcon,
+  TripAdvisorRatingIcon
 } from "@/icons/icons";
+import { NestledInNature, PeacefulLocation, PureVeg } from '../../icons/icons';
 
 export const homePageData = {
   bannerData: {
@@ -79,7 +78,7 @@ export const homePageData = {
   },
   experiences: {
     title: "EXPERIENCES",
-    subTitle: "Lorem Ipsum Dolor Sit Amet",
+    subTitle: "Designed for Joy, Built for Memories",
     cards: [
       {
         src: "/destination-wedding.png",
@@ -99,19 +98,19 @@ export const homePageData = {
     title: "UNIQUE EDGE",
     subTitle: "Why Us?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "A perfect blend of luxury and nature, offering serene escapes amidst the Himalayas. Exquisite vegetarian cuisine and heartfelt hospitality that make every stay memorable.",
     cards: [
       {
-        icon: <CuratedLuxury />,
-        title: "Curated Luxury",
+        icon: <PureVeg />,
+        title: "Pure Veg",
       },
       {
         icon: <PeacefulLocation />,
-        title: "Peaceful Location",
+        title: "Peaceful Location Nestled in Nature",
       },
       {
         icon: <NestledInNature />,
-        title: "Nestled in Nature",
+        title: "family centric",
       },
     ],
   },
@@ -128,7 +127,7 @@ export const homePageData = {
         description: "Govind Prasadam Pure Vegetarian Restaurant",
       },
       {
-        src: imageUrl + "IMG_8383.webp",
+        src: imageUrl + "IMG_8354.webp",
         description: "Open Air Cafe",
       },
     ],
@@ -231,9 +230,10 @@ export const homePageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title:
+      "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
       href: "",
       label: "Book Now",

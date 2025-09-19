@@ -14,7 +14,7 @@ const OnlinePlatformsCard: FC<OnlinePlatformsPropsTypes["cards"][0]> = ({
       <div>{icon}</div>
       <div className="text-lg flex flex-col font-medium  text-clr uppercase tracking-wide">
         <span className="">{ratings}</span>
-        <span className="">{partnerName}</span>
+        <span className="font-plus text-xl">{partnerName}</span>
       </div>
     </div>
   );

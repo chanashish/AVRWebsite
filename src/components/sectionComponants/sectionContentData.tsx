@@ -41,11 +41,13 @@ export const sectionContentData = {
         name: "Google Rating",
         logo: "/Google.png",
         rating: "5.0",
+        href:"https://www.google.com/travel/search?q=anand%20vardhan%20resorts&g2lb=4965990%2C4969803%2C72277293%2C72302247%2C72317059%2C72406588%2C72414906%2C72421566%2C72471280%2C72472051%2C72481459%2C72485658%2C72560029%2C72573224%2C72616120%2C72619927%2C72647020%2C72648289%2C72686036%2C72760082%2C72803964%2C72808078%2C72825294%2C72827241%2C72832976%2C72852292%2C72860862%2C72881573%2C72882230%2C72885032%2C72916970&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaRgooEiYyJDB4MzkwNDg5NGVmMjU2MzgxZDoweDUzNmYwYTlhMzA2YTI3MRIaEhQKBwjpDxADGBkSBwjpDxADGBoYATICEAA&qs=CAEyE0Nnb0k4Y1NhbUpxVnZKc0ZFQUU4AkIJCXGiBqOp8DYFQgkJcaIGo6nwNgU&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwjAiKitiKOMAxUAAAAAHQAAAAAQBQ",
       },
       {
         name: "Trip Advisor",
         logo: "/trip.png",
         rating: "5.0",
+        href:"https://www.tripadvisor.in/Hotel_Review-g297617-d24062550-Reviews-Anand_Vardhan_Resorts-Himachal_Pradesh.html",
       },
     ],
     cards: [

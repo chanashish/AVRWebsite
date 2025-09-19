@@ -1,5 +1,5 @@
 export const contact = {
-    address:"Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104",
+    address:"Village Ghurdaur PO Larakelo, Kullu Naggar, Manali Road, Himachal Pradesh 175104",
     addressUrl:"https://maps.app.goo.gl/jUxuRoek1LMLQaEG9",
     email:"sales@anandvardhanresorts.com",
     phone:"+91-93172-07373",

@@ -25,18 +25,18 @@ export default function BlogPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-4 bg-white">
-                <h3 className="text-[24px] text-[#2F4B26] font-normal playfair">
+              <div className="p-4 bg-clr2 space-y-3">
+                <h3 className="text-2xl font-plus text-[#2F4B26] font-normal">
                   {card.title}
                 </h3>
-                <span className="text-[14px] text-[#2F4B26] font-normal">
+                <p className="text-sm text-Light font-normal">
                   {card.date}
-                </span>
-                <p className="text-[16px] text-[#2F4B26] font-normal mt-2">
-                  {card.description}{" "}
-                  <Link href={card.link.href} className="text-[#FF7A00]">
+                </p>
+                <p className="md:text-lg text-Light font-normal mt-2">
+                  {card.description.slice(0, 180)}{" "}
+                  <Link href={card.link.href} className="text-[#1F1F1F] font-semibold">
                     {" "}
-                    {card.link.label}
+                    ...{card.link.label}
                   </Link>
                 </p>
               </div>

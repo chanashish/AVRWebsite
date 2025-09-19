@@ -97,8 +97,8 @@ export const aboutPageData = {
     ],
   },
   experiences: {
-    title: "EXPERIENCES",
-    subTitle: "Lorem Ipsum Dolor Sit Amet",
+    title: "Experience",
+    subTitle: "Anand Vardhan Resort",
     cards: [
       {
         src: "/destination-wedding.png",
@@ -115,12 +115,13 @@ export const aboutPageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title:
+      "Book your stay with us!",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Create unforgettable memories in Anand Vardhan Resort. Your dream vacation starts here.",
     link: {
-      label: "Book Now",
       href: "",
+      label: "Book Now",
     },
   },
 };
