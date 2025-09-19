@@ -11,7 +11,7 @@ import {
   WhyChooseUs,
 } from "./components";
 import { homePageData } from "./homePageData";
-import { Experiences, SectionWithContainer, TestimonialSection } from "@/components/sectionComponants";
+import { Experiences, sectionContentData, SectionWithContainer, TestimonialSection } from "@/components/sectionComponants";
 import CheckInOutForm from "@/components/cards/CheckInOutForm";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
       <WhyChooseUs {...homePageData.whyChooseUs} />
       <OurCulinaryOfferings {...homePageData.ourCulinaryOfferings} />
       <OnlinePlatforms {...homePageData.onlinePlatforms} />
-      <TestimonialSection {...homePageData.testimonials} />
+      <TestimonialSection {...sectionContentData.testimonials} />
       <Addcard {...homePageData.addCardData} />
     </main>
   );
