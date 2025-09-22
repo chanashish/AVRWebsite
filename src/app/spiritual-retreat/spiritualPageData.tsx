@@ -13,34 +13,34 @@ export const spiritualPageData = {
       "Our holistic Innergise stays are transformative wellness retreats designed for those seeking renewal. Relax, deepen your awareness, restore balance, and reconnect with what matters most – your mind, body, and inner energy.",
     src: "/Enhance-Your-Inner-Energy.png",
     link: {
-      href: "/contact",
+      href: "/AnandVardhan_Packages.pdf",
       label: "Download Brochure",
     },
   },
   exclusivePackages: {
     title: "ANAND VARDHAN RESORTS, NAGGAR",
-    subTitle: "Exclusive Holiday Packages",
+    subTitle: "Spiritual Retreat Packages",
     cards: [
       {
         src: "/Explore-Manali.jpg",
-        title: "Explore Manali (4 Days)",
+        title: "Spiritual Retreat (4 Days)",
         description:
-          "Perfect for adventure lovers & those seeking to explore the beauty of Manali",
+          "Ideal for peace seekers, wellness enthusiasts & those seeking rejuvenation.",
         link: {
           href: "/contact-us",
           label: "Book Package",
         },
       },
-      {
-        src: "/Spiritual-Retreat.jpg",
-        title: "Lorem ipsum",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-        link: {
-          href: "/contact-us",
-          label: "Book Package",
-        },
-      },
+      // {
+      //   src: "/Spiritual-Retreat.jpg",
+      //   title: "Lorem ipsum",
+      //   description:
+      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      //   link: {
+      //     href: "/contact-us",
+      //     label: "Book Package",
+      //   },
+      // },
     ],
   },
   packages: {

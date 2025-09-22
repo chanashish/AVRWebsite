@@ -19,7 +19,7 @@ const Addcard: FC<AddCardDataPropsTypes> = ({ title, description, link }) => {
           </div>
           <div className="">
             <Link
-              href={link}
+              href={link.href}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-clr1 ml-auto rounded-full md:w-fit flex justify-center items-center text-white py-4 px-6 shadow-inner md:text-lg hover:bg-clr transition"
