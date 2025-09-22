@@ -19,7 +19,7 @@ const AboutUsHome: FC<AboutUsPropsTypes> = ({
         <div className="md:grid hidden grid-cols-2 gap-6 w-full">
           {images.slice(0, 2).map((image, index) => (
             <div
-              className={`w-full aspect-[4/6] relative ${index === 0 ? "" : "lg:mt-12"}`}
+              className={`w-full card-view-scale aspect-[4/6] relative ${index === 0 ? "" : "lg:mt-12"}`}
               key={index}
             >
               <Image

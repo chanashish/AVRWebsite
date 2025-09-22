@@ -3,16 +3,16 @@ import {
   BookingRatingIcon,
   ExpediaRatingIcon,
   HotelRatingIcon,
-  TripAdvisorRatingIcon
+  TripAdvisorRatingIcon,
 } from "@/icons/icons";
-import { NestledInNature, PeacefulLocation, PureVeg } from '../../icons/icons';
+import { NestledInNature, PeacefulLocation, PureVeg } from "../../icons/icons";
+import { contact } from "../../../constent";
 
 export const homePageData = {
   bannerData: {
     images: [
-      imageUrl + "IMG_8380.webp",
-      "/home.webp",
-    ],
+      imageUrl + "IMG_8380.webp", 
+      "/Home.webp"],
     title: "Anand Vardhan Resort",
     subTitle: "Welcome to",
     description: "A PURE VEGETARIAN RESORT IN MANALI",
@@ -25,10 +25,11 @@ export const homePageData = {
       "Wake up to fresh mountain air, chirping birds, and breathtaking views of the Dhauladhar and Pir Panjal ranges. Nestled amid apple orchards and pine forests near Manali, our resort offers soulful escapes and warm hospitality away from the city’s hustle.",
     ],
     images: [
-      "/home-about2.png", 
-      "/home-about1.png", 
-      "/home-about3.jpg", 
-      "/home-about4.jpg",],
+      "/home-about2.png",
+      "/home-about1.png",
+      "/home-about3.jpg",
+      "/home-about4.jpg",
+    ],
     link: {
       label: "More About Us",
       href: "/about-us/",
@@ -235,7 +236,7 @@ export const homePageData = {
     description:
       "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

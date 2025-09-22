@@ -12,9 +12,10 @@ export default function BlogPage() {
       <SectionWithContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-4">
           {blogPageData.cards.map((card, index) => (
-            <div
+            <Link
+              href={card.link.href}
               key={index}
-              className="w-full rounded-lg overflow-hidden box-shadow"
+              className="w-full card-view-scale rounded-lg overflow-hidden box-shadow"
             >
               <div className="w-full relative md:aspect-[4/2.5] aspect-[3/2.2]">
                 <Image
@@ -29,18 +30,15 @@ export default function BlogPage() {
                 <h3 className="text-2xl font-plus text-[#2F4B26] font-normal">
                   {card.title}
                 </h3>
-                <p className="text-sm text-Light font-normal">
-                  {card.date}
-                </p>
+                <p className="text-sm text-Light font-normal">{card.date}</p>
                 <p className="md:text-lg text-Light font-normal mt-2">
                   {card.description.slice(0, 180)}{" "}
-                  <Link href={card.link.href} className="text-[#1F1F1F] font-semibold">
-                    {" "}
+                  <span className="text-[#1F1F1F] font-semibold">
                     ...{card.link.label}
-                  </Link>
+                  </span>
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </SectionWithContainer>

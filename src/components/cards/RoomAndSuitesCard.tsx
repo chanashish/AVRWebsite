@@ -1,9 +1,11 @@
 "use client";
 import { RoomsAndSuitesPropsTypes } from "@/@types/types";
-import Link from "next/link";
-import SwiperCarousel from "../SwiperCarousel";
+import { WebsiteContext } from "@/context/WebsiteContext";
 import Image from "next/image";
-import { Autoplay, FreeMode, Navigation } from "swiper/modules";
+import Link from "next/link";
+import { useContext } from "react";
+import { Navigation } from "swiper/modules";
+import SwiperCarousel from "../SwiperCarousel";
 
 type Props = RoomsAndSuitesPropsTypes["cards"][0] & {
   index: number;
@@ -17,9 +19,30 @@ const RoomAndSuitesCard: React.FC<Props> = ({
   description,
   facilityList,
 }) => {
+  // Use context instead of local state
+  const { setOpenImgPopup, setImage, setCurrentIndex, setRoomName } =
+    useContext(WebsiteContext);
+
+  const handleOpen = ({
+    images,
+    index,
+    roomName = "",
+  }: {
+    images: string[];
+    index: number;
+    roomName?: string;
+  }) => {
+    setOpenImgPopup(true);
+    setImage(images);
+    setCurrentIndex(index);
+    setRoomName(roomName);
+  };
+
   return (
-    <div className={`flex flex-col ${description ? "box-shadow" : "gap-4"}`}>
-      <div className="relative">
+    <div
+      className={`flex card-view-scale w-full flex-col ${description ? "box-shadow" : "gap-4"}`}
+    >
+      <div className="relative ">
         <SwiperCarousel
           data={images}
           className="w-full"
@@ -39,6 +62,7 @@ const RoomAndSuitesCard: React.FC<Props> = ({
               fill
               className="object-cover"
               sizes="100vw"
+              onClick={() => handleOpen({ images, index, roomName: title })}
             />
           )}
         />
@@ -57,12 +81,12 @@ const RoomAndSuitesCard: React.FC<Props> = ({
         </button>
       </div>
       <div
-        className={`flex  ${description ? "flex-col gap-4 px-6 bg-white py-5" : "items-center justify-between"}`}
+        className={`flex h-full  ${description ? "flex-col gap-4 px-6 bg-white py-5" : "items-center justify-between"}`}
       >
         <h3 className={`text-2xl text-clr font-plus`}>{title}</h3>
         {facilityList && (
-          <div className="w-full demo">
-            <SwiperCarousel
+          <ul className="w-full flex flex-col gap-2 list-disc pl-6">
+            {/* <SwiperCarousel
               data={facilityList}
               speed={5000}
               loop={true}
@@ -86,13 +110,20 @@ const RoomAndSuitesCard: React.FC<Props> = ({
                   <span className="absolute right-0">•</span>
                 </div>
               )}
-            />
-          </div>
+            /> */}
+            {facilityList.map((text, index) => (
+              <li key={index} className="text-Light">
+                {text}
+              </li>
+            ))}
+          </ul>
         )}
         {description && <p className="text-Light md:text-lg">{description}</p>}
 
         <Link
           href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className={`border border-clr1 px-6 py-3 rounded-full flex items-center justify-center gap-2 text-sm  transition-all duration-300 ease-in-out ${description ? "text-white bg-clr1 hover:bg-white hover:text-clr1" : "text-clr1 bg-transparent hover:bg-clr1 hover:text-white"}`}
         >
           {link.label}

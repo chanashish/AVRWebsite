@@ -1,3 +1,5 @@
+import { contact } from "../../../constent";
+
 export const nearByPlaces = {
   bannerData: {
     title: "Nearby Places",
@@ -101,7 +103,7 @@ export const nearByPlaces = {
     description:
       "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

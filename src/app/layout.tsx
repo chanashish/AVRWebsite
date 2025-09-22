@@ -2,10 +2,12 @@ import { Call, Navbar, Whatsapp } from "@/components";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.scss";
+import "./animation.scss";
 
 import Footer from "@/components/Footer/Footer";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
 import { WebsiteProvider } from "@/context/WebsiteContext";
+import FullscreenImagePopup1 from "@/components/FullscreenImagePopup1";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -389,6 +391,7 @@ export default function RootLayout({
           {/* <StickyLogo /> */}
           <Whatsapp whatsAppNumber="9317207373" />
           <Call callNumber="919317207373" />
+          <FullscreenImagePopup1 />
         </WebsiteProvider>
       </body>
     </html>

@@ -9,7 +9,7 @@ type card = pureVegSectionDataPropsTypes["cards"][0] & { index?: number };
 const PureVegCard: FC<card> = ({ images, title, description, index }) => {
   return (
     <div>
-      <div className="relative w-full">
+      <div className="relative card-view-scale w-full">
         <SwiperCarousel
           data={images}
           slidesPerView={1}

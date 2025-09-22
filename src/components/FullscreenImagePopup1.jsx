@@ -1,20 +1,20 @@
 "use client";
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback, useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
 import { OutLineBtnNext, OutLineBtnPrev } from "@/icons/icons";
-import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
-// import { AiOutlineZoomIn } from "react-icons/ai";
-// import { AiOutlineZoomOut } from "react-icons/ai";
+import { WebsiteContext } from "@/context/WebsiteContext";
 
-const FullscreenImagePopup1 = ({
-  openImgPopup,
-  setOpenImgPopup,
-  image,
-  currentIndex,
-  roomName = "",
-}) => {
-  const [imgIndex, setImgIndex] = useState(currentIndex);
+const FullscreenImagePopup1 = () => {
+  const { 
+    openImgPopup, 
+    setOpenImgPopup, 
+    image, 
+    currentIndex, 
+    roomName 
+  } = useContext(WebsiteContext);
+
+  const [imgIndex, setImgIndex] = useState(currentIndex || 0);
 
   const handleNext = useCallback(() => {
     if (imgIndex < image.length - 1) {
@@ -42,14 +42,11 @@ const FullscreenImagePopup1 = ({
     };
   }, [openImgPopup, currentIndex]);
 
-  // const imageSrc = useMemo(() => image[imgIndex], [image, imgIndex]);
   const imageSrc = useMemo(
     () =>
       image && image[imgIndex] ? image[imgIndex] : "/images/placeholder.png",
     [image, imgIndex]
   );
-
-  // const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleKeydown = useCallback(
     (event) => {
@@ -61,9 +58,6 @@ const FullscreenImagePopup1 = ({
       } else if (event.key === "ArrowLeft") {
         handlePrev();
       }
-      // if (event.key === "f") {
-      //   toggleFullscreen();
-      // }
     },
     [setOpenImgPopup, handleNext, handlePrev]
   );
@@ -71,9 +65,8 @@ const FullscreenImagePopup1 = ({
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchStartTime, setTouchStartTime] = useState(0);
 
-
   const handleTouchStart = (e) => {
-    if (e.touches.length !== 1) return; // Ignore multi-touch
+    if (e.touches.length !== 1) return;
     setTouchStartX(e.touches[0].clientX);
     setTouchStartTime(Date.now());
   };
@@ -85,20 +78,17 @@ const FullscreenImagePopup1 = ({
     const deltaX = touchEndX - touchStartX;
     const deltaTime = touchEndTime - touchStartTime;
 
-    // Only proceed if swipe was quick and significant enough
     if (deltaTime < 500 && Math.abs(deltaX) > 50) {
       if (deltaX < 0) {
-        handleNext(); // Swipe left
+        handleNext();
       } else {
-        handlePrev(); // Swipe right
+        handlePrev();
       }
     }
 
     setTouchStartX(0);
     setTouchStartTime(0);
   };
-
-
 
   useEffect(() => {
     if (openImgPopup) {
@@ -114,27 +104,6 @@ const FullscreenImagePopup1 = ({
       document.body.style.overflow = "";
     };
   }, [openImgPopup, handleKeydown]);
-
-  // const toggleFullscreen = useCallback(() => {
-  //   const element = document.querySelector(".image-container img");
-  //   if (document.fullscreenElement) {
-  //     document.exitFullscreen();
-  //   } else if (element) {
-  //     element.requestFullscreen().catch((err) => console.error(err));
-  //   }
-  // }, []);
-
-  // const handleFullscreenChange = useCallback(() => {
-  //   setIsFullscreen(!!document.fullscreenElement);
-  // }, []);
-
-  // useEffect(() => {
-  //   document.addEventListener("fullscreenchange", handleFullscreenChange);
-
-  //   return () => {
-  //     document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  //   };
-  // }, [handleFullscreenChange]);
 
   return (
     <div
@@ -175,7 +144,6 @@ const FullscreenImagePopup1 = ({
                   className="md:object-cover object-contain transition-all duration-300 ease-in-out"
                 />
               </div>
-
             )}
           </div>
           <button
@@ -191,7 +159,7 @@ const FullscreenImagePopup1 = ({
             <OutLineBtnNext />
           </button>
           {roomName && (
-            <span className=" bg-clr4/30 p-2  text-[18px] text-white lato font-normal image-title-center">
+            <span className=" bg-clr4/30 p-2 sr-only text-[18px] text-white lato font-normal image-title-center">
               {roomName}
             </span>
           )}

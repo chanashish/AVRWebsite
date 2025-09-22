@@ -8,5 +8,6 @@ export const contact = {
         facebook:"https://www.facebook.com/anandvardhanresorts/",
         instagram:"https://www.instagram.com/anandvardhanresorts/",
         linkedin:"https://www.linkedin.com/company/anand-vardhan-resort/"
-    }
+    },
+    cta:"https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates."
 };

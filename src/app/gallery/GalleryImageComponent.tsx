@@ -1,8 +1,8 @@
 "use client";
 import { SectionWithContainer } from "@/components/sectionComponants";
+import { WebsiteContext } from "@/context/WebsiteContext";
 import Image from "next/image";
-import { FC, useCallback, useState } from "react";
-import FullscreenImagePopup1 from "../../components/FullscreenImagePopup1";
+import { FC, useCallback, useState, useContext } from "react";
 
 // Sample image data with tags matching headings
 interface ImageDataProps {
@@ -19,7 +19,12 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
     "lg:col-span-2 lg:row-span-1",
   ];
 
-  const order = ["luxury suite room", "super deluxe room", "deluxe room", "rooms & suites"];
+  const order = [
+    "luxury suite room",
+    "super deluxe room",
+    "deluxe room",
+    "rooms & suites",
+  ];
 
   const sortedImages = [...imageData].sort((a, b) => {
     const aIndex = order.indexOf(a.alt.toLowerCase());
@@ -48,20 +53,23 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
 
   const filteredData = filterData(currentCategory);
 
-  const [openImgPopup, setOpenImgPopup] = useState(false);
-  const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  // Use context instead of local state
+  const { setOpenImgPopup, setImage, setCurrentIndex, setRoomName } =
+    useContext(WebsiteContext);
 
   const handleOpen = ({
     images,
     index,
+    roomName = "",
   }: {
     images: string[];
     index: number;
+    roomName?: string;
   }) => {
     setOpenImgPopup(true);
-    setCurrentImage(images);
+    setImage(images);
     setCurrentIndex(index);
+    setRoomName(roomName);
   };
 
   return (
@@ -86,9 +94,9 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
       {/* Gallery */}
       <div className="mt-8">
         <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1 md:auto-rows-[15rem] auto-rows-[280px] grid-flow-row gap-[.55rem]">
-          {filteredData.map((src, index) => (
+          {filteredData.map((item, index) => (
             <div
-              key={index}
+              key={item.id}
               className={`${
                 gridPattern[index % gridPattern.length]
               } overflow-hidden hover:border-4 border-white hover:shadow-3xl shadow-2xl hover:-translate-y-1 hover:shadow-gray-600 duration-1000 transition ease-in-out relative aspect-auto`}
@@ -98,29 +106,24 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
                   handleOpen({
                     images: [...new Set(filteredData?.map((card) => card.src))],
                     index,
+                    roomName: item.alt,
                   })
                 }
-                src={src.src}
-                alt={src.alt}
+                src={item.src}
+                alt={item.alt}
                 priority={true}
-                // placeholder="blur"
                 fill
                 className={`w-full h-full cursor-pointer object-cover hover:scale-110 duration-1000 transition ease-linear`}
               />
-              {src.tags?.trim().toLowerCase() === "rooms & suites" && (
+              {item.tags?.trim().toLowerCase() === "rooms & suites" && (
                 <div className="absolute top-2 left-2 bg-white px-2 py-1 text-sm font-medium text-gray-900">
-                  {src.alt}
+                  {item.alt}
                 </div>
               )}
             </div>
           ))}
 
-          <FullscreenImagePopup1
-            openImgPopup={openImgPopup}
-            setOpenImgPopup={setOpenImgPopup}
-            image={currentImage}
-            currentIndex={currentIndex}
-          />
+          {/* FullscreenImagePopup1 will now read from context */}
         </div>
         {filteredData.length === 0 && (
           <div className="py-20 text-center text-gray-500">

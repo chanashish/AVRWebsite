@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
+import { contact } from "../../../constent";
 
 const CheckInOutForm = () => {
   const checkInRef = useRef<HTMLInputElement>(null);
@@ -121,7 +122,7 @@ const CheckInOutForm = () => {
           </div>
         </div>
 
-        <Link href={"tel:+919816091658"} target="_blank" className="bg-clr1 flex items-center justify-center gap-2 uppercase text-white lg:my-4 max-md:py-4 font-medium hover:text-clr hover:bg-white transition-colors ease-in-out duration-300 text-sm">
+        <Link href={contact.cta} target="_blank" className="bg-clr1 flex items-center justify-center gap-2 uppercase text-white lg:my-4 max-md:py-4 font-medium hover:text-clr hover:bg-white transition-colors ease-in-out duration-300 text-sm">
           Check Availability
         </Link>
       </div>

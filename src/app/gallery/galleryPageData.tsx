@@ -1,4 +1,5 @@
 import { imageUrl } from "@/data/links";
+import { contact } from "../../../constent";
 
 export const galleryPageData = {
   bannerData: {
@@ -444,7 +445,7 @@ export const galleryPageData = {
     description:
       "Life's too short for ordinary vacations. Book now for memories that last forever.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

@@ -1,4 +1,5 @@
 import { imageUrl } from "@/data/links";
+import { contact } from "../../../constent";
 
 export const diningPageData = {
   bannerData: {
@@ -37,7 +38,7 @@ export const diningPageData = {
     description:
       "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

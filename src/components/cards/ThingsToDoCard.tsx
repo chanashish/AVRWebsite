@@ -13,7 +13,7 @@ const ThingsToDoCard: FC<ThingsToDoCardPropsTypes> = ({
   src,
 }) => {
   return (
-    <div className="w-full box-shadow">
+    <div className="w-full card-view-scale box-shadow">
       <div className="w-full relative md:aspect-[4/3] aspect-[4/3]">
         <Image
           src={src}

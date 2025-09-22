@@ -5,6 +5,7 @@ import {
   HotelRatingIcon,
   TripAdvisorRatingIcon,
 } from "@/icons/icons";
+import { contact } from "../../../constent";
 
 export const aboutPageData = {
   bannerData: {
@@ -120,7 +121,7 @@ export const aboutPageData = {
     description:
       "Create unforgettable memories in Anand Vardhan Resort. Your dream vacation starts here.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

@@ -6,8 +6,6 @@ import ToDoSliderCard from "../cards/ToDoSliderCard";
 import Section from "./Section";
 import Link from "next/link";
 import Container from "./Container";
-import FullscreenImagePopup1 from "../FullscreenImagePopup1";
-import { useState } from "react";
 
 interface TodoSectionProps {
   title?: string;
@@ -29,23 +27,9 @@ const TodoSection: React.FC<TodoSectionProps> = ({
   href,
   textEnd = false,
 }) => {
-  const [openImgPopup, setOpenImgPopup] = useState(false);
-  const [currentImage, setCurrentImage] = useState<string[]>([]); // array of image
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [roomName, setRoomName] = useState<string>("");
+  
 
-  const handleOpen = ({
-    images,
-    index,
-  }: {
-    images: string[];
-    index: number;
-  }) => {
-    setOpenImgPopup(true);
-    setCurrentImage(images);
-    setCurrentIndex(index);
-    setRoomName(cardData[index].title);
-  };
+
 
   return (
     <Section className="bg-[#F9F9F1]">
@@ -120,12 +104,7 @@ const TodoSection: React.FC<TodoSectionProps> = ({
                   title={item.title}
                   description={item.description}
                   textEnd={textEnd}
-                  handleClick={() => {
-                    handleOpen({
-                      images: cardData.map((item) => item.src),
-                      index: typeof index === "number" ? index : 0,
-                    });
-                  }}
+                 
                 />
               )}
             />
@@ -157,13 +136,7 @@ const TodoSection: React.FC<TodoSectionProps> = ({
           )}
         </div>
       </Container>
-      <FullscreenImagePopup1
-        openImgPopup={openImgPopup}
-        setOpenImgPopup={setOpenImgPopup}
-        image={currentImage}
-        currentIndex={currentIndex}
-        roomName={roomName}
-      />
+      
     </Section>
   );
 };

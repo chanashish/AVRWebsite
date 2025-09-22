@@ -12,7 +12,7 @@ const Experiences: FC<ExperiencesDataPropsTypes> = ({ title, subTitle, cards }) 
     <Section>
       <div className="flex flex-col md:gap-14 gap-8 max-lg:px-4">
         <SectionHeading title={title} subTitle={subTitle} textCenter />
-        <div className="">
+        <div className="w-full">
           <SwiperCarousel
             data={cards}
             slidesPerView={1}
@@ -37,6 +37,7 @@ const Experiences: FC<ExperiencesDataPropsTypes> = ({ title, subTitle, cards }) 
                 autoplay: false,
               },
             }}
+            swiperSlideClassName=""
             renderSlide={(card, index) => (
               <div
                 key={index}
