@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Container from "../SectionComponents/Container";
+import { Container } from "../sectionComponants";
 import { footerData } from "./footerData";
 import Link from "next/link";
 
@@ -51,6 +51,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       aria-label={link.label}
                     >
+                      <span className="sr-only">{link.label}</span>
                       {link.icon}
                     </Link>
                   </li>

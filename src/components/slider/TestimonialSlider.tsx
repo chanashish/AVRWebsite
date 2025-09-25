@@ -1,7 +1,8 @@
 "use client";
 import { TestimonialsPropsTypes } from "@/@types/types";
 import { FC } from "react";
-import SwiperCarousel from "../SwiperCarousel";
+import SwiperCarousel from "./SwiperCarousel";
+
 import { Autoplay, Pagination } from "swiper/modules";
 import { TestimonialCard } from "../cards";
 

@@ -54,6 +54,8 @@ export const WebsiteProvider = ({ children }: Props) => {
     fetchWebsiteData();
   }, []);
 
+  // console.log(websiteData);
+
   return (
     <WebsiteContext.Provider
       value={{

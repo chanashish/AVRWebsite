@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import Container from "../SectionComponents/Container";
+import { Container} from "../sectionComponants";
 import MobileNav from "./MobileNav";
 import { footerData } from "../Footer/footerData";
 import axios from "axios";
@@ -154,6 +154,7 @@ const Navbar: React.FC = () => {
                       href={link.href}
                       className="flex items-center gap-2 text-white"
                     >
+                      <span className="sr-only">{link.label}</span>
                       {link.icon}
                     </Link>
                   </li>

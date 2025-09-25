@@ -178,6 +178,7 @@ const NumberOfGuests: React.FC<NumberOfGuestsProps> = ({
                 disabled={guest.value <= (guest.type === "adults" ? 1 : 0)}
                 className="w-4 h-4 aspect-square rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
               >
+                <span className="sr-only">minus</span>
                 <FiMinus />
               </button>
               <span className="w-[3ch] flex items-center justify-center">
@@ -189,6 +190,7 @@ const NumberOfGuests: React.FC<NumberOfGuestsProps> = ({
                 }
                 className="w-4 h-4 aspect-square rounded-full bg-gray-100 flex items-center justify-center"
               >
+                <span className="sr-only">plus</span>
                 <GoPlus />
               </button>
             </div>

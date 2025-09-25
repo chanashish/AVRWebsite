@@ -76,7 +76,7 @@ export const weddingPageData = {
       },
       {
         src: imageUrl + "destination/offer2.webp",
-        alt: "Haldhi Ceremony ",
+        alt: "Haldi Ceremony ",
       },
       {
         src: imageUrl + "destination/offer3.webp",

@@ -1,9 +1,9 @@
 "use client";
 import { pureVegSectionDataPropsTypes } from "@/@types/types";
 import { FC } from "react";
-import SwiperCarousel from "../SwiperCarousel";
 import Image from "next/image";
 import { Navigation } from "swiper/modules";
+import SwiperCarousel from "../slider/SwiperCarousel";
 
 type card = pureVegSectionDataPropsTypes["cards"][0] & { index?: number };
 const PureVegCard: FC<card> = ({ images, title, description, index }) => {

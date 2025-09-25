@@ -119,7 +119,7 @@ export const homePageData = {
     title: "OUR CULINARY OFFERINGS",
     subTitle: "A Celebration of Pure Vegetarian Flavors",
     link: {
-      href: "",
+      href: "/contact-us/",
       label: "Know More",
     },
     cards: [
@@ -139,22 +139,22 @@ export const homePageData = {
       {
         icon: <TripAdvisorRatingIcon />,
         partnerName: "TripAdvisor",
-        ratings: "4.5/5",
+        ratings: "4.9/5",
       },
       {
         icon: <BookingRatingIcon />,
         partnerName: "Booking.com",
-        ratings: "9.5/10",
+        ratings: "7.5/10",
       },
       {
         icon: <HotelRatingIcon />,
         partnerName: "Hotels.com",
-        ratings: "9.7/10",
+        ratings: "8.4/10",
       },
       {
         icon: <ExpediaRatingIcon />,
         partnerName: "Expedia",
-        ratings: "9.6/10",
+        ratings: "8.4/10",
       },
     ],
   },
@@ -165,12 +165,12 @@ export const homePageData = {
       {
         name: "Google Rating",
         logo: "/Google.png",
-        rating: "5.0",
+        rating: "4.8",
       },
       {
         name: "Trip Advisor",
         logo: "/trip.png",
-        rating: "5.0",
+        rating: "4.9",
       },
     ],
     cards: [

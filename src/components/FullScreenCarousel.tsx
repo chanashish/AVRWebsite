@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import CheckInOutForm from "./cards/CheckInOutForm";
 import { LeftLinesIcon, RightLinesIcon } from "../icons/icons";
-import Section from "./SectionComponents/Section";
+import { Section } from "./sectionComponants";
 
 interface FullScreenCarouselProps {
   images: string[];
@@ -43,6 +43,7 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({
               alt={`Slide ${index}`}
               fill
               sizes="100vw"
+              loading="eager"
               priority={index === 0}
               className="object-cover w-full h-full"
             />

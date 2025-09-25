@@ -2,7 +2,7 @@ import { AddCardDataPropsTypes } from "@/@types/types";
 import { ArrowUpIcon } from "@/icons/icons";
 import Link from "next/link";
 import { FC } from "react";
-import SectionWithContainer from "../SectionComponents/SectionWithContainer";
+import { SectionWithContainer } from "../sectionComponants";
 
 const Addcard: FC<AddCardDataPropsTypes> = ({ title, description, link }) => {
   return (

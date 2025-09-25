@@ -1,3 +1,4 @@
+import { contact } from "../../../constent";
 import { imageUrl } from "../../data/links";
 
 export const spiritualPageData = {
@@ -13,8 +14,8 @@ export const spiritualPageData = {
       "Our holistic Innergise stays are transformative wellness retreats designed for those seeking renewal. Relax, deepen your awareness, restore balance, and reconnect with what matters most – your mind, body, and inner energy.",
     src: "/Enhance-Your-Inner-Energy.png",
     link: {
-      href: "/AnandVardhan_Packages.pdf",
-      label: "Download Brochure",
+      href: contact.cta,
+      label: "Contact Us",
     },
   },
   exclusivePackages: {
@@ -107,7 +108,7 @@ export const spiritualPageData = {
     title: "ANAND VARDHAN RESORT X RISHIBHUMI BRINGS",
     subTitle: "Holistic Programs To Restore Balance And Vitality",
     link: {
-      href: "/contact",
+      href: "/contact-us",
       label: "Contact Us",
     },
     cards: [
@@ -142,7 +143,7 @@ export const spiritualPageData = {
       {
         src: imageUrl + "spiritual/relax2.webp",
         title: "Acupressure",
-        icon: "/Icons/acupressure.png",
+        icon: "/icons/acupressure.png",
         description:
           "Acupuncture is like a reset button for your body and mind. Our team of experts works towards releasing tension, ease pain, and bring you back to a place of pure relaxation and vitality.",
       },
@@ -173,7 +174,7 @@ export const spiritualPageData = {
         description:
           "A focused 3-day cleanse to eliminate toxins & refresh your body with personalized therapies, yoga & diet.",
         src: "/icons/detox.png",
-        link: { href: "/contact", label: "Book Package" },
+        link: { href: "/contact-us", label: "Book Package" },
       },
       {
         packageType: "Journey to Wellness",
@@ -181,7 +182,7 @@ export const spiritualPageData = {
         description:
           " A 7-day retreat combining yoga, meditation, and holistic treatments for stress relief and revitalization.",
         src: "/icons/journey.png",
-        link: { href: "/contact", label: "Book Package" },
+        link: { href: "/contact-us", label: "Book Package" },
       },
       {
         packageType: "Inner Transformation",
@@ -189,28 +190,28 @@ export const spiritualPageData = {
         description:
           "A 10-day immersive program with intensive therapies, consultations, and lifestyle guidance for deep healing.",
         src: "/icons/inner.png",
-        link: { href: "/contact", label: "Book Package" },
+        link: { href: "/contact-us", label: "Book Package" },
       },
     ],
   },
   whyChooseUs: {
     title: "WHY CHOOSE US",
-    subTitle: "Where healing, comfort, and luxury come together!",
+    subTitle: "Your journey to inner harmony begins here",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Escape the noise and rediscover your best self. At Anand Vardhan Resort, we blend ancient wisdom with luxurious comfort in a stunning mountain sanctuary, crafting a wellness experience that is uniquely and profoundly yours.",
     src: imageUrl + "well4.webp",
     cards: [
       {
         title: "Wellness Consultation & Personal Plan",
         description:
-          "Meet with our wellness experts to create a custom self-care routine based on your goals and lifestyle.",
+          "Wellness, Crafted for You Our certified wellness gurus don't just guide; they inspire your transformation with deep expertise and authentic passion",
         src: "/icons/chooseus.png",
       },
       {
-        title: "Lorem Ipsum Dolor Sit Amet",
+        title: "Your Mountain Sanctuary ",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-        src: "/icons/chooseus.png",
+          "Breathe in the pure mountain air. Let the serene, powerful landscape be the backdrop to your profound relaxation and healing",
+        src: "/icons/chooseus1.png",
       },
     ],
   },

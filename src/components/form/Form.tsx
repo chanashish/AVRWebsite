@@ -23,14 +23,8 @@ const Form = () => {
   });
   const offers = [
     // "Wellness Offers",
-    "Rejuvenation Treatments",
-    "Lifestyle Treatments",
-    "Ailment Treatments",
-    "Panchkarma",
-    "Ladies Shakti Special",
-    "Detoxification Treatments",
-    "Ayurvedic Weight loss Treatments",
-    "Stress Management",
+    "Wellness Package",
+    "Spiritual Retreat",
   ];
 
   const [formData, setFormData] = useState({
@@ -210,7 +204,6 @@ const Form = () => {
       setIsSubmitting(false);
     }
   };
-
 
   const inputFields = [
     {

@@ -43,9 +43,9 @@ const AboutSpiritual: FC<AboutSpiritualPropsTypes> = ({
             className="px-6 md:py-3 py-4 bg-clr1 text-white rounded-full transition flex items-center justify-center md:w-fit gap-2"
           >
             {link.label}
-            <span aria-label="arrow-up">
+            {/* <span aria-label="arrow-up">
               <DownloadBrochure />
-            </span>
+            </span> */}
           </Link>
         </div>
       </div>

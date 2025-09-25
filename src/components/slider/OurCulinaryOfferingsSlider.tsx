@@ -1,8 +1,8 @@
 "use client";
 import { OurCulinaryOfferingsPropsTypes } from "@/@types/types";
-import SwiperCarousel from "../SwiperCarousel";
 import { Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
+import SwiperCarousel from "./SwiperCarousel";
 
 interface OurCulinaryOfferingsSliderProps {
   cards: OurCulinaryOfferingsPropsTypes["cards"];

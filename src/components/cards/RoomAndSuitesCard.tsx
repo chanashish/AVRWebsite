@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 import { Navigation } from "swiper/modules";
-import SwiperCarousel from "../SwiperCarousel";
+import SwiperCarousel from "../slider/SwiperCarousel";
+
 
 type Props = RoomsAndSuitesPropsTypes["cards"][0] & {
   index: number;

@@ -1,11 +1,11 @@
-import { Section, SectionWithContainer } from '@/components'
 import PolicyHeading from '@/components/PolicyHeading'
+import { Section, SectionWithContainer } from '@/components/sectionComponants'
 import React from 'react'
 
 const page = () => {
     return (
         <div>
-            <Section lgpy='0' py='0' className='lg:max-h-[476px]'>
+            <Section defaultPadding={false} className='lg:max-h-[476px]'>
                 <PolicyHeading
                     className="h-full text-center"
                     heading='Terms & Conditions'

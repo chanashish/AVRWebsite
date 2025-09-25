@@ -1,6 +1,6 @@
 import { WhyChooseUsPropsTypes } from "@/@types/types";
-import { SectionWithContainer } from "@/components";
 import { WhyChooseUsCard } from "@/components/cards";
+import { SectionWithContainer } from "@/components/sectionComponants";
 import { WhyChooseUsSlider } from "@/components/slider";
 import { SectionHeading } from "@/components/typography";
 import { FC } from "react";
