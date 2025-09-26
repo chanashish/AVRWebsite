@@ -8,6 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
 import { WebsiteProvider } from "@/context/WebsiteContext";
 import FullscreenImagePopup1 from "@/components/FullscreenImagePopup1";
+import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -392,6 +393,7 @@ export default function RootLayout({
           <Whatsapp whatsAppNumber="9317207373" />
           <Call callNumber="919317207373" />
           <FullscreenImagePopup1 />
+          <AmenitiesPopUp />
         </WebsiteProvider>
       </body>
     </html>

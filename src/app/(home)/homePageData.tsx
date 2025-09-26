@@ -10,8 +10,7 @@ import { contact } from "../../../constent";
 
 export const homePageData = {
   bannerData: {
-    images: [
-      imageUrl + "IMG_8380.webp", 
+    images: ["/IMG_8380.webp", 
       "/Home.webp"],
     title: "Anand Vardhan Resort",
     subTitle: "Welcome to",

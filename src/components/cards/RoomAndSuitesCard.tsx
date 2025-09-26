@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 import SwiperCarousel from "../slider/SwiperCarousel";
 
-
 type Props = RoomsAndSuitesPropsTypes["cards"][0] & {
   index: number;
 };
@@ -19,10 +18,17 @@ const RoomAndSuitesCard: React.FC<Props> = ({
   index,
   description,
   facilityList,
+  viewAllAmenities,
 }) => {
   // Use context instead of local state
-  const { setOpenImgPopup, setImage, setCurrentIndex, setRoomName } =
-    useContext(WebsiteContext);
+  const {
+    setOpenImgPopup,
+    setImage,
+    setCurrentIndex,
+    setRoomName,
+    setIsOpenAmenityPopup,
+    setViewAllAmenities,
+  } = useContext(WebsiteContext);
 
   const handleOpen = ({
     images,
@@ -37,6 +43,19 @@ const RoomAndSuitesCard: React.FC<Props> = ({
     setImage(images);
     setCurrentIndex(index);
     setRoomName(roomName);
+  };
+
+  interface AmenityGroup {
+    amenityType: string;
+    amenities: string[];
+  }
+  const handleOpenAmenityPopup = (
+    viewAllAmenities: AmenityGroup[],
+    title: string
+  ) => {
+    setIsOpenAmenityPopup(true);
+    setRoomName(title);
+    setViewAllAmenities(viewAllAmenities);
   };
 
   return (
@@ -87,36 +106,23 @@ const RoomAndSuitesCard: React.FC<Props> = ({
         <h3 className={`text-2xl text-clr font-plus`}>{title}</h3>
         {facilityList && (
           <ul className="w-full flex flex-col gap-2 list-disc pl-6">
-            {/* <SwiperCarousel
-              data={facilityList}
-              speed={5000}
-              loop={true}
-              modules={[Autoplay, FreeMode]}
-              freeMode={true}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }}
-              slidesPerView={1.2}
-              spaceBetween={0}
-              breakpoints={{
-                768: {
-                  slidesPerView: 1.2,
-                },
-              }}
-              renderSlide={(text) => (
-                <div className="relative flex items-center justify-center">
-                  <p className="text-Light text-nowrap text-center">{text}</p>
-                  <span className="absolute right-0">•</span>
-                </div>
-              )}
-            /> */}
             {facilityList.map((text, index) => (
               <li key={index} className="text-Light">
                 {text}
               </li>
             ))}
+            {viewAllAmenities && (
+              <li className="text-clr1 list-none">
+                <button
+                  onClick={() =>
+                    handleOpenAmenityPopup(viewAllAmenities, title)
+                  }
+                  className="hover:underline underline-offset-4 capitalize"
+                >
+                  View all amenities
+                </button>
+              </li>
+            )}
           </ul>
         )}
         {description && <p className="text-Light md:text-lg">{description}</p>}

@@ -32,17 +32,71 @@ export const roomsPageData = {
           imageUrl + "luxurySuite/012.webp",
         ],
         facilityList: [
-          // "Sofa, Double Bed",
-        
-          // "Work Desk",
-          // "Wardrobe",
-          // "WiFi",
-          // "42 “ LED TV",
-          // "Hygienic Washrooms with Toiletries",
           "Shower Cubical",
           "Balcony with Outdoor Furniture & Swing",
           "Snow-capped Mountain View",
           "Hot & Cold Air Conditioner",
+        ],
+        viewAllAmenities: [
+          {
+            amenityType: "Popular with Guests",
+            amenities: [
+              "Air Conditioning",
+              "Wi-Fi",
+              "Daily Housekeeping",
+              "Bathroom",
+              "In-room Dining",
+              "Mineral Water",
+              "Room Service",
+            ],
+          },
+          {
+            amenityType: "Room Features",
+            amenities: [
+              "Telephone",
+              "Closet",
+              "Living Area",
+              "Seating Area",
+              "Chair",
+              "Centre Table",
+              "Dining Area",
+              "Work Desk",
+              "Blackout Curtains",
+              "Sofa",
+              "Charging Points",
+            ],
+          },
+          {
+            amenityType: "Beds and Blanket",
+            amenities: ["Woollen Blanket"],
+          },
+          {
+            amenityType: "Safety and Security",
+            amenities: ["Cupboards with Locks"],
+          },
+          {
+            amenityType: "Media and Entertainment",
+            amenities: ["TV"],
+          },
+          {
+            amenityType: "Bathroom",
+            amenities: [
+              "Hairdryer",
+              "Dental Kit",
+              "Geyser/Water Heater",
+              "Shower Cap",
+              "Slippers",
+              "Toiletries",
+              "Western Toilet Seat",
+              "Shower Cubicle",
+              "Hot & Cold Water",
+              "Sewing Kit",
+            ],
+          },
+          {
+            amenityType: "Other Facilities",
+            amenities: ["Newspaper", "Ceiling Fan", "Balcony", "Kettle"],
+          },
         ],
         link: {
           href: contact.cta,
@@ -67,16 +121,64 @@ export const roomsPageData = {
         ],
         facilityList: [
           "Sofa,Double Bed",
-          // "",
-          // "Work Desk",
-          // "Wardrobe",
-          // "WiFi",
-          // "32 “ LED TV",
           "Mountain View",
           "Shower Cubical",
           "Balcony with Outdoor Furniture",
-          // "Hygienic Washrooms with Toiletries",
-          // "Luggage Racks",
+        ],
+        viewAllAmenities: [
+          {
+            amenityType: "Popular with Guests",
+            amenities: [
+              "Air Conditioning",
+              "Wi-Fi",
+              "Mineral Water - additional charge",
+              "Daily Housekeeping",
+              "Bathroom",
+              "In-room Dining",
+              "Room Service",
+              "Heater",
+            ],
+          },
+          {
+            amenityType: "Room Features",
+            amenities: [
+              "Telephone",
+              "Closet",
+              "Seating Area",
+              "Chair",
+              "Centre Table",
+              "Blackout Curtains",
+              "Sofa",
+              "Charging Points",
+            ],
+          },
+          {
+            amenityType: "Beds and Blanket",
+            amenities: ["Woollen Blanket"],
+          },
+          {
+            amenityType: "Media and Entertainment",
+            amenities: ["TV"],
+          },
+          {
+            amenityType: "Bathroom",
+            amenities: [
+              "Hairdryer",
+              "Dental Kit",
+              "Geyser/Water Heater",
+              "Shower Cap",
+              "Slippers",
+              "Toiletries",
+              "Western Toilet Seat",
+              "Shower Cubicle",
+              "Hot & Cold Water",
+              "Sewing Kit",
+            ],
+          },
+          {
+            amenityType: "Other Facilities",
+            amenities: ["Balcony", "Newspaper", "Ceiling Fan", "Kettle"],
+          },
         ],
         link: {
           href: contact.cta,
@@ -96,18 +198,67 @@ export const roomsPageData = {
           imageUrl + "Deluxe/007.webp",
           imageUrl + "Deluxe/008.webp",
         ],
-        facilityList: [
-          // "Double Bed with Spring Mattress",
-          // "Hot Running Water",
-          // "Tea coffee Kitchenette",
-          "Sofa , Double bed",
-          // "Study Table & Chair",
-          "WiFi",
-          "Wardrobe",
-          // "Luggage racks",
-          "LED TV",
-          // " Hygienic Washrooms with Toiletries",
+        facilityList: [, "Sofa , Double bed", "WiFi", "Wardrobe", "LED TV"],
+        viewAllAmenities: [
+          {
+            amenityType: "Popular with Guests",
+            amenities: [
+              "Wi-Fi",
+              "Mineral Water - additional charge",
+              "Daily Housekeeping",
+              "Bathroom",
+              "In-room Dining",
+              "Laundry Service",
+              "Room Service",
+              "Heater",
+            ],
+          },
+          {
+            amenityType: "Room Features",
+            amenities: [
+              "Closet",
+              "Seating Area",
+              "Chair",
+              "Work Desk",
+              "Blackout Curtains",
+              "Sofa",
+              "Charging Points",
+            ],
+          },
+          {
+            amenityType: "Beds and Blanket",
+            amenities: ["Woollen Blanket"],
+          },
+          {
+            amenityType: "Safety and Security",
+            amenities: ["Cupboards with Locks"],
+          },
+          {
+            amenityType: "Media and Entertainment",
+            amenities: ["TV"],
+          },
+          {
+            amenityType: "Bathroom",
+            amenities: [
+              "Dental Kit",
+              "Geyser/Water Heater",
+              "Shower Cap",
+              "Slippers",
+              "Western Toilet Seat",
+              "Shower Cubicle",
+              "Hot & Cold Water",
+              "Sewing Kit",
+              "Jetspray",
+              "Toiletries",
+              "Towels",
+            ],
+          },
+          {
+            amenityType: "Other Facilities",
+            amenities: ["Ceiling Fan", "Kettle"],
+          },
         ],
+
         link: {
           href: contact.cta,
           label: "Book Now",
@@ -116,8 +267,7 @@ export const roomsPageData = {
     ],
   },
   addCardData: {
-    title:
-      "Your tranquil retreat at Anand Vardhan Resort",
+    title: "Your tranquil retreat at Anand Vardhan Resort",
     description:
       "Find your perfect sanctuary among our luxury rooms. Book your ideal retreat today.",
     link: {

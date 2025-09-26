@@ -5,6 +5,11 @@ interface Props {
   children: React.ReactNode;
 }
 
+interface AmenityGroup {
+  amenityType: string;
+  amenities: string[];
+}
+
 interface IWebsiteContext {
   websiteData: any;
   setWebsiteData: (data: any) => void;
@@ -16,7 +21,12 @@ interface IWebsiteContext {
   setCurrentIndex: React.Dispatch<React.SetStateAction<number | null>>;
   roomName: string;
   setRoomName: React.Dispatch<React.SetStateAction<string>>;
+  isOpenAmenityPopup: boolean;
+  setIsOpenAmenityPopup: React.Dispatch<React.SetStateAction<boolean>>;
+  viewAllAmenities: AmenityGroup[];
+  setViewAllAmenities: React.Dispatch<React.SetStateAction<AmenityGroup[]>>;
 }
+
 
 export const WebsiteContext = createContext<IWebsiteContext>({
   websiteData: {},
@@ -29,6 +39,10 @@ export const WebsiteContext = createContext<IWebsiteContext>({
   setCurrentIndex: () => {},
   roomName: "",
   setRoomName: () => {},
+  isOpenAmenityPopup: false,
+  setIsOpenAmenityPopup: () => {},
+  viewAllAmenities: [],
+  setViewAllAmenities: () => {},
 });
 
 export const WebsiteProvider = ({ children }: Props) => {
@@ -38,6 +52,8 @@ export const WebsiteProvider = ({ children }: Props) => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [roomName, setRoomName] = useState<string>("");
 
+  const [isOpenAmenityPopup, setIsOpenAmenityPopup] = useState(false);
+  const [viewAllAmenities, setViewAllAmenities] = useState<AmenityGroup[]>([]);
   useEffect(() => {
     const fetchWebsiteData = async () => {
       try {
@@ -69,6 +85,10 @@ export const WebsiteProvider = ({ children }: Props) => {
         setCurrentIndex,
         roomName,
         setRoomName,
+        isOpenAmenityPopup,
+        setIsOpenAmenityPopup,
+        viewAllAmenities,
+        setViewAllAmenities,
       }}
     >
       {children}

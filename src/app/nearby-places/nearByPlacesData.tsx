@@ -91,7 +91,7 @@ export const nearByPlaces = {
         "Seek Lord Ganesha's blessings at this ancient Ganesh Temple. This 1,500-year-old temple with its unique rock formation offers spiritual significance and valley views. Many guests from Anand Vardhan Resort begin their Manali temple circuit here for good fortune.",
     },
     {
-      src: "/Solang-Valley.jpg",
+      src: "/solang-valley.webp",
       title: "Solang Valley",
       description:
         "Save the best for last at Solang Valley, the ultimate adventure destination! Whether it's skiing in winter or paragliding in summer, this 25 km journey from Anand Vardhan Resort opens up endless possibilities. Our resort's strategic location makes Solang Valley easily accessible while offering a peaceful retreat to return to after action-packed days.",

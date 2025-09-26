@@ -3,7 +3,7 @@ import { contact } from "../../../constent";
 
 export const thingsToDoData = {
   bannner: {
-    title: "Things To Do",
+    title: "Activities to indulge in",
     images: [
       imageUrl + "273A8501.webp",
       // imageUrl + "273A8504.webp",
