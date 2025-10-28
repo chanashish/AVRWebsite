@@ -15,7 +15,7 @@ export default function BlogPage() {
             <Link
               href={card.link.href}
               key={index}
-              className="w-full card-view-scale rounded-lg overflow-hidden box-shadow"
+              className="w-full flex flex-col card-view-scale rounded-lg overflow-hidden box-shadow"
             >
               <div className="w-full relative md:aspect-[4/2.5] aspect-[3/2.2]">
                 <Image
@@ -26,8 +26,8 @@ export default function BlogPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-4 bg-clr2 space-y-3">
-                <h3 className="text-2xl font-plus text-[#2F4B26] font-normal">
+              <div className="p-4 bg-clr2 space-y-3 h-full">
+                <h3 className="text-2xl font-plus text-[#2F4B26] font-normal flex-grow">
                   {card.title}
                 </h3>
                 <p className="text-sm text-Light font-normal">{card.date}</p>

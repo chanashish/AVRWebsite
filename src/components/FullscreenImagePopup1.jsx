@@ -150,12 +150,14 @@ const FullscreenImagePopup1 = () => {
             onClick={handlePrev}
             className={`absolute lg:-left-5 lg:top-[45%] max-sm:left-[9rem] max-sm:-bottom-5 filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-black flex items-center justify-center disabled:opacity-65 z-10 ${imgIndex <= 0 ? "pointer-events-none bg-black" : ""}`}
           >
+            <span className="sr-only">prev button</span>
             <OutLineBtnPrev />
           </button>
           <button
             onClick={handleNext}
             className={`absolute lg:-right-5 lg:top-[45%] max-sm:-bottom-5 max-sm:right-[9rem] filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-black flex items-center justify-center disabled:opacity-65 z-10`}
           >
+            <span className="sr-only">next button</span>
             <OutLineBtnNext />
           </button>
           {roomName && (

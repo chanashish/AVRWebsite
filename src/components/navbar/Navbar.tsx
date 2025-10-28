@@ -110,7 +110,8 @@ const Navbar: React.FC = () => {
               <li className="">
                 {temp && (
                   <div className="flex items-center gap-2">
-                    <span aria-label="temperature">
+                    <span>
+                      <span className="sr-only">Weather icon</span>
                       <TemperatureIcon />
                     </span>
                     <span className="text-white">{temp}°C</span>
@@ -186,7 +187,7 @@ const Navbar: React.FC = () => {
               <li key={link.id} className="w-full">
                 <Link
                   href={link.href}
-                  className={`text-nowrap text-clr font-medium relative transition-all duration-300 ease-in-out group flex items-center justify-center uppercase ${link.href === pathName ? "text-clr1" : ""}`}
+                  className={`text-nowrap text-clr font-medium relative transition-all duration-300 ease-in-out group flex items-center justify-center uppercase ${link.href === pathName ? "font-semibold" : ""}`}
                 >
                   {link.label}
                   <span

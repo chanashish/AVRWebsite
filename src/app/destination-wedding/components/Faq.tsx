@@ -1,7 +1,10 @@
+"use client";
+import { FaqData } from "@/@types/types";
 import { Accordion } from "@/components/cards";
 import { Section } from "@/components/sectionComponants";
+import { WebsiteContext } from "@/context/WebsiteContext";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 
 interface FaqProps {
   title: string;
@@ -13,7 +16,19 @@ interface FaqProps {
   }[];
 }
 
-const Faq: FC<FaqProps> = ({ title, src, faqData }) => {
+
+
+const Faq: FC<FaqProps> = ({ title, src }) => {
+  const { websiteData } = useContext(WebsiteContext);
+  const [data, setData] = useState<FaqData>([]);
+
+  useEffect(() => {
+    if (websiteData && websiteData.Faq && websiteData.Faq.length > 0) {
+      setData(websiteData?.Faq);
+    }
+  }, [websiteData]);
+
+
   return (
     <Section className="faq">
       <div className="grid md:grid-cols-2 grid-cols-1 items-center">
@@ -26,8 +41,8 @@ const Faq: FC<FaqProps> = ({ title, src, faqData }) => {
             {title}
           </h2>
           <div className="divide-y divide-light border-y border-light">
-            {faqData.map((card, index) => (
-              <Accordion key={index} {...card} index={index} />
+            {data.map((card, index ) => (
+              <Accordion key={index} ques={card.Question} ans={card.Answer} id={card._id} index={index} />
             ))}
           </div>
         </div>

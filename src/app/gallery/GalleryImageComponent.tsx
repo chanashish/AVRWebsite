@@ -84,7 +84,7 @@ const GalleryImageComponent: FC<ImageDataProps> = ({ imageData }) => {
               category === currentCategory
                 ? "bg-[#2F4B26] text-white"
                 : "bg-white text-[#2F4B26]"
-            } px-4 py-3 md:py-1 uppercase rounded-full border text-nowrap md:text-base text-sm border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
+            } px-4 py-3 md:py-1 uppercase max-md:text-wrap rounded-full border text-nowrap md:text-base text-sm border-[#2F4B26] hover:bg-[#2F4B26] hover:text-white transition-all duration-300 ease-in-out`}
           >
             {category}
           </button>

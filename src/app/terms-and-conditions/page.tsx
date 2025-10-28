@@ -1,11 +1,9 @@
-import PolicyHeading from '@/components/PolicyHeading'
-import { Section, SectionWithContainer } from '@/components/sectionComponants'
-import React from 'react'
+import ShowPage from "./components/ShowPage"
 
 const page = () => {
     return (
         <div>
-            <Section defaultPadding={false} className='lg:max-h-[476px]'>
+            {/* <Section defaultPadding={false} className='lg:max-h-[476px]'>
                 <PolicyHeading
                     className="h-full text-center"
                     heading='Terms & Conditions'
@@ -80,7 +78,8 @@ const page = () => {
                     </div>
                 </div>
 
-            </SectionWithContainer>
+            </SectionWithContainer> */}
+            <ShowPage />
         </div>
     )
 }

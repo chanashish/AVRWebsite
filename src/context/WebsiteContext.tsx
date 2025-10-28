@@ -61,7 +61,7 @@ export const WebsiteProvider = ({ children }: Props) => {
           "https://nexon.eazotel.com/cms/get/website/anandvardhanresort"
         );
         const data = await response.json();
-        setWebsiteData(data);
+        setWebsiteData(data?.WebsiteData["70592479"]);
       } catch (error) {
         console.error("Failed to fetch website data:", error);
       }

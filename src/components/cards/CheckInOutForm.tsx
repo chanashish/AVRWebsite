@@ -36,7 +36,7 @@ const CheckInOutForm = () => {
         {/* Arrival Date Input */}
         <div className="flex max-md:bg-white flex-col gap-2 items-center justify-center p-4 w-full">
           <label
-            htmlFor="checkIn"
+            htmlFor="check-In-date"
             className="text-sm font-semibold uppercase text-Light"
           >
             Arrival date
@@ -44,7 +44,7 @@ const CheckInOutForm = () => {
           <div className="relative w-full border-b border-dark pb-2">
             <input
               type="date"
-              id="checkIn"
+              id="check-In-date"
               min={min}
               onChange={(e) => {
                 setData((prev) => ({ ...prev, checkIn: e.target.value }));
@@ -66,7 +66,7 @@ const CheckInOutForm = () => {
         {/* Departure Date Input */}
         <div className="flex max-md:bg-white flex-col gap-2 items-center justify-center p-4 w-full">
           <label
-            htmlFor="checkOut"
+            htmlFor="check-Out-date"
             className="text-sm font-semibold uppercase text-Light"
           >
             Departure date
@@ -74,7 +74,7 @@ const CheckInOutForm = () => {
           <div className="relative w-full border-b border-dark pb-2">
             <input
               type="date"
-              id="checkOut"
+              id="check-Out-date"
               max={max}
               min={data.checkIn ? data.checkIn : min}
               ref={checkOutRef}

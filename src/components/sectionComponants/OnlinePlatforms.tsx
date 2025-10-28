@@ -44,7 +44,6 @@ const OnlinePlatforms: FC<OnlinePlatformsPropsTypes> = ({ title, cards, defaultP
             }}
           renderSlide={(card, index) => <OnlinePlatformsCard key={index} {...card} />} />
         </div>
-        <div className="w-full mt-4 h-px bg-[linear-gradient(to_right,_#FFFFFF,_#B2B2B2,_#FFFFFF)]" />
       </div>
     </SectionWithContainer>
   );

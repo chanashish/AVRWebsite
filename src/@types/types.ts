@@ -248,3 +248,9 @@ export interface OurServicesPropsTypes {
     name: string;
   }[];
 }
+
+export type FaqData = {
+  Answer: string;
+  Question: string;
+  _id: number;
+}[]
