@@ -54,6 +54,10 @@ export const footerData = {
           label: "Contact Us",
           href: "/contact-us/",
         },
+        {
+          label: "Careers",
+          href: "/careers/",
+        }
       ],
     },
     {
