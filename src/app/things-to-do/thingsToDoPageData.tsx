@@ -1,8 +1,9 @@
 import { imageUrl } from "@/data/links";
+import { contact } from "../../../constent";
 
 export const thingsToDoData = {
   bannner: {
-    title: "Adventure Activities",
+    title: "Activities to indulge in",
     images: [
       imageUrl + "273A8501.webp",
       // imageUrl + "273A8504.webp",
@@ -76,7 +77,7 @@ export const thingsToDoData = {
     description:
       "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

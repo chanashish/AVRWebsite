@@ -1,9 +1,9 @@
 "use client";
 import { ProgramsToRestorePropsTypes } from "@/@types/types";
 import { FC } from "react";
-import SwiperCarousel from "../SwiperCarousel";
 import ProgramsToRestoreCard from "../cards/ProgramsToRestoreCard";
 import { Autoplay, Pagination } from "swiper/modules";
+import SwiperCarousel from "./SwiperCarousel";
 
 type ProgramsToRestoreSliderProps = {
   programs: ProgramsToRestorePropsTypes["cards"];

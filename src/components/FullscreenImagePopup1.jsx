@@ -1,20 +1,20 @@
 "use client";
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback, useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import Image from "next/image";
 import { OutLineBtnNext, OutLineBtnPrev } from "@/icons/icons";
-import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
-// import { AiOutlineZoomIn } from "react-icons/ai";
-// import { AiOutlineZoomOut } from "react-icons/ai";
+import { WebsiteContext } from "@/context/WebsiteContext";
 
-const FullscreenImagePopup1 = ({
-  openImgPopup,
-  setOpenImgPopup,
-  image,
-  currentIndex,
-  roomName = "",
-}) => {
-  const [imgIndex, setImgIndex] = useState(currentIndex);
+const FullscreenImagePopup1 = () => {
+  const { 
+    openImgPopup, 
+    setOpenImgPopup, 
+    image, 
+    currentIndex, 
+    roomName 
+  } = useContext(WebsiteContext);
+
+  const [imgIndex, setImgIndex] = useState(currentIndex || 0);
 
   const handleNext = useCallback(() => {
     if (imgIndex < image.length - 1) {
@@ -42,14 +42,11 @@ const FullscreenImagePopup1 = ({
     };
   }, [openImgPopup, currentIndex]);
 
-  // const imageSrc = useMemo(() => image[imgIndex], [image, imgIndex]);
   const imageSrc = useMemo(
     () =>
       image && image[imgIndex] ? image[imgIndex] : "/images/placeholder.png",
     [image, imgIndex]
   );
-
-  // const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleKeydown = useCallback(
     (event) => {
@@ -61,9 +58,6 @@ const FullscreenImagePopup1 = ({
       } else if (event.key === "ArrowLeft") {
         handlePrev();
       }
-      // if (event.key === "f") {
-      //   toggleFullscreen();
-      // }
     },
     [setOpenImgPopup, handleNext, handlePrev]
   );
@@ -71,9 +65,8 @@ const FullscreenImagePopup1 = ({
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchStartTime, setTouchStartTime] = useState(0);
 
-
   const handleTouchStart = (e) => {
-    if (e.touches.length !== 1) return; // Ignore multi-touch
+    if (e.touches.length !== 1) return;
     setTouchStartX(e.touches[0].clientX);
     setTouchStartTime(Date.now());
   };
@@ -85,20 +78,17 @@ const FullscreenImagePopup1 = ({
     const deltaX = touchEndX - touchStartX;
     const deltaTime = touchEndTime - touchStartTime;
 
-    // Only proceed if swipe was quick and significant enough
     if (deltaTime < 500 && Math.abs(deltaX) > 50) {
       if (deltaX < 0) {
-        handleNext(); // Swipe left
+        handleNext();
       } else {
-        handlePrev(); // Swipe right
+        handlePrev();
       }
     }
 
     setTouchStartX(0);
     setTouchStartTime(0);
   };
-
-
 
   useEffect(() => {
     if (openImgPopup) {
@@ -115,30 +105,9 @@ const FullscreenImagePopup1 = ({
     };
   }, [openImgPopup, handleKeydown]);
 
-  // const toggleFullscreen = useCallback(() => {
-  //   const element = document.querySelector(".image-container img");
-  //   if (document.fullscreenElement) {
-  //     document.exitFullscreen();
-  //   } else if (element) {
-  //     element.requestFullscreen().catch((err) => console.error(err));
-  //   }
-  // }, []);
-
-  // const handleFullscreenChange = useCallback(() => {
-  //   setIsFullscreen(!!document.fullscreenElement);
-  // }, []);
-
-  // useEffect(() => {
-  //   document.addEventListener("fullscreenchange", handleFullscreenChange);
-
-  //   return () => {
-  //     document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  //   };
-  // }, [handleFullscreenChange]);
-
   return (
     <div
-      className={`fixed bg-black/80 flex flex-col items-center justify-center z-50 transition-all duration-300 ${openImgPopup ? "inset-0 opacity-100 scale-100 w-full h-full" : "opacity-0 scale-0 w-0 h-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform-origin-center"}`}
+      className={`fixed md:bg-black/80 bg-black flex flex-col items-center justify-center z-50 transition-all duration-300 ${openImgPopup ? "inset-0 opacity-100 scale-100 w-full h-full" : "opacity-0 scale-0 w-0 h-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform-origin-center"}`}
       onClick={(e) => {
         if (e.target === e.currentTarget) setOpenImgPopup(false);
       }}
@@ -146,24 +115,11 @@ const FullscreenImagePopup1 = ({
         if (e.key === "Escape") setOpenImgPopup(false);
       }}
     >
-      <div className="w-full flex items-center justify-between md:px-4 px-0">
+      <div className="w-full flex items-center justify-between z-10 md:px-4 absolute md:top-0 top-[18rem] px-4">
         <span className=" bg-clr4/30 p-2  text-sm text-white poppins">
           {imgIndex + 1}/{image.length}
         </span>
         <div className="flex items-center justify-center gap-4">
-          {/* <button
-            className="w-full h-full cursor-pointer flex items-end justify-end bg-clr7/30"
-            onClick={toggleFullscreen}
-          >
-            <span className="p-7  w-max rounded-md text-white ">
-              {isFullscreen ? (
-                <MdFullscreenExit className="w-8 h-8 text-base flex justify-center items-center   font-bold text-white" />
-              ) : (
-                <MdFullscreen className="w-8 h-8 text-base flex justify-center items-center   font-bold text-white" />
-              )}
-            </span>
-          </button> */}
-
           <button onClick={() => setOpenImgPopup(false)}>
             <IoCloseSharp className=" w-8 h-8 text-base flex justify-center items-center  font-bold text-white" />
           </button>
@@ -188,23 +144,24 @@ const FullscreenImagePopup1 = ({
                   className="md:object-cover object-contain transition-all duration-300 ease-in-out"
                 />
               </div>
-
             )}
           </div>
           <button
             onClick={handlePrev}
-            className={`absolute lg:-left-5 lg:top-[45%] top-[-5rem] filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-clr2 flex items-center justify-center disabled:opacity-65 z-10 ${imgIndex <= 0 ? "pointer-events-none bg-black" : ""}`}
+            className={`absolute lg:-left-5 lg:top-[45%] max-sm:left-[9rem] max-sm:-bottom-5 filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-black flex items-center justify-center disabled:opacity-65 z-10 ${imgIndex <= 0 ? "pointer-events-none bg-black" : ""}`}
           >
+            <span className="sr-only">prev button</span>
             <OutLineBtnPrev />
           </button>
           <button
             onClick={handleNext}
-            className={`absolute lg:-right-5 lg:top-[45%] top-[-5rem] max-sm:left-[5rem] filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-clr2 flex items-center justify-center disabled:opacity-65 z-10`}
+            className={`absolute lg:-right-5 lg:top-[45%] max-sm:-bottom-5 max-sm:right-[9rem] filter backdrop:blur-md w-12 aspect-1 rounded-full bg-white text-black flex items-center justify-center disabled:opacity-65 z-10`}
           >
+            <span className="sr-only">next button</span>
             <OutLineBtnNext />
           </button>
           {roomName && (
-            <span className=" bg-clr4/30 p-2  text-[18px] text-white lato font-normal image-title-center">
+            <span className=" bg-clr4/30 p-2 sr-only text-[18px] text-white lato font-normal image-title-center">
               {roomName}
             </span>
           )}

@@ -3,7 +3,7 @@ import { contact } from "../../../constent";
 
 export const weddingPageData = {
   bannerData: {
-    title: "DESTINATION WEDDING",
+    title: "Destination Wedding",
     images: ["/wedding-bnr.png"],
   },
   aboutWeddingData: {
@@ -45,11 +45,11 @@ export const weddingPageData = {
         alt: "Photography",
         name: "Photography",
       },
-      {
-        src: "/icons/hygiene.png",
-        alt: "Hygiene",
-        name: "Hygiene",
-      },
+      // {
+      //   src: "/icons/hygiene.png",
+      //   alt: "Hygiene",
+      //   name: "Hygiene",
+      // },
       {
         src: "/icons/vegmenu.png",
         alt: "Pure Veg Menu",
@@ -76,7 +76,7 @@ export const weddingPageData = {
       },
       {
         src: imageUrl + "destination/offer2.webp",
-        alt: "Haldhi Ceremony ",
+        alt: "Haldi Ceremony ",
       },
       {
         src: imageUrl + "destination/offer3.webp",
@@ -118,7 +118,7 @@ export const weddingPageData = {
     description:
       "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

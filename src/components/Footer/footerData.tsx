@@ -3,7 +3,7 @@ import { FillLinkedin, CallIcon, FillInstagram, FillFacebook } from '@/icons/ico
 
 export const footerData = {
   logo: "/logo.png",
-  title: "Anand Vardhan Resorts Village",
+  title: "Anand Vardhan Resorts",
   ContactLink: [
     {
       label: contact.address,
@@ -54,6 +54,10 @@ export const footerData = {
           label: "Contact Us",
           href: "/contact-us/",
         },
+        {
+          label: "Careers",
+          href: "/careers/",
+        }
       ],
     },
     {

@@ -1,6 +1,7 @@
-import React from "react";
+import { Section, SectionWithContainer } from "@/components/sectionComponants";
 import ContacForm from "./ContactForm";
 import Banner from "./components/Banner";
+import Faq from "./components/Faq";
 import { contactPageData } from "./contactPageData";
 
 export const metadata = {
@@ -14,9 +15,22 @@ const page = () => {
     <div>
       <Banner {...contactPageData.bannerData} />
       <ContacForm {...contactPageData.formData} />
+      <Section>
+        <SectionWithContainer sectionClassName="box-shadow">
+          <h2
+            className="lg:text-[2.5rem]/[3rem] text-[2rem] font-plus text-clr"
+            dangerouslySetInnerHTML={{ __html: contactPageData.faq.title }}
+          />
+          {/* <div className="divide-y divide-light border-y border-light mt-8 md:mt-12">
+            {contactPageData.faq.faqData.map((card, index) => (
+              <Accordion key={index} {...card} index={index} iconColor="clr" />
+            ))}
+          </div> */}
+          <Faq />
+        </SectionWithContainer>
+      </Section>
     </div>
   );
 };
 
 export default page;
-

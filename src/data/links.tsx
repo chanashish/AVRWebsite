@@ -31,11 +31,7 @@ export const NavLink: navLinkProps[] = [
     label: "Dining",
     href: "/dining/",
   },
-  {
-    id: 7,
-    label: "Things To Do",
-    href: "/things-to-do/",
-  },
+
   {
     id: 10,
     label: "Nearby Places",
@@ -52,9 +48,14 @@ export const NavLink: navLinkProps[] = [
     href: "/gallery/",
   },
   {
-    id: 8,
+    id: 7,
     label: "Destination Wedding",
     href: "/destination-wedding/",
+  },
+  {
+    id: 8,
+    label: "Things To Do",
+    href: "/things-to-do/",
   },
   {
     id: 5,

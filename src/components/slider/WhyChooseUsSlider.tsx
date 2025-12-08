@@ -1,5 +1,6 @@
 import { Autoplay } from "swiper/modules";
-import SwiperCarousel from "../SwiperCarousel";
+import SwiperCarousel from "./SwiperCarousel";
+
 import { WhyChooseUsCard } from "../cards";
 import { WhyChooseUsPropsTypes } from "@/@types/types";
 import { FC } from "react";

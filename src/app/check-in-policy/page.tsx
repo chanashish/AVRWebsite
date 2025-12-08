@@ -1,11 +1,12 @@
-import { Section, SectionWithContainer } from '@/components'
 import PolicyHeading from '@/components/PolicyHeading'
+import { Section, SectionWithContainer } from '@/components/sectionComponants'
 import React from 'react'
+import ShowPage from './ShowPage'
 
 const page = () => {
     return (
         <div>
-            <Section lgpy='0' py='0' className='lg:max-h-[476px]'>
+            <Section defaultPadding={false} className='lg:max-h-[476px]'>
                 <PolicyHeading
                     className="h-full text-center"
                     heading='Check In Policy'
@@ -14,7 +15,7 @@ const page = () => {
                 />
             </Section>
             <SectionWithContainer>
-                <div className="flex flex-col gap-[40px]">
+                {/* <div className="flex flex-col gap-[40px]">
                     <div className='flex flex-col gap-[24px]'>
                         <h3 className="text-[32px] text-[#2F4B26] font-normal playfair">Prices</h3>
                         <p className="roboto text-[20px] text-[#686767] font-light">
@@ -43,8 +44,8 @@ const page = () => {
                             If your arrival is delayed beyond 6 pm, you are required to inform Anand Vardhan Resort in advance to retain your booking for the day.
                         </p>
                     </div>
-                </div>
-
+                </div> */}
+                <ShowPage />
             </SectionWithContainer>
         </div>
     )

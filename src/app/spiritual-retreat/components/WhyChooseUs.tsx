@@ -42,7 +42,7 @@ const WhyChooseUs: FC<WhyChooseSpiritualPropsTypes> = ({
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold text-clr">
+                <h3 className="text-2xl font-plus font-semibold text-clr">
                   {card.title}
                 </h3>
                 <p className="text-Light md:text-lg">{card.description}</p>

@@ -16,7 +16,7 @@ const BookNow: FC<contactPropsTypes> = ({ title, description, src }) => {
           <Image src={src} alt={title} fill className="object-cover rounded-2xl " />
         </div>
         <div className="w-full bg-clr flex flex-col gap-6 md:gap-8 px-6 py-14 rounded-2xl">
-          <h2 className="md:text-[2.5rem] text-3xl font-semibold text-white">{title}</h2>
+          <h2 className="md:text-[2.5rem] font-plus text-3xl font-semibold text-white">{title}</h2>
           <p className="text-white md:text-lg">{description}</p>
           <Form />
         </div>

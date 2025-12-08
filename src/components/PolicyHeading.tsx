@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionWithContainer from './SectionComponents/SectionWithContainer';
+import { SectionWithContainer } from './sectionComponants';
 
 interface PolicyHeadingProps {
     heading: string;

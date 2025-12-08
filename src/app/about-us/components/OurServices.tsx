@@ -1,7 +1,7 @@
 "use client";
 import { OurServicesPropsTypes } from "@/@types/types";
 import { Section } from "@/components/sectionComponants";
-import SwiperCarousel from "@/components/SwiperCarousel";
+import SwiperCarousel from "@/components/slider/SwiperCarousel";
 import { SectionHeading } from "@/components/typography";
 import Image from "next/image";
 import { FC } from "react";

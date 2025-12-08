@@ -6,16 +6,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import Container from "../SectionComponents/Container";
+import { Container} from "../sectionComponants";
 import MobileNav from "./MobileNav";
 import { footerData } from "../Footer/footerData";
 import axios from "axios";
 import { navUpper } from "./navData";
+import { contact } from "../../../constent";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
 
-  const ignoreIds = [6, 7, 9, 10];
+  const ignoreIds = [6, 9, 5, 10];
 
   const updatedNavLinks = NavLink.filter((link) => link.id).filter(
     (link) => !ignoreIds.includes(link.id)
@@ -110,7 +111,8 @@ const Navbar: React.FC = () => {
               <li className="">
                 {temp && (
                   <div className="flex items-center gap-2">
-                    <span aria-label="temperature">
+                    <span>
+                      <span className="sr-only">Weather icon</span>
                       <TemperatureIcon />
                     </span>
                     <span className="text-white">{temp}°C</span>
@@ -154,6 +156,7 @@ const Navbar: React.FC = () => {
                       href={link.href}
                       className="flex items-center gap-2 text-white"
                     >
+                      <span className="sr-only">{link.label}</span>
                       {link.icon}
                     </Link>
                   </li>
@@ -185,7 +188,7 @@ const Navbar: React.FC = () => {
               <li key={link.id} className="w-full">
                 <Link
                   href={link.href}
-                  className={`text-nowrap text-clr font-medium relative transition-all duration-300 ease-in-out group flex items-center justify-center uppercase ${link.href === pathName ? "text-clr1" : ""}`}
+                  className={`text-nowrap text-clr font-medium relative transition-all duration-300 ease-in-out group flex items-center justify-center uppercase ${link.href === pathName ? "font-semibold" : ""}`}
                 >
                   {link.label}
                   <span
@@ -202,7 +205,7 @@ const Navbar: React.FC = () => {
             </Link> */}
 
             <Link
-              href="tel:+919317207373"
+              href={contact.cta}
               className="bg-clr text-white px-4 py-2 rounded-sm"
             >
               <span className="">Book Now</span>
@@ -218,7 +221,9 @@ const Navbar: React.FC = () => {
               {isOpen ? <IoMdClose /> : <MenuBurger />}
             </button>
             <Link
-              href="tel:+919317207373"
+              href={contact.cta}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden bg-clr1 text-white hover:bg-white border border-clr1 hover:text-clr1 px-8 py-4 lg:flex items-center justify-center gap-2 uppercase"
             >
               Book Now

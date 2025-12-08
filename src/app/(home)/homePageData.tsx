@@ -1,19 +1,17 @@
 import { imageUrl } from "@/data/links";
-import { NestledInNature, PeacefulLocation } from '../../icons/icons';
 import {
   BookingRatingIcon,
-  CuratedLuxury,
   ExpediaRatingIcon,
   HotelRatingIcon,
   TripAdvisorRatingIcon,
 } from "@/icons/icons";
+import { NestledInNature, PeacefulLocation, PureVeg } from "../../icons/icons";
+import { contact } from "../../../constent";
 
 export const homePageData = {
   bannerData: {
-    images: [
-      imageUrl + "IMG_8380.webp",
-      "/home.webp",
-    ],
+    images: ["/IMG_8380.webp", 
+      "/Home.webp"],
     title: "Anand Vardhan Resort",
     subTitle: "Welcome to",
     description: "A PURE VEGETARIAN RESORT IN MANALI",
@@ -26,10 +24,11 @@ export const homePageData = {
       "Wake up to fresh mountain air, chirping birds, and breathtaking views of the Dhauladhar and Pir Panjal ranges. Nestled amid apple orchards and pine forests near Manali, our resort offers soulful escapes and warm hospitality away from the city’s hustle.",
     ],
     images: [
-      "/home-about2.png", 
-      "/home-about1.png", 
-      "/home-about3.jpg", 
-      "/home-about4.jpg",],
+      "/home-about2.png",
+      "/home-about1.png",
+      "/home-about3.jpg",
+      "/home-about4.jpg",
+    ],
     link: {
       label: "More About Us",
       href: "/about-us/",
@@ -79,7 +78,7 @@ export const homePageData = {
   },
   experiences: {
     title: "EXPERIENCES",
-    subTitle: "Lorem Ipsum Dolor Sit Amet",
+    subTitle: "Designed for Joy, Built for Memories",
     cards: [
       {
         src: "/destination-wedding.png",
@@ -99,19 +98,19 @@ export const homePageData = {
     title: "UNIQUE EDGE",
     subTitle: "Why Us?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "A perfect blend of luxury and nature, offering serene escapes amidst the Himalayas. Exquisite vegetarian cuisine and heartfelt hospitality that make every stay memorable.",
     cards: [
       {
-        icon: <CuratedLuxury />,
-        title: "Curated Luxury",
+        icon: <PureVeg />,
+        title: "Pure Veg",
       },
       {
         icon: <PeacefulLocation />,
-        title: "Peaceful Location",
+        title: "Peaceful Location Nestled in Nature",
       },
       {
         icon: <NestledInNature />,
-        title: "Nestled in Nature",
+        title: "family centric",
       },
     ],
   },
@@ -119,7 +118,7 @@ export const homePageData = {
     title: "OUR CULINARY OFFERINGS",
     subTitle: "A Celebration of Pure Vegetarian Flavors",
     link: {
-      href: "",
+      href: "/contact-us/",
       label: "Know More",
     },
     cards: [
@@ -128,7 +127,7 @@ export const homePageData = {
         description: "Govind Prasadam Pure Vegetarian Restaurant",
       },
       {
-        src: imageUrl + "IMG_8383.webp",
+        src: imageUrl + "IMG_8354.webp",
         description: "Open Air Cafe",
       },
     ],
@@ -139,22 +138,22 @@ export const homePageData = {
       {
         icon: <TripAdvisorRatingIcon />,
         partnerName: "TripAdvisor",
-        ratings: "4.5/5",
+        ratings: "4.9/5",
       },
       {
         icon: <BookingRatingIcon />,
         partnerName: "Booking.com",
-        ratings: "9.5/10",
+        ratings: "7.5/10",
       },
       {
         icon: <HotelRatingIcon />,
         partnerName: "Hotels.com",
-        ratings: "9.7/10",
+        ratings: "8.4/10",
       },
       {
         icon: <ExpediaRatingIcon />,
         partnerName: "Expedia",
-        ratings: "9.6/10",
+        ratings: "8.4/10",
       },
     ],
   },
@@ -165,12 +164,12 @@ export const homePageData = {
       {
         name: "Google Rating",
         logo: "/Google.png",
-        rating: "5.0",
+        rating: "4.8",
       },
       {
         name: "Trip Advisor",
         logo: "/trip.png",
-        rating: "5.0",
+        rating: "4.9",
       },
     ],
     cards: [
@@ -231,11 +230,12 @@ export const homePageData = {
     ],
   },
   addCardData: {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title:
+      "Discover the best of Himachal Pradesh tourism from Anand Vardhan Resort",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
+      "Your perfect gateway to Naggar's top attractions, heritage sites, and natural wonders in the heart of Kullu Valley.",
     link: {
-      href: "",
+      href: contact.cta,
       label: "Book Now",
     },
   },

@@ -23,7 +23,7 @@ const TestimonialCard: FC<TestimonialsPropsTypes["cards"][0]> = ({
       >
         <div className="w-full flex items-center justify-between">
           <div className="space-y-2">
-            <h3 className="text-2xl font-semibold text-white">{name}</h3>
+            <h3 className="text-2xl font-plus font-semibold text-white">{name}</h3>
             <div className="flex items-center gap-2">
               {Array.from({ length: 5 }, (_, i) => (
                 <span key={i}>
@@ -47,7 +47,7 @@ const TestimonialCard: FC<TestimonialsPropsTypes["cards"][0]> = ({
         <p className="md:text-lg text-white font-light roboto">
           {ReadMore || review.length <= 180
             ? review
-            : `${review.slice(0, 180)}... `}
+            : `${review.slice(0, 175)}... `}
           {review.length > 150 && !ReadMore && (
             <span
               className="text-secondary cursor-pointer capitalize font-semibold ml-1"

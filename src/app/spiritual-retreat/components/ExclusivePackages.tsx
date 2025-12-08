@@ -26,10 +26,10 @@ const ExclusivePackages: React.FC<ExclusivePackagesPropsTypes> = ({
     <SectionWithContainer>
       <div className="flex flex-col md:gap-14 gap-8">
         <SectionHeading title={title} subTitle={subTitle} textCenter />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
           {cards.map((card, index) => (
             <div
-              className={`transition-all delay-${index + 1} flex flex-col box-shadow rounded-[24px] overflow-hidden`}
+              className={`transition-all max-w-md card-view-scale delay-${index + 1} flex flex-col box-shadow rounded-[24px] overflow-hidden`}
               key={index}
             >
               <div className="w-full relative md:aspect-[4/2.5] aspect-[4/3]">
@@ -41,7 +41,7 @@ const ExclusivePackages: React.FC<ExclusivePackagesPropsTypes> = ({
                 />
               </div>
               <div className="px-4 py-6 flex flex-col gap-4 bg-clr2">
-                <h3 className="text-2xl md:text-[2rem] text-clr">{card.title}</h3>
+                <h3 className="text-2x font-plus md:text-[2rem] text-clr">{card.title}</h3>
                 <p className="md:text-lg text-clr">{card.description}</p>
                 <Link
                   href={card.link.href}

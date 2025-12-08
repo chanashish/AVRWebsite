@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
+import { contact } from "../../../constent";
 
 const CheckInOutForm = () => {
   const checkInRef = useRef<HTMLInputElement>(null);
@@ -35,7 +36,7 @@ const CheckInOutForm = () => {
         {/* Arrival Date Input */}
         <div className="flex max-md:bg-white flex-col gap-2 items-center justify-center p-4 w-full">
           <label
-            htmlFor="checkIn"
+            htmlFor="check-In-date"
             className="text-sm font-semibold uppercase text-Light"
           >
             Arrival date
@@ -43,7 +44,7 @@ const CheckInOutForm = () => {
           <div className="relative w-full border-b border-dark pb-2">
             <input
               type="date"
-              id="checkIn"
+              id="check-In-date"
               min={min}
               onChange={(e) => {
                 setData((prev) => ({ ...prev, checkIn: e.target.value }));
@@ -65,7 +66,7 @@ const CheckInOutForm = () => {
         {/* Departure Date Input */}
         <div className="flex max-md:bg-white flex-col gap-2 items-center justify-center p-4 w-full">
           <label
-            htmlFor="checkOut"
+            htmlFor="check-Out-date"
             className="text-sm font-semibold uppercase text-Light"
           >
             Departure date
@@ -73,7 +74,7 @@ const CheckInOutForm = () => {
           <div className="relative w-full border-b border-dark pb-2">
             <input
               type="date"
-              id="checkOut"
+              id="check-Out-date"
               max={max}
               min={data.checkIn ? data.checkIn : min}
               ref={checkOutRef}
@@ -121,7 +122,7 @@ const CheckInOutForm = () => {
           </div>
         </div>
 
-        <Link href={"tel:+919816091658"} target="_blank" className="bg-clr1 flex items-center justify-center gap-2 uppercase text-white lg:my-4 max-md:py-4 font-medium hover:text-clr hover:bg-white transition-colors ease-in-out duration-300 text-sm">
+        <Link href={contact.cta} target="_blank" className="bg-clr1 flex items-center justify-center gap-2 uppercase text-white lg:my-4 max-md:py-4 font-medium hover:text-clr hover:bg-white transition-colors ease-in-out duration-300 text-sm">
           Check Availability
         </Link>
       </div>
@@ -177,6 +178,7 @@ const NumberOfGuests: React.FC<NumberOfGuestsProps> = ({
                 disabled={guest.value <= (guest.type === "adults" ? 1 : 0)}
                 className="w-4 h-4 aspect-square rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
               >
+                <span className="sr-only">minus</span>
                 <FiMinus />
               </button>
               <span className="w-[3ch] flex items-center justify-center">
@@ -188,6 +190,7 @@ const NumberOfGuests: React.FC<NumberOfGuestsProps> = ({
                 }
                 className="w-4 h-4 aspect-square rounded-full bg-gray-100 flex items-center justify-center"
               >
+                <span className="sr-only">plus</span>
                 <GoPlus />
               </button>
             </div>

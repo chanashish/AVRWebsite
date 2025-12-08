@@ -8,8 +8,8 @@ const NearByPlacesCard: FC<NearByPlacesSliderPropsTypes["cards"][0]> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col gap-6 ">
-      <div className="relative w-full aspect-[4/4.5]">
+    <div className="flex flex-col gap-6 box-shadow bg-clr2">
+      <div className="relative w-full aspect-[4/4]">
         <Image
           src={src}
           alt={title}
@@ -18,7 +18,7 @@ const NearByPlacesCard: FC<NearByPlacesSliderPropsTypes["cards"][0]> = ({
           sizes="100vw"
         />
       </div>
-      <div className="flex flex-col gap-4 px-4 pb-6 min-h-[21rem] h-full">
+      <div className="flex flex-col gap-4 px-4 pb-6  h-full">
         <h2 className="text-[2rem] text-clr font-plus text-center">
           {title}
         </h2>

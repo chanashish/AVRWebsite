@@ -66,13 +66,17 @@ export interface RoomsAndSuitesPropsTypes {
   subTitle?: string;
   description?: string;
   cards: {
-    images: string[];
     title: string;
     description?: string;
-    facilityList?: string[];
+    images: string[];
+    facilityList?: (string | undefined)[];
+    viewAllAmenities?: {
+      amenityType: string;
+      amenities: string[];
+    }[];
     link: {
-      label: string;
       href: string;
+      label: string;
     };
   }[];
 }
@@ -126,6 +130,7 @@ export interface TestimonialsPropsTypes {
     name: string;
     logo: string;
     rating: string;
+    href: string;
   }[];
   cards: {
     id: number;
@@ -165,82 +170,87 @@ export interface pureVegSectionDataPropsTypes {
 }
 
 export interface WeddingServicesPropsTypes {
-    title: string;
-    cards: {
-        src: string;
-        alt: string;
-        name: string;
-    }[];
+  title: string;
+  cards: {
+    src: string;
+    alt: string;
+    name: string;
+  }[];
 }
 
 export interface OfferSliderPropsTypes {
-    title: string;
-    cards: {
-        src: string;
-        alt: string;
-    }[];
+  title: string;
+  cards: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 export interface AboutWeddingPropsTypes {
-    src: string;
-    title: string;
-    subTitle: string;
-    description: string;
-    links: {
-        href: string;
-        label: string;
-    }[];
+  src: string;
+  title: string;
+  subTitle: string;
+  description: string;
+  links: {
+    href: string;
+    label: string;
+  }[];
 }
 
-export interface  WhyChooseSpiritualPropsTypes {
+export interface WhyChooseSpiritualPropsTypes {
+  title: string;
+  subTitle: string;
+  description: string;
+  src: string;
+  cards: {
     title: string;
-    subTitle: string;
     description: string;
     src: string;
-    cards: {
-        title: string;
-        description: string;
-        src: string;
-    }[];
+  }[];
 }
 
 export interface OurPackagesPropsTypes {
-    title: string;
+  title: string;
+  description: string;
+  cards: {
+    packageType: string;
+    days: string;
     description: string;
-    cards: {
-        packageType: string;
-        days: string;
-        description: string;
-        src: string;
-        link: {
-            href: string;
-            label: string;
-        };
-    }[];
+    src: string;
+    link: {
+      href: string;
+      label: string;
+    };
+  }[];
 }
 
-
 export interface ProgramsToRestorePropsTypes {
+  title: string;
+  subTitle: string;
+  link: {
+    href: string;
+    label: string;
+  };
+  cards: {
+    src: string;
     title: string;
-    subTitle: string;
-    link: {
-        href: string;
-        label: string;
-    };
-    cards: {
-        src: string;
-        title: string;
-        icon: string;
-        description: string;
-    }[];
+    icon: string;
+    description: string;
+  }[];
 }
 
 export interface OurServicesPropsTypes {
-    title: string;
-    subTitle: string;
-    cards: {
-        src: string;
-        alt: string;
-        name: string;
-    }[];
+  title: string;
+  subTitle: string;
+  cards: {
+    src: string;
+    alt: string;
+    name: string;
+  }[];
 }
+
+export type FaqData = {
+  Answer: string;
+  Question: string;
+  _id: number;
+}[]

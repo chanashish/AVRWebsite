@@ -13,6 +13,7 @@ const Form = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  //  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0 });
   const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
     null,
     null,
@@ -23,14 +24,8 @@ const Form = () => {
   });
   const offers = [
     // "Wellness Offers",
-    "Rejuvenation Treatments",
-    "Lifestyle Treatments",
-    "Ailment Treatments",
-    "Panchkarma",
-    "Ladies Shakti Special",
-    "Detoxification Treatments",
-    "Ayurvedic Weight loss Treatments",
-    "Stress Management",
+    "Wellness Package",
+    "Spiritual Retreat",
   ];
 
   const [formData, setFormData] = useState({
@@ -57,6 +52,7 @@ const Form = () => {
   const phoneRegex = /^[0-9]{10}$/;
 
   const dropDownRef = useRef<HTMLDivElement | null>(null);
+
   useClickOutside(dropDownRef, () => {
     setIsDropdownOpen(false);
   });
@@ -171,7 +167,7 @@ const Form = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "testmulti",
+          Domain: "anandvardhanresort",
           email: formData.email,
           Name: `${formData.firstName} ${formData.lastName}`,
           Contact: formData.phone,
@@ -210,7 +206,6 @@ const Form = () => {
       setIsSubmitting(false);
     }
   };
-
 
   const inputFields = [
     {

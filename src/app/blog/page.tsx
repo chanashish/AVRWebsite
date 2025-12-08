@@ -12,9 +12,10 @@ export default function BlogPage() {
       <SectionWithContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-4">
           {blogPageData.cards.map((card, index) => (
-            <div
+            <Link
+              href={card.link.href}
               key={index}
-              className="w-full rounded-lg overflow-hidden box-shadow"
+              className="w-full flex flex-col card-view-scale rounded-lg overflow-hidden box-shadow"
             >
               <div className="w-full relative md:aspect-[4/2.5] aspect-[3/2.2]">
                 <Image
@@ -25,22 +26,19 @@ export default function BlogPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-4 bg-white">
-                <h3 className="text-[24px] text-[#2F4B26] font-normal playfair">
+              <div className="p-4 bg-clr2 space-y-3 h-full">
+                <h3 className="text-2xl font-plus text-[#2F4B26] font-normal flex-grow">
                   {card.title}
                 </h3>
-                <span className="text-[14px] text-[#2F4B26] font-normal">
-                  {card.date}
-                </span>
-                <p className="text-[16px] text-[#2F4B26] font-normal mt-2">
-                  {card.description}{" "}
-                  <Link href={card.link.href} className="text-[#FF7A00]">
-                    {" "}
-                    {card.link.label}
-                  </Link>
+                <p className="text-sm text-Light font-normal">{card.date}</p>
+                <p className="md:text-lg text-Light font-normal mt-2">
+                  {card.description.slice(0, 180)}{" "}
+                  <span className="text-[#1F1F1F] font-semibold">
+                    ...{card.link.label}
+                  </span>
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </SectionWithContainer>

@@ -5,6 +5,7 @@ import { TestimonialSlider } from "@/components/slider";
 import { SectionHeading } from "@/components/typography";
 import { StarIcon } from "@/icons/icons";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TestimonialSection(props: TestimonialsPropsTypes) {
   return (
@@ -27,7 +28,7 @@ export default function TestimonialSection(props: TestimonialsPropsTypes) {
               {/* Content */}
               <div className="relative md:grid  grid-cols-2 py-6 box-shadow rounded-[20px] max-md:px-4 md:divide-x-[0.5px] max-md:divide-y-[0.5px] divide-white z-10">
                 {props.reviewPartners.map((partner, index) => (
-                  <div key={index} className="flex items-center gap-4 md:px-4 max-md:py-4">
+                  <Link href={partner.href} target="_blank" rel="noopener noreferrer" key={index} className="flex items-center gap-4 md:px-4 max-md:py-4">
                     <div className="w-full max-w-[2.5rem] aspect-square relative">
                       <Image
                         src={partner.logo}
@@ -53,7 +54,7 @@ export default function TestimonialSection(props: TestimonialsPropsTypes) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

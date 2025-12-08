@@ -4,7 +4,7 @@ import {
   sectionContentData,
   TestimonialSection,
 } from "@/components/sectionComponants";
-import { AboutSpiritual, ExclusivePackages, OurPackages, Packages, ProgramsToRestore, WhyChooseUs } from "./components";
+import { AboutSpiritual, ExclusivePackages, OurPackages, ProgramsToRestore, WhyChooseUs } from "./components";
 import BookNow from "./components/BookNow";
 import { spiritualPageData } from "./spiritualPageData";
 
@@ -22,7 +22,7 @@ const page = () => {
       />
       <AboutSpiritual {...spiritualPageData.aboutSpiritual} />
       <ExclusivePackages {...spiritualPageData.exclusivePackages} />
-      <Packages {...spiritualPageData.packages} />
+      {/* <Packages {...spiritualPageData.packages} /> */}
       <ProgramsToRestore {...spiritualPageData.programsToRestore} />
       <OurPackages {...spiritualPageData.ourPackages} />
       <WhyChooseUs {...spiritualPageData.whyChooseUs} />

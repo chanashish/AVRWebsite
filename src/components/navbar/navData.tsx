@@ -3,7 +3,7 @@ import { contact } from "../../../constent";
 
 export const navUpper = [
   {
-    label: "Manali Road, Himachal Pradesh",
+    label: "Kullu Naggar Manali Road, Himachal Pradesh",
     href: contact.addressUrl,
     icon: <FillLocation />,
   },

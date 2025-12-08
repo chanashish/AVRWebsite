@@ -13,6 +13,7 @@ import {
 import { homePageData } from "./homePageData";
 import {
   Experiences,
+  sectionContentData,
   SectionWithContainer,
   TestimonialSection,
 } from "@/components/sectionComponants";
@@ -31,7 +32,7 @@ export default function Home() {
       <WhyChooseUs {...homePageData.whyChooseUs} />
       <OurCulinaryOfferings {...homePageData.ourCulinaryOfferings} />
       <OnlinePlatforms {...homePageData.onlinePlatforms} />
-      <TestimonialSection {...homePageData.testimonials} />
+      <TestimonialSection {...sectionContentData.testimonials} />
       <Addcard {...homePageData.addCardData} />
     </main>
   );
