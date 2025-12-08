@@ -1,11 +1,10 @@
-import { Call, Navbar, Whatsapp } from "@/components";
+import { Call, Footer, Navbar, Whatsapp } from "@/components";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.scss";
 
-import Footer from "@/components/Footer/Footer";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
-import { WebsiteProvider } from "@/context/WebsiteContext";
+import PureVegBanner from "./(home)/components/PureVegBanner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,7 +27,6 @@ export const metadata: Metadata = {
 //   content: {
 //     discount: 25,
 //     _html: `<p class="content-para">Luxury stays. Serene views. And up to 25% off <br><span class="purple-purse italic"> just for you!</span></br></p>`,
-//     // subTitle: "Luxury stays. Serene views. And up to 25% off",
 //     title: "RESERVE NOW",
 //     borderColor: "#fff",
 //   },
@@ -381,15 +379,12 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
 
         {/* <RenderChatBot /> */}
-        <WebsiteProvider>
-          <Navbar />
-          {/* <DiscountPopup {...data} /> */}
-          {children}
-          <Footer />
-          {/* <StickyLogo /> */}
-          <Whatsapp whatsAppNumber="9317207373" />
-          <Call callNumber="919317207373" />
-        </WebsiteProvider>
+        <PureVegBanner />
+        <Navbar />
+        {children}
+        <Footer />
+        <Whatsapp whatsAppNumber="9317207373" />
+        <Call callNumber="919317207373" />
       </body>
     </html>
   );
