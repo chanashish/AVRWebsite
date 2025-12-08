@@ -4,7 +4,7 @@ import { IoCall } from "react-icons/io5";
 
 function Call({ callNumber }: { callNumber: string }) {
   return (
-    <div className="fixed bottom-10 lg:left-3  left-4 z-20 cursor-pointer">
+    <div className="fixed bottom-32 left-4 z-20 cursor-pointer">
       <Link
         href={`tel:+ ${callNumber ? callNumber : "919317207373"} `}
         target="_blank"

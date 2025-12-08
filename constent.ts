@@ -10,5 +10,6 @@ export const contact = {
         instagram:"https://www.instagram.com/anandvardhanresorts/",
         linkedin:"https://www.linkedin.com/company/anand-vardhan-resort/"
     },
-    cta:"https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates."
+    WhatsappCta:"https://wa.me/+919317207373?text=Hello%2C+I+would+like+to+inquire+about+room+availability+and+rates.",
+    cta:"https://bookings.anandvardhanresorts.com/?propertyId=11473&triggerSearch=true"
 };

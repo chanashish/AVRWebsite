@@ -1,14 +1,14 @@
-import { Call, Navbar, Whatsapp } from "@/components";
+import { Call, Navbar } from "@/components";
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.scss";
 import "./animation.scss";
+import "./globals.scss";
 
 import Footer from "@/components/Footer/Footer";
-import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
-import { WebsiteProvider } from "@/context/WebsiteContext";
 import FullscreenImagePopup1 from "@/components/FullscreenImagePopup1";
 import AmenitiesPopUp from "@/components/pop-up/AmenitiesPopUp";
+import { WebsiteProvider } from "@/context/WebsiteContext";
+import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -82,6 +82,29 @@ export default function RootLayout({
           name="google-site-verification"
           content="AI8uiz0tsMf569ZnqOVsiTjO-HxasZqwK77F_sYcLrA"
         />
+        <Script
+          type="text/javascript"
+          id="ycloud-script"
+          strategy="afterInteractive"
+        >
+          {`;(function (m, ei, q, i, a, j, s) {
+        m[i] =
+          m[i] ||
+          function () {
+            ;(m[i].a = m[i].a || []).push(arguments)
+          }
+        ;(j = ei.createElement(q)), (s = ei.getElementsByTagName(q)[0]);
+        j.async = true;
+        j.crossorigin = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://sdk.ycloud.com/growth-tool/install.js';
+        s.parentNode.insertBefore(j, s);
+        j.onload = function () {
+          window._YCLOUD.init('E89F5F2EAD2ADBCFFBBBFD32EBD5DC0A')
+        };
+        })(window, document, 'script', '_YCLOUD')
+        `}
+        </Script>
         {/* <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5YZX33V7B"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Y5YZX33V7B'); </script> */}
 
         {/* <script type="application/ld+json">
@@ -662,7 +685,7 @@ export default function RootLayout({
           {children}
           <Footer />
           {/* <StickyLogo /> */}
-          <Whatsapp whatsAppNumber="9317207373" />
+          {/* <Whatsapp whatsAppNumber="9317207373" /> */}
           <Call callNumber="919317207373" />
           <FullscreenImagePopup1 />
           <AmenitiesPopUp />
@@ -677,10 +700,8 @@ export default function RootLayout({
             };
           `}
         </Script>
-
-        {/* ✅ Chatbot script */}
         <Script
-          src="https://test-cb.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
+          src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
           strategy="afterInteractive"
         />
       </body>

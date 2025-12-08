@@ -11,6 +11,7 @@ import MobileNav from "./MobileNav";
 import { footerData } from "../Footer/footerData";
 import axios from "axios";
 import { navUpper } from "./navData";
+import { contact } from "../../../constent";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
@@ -204,7 +205,7 @@ const Navbar: React.FC = () => {
             </Link> */}
 
             <Link
-              href="tel:+919317207373"
+              href={contact.cta}
               className="bg-clr text-white px-4 py-2 rounded-sm"
             >
               <span className="">Book Now</span>
@@ -220,7 +221,9 @@ const Navbar: React.FC = () => {
               {isOpen ? <IoMdClose /> : <MenuBurger />}
             </button>
             <Link
-              href="tel:+919317207373"
+              href={contact.cta}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden bg-clr1 text-white hover:bg-white border border-clr1 hover:text-clr1 px-8 py-4 lg:flex items-center justify-center gap-2 uppercase"
             >
               Book Now
