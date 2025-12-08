@@ -11,7 +11,11 @@ import {
   WhyChooseUs,
 } from "./components";
 import { homePageData } from "./homePageData";
-import { Experiences, SectionWithContainer, TestimonialSection } from "@/components/sectionComponants";
+import {
+  Experiences,
+  SectionWithContainer,
+  TestimonialSection,
+} from "@/components/sectionComponants";
 import CheckInOutForm from "@/components/cards/CheckInOutForm";
 
 export default function Home() {
