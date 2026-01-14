@@ -1,11 +1,9 @@
 "use client";
-import { Autoplay, Pagination } from "swiper/modules";
-import SwiperCarousel from "./slider/SwiperCarousel";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import CheckInOutForm from "./cards/CheckInOutForm";
+import { Autoplay, Pagination } from "swiper/modules";
 import { LeftLinesIcon, RightLinesIcon } from "../icons/icons";
 import { Section } from "./sectionComponants";
+import SwiperCarousel from "./slider/SwiperCarousel";
 
 interface FullScreenCarouselProps {
   images: string[];
@@ -20,7 +18,6 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({
   subTitle,
   description,
 }) => {
-  const pathName = usePathname();
 
   return (
     <Section  className="w-full relative !py-0">
@@ -108,11 +105,11 @@ const FullScreenCarousel: React.FC<FullScreenCarouselProps> = ({
           </div>
         </div>
       )}
-      {pathName === "/" && (
+      {/* {pathName === "/" && (
         <div className="absolute max-lg:hidden z-10 bottom-12 left-1/2 transform -translate-x-1/2 w-full px-4">
           <CheckInOutForm />
         </div>
-      )}
+      )} */}
     </Section>
   );
 };

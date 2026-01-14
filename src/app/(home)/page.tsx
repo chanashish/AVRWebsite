@@ -2,6 +2,11 @@
 // import WellnessSliderSection from "@/components/WellnessSlider";
 // import dynamic from "next/dynamic";
 import FullScreenCarousel from "@/components/FullScreenCarousel";
+import {
+  Experiences,
+  sectionContentData,
+  TestimonialSection
+} from "@/components/sectionComponants";
 import Addcard from "../../components/cards/Addcard";
 import {
   AboutUsHome,
@@ -11,21 +16,33 @@ import {
   WhyChooseUs,
 } from "./components";
 import { homePageData } from "./homePageData";
-import {
-  Experiences,
-  sectionContentData,
-  SectionWithContainer,
-  TestimonialSection,
-} from "@/components/sectionComponants";
-import CheckInOutForm from "@/components/cards/CheckInOutForm";
 
 export default function Home() {
   return (
     <main>
       <FullScreenCarousel {...homePageData.bannerData} />
-      <SectionWithContainer sectionClassName="bg-clr lg:hidden">
+      {/* <SectionWithContainer sectionClassName="bg-clr lg:hidden">
         <CheckInOutForm />
-      </SectionWithContainer>
+      </SectionWithContainer> */}
+      <div className="bg-clr2 p-4 md:p-8 lg:p-12">
+        <iframe
+          src="https://login.hotelgrowthsuite.com/widget/form/693bf7a7d055a"
+          // style="width:100%;height:600px;border:none;border-radius:3px"
+          style={{
+            width: "100%",
+            height: "440px",
+            border: "none",
+            borderRadius: "3px",
+          }}
+          id="inline-693bf7a7d055a"
+          data-form-name="Contact Us"
+          data-layout-iframe-id="inline-693bf7a7d055a"
+          data-form-id="693bf7a7d055a"
+          data-height="600"
+          title="Contact Us"
+          className="bg-clr2"
+        ></iframe>
+      </div>
       <AboutUsHome {...homePageData.aboutUsData} />
       <RoomAndSuites {...homePageData.roomsAndSuites} />
       <Experiences {...homePageData.experiences} />
